@@ -3,7 +3,7 @@ Contributors: galdub, tomeraharon, premio
 Tags: whatsapp, contact form, facebook messenger, call now button, instagram
 Requires at least: 3.1
 Tested up to: 6.6
-Stable tag: 2.2.1
+Stable tag: 2.2.2
 Plugin URI: https://premio.io/downloads/mystickyelements/
 License: GPLv3
 
@@ -134,7 +134,7 @@ Unlock the Pro features for only $49/year
 4. Page targeting - show or hide your contact form, chat, call, and social networks channels on specific pages
 5. Widget analytics - discover the most frequently used chat and social channels (e.g., WhatsApp, Facebook Messenger, contact form, etc)
 6. Country targeting for specific countries
-7. Time delay
+7. Show the widget after a few seconds or based on page scroll percentage
 8. Integrations with MailChimp and MailPoet - connect your My Sticky Elements contact forms to your MailChimp and MailPoet accounts
 9. Create different bars for different pages. Show different icons, form and language based on page targeting rules
 10. Custom CSS
@@ -154,11 +154,11 @@ Unlock the Pro features for only $49/year
 24. Log the IP address of visitors that submit your contact us form
 25. Add a Text block to your contact form - add text to the upper part of your forms
 26. Traffic source targeting 
-27. Available days and hours
+27. Available days and hours and specific date scheduling
 28. More text formatting options for the text block and consent checkbox text
 29. Add sender name in email subject for your contact form submissions
 30. Multiple file upload feature - there can now be up to 5 files that can be uploaded via the contact form
-31. Merge tags for WhatsApp - you can add merge tag like the URL or the Title of the page when visitors message you on WhatsApp
+31. Merge tags for WhatsApp, Email & SMS - you can add merge tag like the URL or the Title of the page when visitors message you on WhatsApp, SMS & Email
 
 <br><a href="https://premio.io/downloads/mystickyelements/?utm_source=wordpressorg" target="_blank" title="My Sticky Elements pro plans"><strong>Upgrade to pro 🚀</strong></a> to get all pro features :)
 
@@ -334,6 +334,14 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 9. Change the color of your icons, contact form, text, and anything else!
 
 == Changelog ==
+
+= 2.2.2 =
+Flyout bug fixed
+Option to add the current URL to the contact form body as merge tag
+Date scheduling (Pro)
+Page scroll trigger (Pro)
+URL & Title merge tags for the SMS and Email channels (Pro)
+Country dropdown added to the contact form (Pro)
 
 = 2.2.1 =
 Add Threads as a channel

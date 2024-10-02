@@ -2862,8 +2862,9 @@
     });
     
     function myStickyelements_intro_popup_close(){
-        var nonceVal = jQuery("#myStickyelements_update_popup_status").val();
-        $( "#myStickyelements-intro-popup" ).dialog('close');
+        var nonceVal = jQuery("#myStickyelements_update_popup_status").val();        
+		jQuery('.mystickyelements-intro-popup').hide();
+        jQuery('#mystickyelement_intro_popup_overlay').hide();
         jQuery.ajax({
             url: ajaxurl,
             type:'post',
@@ -2872,8 +2873,7 @@
                 nonce: nonceVal
             },
             success: function( data ){
-                jQuery('.mystickyelements-intro-popup').hide();
-                jQuery('#mystickyelement_intro_popup_overlay').hide();
+                
             },
         });
     }
@@ -3071,6 +3071,31 @@
 			} else {
 				$( '.recommended-chatway-plugin' ).show();
 				$( '.myStickyelements-chatway-header .wp-list-table.widefat.plugin-install' ).hide();
+			}
+		});
+		
+		/* Date Scheduling section */
+		var datepicker_option = {
+				showLeadingZero: true,
+				minDate: 0,
+				dateFormat: 'mm/dd/yy'
+			}
+		$( ".myStickyelements-date-schedules .myStickyelements-datepicker" ).datepicker( datepicker_option );
+		$( ".myStickyelements-date-schedules .myStickyelements-timepicker" ).timepicker({showLeadingZero: true,minTime:0});
+		$( document ).on( 'click', '#myStickyelements-date-schedling' ,function(){
+			$( '#myStickyelements-date-schedule-options').show();
+			$( '#remove-myStickyelements-date-schedling').show();
+			$( this ).hide();
+		});
+		$( document ).on( 'click', '#remove-myStickyelements-date-schedling', function() {
+			$('#myStickyelements-date-schedule-options').hide();
+			$('#myStickyelements-date-schedling').show();
+			$( this ).hide();
+		});
+		
+		$('input[type="number"]').on( 'keypress', function(e){			
+			if (e.which != 8 && e.which != 0 && e.which < 48 || e.which > 57){
+				e.preventDefault();
 			}
 		});
 		

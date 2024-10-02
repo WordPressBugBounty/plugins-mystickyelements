@@ -3,7 +3,7 @@
 Plugin Name: myStickyElements
 Plugin URI: https://premio.io/
 Description: myStickyElements is simple yet very effective plugin. It is perfect to fill out usually unused side space on webpages with some additional messages, videos, social widgets ...
-Version: 2.2.1
+Version: 2.2.2
 Author: Premio
 Author URI: https://premio.io/
 Domain Path: /languages
@@ -14,7 +14,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 
 define('MYSTICKYELEMENTS_URL', plugins_url('/', __FILE__));  // Define Plugin URL
 define('MYSTICKYELEMENTS_PATH', plugin_dir_path(__FILE__));  // Define Plugin Directory Path
-define("MY_STICKY_ELEMENT_VERSION", "2.2.1");
+define("MY_STICKY_ELEMENT_VERSION", "2.2.2");
 /*
  * redirect my sticky element setting page after plugin activated
  */
@@ -2955,6 +2955,7 @@ if ( !function_exists('mystickyelements_social_channels')) {
 											'class' => "fas fa-sms",
 											'tooltip'	=> 'Add your full phone number with country code. E.g., +18006927753',
 											'number_validation' => 1,
+											'is_pre_set_message' => 1,
 											'icon_color' => 1
 										),
 							'phone'		=> array(
@@ -2976,6 +2977,7 @@ if ( !function_exists('mystickyelements_social_channels')) {
 											'placeholder'	=> 'Example: john@example.com',
 											'class' => "far fa-envelope",
 											'tooltip'	=> 'Add your email address. E.g., support@premio.io',
+											'is_pre_set_message' => 1,
 											'icon_color' => 1
 										),
 							'insagram'	=> array(

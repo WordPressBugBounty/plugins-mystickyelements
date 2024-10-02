@@ -499,10 +499,14 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 										$link_target = 0;
 										break;
 									case 'email':
+										$title = wp_get_document_title();										
 										if (strpos($value['text'], 'mailto:') == false) {
-											$social_link = "mailto:".esc_attr($value['text']);
+											$social_link = "mailto:" . $value['text'];
 										} else {
 											$social_link = $value['text'];
+										}
+										if( isset($value['pre_set_message']) && $value['pre_set_message'] != '' ) {
+											$social_link .=  '?subject=' . esc_attr($value['pre_set_message']);
 										}
 										$link_target = 0;
 										break;
@@ -570,8 +574,13 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 										$social_link = "skype:" . esc_attr($value['text']) . "?chat";
 										$link_target = 0;
 										break;
-									case 'SMS' :
-										$social_link = "sms:" . esc_attr($value['text']);
+									case 'SMS' :										
+										$title = wp_get_document_title();										
+										$social_link = "sms:" . esc_attr( $value['text'] );
+										
+										if( isset($value['pre_set_message']) && $value['pre_set_message'] != '' ) {
+											$social_link .= "?&body=". $value['pre_set_message'];
+										}
 										$link_target = 0;
 										break;
 									case 'qq':
@@ -820,7 +829,7 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 									if (isset($value['icon_color']) && $value['icon_color'] != '') {
 										$icon_text_color = "color: " . esc_attr($value['icon_color']) . ";";
 									}
-									//if ( $hover_text != '') :
+									if ( $hover_text != '') :
 								?>
 									<span class="mystickyelements-social-text <?php echo esc_attr(($social_link == '') ? 'mystickyelements-social-no-link' : '');?>" style= "<?php echo esc_attr($icon_bg_color.$icon_text_color) ?>" >
 										<?php if ($social_link != ''): ?>
@@ -840,7 +849,7 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 										</a>
 									<?php endif; ?>
 									</span>
-								<?php //endif; /* Hover Text Not equal to blank */
+								<?php endif; /* Hover Text Not equal to blank */
 								
 								endif;?>
 								</li>

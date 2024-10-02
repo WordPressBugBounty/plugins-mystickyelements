@@ -361,19 +361,34 @@ if ( !$furl){
 									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 									<p><?php esc_html_e("Your My Sticky Elements widget will first appear to the user according to the selected trigger. After the widget appeared for the first time, it'll always be visible on-load - once the user is aware of the widget, the user expects it to always appear","myStickyelements");?></p>
 								</div>
-								<label for="myStickyelements-time-delay">Time delay</label>
+								<label for="myStickyelements-time-delay"><?php esc_html_e('Display after', 'mystickyelements'); ?></label>
 								
 								<?php if (!$is_pro_active) { ?>
-								<span class="upgrade-myStickyelements"><a href="<?php echo esc_url($upgrade_url); ?>" target="_blank"><i class="fas fa-lock"></i><?php _e('UPGRADE NOW', 'mystickyelements'); ?></a></span>
+								<span class="upgrade-myStickyelements"><a href="<?php echo esc_url($upgrade_url); ?>" target="_blank"><i class="fas fa-lock"></i><?php esc_html_e('UPGRADE NOW', 'mystickyelements'); ?></a></span>
 							<?php } ?>
 							</span>
-							<div class="myStickyelements-inputs myStickyelements-label myStickyelements-time-delay">
+							<div class="myStickyelements-inputs myStickyelements-label myStickyelements-time-delay">	
+								<input type="number" name="general-settings[timer_delay_sec]" value="<?php echo esc_attr(( isset($general_settings['timer_delay_sec']) && $general_settings['timer_delay_sec'] != '' ) ? $general_settings['timer_delay_sec'] : '0') ; ?>" disabled="disabled" style="width: 20%">
+								&nbsp;<?php esc_html_e('seconds on the page', 'mystickyelements'); ?>
+							</div>
+							
+						</div>
+						
+						<div class="mystickyelements-content-section-wrap">
+							<span class="myStickyelements-label">
+								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip" style="margin-top: 5px;">
+									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+									<p><?php esc_html_e("Set a scroll percentage after which the widget becomes visible","myStickyelements");?></p>
+								</div>
+								<label for="myStickyelements-time-delay"><?php esc_html_e('Visible after scrolling', 'mystickyelements'); ?></label>
 								
-								<label for="myStickyelements-time-delay" class="myStickyelements-switch">
-									<input type="checkbox" id="myStickyelements-time-delay" name="general-settings[time_delay]" <?php checked(@$general_settings['time_delay'],'1') ?> value="<?php echo isset($general_settings['time_delay']) ? $general_settings['time_delay'] : '1'; ?>" <?php if(!$is_pro_active) : ?> disabled="disabled" <?php endif; ?>>
-									<span class="slider round"></span>
-								</label>
-								&nbsp;<input type="number" name="general-settings[timer_delay_sec]" style="width: 133px;display:<?php echo isset($general_settings['time_delay']) ? 'inline-flex' : 'none';?>" value="<?php echo esc_attr(( isset($general_settings['timer_delay_sec']) && $general_settings['timer_delay_sec'] != '' ) ? $general_settings['timer_delay_sec'] : '0') ; ?>" <?php if(isset($general_settings['time_delay']) && $general_settings['time_delay'] != 1 ): ?> disabled="disabled" <?php endif; ?>>
+								<?php if (!$is_pro_active) { ?>
+								<span class="upgrade-myStickyelements"><a href="<?php echo esc_url($upgrade_url); ?>" target="_blank"><i class="fas fa-lock"></i><?php esc_html_e('UPGRADE NOW', 'mystickyelements'); ?></a></span>
+							<?php } ?>
+							</span>
+							<div class="myStickyelements-inputs myStickyelements-label myStickyelements-time-delay">	
+								<input type="number" name="general-settings[after_page_scroll]" value="0" disabled="disabled" style="width: 20%">
+								&nbsp;<?php esc_html_e('% of the page', 'mystickyelements'); ?>
 							</div>
 							
 						</div>
@@ -517,7 +532,79 @@ if ( !$furl){
 							</div>
 						</div>
 					</div>
-					<!-- END Days and Hours -->					
+					<!-- END Days and Hours -->
+					<!-- Date Scheduling -->
+					<div class="mystickyelements-content-section-wrap">
+						<span class="myStickyelements-label myStickyelements-extra-label" >
+							<label for="traffic-add-other-source">
+								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
+									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+									<p><?php esc_html_e('Set the date and time for when you want the widget to start showing and the time you would like it to stop showing. You can add up to 12 combinations of "on and off" triggers. This feature may be useful when you have an upcoming limited-time offer.', 'mystickyelements'); ?></p>
+								</div>
+								<?php esc_html_e( "Date Scheduling", 'mystickyelements' );?>
+							</label>
+							<span class="upgrade-myStickyelements"><a href="<?php echo esc_url($upgrade_url); ?>" target="_blank"><i class="fas fa-lock"></i><?php _e('UPGRADE NOW', 'mystickyelements'); ?></a></span>
+						</span>
+						<div class="myStickyelements-show-on-right myStickyelements-inputs">							
+							<div id="myStickyelements-date-schedule-options" class=" myStickyelements-label myStickyelements-date-schedule-options date-schedule-options" style="display:none;" >
+								
+								<div class="myStickyelements-date-schedule-time-zone">
+									<label><?php esc_html_e( 'Timezone', 'mystickyelements');?></label>
+									<select class="gmt-data myStickyelements-gmt-timezone gmt-timezone" name="general-settings[date_schedule_timezone]" <?php echo !$is_pro_active?"disabled":"" ?>>
+										<option selected="selected" value=""><?php esc_html_e( "Select a city or country", 'mystickyelements' );?></option>
+									</select>
+								</div>
+								<div class="myStickyelements-date-schedule-boxes myStickyelements-date-schedules">
+									<div class="myStickyelements-date-schedule-box setting-content-relative">
+										<div class="date-time-box">
+											<div class="date-select-option">
+												<label>
+													<?php esc_html_e( 'Start date ', 'mystickyelements');?>
+													<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
+														<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+														<p><?php esc_html_e('Schedule a date from which the widget will be displayed (the starting date is included)',"mystickyelements");?></p>
+													</div>
+												</label>
+												<input autocomplete="off" type="text" class="myStickyelements-datepicker" id="date_schedule___count___start_date">
+											</div>
+											<div class="time-select-option">
+												<label><?php esc_html_e( 'Start time ', 'mystickyelements');?></label>
+												<input autocomplete="off" type="text" class="myStickyelements-timepicker" id="date_schedule___count___start_time">
+											</div>
+										</div>
+										<div class="date-time-box">
+											<div class="date-select-option">
+												<label>
+													<?php esc_html_e( 'End date ', 'mystickyelements');?>
+													<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
+														<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+														<p><?php esc_html_e('Schedule a date from which the widget will stop being displayed (the end date is included)',"mystickyelements");?></p>
+													</div>
+												</label>
+												<input autocomplete="off" type="text" class="myStickyelements-datepicker" id="date_schedule___count___end_date">
+											</div>
+											<div class="time-select-option">
+												<label><?php esc_html_e( 'End time ', 'mystickyelements');?></label>
+												<input autocomplete="off" type="text" class="myStickyelements-timepicker" id="date_schedule___count___end_time">
+											</div>
+											<div class="myStickyelements-url-buttons">
+												<a class="myStickyelements-remove-date-schedule" href="javascript:void(0);">x</a>
+											</div>
+										</div>
+									</div>									
+								</div>
+								<span class="upgrade-myStickyelements">
+									<a href="<?php echo esc_url($upgrade_url); ?>" target="_blank">
+										<i class="fas fa-lock"></i><?php _e('UPGRADE NOW', 'mystickyelements'); ?>
+									</a>
+								</span>
+							</div>
+							
+							<a href="javascript:void(0);" class="create-rule" id="myStickyelements-date-schedling"><?php esc_html_e( "Add Rule", "mystickyelements" );?></a>
+							<a href="javascript:void(0);" class="create-rule remove-rule" id="remove-myStickyelements-date-schedling" style="display:none;"><?php esc_html_e( "Remove Rules", "mystickyelements" );?></a>
+						</div>
+					</div>
+					<!-- End Date Scheduling -->
 					
 					<!-- Traffic Source -->
 					<!--<div class="more-setting-rows"> -->

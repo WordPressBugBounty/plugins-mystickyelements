@@ -1669,14 +1669,15 @@ a.remove-rule:hover {
 }
 .myStickyelements-page-option .upgrade-myStickyelements ,
 .myStickyelements-country-inputs .upgrade-myStickyelements ,
-.myStickyelements-traffic-source-inputs .upgrade-myStickyelements {
+.myStickyelements-traffic-source-inputs .upgrade-myStickyelements,
+.myStickyelements-date-schedule-options .upgrade-myStickyelements {
 	float: none;
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	text-align: center;
-	background-color: rgba(0,0,0,0.6);
+	/*background-color: rgba(0,0,0,0.6);*/
 	bottom: 0;
 	border-radius: 4px;
 	display: flex;
@@ -1698,7 +1699,8 @@ a.remove-rule:hover {
 }
 .myStickyelements-page-option:hover .upgrade-myStickyelements ,
 .myStickyelements-country-inputs:hover .upgrade-myStickyelements ,
-.myStickyelements-traffic-source-inputs:hover .upgrade-myStickyelements {
+.myStickyelements-traffic-source-inputs:hover .upgrade-myStickyelements,
+.myStickyelements-date-schedule-options:hover .upgrade-myStickyelements {
 	opacity: 1;
 	visibility: visible;
 }
@@ -3600,7 +3602,7 @@ button.popup-form-btn {
 	height: 35px;
 	padding-left: 15px;
 	padding-right: 15px;
-	width: 100%;
+	width: 100%;	
 }
 .mystickyelements-wrap textarea {
 	height: 100px;
@@ -6506,4 +6508,56 @@ input#preview-stickyelements-submit-form {
 	width: 69%;
 	display: inline;
 	margin-left: 10px;
+}
+
+/* CSS 03072024 */
+.wp-core-ui select {
+	max-width: 100%;
+}
+.myStickyelements-date-schedule-time-zone,
+.date-select-option,
+.time-select-option {
+	display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.date-time-box {
+	display: flex;
+    gap: 20px;
+}
+.myStickyelements-date-schedule-boxes .myStickyelements-date-schedule-box {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 20px 0;
+}
+a.myStickyelements-remove-date-schedule {
+    color: #fff;
+    background-color: #666;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: top;
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 22px;
+    line-height: 35px;
+}
+a.myStickyelements-remove-date-schedule:hover {
+	color: #fff;
+	background-color: #7761DF;
+}
+.myStickyelements-date-schedule-options {
+	position: relative;
+}
+.myStickyelements-date-schedule-box {
+	position: relative;
+    padding-right: 48px;
+}
+.myStickyelements-date-schedule-box .myStickyelements-url-buttons {
+    width: 38px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }

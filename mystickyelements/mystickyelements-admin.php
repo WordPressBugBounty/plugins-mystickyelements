@@ -100,6 +100,10 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
                     wp_enqueue_media();
 					// include the javascript
 					wp_enqueue_script('thickbox', null, array('jquery'));
+					
+					wp_enqueue_style('jquery-ui-css', plugins_url('/css/datepicker.min.css', __FILE__), [], MY_STICKY_ELEMENT_VERSION);
+
+					wp_enqueue_script('jquery-ui-datepicker');
 
 					// include the thickbox styles
 					wp_enqueue_style('thickbox.css', '/'.WPINC.'/js/thickbox/thickbox.css', null, '1.0');
@@ -109,6 +113,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 					
 					//wp_enqueue_script('plugin-install', admin_url('/js/plugin-install.min', __FILE__), array( 'jquery' ), MY_STICKY_ELEMENT_VERSION, true ) ;
 					wp_enqueue_script('select2-js', plugins_url('/js/select2.min.js', __FILE__), array( 'jquery' ), MY_STICKY_ELEMENT_VERSION, true ) ;
+					wp_enqueue_script('timepicker-js', plugins_url('/js/timepicker.min.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, false);
 					wp_enqueue_script('confetti-js', plugins_url('/js/confetti.min.js', __FILE__), array( 'jquery' ), MY_STICKY_ELEMENT_VERSION, true ) ;
 					
 					wp_enqueue_script( 'mailcheck-js', plugins_url('/js/mailcheck.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
@@ -1172,7 +1177,13 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 
                                     <div class="myStickyelements-setting-wrap-list myStickyelements-custom-pre-message"
                                          <?php if (!isset($social_channels_list['is_pre_set_message'])) : ?>style="display:none;" <?php endif; ?>>
-                                        <label><?php _e('Pre Set Message', 'mystickyelements'); ?></label>
+                                        <label>
+											<?php _e('Pre Set Message', 'mystickyelements'); ?>
+											<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
+												<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+												<p><?php esc_html_e('Add your own pre-set message that\'s automatically added to the user\'s message. You can also use merge tags and add the URL or the title of the current visitor\'s page. E.g. you can add the current URL of a product to the message so you know which product the visitor is talking about when the visitor messages you', 'mystickyelements'); ?></p>
+											</div>											
+										</label>
                                         <div class="px-wrap myStickyelements-inputs">
                                             <input type="text"
                                                    name="social-channels-tab[<?php echo esc_attr($social_channel); ?>][pre_set_message]"

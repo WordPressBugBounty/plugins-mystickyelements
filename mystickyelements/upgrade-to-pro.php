@@ -192,6 +192,10 @@ $features = [
         'title' => esc_html__("Country targeting", "mystickyelements"),
         'tooltip' => esc_html__("Target your widget to specific countries. You can create different widgets for different countries", "mystickyelements")
     ],
+	[
+        'title' => esc_html__("Set triggers", "mystickyelements"),
+        'tooltip' => esc_html__("Set your widget to appear after a specific time delay or when users scroll to a certain percentage of the page, helping you capture attention at the perfect moment", "mystickyelements")
+    ],
     [
         'title' => esc_html__("Traffic source targeting", "mystickyelements"),
         'tooltip' => esc_html__("Show the widget only to visitors who come from specific traffic sources including direct traffic, social networks, search engines, Google Ads, or any other traffic source", "mystickyelements")

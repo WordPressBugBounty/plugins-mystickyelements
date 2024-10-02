@@ -68,11 +68,15 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 			</div>
 			<div class="mystickyelements-action-popup-open mystickyelements-action-popup-status" id="contactform-status-popup" style="display:none;">
 				<div class="popup-ui-widget-header">
-					<span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e( 'Are you sure?', 'mystickyelement');?></span><span class="close-dialog" data-from ='contact-form'> &#10006 </span>
+					<span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e( 'Disable Contact Form?', 'mystickyelement');?></span><span class="close-dialog" data-from ='contact-form'> &#10006 </span>
 				</div>	
-				<div id="widget-delete-confirm" class="ui-widget-content"><p><?php 
-					esc_html_e( "You're about to turn off the ", "mystickyelement");
-				?> <span><?php esc_html_e( "contact form", "mystickyelement"); ?></span><?php esc_html_e( " widget. By turning it off, this widget won't appear on your website. Are you sure?", "mystickyelement"); ?></p></div>
+				<div id="widget-delete-confirm" class="ui-widget-content">
+					<p>
+						<?php 
+							_e( "You are about to disable the <span>contact form</span>. Once disabled, the contact form will no longer be visible. Only the chat buttons or social channels will remain visible if they are enabled.", "mystickyelement");
+						?>
+					</p>
+				</div>
 				<div class="popup-ui-dialog-buttonset"><button type="button" class="btn-disable-cancel button-contact-popup-disable"><?php esc_html_e('Disable anyway','mystickyelement');?></button><button type="button" class="mystickyelement-keep-widget-btn button-contact-popup-keep" data-from = "contact-form" ><?php esc_html_e('Keep using','mystickyelement');?></button></div>
 			</div>
 			<div id="mystickyelement-contact-popup-overlay" class="stickyelement-overlay" data-from = "contact-form" style="display:none;"></div>
@@ -787,6 +791,10 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 						<label class="contact-form-field-select">
 							<input type="radio" name="radio_btn" />
 							<span><i class="fas fa-file-upload"></i><?php esc_html_e('File upload', 'mystickyelements'); ?></span>
+						</label>
+						<label class="contact-form-field-select">
+							<input type="radio" name="radio_btn" />
+							<span><i class="fas fa-caret-down"></i><?php esc_html_e('Country Dropdown', 'mystickyelements'); ?></span>
 						</label>
 						<label class="contact-form-field-select">
 							<input type="radio" name="radio_btn" />
