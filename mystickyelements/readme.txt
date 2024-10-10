@@ -3,7 +3,7 @@ Contributors: galdub, tomeraharon, premio
 Tags: whatsapp, contact form, facebook messenger, call now button, instagram
 Requires at least: 3.1
 Tested up to: 6.6
-Stable tag: 2.2.2
+Stable tag: 2.2.3
 Plugin URI: https://premio.io/downloads/mystickyelements/
 License: GPLv3
 
@@ -334,6 +334,9 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 9. Change the color of your icons, contact form, text, and anything else!
 
 == Changelog ==
+
+= 2.2.3 =
+Contact form mobile bug fixed
 
 = 2.2.2 =
 Flyout bug fixed
