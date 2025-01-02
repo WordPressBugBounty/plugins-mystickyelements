@@ -65,11 +65,11 @@ foreach ( $contact_field as $key=>$value ) {
 								$search_channel = (isset($value['search_class']) ) ? $key. ' ' . $value['search_class'] : $key;
 								
 								if( !isset($value['custom']) ) { 
-								
+								$channel_class	= (isset($value['channel_class'])) ? $value['channel_class'] : '';						
 								?>
 									<li data-search="<?php echo str_replace("_", " ", $search_channel); ?>" <?php if ( isset( $value['is_locked'] ) && $value['is_locked'] == 1 ): ?> class="upgrade-myStickyelements" <?php endif; ?>>
 										<label>
-											<span class="social-channels-list social-<?php echo esc_attr($key); ?> <?php if( isset($social_channels[$key]) && $social_channels[$key] == '1' ) : ?>social-checked-active<?php endif; ?>" style="background-color: <?php echo set_span_bg_color( $key , $value ); ?>">
+											<span class="social-channels-list <?php echo esc_attr($channel_class);?> social-<?php echo esc_attr($key); ?> <?php if( isset($social_channels[$key]) && $social_channels[$key] == '1' ) : ?>social-checked-active<?php endif; ?>" style="background-color: <?php echo set_span_bg_color( $key , $value ); ?>">
 												
 												<i class="<?php echo social_channel_icon_class( $key , $value );?>"></i>
 												<?php $social_channels[$key] = isset($social_channels[$key]) ? $social_channels[$key] : '';?>

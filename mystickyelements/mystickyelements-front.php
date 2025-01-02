@@ -596,7 +596,12 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 											$value['text'] = '@'.$value['text'] ;
 										}
 										$social_link = 'https://www.tiktok.com/'.$value['text'];
-										break;		
+										break;
+									case 'instagram_dm':
+										$value['text'] = str_replace(["https://www.instagram.com/", "https://ig.me/m/", "https://instagram.com/", "@"], ["","","", ""], $value['text']);
+										$social_link   = "https://ig.me/m/".esc_attr($value['text']);
+										$social_link   = esc_url($social_link);
+										break;
 									default;
 										if ( $channel_type == 'whatsapp') {
 											$value['text'] = str_replace( ['http://','https://','+',' ','-'], [''], $value['text']);
@@ -642,10 +647,11 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 									} else {
 										$link_target = 0;
 									}
-								} 
+								}
+								$channel_class	= (isset($social_channels_list['channel_class'])) ? $social_channels_list['channel_class'] : '';
 								?>
 								<li id="mystickyelements-social-<?php echo esc_attr($key);?>"
-									class="mystickyelements-social-icon-li mystickyelements-social-<?php echo esc_attr($key);?> <?php echo esc_attr($element_class);?>">
+									class="mystickyelements-social-icon-li mystickyelements-<?php echo esc_attr($channel_class);?> mystickyelements-social-<?php echo esc_attr($key);?> <?php echo esc_attr($element_class);?>">
 									<?php
 									/*diamond template css*/
 									if ( isset($value['bg_color']) && $value['bg_color'] != '' ) {
@@ -768,10 +774,9 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 											?>
 										</style>
 										<?php						
-									}									
-									
+									}
 									?>										
-									<span class="mystickyelements-social-icon social-<?php echo esc_attr($key);?> social-<?php echo esc_attr($channel_type);?>" data-tab-setting = '<?php echo esc_attr((isset($general_settings["open_tabs_when"]) && $general_settings["open_tabs_when"]!="" ) ? $general_settings["open_tabs_when"] : "");?>' data-click = "0"data-mobile-behavior="<?php echo esc_attr((isset($general_settings['mobile_behavior']) && $general_settings['mobile_behavior'] != '' ) ? $general_settings['mobile_behavior'] : '') ?>" data-flyout="<?php echo esc_attr((isset($general_settings['flyout']) && $general_settings['flyout'] != '' ) ? $general_settings['flyout'] : '') ?>"
+									<span class="mystickyelements-social-icon <?php echo esc_attr($channel_class);?> social-<?php echo esc_attr($key);?> social-<?php echo esc_attr($channel_type);?>" data-tab-setting = '<?php echo esc_attr((isset($general_settings["open_tabs_when"]) && $general_settings["open_tabs_when"]!="" ) ? $general_settings["open_tabs_when"] : "");?>' data-click = "0"data-mobile-behavior="<?php echo esc_attr((isset($general_settings['mobile_behavior']) && $general_settings['mobile_behavior'] != '' ) ? $general_settings['mobile_behavior'] : '') ?>" data-flyout="<?php echo esc_attr((isset($general_settings['flyout']) && $general_settings['flyout'] != '' ) ? $general_settings['flyout'] : '') ?>"
 										  <?php if (isset($value['bg_color']) && $value['bg_color'] != ''): ?> style="background: <?php echo esc_attr($value['bg_color']); ?>" <?php endif;
 									?>>
 										
@@ -796,7 +801,7 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 										if ( isset($value['icon_text']) && $value['icon_text'] != '' && isset($general_settings['templates']) && $general_settings['templates'] == 'default' ) {
 											$icon_text_size = '';
 											if ( isset($value['icon_text_size']) && $value['icon_text_size'] != '') {
-												$icon_text_size = "font-size: " . esc_attr($value['icon_text_size']) . "px";
+												$icon_text_size = "font-size: " . esc_attr($value['icon_text_size']) . "px;";
 											}
 											if (isset($value['icon_text_color']) && $value['icon_text_color'] != '') {
 											   $icon_text_size .= "color: ".$value['icon_text_color'];
@@ -811,7 +816,10 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 											echo "<style>.mystickyelements-social-icon.social-". esc_attr($key) ." svg .fil1{ fill:" .esc_attr($value['icon_color']). "}</style>";
 										}
 										if ( $key == 'qzone') {
-											echo "<style>.mystickyelements-social-icon.social-". esc_attr($key) ." svg .fil2{ fill:" . esc_attr($value['icon_color']) . "}</style>";
+											echo "<style>.mystickyelements-social-icon.social-". esc_attr($key) ." svg .qzone-fill{ fill:" . esc_attr($value['icon_color']) . "}</style>";
+										}
+										if ($key == 'instagram_dm') {
+											echo "<style>.mystickyelements-social-icon.social-" . $key . " svg .fil2{ fill:" . $value['icon_color'] . "}</style>";
 										}
 										?>
 									</span>									

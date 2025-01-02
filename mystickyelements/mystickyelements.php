@@ -3,7 +3,7 @@
 Plugin Name: myStickyElements
 Plugin URI: https://premio.io/
 Description: myStickyElements is simple yet very effective plugin. It is perfect to fill out usually unused side space on webpages with some additional messages, videos, social widgets ...
-Version: 2.2.3
+Version: 2.2.4
 Author: Premio
 Author URI: https://premio.io/
 Domain Path: /languages
@@ -14,7 +14,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 
 define('MYSTICKYELEMENTS_URL', plugins_url('/', __FILE__));  // Define Plugin URL
 define('MYSTICKYELEMENTS_PATH', plugin_dir_path(__FILE__));  // Define Plugin Directory Path
-define("MY_STICKY_ELEMENT_VERSION", "2.2.3");
+define("MY_STICKY_ELEMENT_VERSION", "2.2.4");
 /*
  * redirect my sticky element setting page after plugin activated
  */
@@ -2981,15 +2981,27 @@ if ( !function_exists('mystickyelements_social_channels')) {
 											'icon_color' => 1
 										),
 							'insagram'	=> array(
-											'text' => "Instagram",
-											'icon_text' => "",
-											'hover_text' => "Instagram",
+											'text'             => "Instagram Page",
+											'icon_text'        => "",
+											'hover_text'       => "Instagram Page",
 											'background_color' => "",
 											'placeholder'	=> 'Example: https://instagram.com/cocacola',
 											'class' => "fab fa-instagram",
 											'tooltip'	=> 'Add the link of of your Instagram profile E.g., <a href="https://instagram.com/cocacola" target="_blank">https://instagram.com/cocacola</a>',
 											'icon_color' => 1
 										),
+							'instagram_dm'           => [				
+											'text'             => "Instagram DM",
+											'icon_text'        => "",
+											'hover_text'       => "Instagram DM",
+											'background_color' => "",
+											'placeholder'      => 'Instagram DM Example: Instagram_handle',
+											'channel_class'	   => 'social-insagram',
+											'class'            => "mystickyelement_instagramdm_icon",
+											'tooltip'          => 'Add the link to your Instagram profile, e.g. <a href="https://instagram.com/cocacola" target="_blank">https://instagram.com/cocacola</a> or directly add the Instagram handle, e.g. cocacola',
+											'custom_svg_icon'  => file_get_contents(MYSTICKYELEMENTS_PATH.'/images/instagramdm-logo.svg'),
+											'icon_color'       => 1,
+										],
 							'threads'           => [
 											'text'             => "Threads",
 											'icon_text'        => "",

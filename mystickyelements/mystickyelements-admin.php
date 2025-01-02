@@ -911,7 +911,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
                         $social_channels_list['is_pre_set_message'] = 1;
                     }
                 }				
-				
+				$channel_class	= (isset($social_channels_list['channel_class'])) ? $social_channels_list['channel_class'] : '';
                 ?>
                 <div id="social-channel-<?php echo esc_attr($social_channel); ?>" class="social-channels-item"
                      data-slug="<?php echo esc_attr($social_channel); ?>">
@@ -919,7 +919,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
                     <div class="social-channels-item-title social-channel-input-box-section">
                         <label>
 
-							<span class="social-channels-list social-<?php echo esc_attr($social_channel); ?> social-<?php echo esc_attr($channel_type); ?>"
+							<span class="social-channels-list <?php echo esc_attr($channel_class);?> social-<?php echo esc_attr($social_channel); ?> social-<?php echo esc_attr($channel_type); ?>"
                                   style="background-color: <?php echo esc_attr($social_channel_value['bg_color']) ?>; color: <?php echo esc_attr($social_channel_value['icon_color']) ?>; position:relative;">
 								<?php if (isset($social_channels_list['custom']) && $social_channels_list['custom'] == 1 && isset($social_channel_value['custom_icon']) && $social_channel_value['custom_icon'] != '' && isset($social_channel_value['fontawesome_icon']) && $social_channel_value['fontawesome_icon'] == ''): ?>
 								

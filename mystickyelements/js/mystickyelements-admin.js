@@ -39,13 +39,15 @@
                 }
 
                 if ( typeof soical_icon !== 'undefined' ){
-                    if ( soical_icon == 'line' ) {
-                        $('.mystickyelements-social-icon.social-' + soical_icon + ' svg .fil1' ).css('fill', color_code );
-                    } else if (  soical_icon == 'qzone' ) {
-                        $('.mystickyelements-social-icon.social-' + soical_icon + ' svg .fil2' ).css('fill', color_code );
-                    } else {
-                        $('.mystickyelements-social-icon.social-' + soical_icon + ' i' ).css('color', color_code );
-                    }
+                    if (soical_icon == 'line' ) {
+						$('.mystickyelements-social-icon.social-' + soical_icon + ' svg .fil1').css('fill', color_code);
+					} else if (soical_icon == 'qzone' ) {
+						$('.mystickyelements-social-icon.social-' + soical_icon + ' svg .qzone-fill').css('fill', color_code);
+					} else if (soical_icon == 'instagram_dm' ) {
+						$('.mystickyelements-social-icon.social-' + soical_icon + ' svg .fil2').css('fill', color_code);
+					} else {
+						$('.mystickyelements-social-icon.social-' + soical_icon + ' i').css('color', color_code);
+					}
                 }
 				
 				if ( typeof soical_text_color != 'undefined' ) {
@@ -935,15 +937,22 @@
                 else {
                     var social_channel_mobile_visible = '';
                 }
+				let channel_class= '';
+				if (social_channel == 'instagram_dm') {
+					channel_class = 'social-insagram';
+				}
 				
-                var social_channel_data = '<li id="mystickyelements-social-' + social_channel + '" class="mystickyelements-social-' + social_channel + '' + social_channel_desktop_visible + '' + social_channel_mobile_visible + ' mystickyelements-social-preview "><span class="mystickyelements-social-icon social-' + social_channel + '" style="background: ' +$social_bg_color + '; color: '+ $social_icon_color + '">' + $social_icon + '<span class="mystickyelements-icon-below-text" style="'+ $social_icon_text_size_style +'">'+ $social_icon_text +'</span></span>';
+                var social_channel_data = '<li id="mystickyelements-social-' + social_channel + '" class="mystickyelements-social-' + social_channel + '' + social_channel_desktop_visible + '' + social_channel_mobile_visible + ' mystickyelements-social-preview "><span class="mystickyelements-social-icon '+ channel_class +'  social-' + social_channel + '" style="background: ' +$social_bg_color + '; color: '+ $social_icon_color + '">' + $social_icon + '<span class="mystickyelements-icon-below-text" style="'+ $social_icon_text_size_style +'">'+ $social_icon_text +'</span></span>';
 
-                if ( social_channel == 'line') {
-                    social_channel_data += '<style>.mystickyelements-social-icon.social-'+ social_channel +' svg .fil1{fill: '+ $social_icon_color+'}</style>';
-                }
-                if ( social_channel == 'qzone') {
-                    social_channel_data += '<style>.mystickyelements-social-icon.social-'+ social_channel +' svg .fil2{fill: '+ $social_icon_color+'}</style>';
-                }
+                if (social_channel == 'line') {
+					social_channel_data += '<style>.mystickyelements-social-icon.social-'+ social_channel +' svg .fil1{fill: '+ $social_icon_color+'}</style>';
+				}
+				if (social_channel == 'qzone') {
+					social_channel_data += '<style>.mystickyelements-social-icon.social-'+ social_channel +' svg .qzone-fill{fill: '+ $social_icon_color+'}</style>';
+				}
+				if (social_channel == 'instagram_dm') {
+					social_channel_data += '<style>.mystickyelements-social-icon.social-'+ social_channel +' svg .fil2{fill: '+ $social_icon_color+'}</style>';
+				}
                 social_channel_data +='</li>';
 
                 $('ul.myStickyelements-preview-ul').append(social_channel_data);

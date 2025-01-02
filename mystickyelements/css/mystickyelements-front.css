@@ -659,6 +659,12 @@ span.mystickyelements-social-icon img {
 	width: 100%;
 	height: 100%;
 }
+.social-instagram_dm i.mystickyelement_instagramdm_icon,
+.social-channels-list.social-instagram_dm i.mystickyelement_instagramdm_icon{
+    background: url('../images/instagramdm-logo.svg') no-repeat center center;
+    background-size: 70%;
+    width: 100%;
+}
 .social-line i.mystickyelement_line_icon,
 .social-channels-list.social-line i.mystickyelement_line_icon{
 	background: url('../images/line-logo.svg') no-repeat center center;
@@ -731,6 +737,7 @@ span.mystickyelements-social-icon img {
 	background-size: 70%;
     width: 100%;
 }
+.social-instagram_dm i.mystickyelement_instagramdm_icon,
 .social-line i.mystickyelement_line_icon,
 .social-qzone i.mystickyelement_qzone_icon ,
 .social-amazon i.mystickyelement_amazon_icon ,

@@ -171,10 +171,27 @@
 								if( !isset($value['bg_color']) ){
 									$value['bg_color'] = $social_channels_list['background_color'];
 								}
+								$channel_class	= (isset($social_channels_list['channel_class'])) ? $social_channels_list['channel_class'] : '';
 								?>
-								<span class="mystickyelements-social-icon social-<?php echo esc_attr($key);?> social-<?php echo esc_attr($channel_type); ?>" style="background: <?php echo esc_attr($value['bg_color']);?>">
-									<i class="<?php echo esc_attr($social_channels_list['class']);?>" <?php if ( isset($value['icon_color']) && $value['icon_color'] != '') : echo "style='color:" . esc_attr($value['icon_color']) . "'"; endif; ?>></i>
-									<?php											
+								<span class="mystickyelements-social-icon <?php echo esc_attr($channel_class);?> social-<?php echo esc_attr($key);?> social-<?php echo esc_attr($channel_type); ?>" style="background: <?php echo esc_attr($value['bg_color']);?>">
+									<?php
+								if (isset($social_channels_list['custom']) && $social_channels_list['custom'] == 1 && $value['custom_icon'] != '' && $value['fontawesome_icon'] == '') :?>
+									<img class="<?php echo ( isset($value['stretch_custom_icon']) && $value['stretch_custom_icon'] == 1 ) ? 'mystickyelements-stretch-custom-img' : '';  ?>" src="<?php echo esc_url($value['custom_icon']);?>" width="40" height="40" />
+							   <?php else :
+								   if (isset($social_channels_list['custom']) && $social_channels_list['custom'] == 1 && $value['fontawesome_icon'] != '') {
+									   $social_channels_list['class'] = $value['fontawesome_icon'];
+								   }
+
+								   if (isset($social_channels_list['custom_svg_icon']) && $social_channels_list['custom_svg_icon'] != '') {
+									   echo $social_channels_list['custom_svg_icon']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								   } else {
+										?>
+									<i class="<?php echo esc_attr($social_channels_list['class']);?>" <?php if (isset($value['icon_color']) && $value['icon_color'] != '') :
+										echo "style='color:".$value['icon_color']."'";
+								   endif; ?>></i>    
+									   <?php
+								   }
+							   endif;											
 									$icon_text_size = "display: none;";
 									$value['icon_text'] = ( isset($value['icon_text']) && $value['icon_text'] != '' ) ? $value['icon_text'] : '';
 									
@@ -191,8 +208,11 @@
 									if ( $key == 'line') {
 										echo "<style>.mystickyelements-social-icon.social-". esc_attr($key) ." svg .fil1{ fill:" .esc_attr($value['icon_color']). "}</style>";
 									}
-									if ( $key == 'qzone') {
-										echo "<style>.mystickyelements-social-icon.social-". esc_attr($key) ." svg .fil2{ fill:" . esc_attr($value['icon_color']) . "}</style>";
+									if ($key == 'qzone') {
+										echo "<style>.mystickyelements-social-icon.social-".$key." svg .qzone-fill{ fill:".$value['icon_color']."}</style>";
+									}
+									if ($key == 'instagram_dm') {
+										echo "<style>.mystickyelements-social-icon.social-".$key." svg .fil2{ fill:".$value['icon_color']."}</style>";
 									}
 									?>
 								</span>

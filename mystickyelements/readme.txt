@@ -2,8 +2,8 @@
 Contributors: galdub, tomeraharon, premio
 Tags: whatsapp, contact form, facebook messenger, call now button, instagram
 Requires at least: 3.1
-Tested up to: 6.6
-Stable tag: 2.2.3
+Tested up to: 6.7
+Stable tag: 2.2.4
 Plugin URI: https://premio.io/downloads/mystickyelements/
 License: GPLv3
 
@@ -28,14 +28,14 @@ Want to use the robust pro version? Check out <a href="https://premio.io/downloa
 pro plans"><strong>My Sticky Elements Pro Plans</strong></a>.
 
 = 📝 Contact form and social buttons in one plugin =
-Tabs that will help your website visitors contact you or follow your business on any popular social channel such as Facebook, Messenger, Instagram, Threads, WhatsApp, Telegram, Pinterest, Youtube, WeChat and more.
-
+Tabs that will help your website visitors contact you or follow your business on any popular social channel such as Facebook, Messenger, Instagram, Threads, WhatsApp, Telegram, Pinterest, YouTube, WeChat, Line Messenger & more.
 
 = 🚀 Show My Sticky Elements contact and social tabs =
 Contact form
 Facebook
 Twitter - X.com
 Instagram page
+Instagram Direct Messenger (DM)
 Pinterest page
 Whatsapp chat
 YouTube channel
@@ -96,7 +96,7 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 = 🆓 Free plan includes: =
 1. Floating contact form
 2. Up to 2 different icons
-3. Eequired fields for the form
+3. Floating contact form
 4. Set the position of the widget
 5. Variety of contact icons templates 
 6. Entry effect
@@ -173,6 +173,8 @@ Add a country code formatting picker to your contact form, making it easier for 
 * Twitter page / X.com - add a link to your Twitter business page, and let your visitors find you on Twitter, follow your page and see your posts. 
 
 * Instagram page - add a link to your Instagram business page or Instagram profile page, and let your visitors follow your brand on Instagram.
+
+* Instagram Direct Messenger - let visitors send you a DM directly through Instagram Direct Messenger.
 
 * Pinterest page - add a link to your Pinterest business page or even to a specific Pinterest board, and let your visitors follow your brand on Pinterest and like your pictures. 
 
@@ -334,6 +336,9 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 9. Change the color of your icons, contact form, text, and anything else!
 
 == Changelog ==
+
+= 2.2.4 =
+Added Instagram Direct Messenger as one of the social chat channels
 
 = 2.2.3 =
 Contact form mobile bug fixed
