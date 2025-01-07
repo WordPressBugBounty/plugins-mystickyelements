@@ -2109,6 +2109,7 @@
 			$(this).addClass('active');
 			$( '#' + next_tab).show();
 			$( '#' + curent_tab).hide();
+			$("html, body").animate({ scrollTop: 0 }, "slow");
 			
 		});
         

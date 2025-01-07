@@ -237,13 +237,7 @@
 						<li class="preview-mobile"><i class="fas fa-mobile-alt"></i></li>
 					</ul>
 				</span>
-			</div>
-			<div class="mystickyelements-preivew-save-btn">
-				<p class="save">
-					<button type="submit" name="submit" value="Save" id="save" class="button button-primary preview-publish"><?php _e('Save', 'mystickyelements');?></button>&nbsp;
-					<button type="submit" name="next-button" id="next-button-prev" class="button button-primary"><?php _e('Next', 'mystickyelements');?></button>
-				</p>
-			</div>
+			</div>			
 		</div>	
 	</div>
 </div>

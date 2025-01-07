@@ -3833,7 +3833,7 @@ body .wrap.mystickyelement-wrap .settings-error + .mystickyelements-wrap {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -15px;
-	padding: 0 30px;
+	padding: 0 30px 30px;
 }
 .mystickyelements-common-form-section .mystickyelements-options {
 	width: 60%;
@@ -5522,7 +5522,7 @@ a.new-upgrade-button {
 		margin-right: 2px;
 	}
 	.mystickyelements-common-form-section {
-		padding: 0 15px;
+		padding: 0 15px 15px;
 	}
 	.myStickyelements-mailchimp-field-mapping .mystickyelements-custom-fields-tooltip {
 		margin-right: 2px;
@@ -6560,4 +6560,16 @@ a.myStickyelements-remove-date-schedule:hover {
 	position: absolute;
 	bottom: 0;
 	right: 0;
+}
+
+/* 070125 */
+.mystickyelements-progress-bar-wrap.show-on-apper-main {
+	background-color: #fff;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	margin: 0 -20px;
+	padding: 16px 0;
+	box-shadow: 0 -5px 30px -10px rgba(0, 0, 0, .25);
+	z-index: 1;
 }
