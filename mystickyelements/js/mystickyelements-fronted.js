@@ -687,20 +687,23 @@
         }
     });
 	
-	jQuery(document).on("click",".iti--allow-dropdown",function(){
-		if( jQuery(this).closest(".mystickyelements-contact-form").data("tab-opt") == "hover" && jQuery(this).closest("#mystickyelements-contact-form").parent().closest(".mystickyelements-on-hover").length > 0 ){
-			jQuery(this).closest(".mystickyelements-contact-form").addClass("country-code-trigger");
-			jQuery(this).closest(".mystickyelements-contact-form").removeClass("element-contact-active");
-			jQuery(this).closest(".mystickyelements-contact-form").addClass("elements-active");
-		}
+	jQuery(document).on("click",".iti--allow-dropdown",function(){		
+		jQuery(this).closest(".mystickyelements-contact-form").addClass("country-code-trigger");
+		jQuery(this).closest(".mystickyelements-contact-form").removeClass("element-contact-active");
+		jQuery(this).closest(".mystickyelements-contact-form").addClass("elements-active");		
 	});
 	
 	jQuery(document).on("click","ul.iti__country-list li",function(){
 		$( ".mystickyelements-contact-form" ).each(function( index ) {
-			if( jQuery(this).data("tab-opt") == "hover" ){
-				jQuery(this).addClass("element-contact-active");			
+			if(jQuery(this).data("tab-opt") == "hover" && $(this).data('isphone-formate') == 1 && $(this).hasClass('elements-active')) {
+				jQuery(this).addClass("element-contact-active");            
 				jQuery(this).removeClass("elements-active");
-			}	
+				jQuery(this).removeClass("country-code-trigger");
+			} else {
+				jQuery(this).removeClass("element-contact-active");            
+				jQuery(this).addClass("elements-active");
+				jQuery(this).removeClass("country-code-trigger");
+			}		
 		});
 	});
 	

@@ -3,7 +3,7 @@ Contributors: galdub, tomeraharon, premio
 Tags: whatsapp, contact form, facebook messenger, call now button, instagram
 Requires at least: 3.1
 Tested up to: 6.7
-Stable tag: 2.2.5
+Stable tag: 2.2.6
 Plugin URI: https://premio.io/downloads/mystickyelements/
 License: GPLv3
 
@@ -24,18 +24,18 @@ With My Sticky Elements:
 = 🎥 Check out My Sticky Elements in action (Video with audio) =
 [youtube  https://www.youtube.com/watch?v=VR9S_yuN1ko]
 
-Want to use the robust pro version? Check out <a href="https://premio.io/downloads/mystickyelements/?utm_source=wordpressorg" target="_blank" title="My Sticky Elements
+Check out <a href="https://premio.io/downloads/mystickyelements/?utm_source=wordpressorg" target="_blank" title="My Sticky Elements
 pro plans"><strong>My Sticky Elements Pro Plans</strong></a>.
 
 = 📝 Contact form and social buttons in one plugin =
-Tabs that will help your website visitors contact you or follow your business on any popular social channel such as Facebook, Messenger, Instagram, Threads, WhatsApp, Telegram, Pinterest, YouTube, WeChat, Line Messenger & more.
+Tabs that will help your website visitors contact you on any popular social channel such as Facebook, Messenger, Instagram, Threads, WhatsApp, Telegram, Pinterest, YouTube, WeChat, Line Messenger & more.
 
 = 🚀 Show My Sticky Elements contact and social tabs =
 Contact form
 Facebook
-Twitter - X.com
+Twitter / X.com
 Instagram page
-Instagram Direct Messenger (DM)
+Instagram Direct Messenger (Instagram DM)
 Pinterest page
 Whatsapp chat
 YouTube channel
@@ -108,7 +108,7 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 12. Change the order of icons
 13. Set tabs for mobile/desktop
 14. Open on hover or click
-15. Custom channels can act as existing channels. For example, you can create two WhatsApp buttons or two Facebook Messenger, etc
+15. Custom channels can act as existing channels. For example, create two WhatsApp buttons or two Facebook Messenger, etc
 16. LTR/RTL support
 17. Save contact form leads into your local database
 18. Minimize tab
@@ -118,7 +118,7 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 22. Change the font of all the buttons text
 23. Change the size of the widget bar 
 24. Add a custom icon
-25. Shortcode, IFrame or HTML icon and display any embedded content on-hover or on-click. You can use it to show a youtube/vimeo video, contact form 7 or any other form, maps, or any other shortcode or IFrame
+25. Shortcode, IFrame or HTML icon and display any embedded content on-hover or on-click. Use it to show a YouTube/Vimeo video, contact form 7 or any other shortcode or IFrame
 26. Preset message that'll automatically be inserted to the WhatsApp messages your visitors send you
 27. Track the URL from which your contact form was submitted
 28. Use Font Awesome icons
@@ -135,7 +135,7 @@ Unlock the Pro features for only $49/year
 5. Widget analytics - discover the most frequently used chat and social channels (e.g., WhatsApp, Facebook Messenger, contact form, etc)
 6. Country targeting for specific countries
 7. Show the widget after a few seconds or based on page scroll percentage
-8. Integrations with MailChimp and MailPoet - connect your My Sticky Elements contact forms to your MailChimp and MailPoet accounts
+8. Integrations with MailChimp and MailPoet - connect your My Sticky Elements contact forms to MailChimp and MailPoet
 9. Create different bars for different pages. Show different icons, form and language based on page targeting rules
 10. Custom CSS
 11. Custom height position of the contact us form and the chat channels on the screen for desktop and mobile
@@ -147,8 +147,8 @@ Unlock the Pro features for only $49/year
 17. Google Analytics events
 18. Dropdown multi select field to your contact form
 19. Redirect your visitors to another page after the form is submitted
-20. You can create 6 shortcode, IFrame or HTML icon and display any embedded content like YouTube videos, contact form 7 or any other form, maps, or any other shortcode or IFrame.
-21. You can add custom text fields to your contact form
+20. Create 6 shortcode, IFrame or HTML icon and display any embedded content like YouTube videos, contact form 7 or any other form, maps, or any other shortcode or IFrame.
+21. Add custom text fields to your contact form
 22. Send your contact form leads to as many email addresses you want
 23. Change the thank you message that's displayed after the contact form is submitted
 24. Log the IP address of visitors that submit your contact us form
@@ -158,14 +158,14 @@ Unlock the Pro features for only $49/year
 28. More text formatting options for the text block and consent checkbox text
 29. Add sender name in email subject for your contact form submissions
 30. Multiple file upload feature - there can now be up to 5 files that can be uploaded via the contact form
-31. Merge tags for WhatsApp, Email & SMS - you can add merge tag like the URL or the Title of the page when visitors message you on WhatsApp, SMS & Email
+31. Merge tags for WhatsApp, Email & SMS - add merge tag like the URL or the Title of the page when visitors message you on WhatsApp, SMS & Email
 
 <br><a href="https://premio.io/downloads/mystickyelements/?utm_source=wordpressorg" target="_blank" title="My Sticky Elements pro plans"><strong>Upgrade to pro 🚀</strong></a> to get all pro features :)
 
 = 💻 How does each social button work? =
 
 * My Sticky Elements Contact Form - your contact form can include Name field, Phone number field, Email field and Message field (textarea).
-The phone and emails field have a built-in validation feature, and all the leads will be displayed on your “Contact Leads” tab in your admin panel. You can also get these leads by email in the Pro plan.
+The phone and emails field have a built-in validation feature, and all the leads will be displayed on your “Contact Leads” tab in your admin panel. Get these leads by email in the Pro plan.
 Add a country code formatting picker to your contact form, making it easier for your visitors to enter their phone number.
 
 * Facebook page - add a link to your Facebook business page (fan page), and let your visitors find you on facebook.
@@ -178,7 +178,7 @@ Add a country code formatting picker to your contact form, making it easier for 
 
 * Pinterest page - add a link to your Pinterest business page or even to a specific Pinterest board, and let your visitors follow your brand on Pinterest and like your pictures. 
 
-* WhatsApp chat - enter your phone number and when your visitors click on the WhatsApp icon, WhatsApp chat interface will be launched. On mobile it will launch the WhatsApp app conversation window, and on desktop it will launch the desktop WhatsApp web interface. You can add a preset message that'll automatically be inserted to the WhatsApp messages your visitors send you. On desktop you can decide if you prefer to redirect users to WhatsApp app or WhatsApp web.
+* WhatsApp chat - enter your phone number and when your visitors click on the WhatsApp icon, WhatsApp chat interface will be launched. On mobile it will launch the WhatsApp app conversation window, and on desktop it will launch the desktop WhatsApp web interface. Add a preset message that'll automatically be inserted to the WhatsApp messages your visitors send you. On desktop decide if you prefer to redirect users to WhatsApp app or WhatsApp web.
 Adding WhatsApp button to your site will give 25 million new users every month (833,000 active users per day) and total of 65 million active users (10% of the total worldwide users), access to contact your immediately.
 
 * YouTube channel - add a link to your YouTube channel (YouTube page) and get more subscribers and views for your videos. 
@@ -195,7 +195,7 @@ Adding WhatsApp button to your site will give 25 million new users every month (
 
 * Address - show your business address for website visitors that want to arrive to your store.
 
-* Open hours - show your business hours for website visitors that want to arrive to your store. You can also type your workdays there.
+* Open hours - show your business hours for website visitors that want to arrive to your store. Add your workdays.
 
 * WeChat - enter your WeChat User ID and let your visitors search for you easily on the WeChat app and message you about your business.
 
@@ -205,7 +205,7 @@ Adding WhatsApp button to your site will give 25 million new users every month (
 
 * Vimeo - Let your visitors see all of your videos on Vimeo, comment, like your videos and follow your channel.
 
-* Spotify - Spotify is growing and if you run a podcast, Spotify is the best distribution channel you can probably have.  
+* Spotify - Spotify is growing and if you run a podcast, Spotify is the best distribution channel.  
 
 * Itunes - similar to Spotify but for Apple users. Add your itunes link to let your visitors find your itunes channel quickly.
 
@@ -271,10 +271,10 @@ Adding WhatsApp button to your site will give 25 million new users every month (
 
 * App Store (Apple) - Let your visitors download your apps from the App Store.
 
-* Custom icons - you can add up to 3 customs icons on the Pro version and link to any website you want.
+* Custom icons - add up to 3 customs icons on the Pro version and link to any website you want.
 
 = ✉️ Add a Floating Contact Form to your WordPress website =
-With My Sticky Elements, you can create a floating contact form for your visitors. In the Pro version, you can customize this form by adding various types of input fields, such as dropdown, file upload, phone number, etc. You can also get leads to email.
+With My Sticky Elements, create a floating contact form for your visitors. In the Pro version, customize this form by adding various types of input fields, such as dropdown, file upload, phone number, etc. Get leads to email.
 
 = 💬 Social, chat buttons custom links, and shortcode support =
 Select from 50+ chat and social buttons
@@ -336,6 +336,9 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 9. Change the color of your icons, contact form, text, and anything else!
 
 == Changelog ==
+
+= 2.2.6 =
+Contact form phone field bug fixed
 
 = 2.2.5 =
 Improved flow of creating a widget
@@ -523,7 +526,7 @@ Improved the UI - now the preview is sticky and the navigation is much easier
 = 1.5.1 =
 Fixed SMS channel bug
 = 1.5 =
-Brand new view for mobile, show all elements on the bottom of the screen. also added separate configuration for the minimize icon for desktop and mobile, and you can also decide if you want it open by default or not
+Brand new view for mobile, show all elements on the bottom of the screen. also added separate configuration for the minimize icon for desktop and mobile, and also decide if you want it open by default or not
 = 1.4.2 =
 Added font selection, bulk removal off leads, added date col to the leads table
 = 1.4.1 =
