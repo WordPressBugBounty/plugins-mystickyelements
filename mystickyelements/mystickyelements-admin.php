@@ -22,40 +22,16 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 			add_action( 'wp_ajax_mystickyelements_admin_send_message_to_owner', array( $this, 'mystickyelements_admin_send_message_to_owner' ) );
 			add_action( 'wp_ajax_mystickyelements_plugin_deactivate', array( $this, 'mystickyelements_plugin_deactivate' ) );
 
-            add_action( 'wp_ajax_sticky_element_update_status', array($this, 'update_status'));
+           
 			add_action( 'wp_ajax_my_sticky_elements_bulks', array( $this, 'my_sticky_elements_bulks' ) );
 			
 			add_action( 'wp_ajax_mystickyelements_review_box', [$this, "mystickyelements_review_box"]);
 			add_action( 'wp_ajax_mystickyelements_review_box_message', [$this, "mystickyelements_review_box_message"]);
+
+			
 		}
-
-        public function update_status() {
-            if(!empty($_REQUEST['nonce']) && wp_verify_nonce($_REQUEST['nonce'], 'my_sticky_elements_update_nonce')) {
-                $status = self::sanitize_options($_REQUEST['status']);
-                $email = self::sanitize_options($_REQUEST['email']);
-                update_option("mysticky_element_update_message", 2);
-                if($status == 1) {
-
-                    $url = 'https://premioapps.com/premio/signup/email.php';
-                    $apiParams = [
-                        'plugin' => 'elements',
-                        'email'  => $email,
-                    ];
-
-                    // Signup Email for Chaty
-                    $apiResponse = wp_safe_remote_post($url, ['body' => $apiParams, 'timeout' => 15, 'sslverify' => true]);
-
-                    if (is_wp_error($apiResponse)) {
-                        wp_safe_remote_post($url, ['body' => $apiParams, 'timeout' => 15, 'sslverify' => false]);
-                    }
-
-					$response['status'] = 1;
-                }
-            }
-            echo "1";
-            die;
-        }
-
+ 
+	
 		public function settings_link($links) {
 			$settings_link = '<a href="'.admin_url("admin.php?page=my-sticky-elements").'">Settings</a>';
 			$links['need_help'] = '<a href="https://premio.io/help/mystickyelements/?utm_source=pluginspage" target="_blank">'.__( 'Need help?', 'mystickyelements' ).'</a>';
@@ -202,7 +178,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 					'Settings Admin',
 					'Chatway Live Chat',
 					'manage_options',
-					'install-chatway-plugin',
+					'my-sticky-elements-chatway-plugin',
 					array( $this, 'mystickyelements_install_chatway_plugin' )
 				);
 			}
@@ -260,10 +236,10 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 		}
 
 		public function mystickyelements_admin_widget_analytics_page(){
-            $is_shown = get_option("mysticky_element_update_message");
-			if($is_shown == 1) {
+            $is_shown = MSE_SIGNUP_CLASS::check_modal_status();
+			if($is_shown) {
 				/* Signup Form When first time activate plugin */				
-				include_once MYSTICKYELEMENTS_PATH . '/admin/update.php';
+				include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';
 				
 			} else {
 				include('mystickyelements-admin-widgetanalytics.php');				
@@ -290,10 +266,10 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 		}
 
 		public function mystickyelements_admin_upgrade_to_pro() {
-			$is_shown = get_option("mysticky_element_update_message");
-			if($is_shown == 1) {
+			$is_shown = MSE_SIGNUP_CLASS::check_modal_status();
+			if($is_shown) {
 				/* Signup Form When first time activate plugin */				
-				include_once MYSTICKYELEMENTS_PATH . '/admin/update.php';			
+				include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';			
 			} else {
 				include_once 'upgrade-to-pro.php';
 			}
@@ -306,8 +282,11 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 		 */
 		public function mystickyelements_admin_settings_page() {
 			global $wpdb;
-			
-			require_once MYSTICKYELEMENTS_PATH . 'admin/stickyelements-review-popup.php';
+			$is_shown = MSE_SIGNUP_CLASS::check_modal_status();
+			if($is_shown != 1) {
+				/* Signup Form When first time activate plugin */	 
+				require_once MYSTICKYELEMENTS_PATH . 'admin/stickyelements-review-popup.php';	
+			}
 			
 			$widget_tab_index = 'mystickyelements-contact-form';
 			if ( isset($_POST['mystickyelement-submit']) && !wp_verify_nonce( $_POST['mystickyelement-submit'], 'mystickyelement-submit' ) ) {
@@ -611,10 +590,10 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 
 			$upgrade_url = admin_url("admin.php?page=my-sticky-elements-upgrade");
 			$is_pro_active = false;
-            $is_shown = get_option("mysticky_element_update_message");
-			if($is_shown == 1) {
+            $is_shown = MSE_SIGNUP_CLASS::check_modal_status();
+			if($is_shown) {
 				/* Signup Form When first time activate plugin */				
-				include_once MYSTICKYELEMENTS_PATH . '/admin/update.php';
+				include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';
 				
 			} else {
 				
@@ -844,8 +823,11 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
                         $social_channel = $social_channel . '_' . $_POST['channel_key'];
                     }
                 } else {
-                    $social_channels_lists = mystickyelements_social_channels();
-                    $social_channels_list = $social_channels_lists[$social_channel];
+                    $social_channels_lists 	= mystickyelements_social_channels();
+                    $social_channels_list 	= ( isset($social_channels_lists[$social_channel])) ? $social_channels_lists[$social_channel] : [];
+					if( empty($social_channels_list)) {
+						return;
+					}
                 }			                
 				
                 $social_channels_list['text'] = isset($social_channels_list['text']) ? $social_channels_list['text'] : "";
@@ -1243,10 +1225,10 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 		 *
 		 */
 		public function mystickyelements_admin_integration_page(){
-			$is_shown = get_option("mysticky_element_update_message");
-			if($is_shown == 1) {
+			$is_shown = MSE_SIGNUP_CLASS::check_modal_status();;
+			if($is_shown) {
 				/* Signup Form When first time activate plugin */				
-				include_once MYSTICKYELEMENTS_PATH . '/admin/update.php';
+				include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';
 				
 			} else {			
 				include( 'mystickyelements-admin-integration.php' );
@@ -1261,10 +1243,10 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 		public function mystickyelements_admin_leads_page(){
 			global $wpdb;
 			
-			$is_shown = get_option("mysticky_element_update_message");
-			if($is_shown == 1) {
+			$is_shown = MSE_SIGNUP_CLASS::check_modal_status();;
+			if($is_shown) {
 				/* Signup Form When first time activate plugin */				
-				include_once MYSTICKYELEMENTS_PATH . '/admin/update.php';				
+				include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';				
 			} else {
 				$where_search = '';
 				$whereCond = [];
@@ -1495,10 +1477,10 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 		}
 		
 		public function mystickyelements_recommended_plugins(){
-			$is_shown = get_option("mysticky_element_update_message");
-			if($is_shown == 1) {
+			$is_shown = MSE_SIGNUP_CLASS::check_modal_status();;
+			if($is_shown) {
 				/* Signup Form When first time activate plugin */				
-				include_once MYSTICKYELEMENTS_PATH . '/admin/update.php';			
+				include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';			
 			} else {
 				include_once 'recommended-plugins.php';
 			}
@@ -1523,6 +1505,16 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 		 *
 		 */
 		public function mystickyelements_admin_new_widget_page(){
+			//  update 2nd time if update mail is not submited by user
+			$is_shown = MSE_SIGNUP_CLASS::check_modal_status();;
+			if($is_shown) {
+				/* Signup Form When first time activate plugin */				
+				include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';	
+				return;		
+			} else {
+				include_once 'recommended-plugins.php';
+			}
+
 			$upgrade_url = admin_url("admin.php?page=my-sticky-elements-upgrade");
 			?>
 			<div class="mystickyelement-new-widget-wrap">

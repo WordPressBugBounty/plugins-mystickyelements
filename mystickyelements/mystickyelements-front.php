@@ -441,8 +441,11 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 									}
 						
 								} else {
-									$social_channels_lists = mystickyelements_social_channels();
-									$social_channels_list = $social_channels_lists[$key];
+									$social_channels_lists 	= mystickyelements_social_channels();
+									$social_channels_list 	= (isset( $social_channels_lists[$key] )) ? $social_channels_lists[$key] : '';
+									if( empty( $social_channels_list ) ) {
+										return;
+									}
 								}
 								
 								//$social_channels_list = $social_channels_lists[$key];

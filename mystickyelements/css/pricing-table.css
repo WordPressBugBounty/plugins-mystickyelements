@@ -1,7 +1,7 @@
 #wpbody-content * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 .nice-select, .pricing-table table tr td:nth-child(2), .pricing-table table tr td:nth-child(4) {
@@ -40,7 +40,7 @@
     font-weight: 600
 }
 
-.fill-width, .mobile-plan .plan-button a, .nice-select, .no-csspointerevents .nice-select.open .list, .pricing-table a.has-tooltip .table-tooltip:hover .table-tooltip-text, .slick-initialized .slick-slide, .slick-slide img {
+.fill-width, .mobile-plan .plan-button a, .nice-select, .no-csspointerevents .nice-select.open .list, .pricing-table .has-tooltip .table-tooltip:hover .table-tooltip-text, .slick-initialized .slick-slide, .slick-slide img {
     display: block
 }
 
@@ -48,7 +48,7 @@
     border-radius: 5px;
     border: 1px solid #605de3;
     clear: both;
-    float: left;
+    float: none;
     font-family: inherit;
     font-size: 14px;
     height: 30px;
@@ -77,7 +77,7 @@
 .nice-select:after {
     border-bottom: 2px solid #6641e5;
     border-right: 2px solid #6641e5;
-    content: '';
+    content: "";
     display: block;
     height: 5px;
     margin-top: -4px;
@@ -209,12 +209,28 @@
 }
 
 .pricing-top {
-    background: #f7f8fc;
-    padding: 50px 0 0
+    background: #fff;
+    padding: 50px 20px 0
 }
 
 .pricing-top .price-container {
     padding: 50px 20px 0
+}
+
+.pricing-top .price-container.pricing-top-container {
+    background: linear-gradient(92.24deg, #1c095b -17.78%, #4215a5 104%);
+    padding: 0;
+    width: 960px;
+    border-radius: 10px
+}
+
+.pricing-top .price-container.pricing-top-container .unlock-features.text-center {
+    padding: 50px 0
+}
+
+.pricing-top .price-container.pricing-top-container .plan-details {
+    color: #fff;
+    background: url("../images/wave-bg-image.png") center bottom/cover
 }
 
 .wrap {
@@ -222,11 +238,12 @@
 }
 
 #wpwrap {
-    background-color: #fff
+    background: 0 0
 }
 
 #wpcontent {
-    padding: 0
+    padding: 0;
+    background: #ffffff;
 }
 
 .price-container {
@@ -308,7 +325,8 @@
 }
 
 .pricing-bottom {
-    padding: 50px 0 0
+    padding: 50px 0 0;
+    background-color: #fff
 }
 
 span.table-text {
@@ -326,7 +344,7 @@ span.table-tooltip {
     box-shadow: none
 }
 
-.pricing-table a.has-tooltip, .pricing-table a.has-tooltip:focus, .pricing-table a.has-tooltip:hover {
+.pricing-table .has-tooltip, .pricing-table .has-tooltip:focus, .pricing-table .has-tooltip:hover {
     display: flex;
     position: relative;
     color: #5a6185;
@@ -335,7 +353,17 @@ span.table-tooltip {
     box-shadow: none;
     text-decoration: none;
     width: 100%;
-    align-items: flex-start
+    align-items: center
+}
+
+.pricing-body .plan-row .plan-col.first-row>.has-tooltip {
+    padding: 5px 10px 5px 20px;
+}
+
+.pricing-body .plan-row .plan-col.first-row>.has-tooltip span.table-tooltip {
+    padding-top: 0;
+    height: auto;
+    display: inline-flex;
 }
 
 .plan-renew, .plan-type, .pricing-header-top .plan-row {
@@ -485,8 +513,9 @@ span.table-tooltip {
     transition: .2s linear
 }
 
-.plan-button a:hover {
+.plan-button a:hover, .plan-button a:focus {
     background-color: #6641e5;
+    border: 1px solid #6641e5 !important;
     color: #fff;
     -webkit-box-shadow: 0 0 10px 0 rgba(102, 65, 229, .5);
     -moz-box-shadow: 0 0 10px 0 rgba(102, 65, 229, .5);
@@ -519,12 +548,15 @@ span.table-tooltip {
     padding: 5px 10px;
     width: 130px;
     margin: 0 auto;
-    background: #fff;
-    border: 1px solid #6641e5;
-    box-shadow: 0 4px 24px rgb(0 0 0 / 11%);
+    background: #C0F5CA;
+    border: 1px solid #d8d5ec;
     border-radius: 32px;
     top: -16px;
-    color: #6641e5
+    color: #000000;
+}
+
+.best-value:empty {
+    display: none
 }
 
 .current-plan-name {
@@ -542,7 +574,7 @@ span.table-tooltip {
     font-weight: 600;
     font-size: 32px;
     text-transform: capitalize;
-    color: #000;
+    color: #fff;
     line-height: 140%
 }
 
@@ -552,7 +584,7 @@ span.table-tooltip {
     line-height: 100%;
     text-align: center;
     text-transform: capitalize;
-    color: #5a6185
+    color: #ddd
 }
 
 .money-guaranteed {
@@ -581,13 +613,17 @@ span.table-tooltip {
     text-align: center
 }
 
+.premio-customers, .premio-faqs {
+    background-color: #fff;
+    padding: 25px 0
+}
+
 .wrap {
     margin-right: 0;
     margin-left: 0
 }
 
 .premio-customers {
-    padding: 25px 0;
     text-align: center
 }
 
@@ -602,10 +638,6 @@ span.table-tooltip {
 .premio-customers img {
     width: 100%;
     height: auto
-}
-
-.premio-faqs {
-    padding: 25px 0
 }
 
 .faq-title {
@@ -772,7 +804,7 @@ span.table-tooltip {
 
 .slick-track:after, .slick-track:before {
     display: table;
-    content: ''
+    content: ""
 }
 
 .clear-both, .slick-track:after {
@@ -872,13 +904,13 @@ span.table-tooltip {
 .desktop-table.sticky-table .pricing-header-top {
     position: fixed;
     top: 32px;
-    z-index: 10001;
+    z-index: 11;
     background: #fff;
     box-shadow: 0 2px 18px 5px rgb(73 104 126 / 20%)
 }
 
 .desktop-table.sticky-table .pricing-header {
-    height: 250px
+    height: 198px
 }
 
 .mobile-plan {
@@ -1060,7 +1092,7 @@ span.plan-plugin-name {
         padding: 0 0 25px
     }
 
-    .mobile-plan.has-sticky-info .mobile-head-plan .plan-name, .mobile-plan.has-sticky-info .mobile-head-plan .plan-renew, .mobile-plan.has-sticky-info .mobile-head-plan .plan-type, .plan-details-bottom .plan-desc, .plan-details-bottom .plan-title span {
+    .mobile-plan.has-sticky-info .best-value, .mobile-plan.has-sticky-info .mobile-head-plan .plan-name, .mobile-plan.has-sticky-info .mobile-head-plan .plan-renew, .mobile-plan.has-sticky-info .mobile-head-plan .plan-type, .plan-details-bottom .plan-desc, .plan-details-bottom .plan-title span {
         display: none
     }
 
@@ -1085,7 +1117,11 @@ span.plan-plugin-name {
     }
 
     .mobile-plan.has-sticky-info .plan-body {
-        padding-top: 224px
+        padding-top: 214px
+    }
+
+    .mobile-plan.has-sticky-info .plan-monthly {
+        margin: 0 0 20px
     }
 
     .mobile-plan.has-sticky-info .mobile-head-plan {
@@ -1099,7 +1135,7 @@ span.plan-plugin-name {
         z-index: 9999;
         border: 1px solid #d8d5ec;
         box-shadow: 0 2px 18px 5px rgb(73 104 126 / 20%);
-        height: 214px
+        height: 220px
     }
 
     .mobile-plans .table-tooltip-text {
@@ -1148,7 +1184,9 @@ span.plan-plugin-name {
 }
 
 .plan-row .plan-col.first-row {
-    text-align: left
+    text-align: left;
+    display: flex;
+    align-items: center;
 }
 
 .plan-row .plan-col + .plan-col {
@@ -1207,4 +1245,11 @@ span.plan-plugin-name {
     padding: 4px 15px;
     color: #767677;
     background-color: #fff
+}
+
+.plugin-title {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000;
 }

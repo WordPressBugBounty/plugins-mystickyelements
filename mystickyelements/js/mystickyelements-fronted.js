@@ -470,11 +470,8 @@
         if( $("#phone_formate").val() == 1 ){
             var contact_number_input = document.querySelector("#contact-form-phone");
             var iti = window.intlTelInput(contact_number_input, {
-                dropdownContainer: document.body,
-                formatOnDisplay: true,
-                hiddenInput: "full_number",
-                initialCountry: "auto",
-                nationalMode: true,
+                dropdownContainer: document.body,                
+                initialCountry: "auto",                
 				separateDialCode: true,
                 utilsScript: mystickyelement_obj.plugin_url+"intl-tel-input-src/build/js/utils.js",
             });

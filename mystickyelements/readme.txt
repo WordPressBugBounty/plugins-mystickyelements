@@ -1,9 +1,9 @@
 === All-in-one Floating Contact Form, Call, Chat, and 50+ Social Icon Tabs  - My Sticky Elements ===
-Contributors: galdub, tomeraharon, premio
+Contributors: premio, galdub, tomeraharon
 Tags: whatsapp, contact form, facebook messenger, call now button, instagram
 Requires at least: 3.1
-Tested up to: 6.7
-Stable tag: 2.2.6
+Tested up to: 6.8
+Stable tag: 2.2.7
 Plugin URI: https://premio.io/downloads/mystickyelements/
 License: GPLv3
 
@@ -56,7 +56,6 @@ SoundCloud
 VK
 Viber
 Snapchat
-Skype
 Line
 SMS
 Tumblr
@@ -183,7 +182,7 @@ Adding WhatsApp button to your site will give 25 million new users every month (
 
 * YouTube channel - add a link to your YouTube channel (YouTube page) and get more subscribers and views for your videos. 
 
-* Phone number (click to call) - A call button is very useful in mobile devices, but desktop visitors can also view your phone number or click to call you via different calling web apps (like Skype).
+* Phone number (click to call) - A call button is very useful in mobile devices, but desktop visitors can also view your phone number or click to call you via different calling web apps (like WhatsApp).
 
 * Facebook Messenger - enter the direct link to the Facebook Messenger of your business page. and once the visitors click on the Facebook Messenger button, the Messenger conversation tab will be opened and they will be able to send you a message. You will get the message into your Facebook page inbox and if you have a bot (native Facebook Messenger bot, Manychat or Chatfuel) it will work automatically.
 
@@ -216,8 +215,6 @@ Adding WhatsApp button to your site will give 25 million new users every month (
 * Viber - Add your phone number and visitors who have Viber app installed can call and chat with you easily.
 
 * Snapchat - Very popular social messaging app used globally. Insert your Snapchat username and let your visitors message you anytime.
-
-* Skype - Add your Skype username.
 
 * Line - Line is a free app for instant communications. Enter your Line link and let your visitors contact your easily.
 
@@ -336,6 +333,9 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 9. Change the color of your icons, contact form, text, and anything else!
 
 == Changelog ==
+
+= 2.2.7 =
+Skype was removed from the social chat channels (Skype EOL)
 
 = 2.2.6 =
 Contact form phone field bug fixed

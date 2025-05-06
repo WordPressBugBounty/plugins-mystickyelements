@@ -90,8 +90,11 @@
 								}
 					
 							} else {
-								$social_channels_lists = mystickyelements_social_channels();
-								$social_channels_list = $social_channels_lists[$key];
+								$social_channels_lists 	= mystickyelements_social_channels();
+								$social_channels_list 	= (isset( $social_channels_lists[$key] )) ? $social_channels_lists[$key] : '';
+								if( empty( $social_channels_list ) ) {
+									return;
+								}
 							}
 							if ( empty($value)) {
 								$value['bg_color'] = $social_channels_list['background_color'];

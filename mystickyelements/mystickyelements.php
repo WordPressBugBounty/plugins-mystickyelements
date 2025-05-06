@@ -3,7 +3,7 @@
 Plugin Name: myStickyElements
 Plugin URI: https://premio.io/
 Description: myStickyElements is simple yet very effective plugin. It is perfect to fill out usually unused side space on webpages with some additional messages, videos, social widgets ...
-Version: 2.2.6
+Version: 2.2.7
 Author: Premio
 Author URI: https://premio.io/
 Domain Path: /languages
@@ -14,7 +14,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 
 define('MYSTICKYELEMENTS_URL', plugins_url('/', __FILE__));  // Define Plugin URL
 define('MYSTICKYELEMENTS_PATH', plugin_dir_path(__FILE__));  // Define Plugin Directory Path
-define("MY_STICKY_ELEMENT_VERSION", "2.2.6");
+define("MY_STICKY_ELEMENT_VERSION", "2.2.7");
 /*
  * redirect my sticky element setting page after plugin activated
  */
@@ -25,7 +25,7 @@ function mystickyelement_activation_redirect($plugin){
         $is_shown = get_option("mysticky_element_update_message");
 
         if($is_shown === false) {
-            add_option("mysticky_element_update_message", 1);
+            add_option("mysticky_element_update_message", false);
         }
 		if(!defined( 'DOING_AJAX' )) {
             add_option("mse_redirect",1);
@@ -3011,17 +3011,7 @@ if ( !function_exists('mystickyelements_social_channels')) {
 											'class'            => "fa-brands fa-threads",
 											'tooltip'          => 'Add a link to your Threads profile here. For example: <a href="https://www.threads.net/@demo_link" target="_blank">https://www.threads.net/@demo_link</a>',
 											'icon_color'       => 1,
-										],
-							'skype'	=> array(
-											'text' => "Skype",
-											'icon_text' => "",
-											'hover_text' => "Skype",
-											'background_color' => "#00aff0",
-											'placeholder'	=> 'Example: Enter your Skype Username',
-											'class' => "fab fa-skype",
-											'tooltip'	=> 'Enter your Skype username. E.g., username',
-											'icon_color' => 1
-										),
+										],							
 							'telegram'	=> array(
 											'text' => "Telegram",
 											'icon_text' => "",
@@ -3715,7 +3705,8 @@ if ( !empty($mysticky_elements_options)) {
 	add_action( 'admin_init' , 'mystickyelements_admin_init' );
 
 	require_once MYSTICKYELEMENTS_PATH . 'mystickyelements-fonts.php';
-	require_once MYSTICKYELEMENTS_PATH . 'mystickyelements-fontawesome-icons.php';
+	require_once MYSTICKYELEMENTS_PATH . 'mystickyelements-fontawesome-icons.php'; 
+	require_once MYSTICKYELEMENTS_PATH . 'class-email-signup.php';
 	require_once MYSTICKYELEMENTS_PATH . 'mystickyelements-admin.php';
 	require_once MYSTICKYELEMENTS_PATH . 'mystickyelements-front.php';
 	require_once MYSTICKYELEMENTS_PATH . 'includes/class-affiliate.php';
