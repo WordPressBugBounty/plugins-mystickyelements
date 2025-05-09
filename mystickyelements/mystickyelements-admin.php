@@ -56,8 +56,15 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 		public  function mystickyelements_admin_enqueue_script( ) {
 
 			if ( isset($_GET['page']) && ( $_GET['page'] == 'my-sticky-elements' || $_GET['page'] == 'my-sticky-elements-leads' || $_GET['page'] == 'my-sticky-elements-new-widget' || $_GET['page'] == 'recommended-plugins' || $_GET['page'] == 'my-sticky-elements-analytics' || $_GET['page'] == 'my-sticky-elements-integration' || $_GET['page'] == 'my-sticky-elements-upgrade' ) ) {
-                $is_shown = get_option("mysticky_element_update_message");
-			    if($is_shown != 1) {
+           
+				$is_shown = MSE_SIGNUP_CLASS::check_modal_status();
+                if($is_shown) {
+                    wp_enqueue_script( 'mailcheck-js', plugins_url('/js/mailcheck.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
+                    wp_enqueue_script('autocomplete-email-js', plugins_url('/js/jquery.email-autocomplete.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, true);
+                    wp_enqueue_style('email-update-css', plugins_url('/css/email-update.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
+                    wp_enqueue_style('mystickyelements-help-css', plugins_url('/css/mystickyelements-help.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
+                    wp_style_add_data('mystickyelements-help-css', 'rtl', 'replace');
+                } else {
                     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
                     wp_enqueue_style('font-awesome-css', plugins_url('/css/font-awesome.min.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
                     wp_enqueue_style('wp-color-picker');
@@ -105,12 +112,6 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 						'remove' => esc_html__("Remove", "mystickyelement")
 					);
 					wp_localize_script('mystickyelements-js', 'mystickyelements', $locale_settings);
-                } else {
-					wp_enqueue_script( 'mailcheck-js', plugins_url('/js/mailcheck.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
-					wp_enqueue_script('autocomplete-email-js', plugins_url('/js/jquery.email-autocomplete.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, true);					
-                    wp_enqueue_style('email-update-css', plugins_url('/css/email-update.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
-					wp_enqueue_style('mystickyelements-help-css', plugins_url('/css/mystickyelements-help.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
-                    wp_style_add_data('mystickyelements-help-css', 'rtl', 'replace');
                 }
 			}
 			

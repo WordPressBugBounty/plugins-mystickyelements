@@ -3,7 +3,7 @@
 Plugin Name: myStickyElements
 Plugin URI: https://premio.io/
 Description: myStickyElements is simple yet very effective plugin. It is perfect to fill out usually unused side space on webpages with some additional messages, videos, social widgets ...
-Version: 2.2.7
+Version: 2.2.8
 Author: Premio
 Author URI: https://premio.io/
 Domain Path: /languages
@@ -14,7 +14,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 
 define('MYSTICKYELEMENTS_URL', plugins_url('/', __FILE__));  // Define Plugin URL
 define('MYSTICKYELEMENTS_PATH', plugin_dir_path(__FILE__));  // Define Plugin Directory Path
-define("MY_STICKY_ELEMENT_VERSION", "2.2.7");
+define("MY_STICKY_ELEMENT_VERSION", "2.2.8");
 /*
  * redirect my sticky element setting page after plugin activated
  */
@@ -22,11 +22,7 @@ add_action( 'activated_plugin', 'mystickyelement_activation_redirect' );
 function mystickyelement_activation_redirect($plugin){
 
 	if( $plugin == plugin_basename( __FILE__ ) ) {
-        $is_shown = get_option("mysticky_element_update_message");
-
-        if($is_shown === false) {
-            add_option("mysticky_element_update_message", false);
-        }
+      
 		if(!defined( 'DOING_AJAX' )) {
             add_option("mse_redirect",1);
 		}

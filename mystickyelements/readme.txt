@@ -3,7 +3,7 @@ Contributors: premio, galdub, tomeraharon
 Tags: whatsapp, contact form, facebook messenger, call now button, instagram
 Requires at least: 3.1
 Tested up to: 6.8
-Stable tag: 2.2.7
+Stable tag: 2.2.8
 Plugin URI: https://premio.io/downloads/mystickyelements/
 License: GPLv3
 
@@ -125,7 +125,7 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 30. Load Google fonts locally from your website
 
 = 🔥 Pro plan includes: =
-Unlock the Pro features for only $49/year
+Unlock the Pro features for only $59/year
 
 1. Show unlimited tabs at the same time
 2. Get the leads directly to your email
@@ -333,6 +333,9 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 9. Change the color of your icons, contact form, text, and anything else!
 
 == Changelog ==
+
+= 2.2.8 =
+Settings page bug fixed
 
 = 2.2.7 =
 Skype was removed from the social chat channels (Skype EOL)
