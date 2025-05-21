@@ -1,7 +1,7 @@
 <div class="mystickyelements-help-form">
     <form action="<?php echo admin_url( 'admin-ajax.php' ) ?>" method="post" id="mystickyelements-help-form">
         <div class="mystickyelements-help-header">
-            <b>Gal Dubinski</b> Co-Founder at Premio
+            <b>Gal Dubinski</b>  Co-Founder at Premio
         </div>
         <div class="mystickyelements-help-content">
             <p><?php esc_html_e("Hello! Are you experiencing any problems with My Sticky Elements? Please let me know :)", "mystickyelements") ?></p>
@@ -12,7 +12,7 @@
                 <textarea type="text" name="textarea_text" id="textarea_text" placeholder="<?php esc_html_e("How can I help you?", "mystickyelements") ?>"></textarea>
             </div>
             <div class="form-button">
-                <button type="submit" class="mystickyelements-help-button" ><?php esc_html_e("Chat") ?></button>
+                <button type="submit" class="mystickyelements-help-button" ><?php esc_html_e("Chat", 'mystickyelements') ?></button>
                 <input type="hidden" name="action" value="mystickyelements_admin_send_message_to_owner"  >
                 <input type="hidden" id="nonce" name="nonce" value="<?php echo wp_create_nonce("mystickyelements_send_message_to_owner") ?>">
             </div>
@@ -35,7 +35,7 @@
     jQuery(document).ready(function(){
         jQuery("#mystickyelements-help-form").on( 'submit', function(){			
             jQuery(".mystickyelements-help-button").attr("disabled",true);
-            jQuery(".mystickyelements-help-button").text("<?php esc_html_e("Sending Request...") ?>");
+            jQuery(".mystickyelements-help-button").text("<?php esc_html_e("Sending Request...", 'mystickyelements') ?>");
             formData = jQuery(this).serialize();
             jQuery.ajax({
                 url: "<?php echo admin_url( 'admin-ajax.php' ) ?>",

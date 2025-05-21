@@ -32,16 +32,16 @@ foreach ( $contact_field as $key=>$value ) {
 
 				<div class="mystickyelements-action-popup-open mystickyelements-action-popup-status" id="socialform-status-popup" style="display:none;">
 					<div class="popup-ui-widget-header">
-						<span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e( 'Disable Social Channels?', 'mystickyelement');?></span><span class="close-dialog" data-from ='social-form'> &#10006 </span>
+						<span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e( 'Disable Social Channels?', 'mystickyelements');?></span><span class="close-dialog" data-from ='social-form'> &#10006 </span>
 					</div>	
 					<div id="widget-delete-confirm" class="ui-widget-content">
 						<p>
 							<?php 
-							_e( "You are about to disable the <span>social channels and chat options</span>. Once disabled, they will no longer be visible. Only the contact form will appear if it is enabled.", "mystickyelement");
+							_e( "You are about to disable the <span>social channels and chat options</span>. Once disabled, they will no longer be visible. Only the contact form will appear if it is enabled.", 'mystickyelements');
 							?> 
 						</p>
 					</div>
-					<div class="popup-ui-dialog-buttonset"><button type="button" class="btn-disable-cancel button-social-popup-disable"><?php esc_html_e('Disable anyway','mystickyelement');?></button><button type="button" class="mystickyelement-keep-widget-btn button-social-popup-keep" data-from = "contact-form" ><?php esc_html_e('Keep using','mystickyelement');?></button></div>
+					<div class="popup-ui-dialog-buttonset"><button type="button" class="btn-disable-cancel button-social-popup-disable"><?php esc_html_e('Disable anyway','mystickyelements');?></button><button type="button" class="mystickyelement-keep-widget-btn button-social-popup-keep" data-from = "contact-form" ><?php esc_html_e('Keep using','mystickyelements');?></button></div>
 				</div>
 				<div id="mystickyelement-social-popup-overlay" class="stickyelement-overlay" data-from = "social-form" style="display:none;"></div>
 				<div class="myStickyelements-social-search">

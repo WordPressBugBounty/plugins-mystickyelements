@@ -1,30 +1,36 @@
+# Copyright (C) 2025 Premio
+# This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: myStickyelements\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mystickyelements-"
-"free\n"
+"Project-Id-Version: myStickyElements 2.2.8\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/mystickyelements-free\n"
 "POT-Creation-Date: 2025-05-21 11:34:25+00:00\n"
-"PO-Revision-Date: 2016-12-01 17:52+0100\n"
-"Last-Translator: damir <jahmirda@gmail.com>\n"
-"Language-Team: TFN <jahmirda@gmail.com>\n"
-"Language: English\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
-"X-Poedit-Basepath: .\n"
+"PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: ..\n"
-"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
 
 #: admin/chatway-plugin.php:46
 msgid "Install Chatway Live Chat"
 msgstr ""
 
-#. translators: %s: Plugin author.
 #: admin/chatway-plugin.php:91 recommended-plugins.php:228
+#. translators: %s: Plugin author.
 msgid "By %s"
 msgstr ""
 
@@ -44,8 +50,8 @@ msgstr ""
 msgid "Network Activate"
 msgstr ""
 
-#. translators: %s: Plugin name and version.
 #: admin/chatway-plugin.php:202 recommended-plugins.php:338
+#. translators: %s: Plugin name and version.
 msgid "More information about %s"
 msgstr ""
 
@@ -57,22 +63,22 @@ msgstr ""
 msgid "This plugin doesn&#8217;t work with your versions of WordPress and PHP."
 msgstr ""
 
-#. translators: 1: URL to WordPress Updates screen, 2: URL to Update PHP page.
 #: admin/chatway-plugin.php:238 recommended-plugins.php:374
+#. translators: 1: URL to WordPress Updates screen, 2: URL to Update PHP page.
 msgid ""
 "<a href=\"%1$s\">Please update WordPress</a>, and then <a "
 "href=\"%2$s\">learn more about updating PHP</a>."
 msgstr ""
 
-#. translators: %s: URL to WordPress Updates screen.
 #: admin/chatway-plugin.php:246 admin/chatway-plugin.php:262
 #: recommended-plugins.php:382 recommended-plugins.php:398
+#. translators: %s: URL to WordPress Updates screen.
 msgid "<a href=\"%s\">Please update WordPress</a>."
 msgstr ""
 
-#. translators: %s: URL to Update PHP page.
 #: admin/chatway-plugin.php:252 admin/chatway-plugin.php:271
 #: recommended-plugins.php:388 recommended-plugins.php:407
+#. translators: %s: URL to Update PHP page.
 msgid "<a href=\"%s\">Learn more about updating PHP</a>."
 msgstr ""
 
@@ -88,13 +94,13 @@ msgstr ""
 msgid "Last Updated:"
 msgstr ""
 
-#. translators: %s: Human-readable time difference.
 #: admin/chatway-plugin.php:318 recommended-plugins.php:455
+#. translators: %s: Human-readable time difference.
 msgid "%s ago"
 msgstr ""
 
-#. translators: %s: Number of installations.
 #: admin/chatway-plugin.php:336 recommended-plugins.php:474
+#. translators: %s: Number of installations.
 msgid "%s Active Installations"
 msgstr ""
 
@@ -130,8 +136,8 @@ msgstr ""
 
 #: admin/chatway.php:71
 msgid ""
-"Add the Chatway Live Chat widget to your website and effectively communicate "
-"with visitors with features such as:"
+"Add the Chatway Live Chat widget to your website and effectively "
+"communicate with visitors with features such as:"
 msgstr ""
 
 #: admin/chatway.php:74
@@ -282,9 +288,8 @@ msgstr ""
 
 #: admin/contact-forms.php:270 admin/contact-forms.php:274
 #: mystickyelements-admin.php:1352 mystickyelements-front.php:321
-#, fuzzy
 msgid "Message"
-msgstr "Bye"
+msgstr ""
 
 #: admin/contact-forms.php:311 admin/contact-forms.php:380
 #: admin/contact-forms.php:599 admin/contact-forms.php:650
@@ -339,8 +344,8 @@ msgstr ""
 
 #: admin/contact-forms.php:430 upgrade-to-pro.php:162
 msgid ""
-"Add custom fields to your contact form including text, text area, dropdowns, "
-"file upload, website, date, and number fields"
+"Add custom fields to your contact form including text, text area, "
+"dropdowns, file upload, website, date, and number fields"
 msgstr ""
 
 #: admin/contact-forms.php:433
@@ -378,8 +383,7 @@ msgid "RTL"
 msgstr ""
 
 #: admin/contact-forms.php:477
-msgid ""
-"Change the background color of the floating bar that opens the contact form"
+msgid "Change the background color of the floating bar that opens the contact form"
 msgstr ""
 
 #: admin/contact-forms.php:479 admin/contact-forms.php:679
@@ -612,8 +616,8 @@ msgstr ""
 msgid ""
 "The free version allows you to save the form submissions (form leads) "
 "locally to your website. If you want to send leads to your email, or "
-"automatically sync leads to Mailchimp or Mailpoet, consider upgrading to the "
-"premium version."
+"automatically sync leads to Mailchimp or Mailpoet, consider upgrading to "
+"the premium version."
 msgstr ""
 
 #: admin/email-signup.php:361
@@ -828,8 +832,8 @@ msgstr ""
 
 #: admin/general-settings.php:262
 msgid ""
-"When the visitor opens the website, the selected channel tab or contact form "
-"will be opened by default. If the visitor closes the tab, hovers over "
+"When the visitor opens the website, the selected channel tab or contact "
+"form will be opened by default. If the visitor closes the tab, hovers over "
 "another channel icon, or visits the channel link it would remain closed."
 msgstr ""
 
@@ -966,8 +970,8 @@ msgstr ""
 
 #: admin/general-settings.php:450 upgrade-to-pro.php:206
 msgid ""
-"Display the widget on specific days and hours based on your opening days and "
-"hours"
+"Display the widget on specific days and hours based on your opening days "
+"and hours"
 msgstr ""
 
 #: admin/general-settings.php:452
@@ -982,8 +986,8 @@ msgstr ""
 #: admin/general-settings.php:509
 msgid ""
 "Set the date and time for when you want the widget to start showing and the "
-"time you would like it to stop showing. You can add up to 12 combinations of "
-"\"on and off\" triggers. This feature may be useful when you have an "
+"time you would like it to stop showing. You can add up to 12 combinations "
+"of \"on and off\" triggers. This feature may be useful when you have an "
 "upcoming limited-time offer."
 msgstr ""
 
@@ -1095,15 +1099,15 @@ msgid "Traffic source"
 msgstr ""
 
 #: admin/general-settings.php:781
-msgid ""
-"Show the widget to visitors who arrived to your website from direct traffic"
+msgid "Show the widget to visitors who arrived to your website from direct traffic"
 msgstr ""
 
 #: admin/general-settings.php:796
 msgid ""
-"Show the widget to visitors who arrived to your website from social networks "
-"including: Facebook, Twitter, Pinterest, Instagram, Google+, LinkedIn, "
-"Delicious, Tumblr, Dribbble, StumbleUpon, Flickr, Plaxo, Digg and more"
+"Show the widget to visitors who arrived to your website from social "
+"networks including: Facebook, Twitter, Pinterest, Instagram, Google+, "
+"LinkedIn, Delicious, Tumblr, Dribbble, StumbleUpon, Flickr, Plaxo, Digg and "
+"more"
 msgstr ""
 
 #: admin/general-settings.php:811 admin/general-settings.php:826
@@ -1131,8 +1135,7 @@ msgid " seconds on the page"
 msgstr ""
 
 #: admin/general-settings.php:904
-msgid ""
-"If enabled, a small black button will appear on top to minimize the widget"
+msgid "If enabled, a small black button will appear on top to minimize the widget"
 msgstr ""
 
 #: admin/general-settings.php:907
@@ -1223,8 +1226,7 @@ msgid "Custom Shortcode"
 msgstr ""
 
 #: admin/social-media.php:124
-msgid ""
-"Add a custom shortcode/Iframe/HTML to your widget. Learn more or check out "
+msgid "Add a custom shortcode/Iframe/HTML to your widget. Learn more or check out "
 msgstr ""
 
 #: admin/social-media.php:124
@@ -1264,9 +1266,9 @@ msgstr ""
 
 #: admin/sticktelements-preview.php:270
 msgid ""
-"You're about to turn off loading Google fonts from Google server. By turning "
-"it off, fonts will not be loaded by default and you have to manually load "
-"them to use properly. Are you sure?"
+"You're about to turn off loading Google fonts from Google server. By "
+"turning it off, fonts will not be loaded by default and you have to "
+"manually load them to use properly. Are you sure?"
 msgstr ""
 
 #: admin/sticktelements-preview.php:279
@@ -1323,8 +1325,8 @@ msgstr ""
 #: admin/stickyelements-dashboard.php:70
 msgid ""
 "Are you sure want to delete the widget? By doing this, you'll delete your "
-"saved settings, channels, & information within the widget. You will lose the "
-"widget permanently and will not be able to retrieve it."
+"saved settings, channels, & information within the widget. You will lose "
+"the widget permanently and will not be able to retrieve it."
 msgstr ""
 
 #: admin/stickyelements-dashboard.php:74 admin/stickyelements-dashboard.php:87
@@ -1420,8 +1422,8 @@ msgstr ""
 
 #: admin/stickyelements-dashboard.php:269
 msgid ""
-"Chatway empowers you and your team to provide live chat support effortlessly "
-"to your visitors."
+"Chatway empowers you and your team to provide live chat support "
+"effortlessly to your visitors."
 msgstr ""
 
 #: admin/stickyelements-dashboard.php:273
@@ -1444,8 +1446,8 @@ msgstr ""
 
 #: admin/stickyelements-dashboard.php:294
 msgid ""
-"Configure triggers & targeting rules for the behavior of the widget. Explore "
-"advanced settings for fine tuning even the smallest detail"
+"Configure triggers & targeting rules for the behavior of the widget. "
+"Explore advanced settings for fine tuning even the smallest detail"
 msgstr ""
 
 #: admin/stickyelements-review-popup.php:27
@@ -1617,8 +1619,8 @@ msgstr ""
 
 #: help.php:7
 msgid ""
-"Hello! Are you experiencing any problems with My Sticky Elements? Please let "
-"me know :)"
+"Hello! Are you experiencing any problems with My Sticky Elements? Please "
+"let me know :)"
 msgstr ""
 
 #: help.php:12
@@ -1680,8 +1682,8 @@ msgstr ""
 
 #: mystickyelements-admin-widgetanalytics.php:43
 msgid ""
-"<strong>Analyze</strong> the number of unique clicks and the <strong>click-"
-"through rate</strong>"
+"<strong>Analyze</strong> the number of unique clicks and the "
+"<strong>click-through rate</strong>"
 msgstr ""
 
 #: mystickyelements-admin.php:39
@@ -1704,8 +1706,8 @@ msgstr ""
 
 #: mystickyelements-admin.php:639 mystickyelements-popup.php:2
 msgid ""
-"Select your contact form fields, chat, and social channels. Need help? Visit "
-"our "
+"Select your contact form fields, chat, and social channels. Need help? "
+"Visit our "
 msgstr ""
 
 #: mystickyelements-admin.php:639 mystickyelements-popup.php:2
@@ -1722,8 +1724,8 @@ msgstr ""
 
 #: mystickyelements-admin.php:661
 msgid ""
-"You just got your first My Sticky Elements lead. Click on the Show Me button "
-"to display your contact form leads"
+"You just got your first My Sticky Elements lead. Click on the Show Me "
+"button to display your contact form leads"
 msgstr ""
 
 #: mystickyelements-admin.php:704
@@ -1842,8 +1844,8 @@ msgstr ""
 msgid ""
 "Add your own pre-set message that's automatically added to the user's "
 "message. You can also use merge tags and add the URL or the title of the "
-"current visitor's page. E.g. you can add the current URL of a product to the "
-"message so you know which product the visitor is talking about when the "
+"current visitor's page. E.g. you can add the current URL of a product to "
+"the message so you know which product the visitor is talking about when the "
 "visitor messages you"
 msgstr ""
 
@@ -1865,7 +1867,8 @@ msgstr ""
 
 #: mystickyelements-admin.php:1196
 msgid ""
-"Automatically send desktop visitors to WhatsApp Web by turning on the feature"
+"Automatically send desktop visitors to WhatsApp Web by turning on the "
+"feature"
 msgstr ""
 
 #: mystickyelements-admin.php:1219
@@ -1878,8 +1881,8 @@ msgstr ""
 
 #: mystickyelements-admin.php:1288
 msgid ""
-"Contact's data is saved locally do make backup or export before uninstalling "
-"plugin"
+"Contact's data is saved locally do make backup or export before "
+"uninstalling plugin"
 msgstr ""
 
 #: mystickyelements-admin.php:1295
@@ -2167,8 +2170,8 @@ msgstr ""
 msgid "Hide From Menu"
 msgstr ""
 
-#. translators: %s: Plugin name and version.
 #: recommended-plugins.php:252
+#. translators: %s: Plugin name and version.
 msgid "Install %s now"
 msgstr ""
 
@@ -2176,8 +2179,8 @@ msgstr ""
 msgid "Cannot Install"
 msgstr ""
 
-#. translators: %s: Plugin name and version.
 #: recommended-plugins.php:274
+#. translators: %s: Plugin name and version.
 msgid "Update %s now"
 msgstr ""
 
@@ -2189,13 +2192,13 @@ msgstr ""
 msgid "Active"
 msgstr ""
 
-#. translators: %s: Plugin name.
 #: recommended-plugins.php:297
+#. translators: %s: Plugin name.
 msgid "Activate %s"
 msgstr ""
 
-#. translators: %s: Plugin name.
 #: recommended-plugins.php:310
+#. translators: %s: Plugin name.
 msgid "Network Activate %s"
 msgstr ""
 
@@ -2483,8 +2486,7 @@ msgid "30 days money back guaranteed"
 msgstr ""
 
 #: upgrade-to-pro.php:396
-msgid ""
-"The plugin will always keep working even if you don't renew your license"
+msgid "The plugin will always keep working even if you don't renew your license"
 msgstr ""
 
 #: upgrade-to-pro.php:493
@@ -2514,8 +2516,8 @@ msgstr ""
 msgid "Premio"
 msgstr ""
 
-#. translators: %s: Plugin name and version.
 #: admin/chatway-plugin.php:115
+#. translators: %s: Plugin name and version.
 msgctxt "plugin"
 msgid "Install %s now"
 msgstr ""
@@ -2525,8 +2527,8 @@ msgctxt "plugin"
 msgid "Cannot Install"
 msgstr ""
 
-#. translators: %s: Plugin name and version.
 #: admin/chatway-plugin.php:137
+#. translators: %s: Plugin name and version.
 msgctxt "plugin"
 msgid "Update %s now"
 msgstr ""
@@ -2541,14 +2543,14 @@ msgctxt "plugin"
 msgid "Active"
 msgstr ""
 
-#. translators: %s: Plugin name.
 #: admin/chatway-plugin.php:160
+#. translators: %s: Plugin name.
 msgctxt "plugin"
 msgid "Activate %s"
 msgstr ""
 
-#. translators: %s: Plugin name.
 #: admin/chatway-plugin.php:173
+#. translators: %s: Plugin name.
 msgctxt "plugin"
 msgid "Network Activate %s"
 msgstr ""
@@ -2558,8 +2560,8 @@ msgctxt "plugin"
 msgid "Installed"
 msgstr ""
 
-#. translators: %s: Number of millions.
 #: admin/chatway-plugin.php:327 recommended-plugins.php:464
+#. translators: %s: Number of millions.
 msgctxt "Active plugin installations"
 msgid "%s+ Million"
 msgid_plural "%s+ Million"

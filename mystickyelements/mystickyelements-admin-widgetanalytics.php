@@ -20,7 +20,7 @@ if (defined('ABSPATH') === false) {
 			
 			<div class="flex items-center mt-5 space-x-3">
                 <a class="btn rounded-lg drop-shadow-3xl font-normal" href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements-upgrade")) ?>" title="Upgrade to Pro">
-                    <?php esc_html_e('Upgrade to Pro 🚀', 'Mystickyelement'); ?>
+                    <?php esc_html_e('Upgrade to Pro 🚀', 'mystickyelements'); ?>
                 </a>                
             </div>
 			
@@ -46,7 +46,7 @@ if (defined('ABSPATH') === false) {
 
             <div class="flex items-center mt-5 space-x-3">
                 <a class="btn rounded-lg drop-shadow-3xl font-normal" href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements-upgrade")) ?>" title="Upgrade to Pro">
-                    <?php esc_html_e('Upgrade to Pro 🚀', 'Mystickyelement'); ?>
+                    <?php esc_html_e('Upgrade to Pro 🚀', 'mystickyelements'); ?>
                 </a>                
             </div>
         </div>

@@ -16,7 +16,7 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
         }
 
         public function mystickyelements_enqueue_script() {
-			$is_min = ( !WP_DEBUG ) ? '.min' : '';
+            $min = MSE_DEV_MODE ? '' : '.min';
             $contact_form 		= get_option('mystickyelements-contact-form');
             $general_settings 	= get_option('mystickyelements-general-settings');
 			$social_channels 	= get_option('mystickyelements-social-channels');			
@@ -35,7 +35,7 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 			}
 			
             wp_enqueue_style('font-awesome-css', plugins_url('/css/font-awesome.min.css', __FILE__), array() , MY_STICKY_ELEMENT_VERSION);
-            wp_enqueue_style('mystickyelements-front-css', plugins_url('/css/mystickyelements-front'. esc_attr($is_min) .'.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION );
+            wp_enqueue_style('mystickyelements-front-css', plugins_url('/css/mystickyelements-front'. esc_attr($min) .'.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION );
 
             // Add Themme custom CSS
            if (  isset($contact_form['form_css']) || isset($general_settings['tabs_css']) || ( isset($general_settings['font_family']) && $general_settings['font_family'] != '') ) {
@@ -113,10 +113,10 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 			</style>	
 			<?php
 			wp_enqueue_script('mystickyelements-cookie-js', plugins_url('/js/jquery.cookie.js', __FILE__), array('jquery'), MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ]);
-			wp_enqueue_script( 'mailcheck-js', plugins_url('/js/mailcheck.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ]);
-			wp_enqueue_script('autocomplete-email-js', plugins_url('/js/jquery.email-autocomplete.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ]);	
+			wp_enqueue_script( 'mailcheck-js', plugins_url('/js/mailcheck'.esc_attr($min).'.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ]);
+			wp_enqueue_script('autocomplete-email-js', plugins_url('/js/jquery.email-autocomplete'.esc_attr($min).'.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ]);
 					
-			wp_enqueue_script('mystickyelements-fronted-js', plugins_url('/js/mystickyelements-fronted' . $is_min . '.js', __FILE__), array('jquery'), MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ] );
+			wp_enqueue_script('mystickyelements-fronted-js', plugins_url('/js/mystickyelements-fronted'.esc_attr($min).'.js', __FILE__), array('jquery'), MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ] );
 
             $locale_settings = array(
                 'ajaxurl' => admin_url('admin-ajax.php'),
@@ -168,8 +168,13 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
             if (isset($contact_form['mobile']) && $contact_form['mobile'] == 1) {
                 $contact_form_class .= ' element-mobile-on';
             }
+			$form_open_delay_sec = 0;
 			if (isset($general_settings['form_open_automatic']) && $general_settings['form_open_automatic'] == 1 && !isset($_COOKIE['closed_contactform'])) {
-				$contact_form_class .= ' elements-active';
+				$contact_form_class .= ' elements-open-form-active';
+				
+				if( isset($general_settings['form_open_delay_sec']) && $general_settings['form_open_delay_sec'] != '' ) { 
+					$form_open_delay_sec = $general_settings['form_open_delay_sec'];
+				}
 			}
 			
 			$close_after = '';
@@ -205,6 +210,9 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 			$general_settings['entry-effect'] = (isset($general_settings['entry-effect']) && $general_settings['entry-effect']!= '') ? $general_settings['entry-effect'] : 'slide-in';
 			$general_settings['templates'] = (isset($general_settings['templates']) && $general_settings['templates']!= '') ? $general_settings['templates'] : 'default';
 			
+			$form_open_automatic = (isset($general_settings['form_open_automatic']) && $general_settings['form_open_automatic'] ==1 )? $general_settings['form_open_automatic']: '';
+
+ 		
 			$general_settings['open_tab_default'] = (isset($general_settings['open_tab_default']) && $general_settings['open_tab_default'] ==1 )? $general_settings['open_tab_default']: '';
 			if ( $general_settings['open_tab_default'] == 1) {							
 				$general_settings['opentab-channel'] = (isset($general_settings['opentab-channel']) && $general_settings['opentab-channel']!= '') ? $general_settings['opentab-channel'] : '';
@@ -220,6 +228,9 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 			$mystickyelements_class[] = 'mystickyelements-mobile-size-' . $general_settings['mobile-widget-size'];
 			$mystickyelements_class[] = 'mystickyelements-entry-effect-' . $general_settings['entry-effect'];
 			$mystickyelements_class[] = 'mystickyelements-templates-' . $general_settings['templates'];
+			
+			
+		 
 
 			$mystickyelements_classes = join( ' ', $mystickyelements_class );
 
@@ -286,7 +297,7 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 								}
 						?>
 
-							<li id="mystickyelements-contact-form" class="mystickyelements-contact-form <?php echo esc_attr($contact_form_class); ?>"  <?php if (isset($contact_form['direction']) && $contact_form['direction'] == 'RTL') : ?> dir="rtl" <?php endif; ?> data-tab-opt="<?php echo esc_attr($general_settings["open_tabs_when"]); ?>" >
+							<li id="mystickyelements-contact-form" class="mystickyelements-contact-form <?php echo esc_attr($contact_form_class); ?>"  <?php if (isset($contact_form['direction']) && $contact_form['direction'] == 'RTL') : ?> dir="rtl" <?php endif; ?> data-tab-opt="<?php echo esc_attr($general_settings["open_tabs_when"]); ?>" data-time-delay="<?php echo esc_attr($form_open_delay_sec);?>" >
 								<?php 
 								$contact_form_text_class = '';
 								if ($contact_form['text_in_tab'] == '') {

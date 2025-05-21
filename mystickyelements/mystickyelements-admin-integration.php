@@ -54,7 +54,7 @@ $plugins_allowedtags = array(
 							$admin_message = '';
 							$activation_url = '#';
 								
-							$admin_message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $activation_url, esc_html__( 'Connect' ) ) . '</p>';
+							$admin_message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $activation_url, esc_html__( 'Connect' , 'mystickyelements') ) . '</p>';
 							
 							echo wp_kses($admin_message, $plugins_allowedtags);
 							

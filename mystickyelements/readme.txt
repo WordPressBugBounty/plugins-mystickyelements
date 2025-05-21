@@ -3,7 +3,7 @@ Contributors: premio, galdub, tomeraharon
 Tags: whatsapp, contact form, facebook messenger, call now button, instagram
 Requires at least: 3.1
 Tested up to: 6.8
-Stable tag: 2.2.8
+Stable tag: 2.2.9
 Plugin URI: https://premio.io/downloads/mystickyelements/
 License: GPLv3
 
@@ -106,7 +106,7 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 11. Background colors
 12. Change the order of icons
 13. Set tabs for mobile/desktop
-14. Open on hover or click
+14. Open on hover or click, you can also open the contact form automatically after a few seconds
 15. Custom channels can act as existing channels. For example, create two WhatsApp buttons or two Facebook Messenger, etc
 16. LTR/RTL support
 17. Save contact form leads into your local database
@@ -136,28 +136,29 @@ Unlock the Pro features for only $59/year
 7. Show the widget after a few seconds or based on page scroll percentage
 8. Integrations with MailChimp and MailPoet - connect your My Sticky Elements contact forms to MailChimp and MailPoet
 9. Create different bars for different pages. Show different icons, form and language based on page targeting rules
-10. Custom CSS
-11. Custom height position of the contact us form and the chat channels on the screen for desktop and mobile
-12. Custom fields to your floating contact form
-13. Automatically close the contact form after submission
-14. Google reCAPTCHA support (reCAPTCHA v2 and reCAPTCHA v3 are supported)
-15. Add a file uploader to your contact form
-16. Consent checkbox
-17. Google Analytics events
-18. Dropdown multi select field to your contact form
-19. Redirect your visitors to another page after the form is submitted
-20. Create 6 shortcode, IFrame or HTML icon and display any embedded content like YouTube videos, contact form 7 or any other form, maps, or any other shortcode or IFrame.
-21. Add custom text fields to your contact form
-22. Send your contact form leads to as many email addresses you want
-23. Change the thank you message that's displayed after the contact form is submitted
-24. Log the IP address of visitors that submit your contact us form
-25. Add a Text block to your contact form - add text to the upper part of your forms
-26. Traffic source targeting 
-27. Available days and hours and specific date scheduling
-28. More text formatting options for the text block and consent checkbox text
-29. Add sender name in email subject for your contact form submissions
-30. Multiple file upload feature - there can now be up to 5 files that can be uploaded via the contact form
-31. Merge tags for WhatsApp, Email & SMS - add merge tag like the URL or the Title of the page when visitors message you on WhatsApp, SMS & Email
+10. Attention effects - grab your visitors' attention to your chat and social buttons
+11. Custom CSS
+12. Custom height position of the contact us form and the chat channels on the screen for desktop and mobile
+13. Custom fields to your floating contact form
+14. Automatically close the contact form after submission
+15. Google reCAPTCHA support (reCAPTCHA v2 and reCAPTCHA v3 are supported)
+16. Add a file uploader to your contact form
+17. Consent checkbox
+18. Google Analytics events
+19. Dropdown multi select field to your contact form
+20. Redirect your visitors to another page after the form is submitted
+21. Create 6 shortcode, IFrame or HTML icon and display any embedded content like YouTube videos, contact form 7 or any other form, maps, or any other shortcode or IFrame.
+22. Add custom text fields to your contact form
+23. Send your contact form leads to as many email addresses you want
+24. Change the thank you message that's displayed after the contact form is submitted
+25. Log the IP address of visitors that submit your contact us form
+26. Add a Text block to your contact form - add text to the upper part of your forms
+27. Traffic source targeting 
+28. Available days and hours and specific date scheduling
+29. More text formatting options for the text block and consent checkbox text
+30. Add sender name in email subject for your contact form submissions
+31. Multiple file upload feature - there can now be up to 5 files that can be uploaded via the contact form
+32. Merge tags for WhatsApp, Email & SMS - add merge tag like the URL or the Title of the page when visitors message you on WhatsApp, SMS & Email
 
 <br><a href="https://premio.io/downloads/mystickyelements/?utm_source=wordpressorg" target="_blank" title="My Sticky Elements pro plans"><strong>Upgrade to pro 🚀</strong></a> to get all pro features :)
 
@@ -333,6 +334,14 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 9. Change the color of your icons, contact form, text, and anything else!
 
 == Changelog ==
+
+= 2.2.9 =
+Open the contact form automatically after a few seconds
+The contact form is shown in the preview
+Attention effects for your My Sticky Elements widget (Pro)
+Option to upload multiple files
+Export My Sticky Elements settings
+Option to change the position of the text block in the contact form
 
 = 2.2.8 =
 Settings page bug fixed

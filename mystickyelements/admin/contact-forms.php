@@ -68,16 +68,16 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 			</div>
 			<div class="mystickyelements-action-popup-open mystickyelements-action-popup-status" id="contactform-status-popup" style="display:none;">
 				<div class="popup-ui-widget-header">
-					<span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e( 'Disable Contact Form?', 'mystickyelement');?></span><span class="close-dialog" data-from ='contact-form'> &#10006 </span>
+					<span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e( 'Disable Contact Form?', 'mystickyelements');?></span><span class="close-dialog" data-from ='contact-form'> &#10006 </span>
 				</div>	
 				<div id="widget-delete-confirm" class="ui-widget-content">
 					<p>
 						<?php 
-							_e( "You are about to disable the <span>contact form</span>. Once disabled, the contact form will no longer be visible. Only the chat buttons or social channels will remain visible if they are enabled.", "mystickyelement");
+							_e( "You are about to disable the <span>contact form</span>. Once disabled, the contact form will no longer be visible. Only the chat buttons or social channels will remain visible if they are enabled.", 'mystickyelements');
 						?>
 					</p>
 				</div>
-				<div class="popup-ui-dialog-buttonset"><button type="button" class="btn-disable-cancel button-contact-popup-disable"><?php esc_html_e('Disable anyway','mystickyelement');?></button><button type="button" class="mystickyelement-keep-widget-btn button-contact-popup-keep" data-from = "contact-form" ><?php esc_html_e('Keep using','mystickyelement');?></button></div>
+				<div class="popup-ui-dialog-buttonset"><button type="button" class="btn-disable-cancel button-contact-popup-disable"><?php esc_html_e('Disable anyway','mystickyelements');?></button><button type="button" class="mystickyelement-keep-widget-btn button-contact-popup-keep" data-from = "contact-form" ><?php esc_html_e('Keep using','mystickyelements');?></button></div>
 			</div>
 			<div id="mystickyelement-contact-popup-overlay" class="stickyelement-overlay" data-from = "contact-form" style="display:none;"></div>
 		</div>
@@ -618,7 +618,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 										</div>
 										<div class="mystickyelements-setting-wrap-right">
 											<?php $contact_form['sender_name'] = ( isset($contact_form['sender_name'])) ? $contact_form['sender_name'] : '';?>
-											<input type="text" name="contact-form[sender_name]" value="<?php echo esc_attr($contact_form['sender_name']);?>" placeholder="<?php esc_html_e('Enter sender name');?>" />
+											<input type="text" name="contact-form[sender_name]" value="<?php echo esc_attr($contact_form['sender_name']);?>" placeholder="<?php esc_html_e('Enter sender name', 'mystickyelements');?>" />
 											<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
 												<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 												<p><?php esc_html_e("The name that will appear as the sender name in your email", 'mystickyelements'); ?></p>
@@ -762,7 +762,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 			
 			<div id='contact_form_field_open' class='contact-form-field-open contact-form-setting-popup-open' style="display:none;">
 				<div class='contact-form-popup-label'>
-					<h3><?php esc_html_e("Choose which custom field you'd like to add"); ?></h3>
+					<h3><?php esc_html_e("Choose which custom field you'd like to add", 'mystickyelements'); ?></h3>
 					<div class="contact-form-field-select-wrap mystickyelements-free-version">
 						<label class="contact-form-field-select">
 							<input type="radio" name="radio_btn" />
@@ -825,11 +825,11 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 					<input type="text" name="contact-form[dropdown-placeholder]"
 							class="contact-form-dropdown-select"
 							value="<?php if(isset($contact_form['dropdown-placeholder']) && $contact_form['dropdown-placeholder'] != '' ){ echo esc_attr(@$contact_form['dropdown-placeholder']); }else{ echo "- Select -"; } ?>"
-							placeholder="<?php esc_html_e('Select...', 'mystickyelement'); ?>"/>
+							placeholder="<?php esc_html_e('Select...', 'mystickyelements'); ?>"/>
 					<div class="contact-form-dropdown-option">
 						<div class="option-value-field">
 							<span class="move-icon"></span>
-							<input type="text" name="contact-form[dropdown-option][]" value=""/> <span class="add-dropdown-option"><?php esc_html_e('Add', 'mystickyelement'); ?></span>
+							<input type="text" name="contact-form[dropdown-option][]" value=""/> <span class="add-dropdown-option"><?php esc_html_e('Add', 'mystickyelements'); ?></span>
 						</div>
 						<?php if (isset($contact_form['dropdown-option']) && !empty($contact_form['dropdown-option'])) :
 							foreach ($contact_form['dropdown-option'] as $option) :
@@ -854,13 +854,13 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 			
 			<div class="contactform-sendleads-upgrade-popup mystickyelements-action-popup-open mystickyelements-blue-popup" style="display:none;">
 				<div class="popup-ui-widget-header">
-					<span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e("Upgrade to pro for more options","mystickyelement");?></span>
+					<span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e("Upgrade to pro for more options",'mystickyelements');?></span>
 					<span class="close-dialog" data-from="sendleads-upgrade">						
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#31373D" d="M22.238 18.004l9.883-9.883c1.172-1.171 1.172-3.071 0-4.243-1.172-1.171-3.07-1.171-4.242 0l-9.883 9.883-9.883-9.882c-1.171-1.172-3.071-1.172-4.243 0-1.171 1.171-1.171 3.071 0 4.243l9.883 9.882-9.907 9.907c-1.171 1.171-1.171 3.071 0 4.242.585.586 1.354.879 2.121.879s1.536-.293 2.122-.879l9.906-9.906 9.882 9.882c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879c1.172-1.171 1.172-3.071 0-4.242l-9.881-9.883z"/></svg>
 					</span>
 				</div>
 				<div class="ui-widget-content">
-					<p><?php esc_html_e("The free version allows you to save the form submissions (form leads) locally to your website. If you want to send leads to your email, or automatically sync leads to Mailchimp or Mailpoet, consider upgrading to the premium version.","mystickyelement");?></p>
+					<p><?php esc_html_e("The free version allows you to save the form submissions (form leads) locally to your website. If you want to send leads to your email, or automatically sync leads to Mailchimp or Mailpoet, consider upgrading to the premium version.",'mystickyelements');?></p>
 				</div>
 				<div class="popup-ui-dialog-buttonset">
 					<a href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements-upgrade")); ?>" class="new-upgrade-button" target="blank">Upgrade to Pro 🎉</a>

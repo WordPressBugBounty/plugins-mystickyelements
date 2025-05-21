@@ -58,29 +58,25 @@ if ( !$furl){
 							</select>
 						</div>
 					</div>
+				
+					
 					<div class="mystickyelements-content-section-wrap">
-						<span class="myStickyelements-label" ><?php _e( 'Position on desktop', 'mystickyelements' );?></span>
+						<span class="myStickyelements-label" for="myStickyelements-inputs-position" ><?php _e( 'Position on desktop', 'mystickyelements' );?></span>
 						<div class="myStickyelements-inputs">
-							<ul>
-								<li>
-									<label>
-										<input type="radio" name="general-settings[position]" value="left" <?php checked( @$general_settings['position'], 'left' );?> />
-										<?php _e( 'Left', 'mystickyelements' );?>
-									</label>
-								</li>
-								<li class="myStickyelements-pos-rtl">
-									<label>
-										<input type="radio" name="general-settings[position]" value="right" <?php checked( @$general_settings['position'], 'right' );?> />
-										<?php _e( 'Right', 'mystickyelements' );?>
-									</label>
-								</li>
-								<li>
-									<label>
-										<input type="radio" name="general-settings[position]" value="bottom" <?php checked( @$general_settings['position'], 'bottom' );?> />
-										<?php _e( 'Bottom', 'mystickyelements' );?>
-									</label>
-								</li>
-							</ul>
+							<?php
+								$desktop_position = array(
+									'left' => __('Left', 'mystickyelements'),
+									'right' => __('Right', 'mystickyelements'),
+									'bottom' => __('Bottom', 'mystickyelements'),
+								);
+								$selected_desktop_position = (isset($general_settings['position']) && $general_settings['position'] != '') ? $general_settings['position'] : 'left';
+							?>
+							<select id="myStickyelements-inputs-position" name="general-settings[position]" >
+								<?php foreach( $desktop_position as $key => $value ): ?>
+									<option value="<?php echo esc_attr($key); ?>" <?php selected( @$selected_desktop_position, $key ); ?>><?php echo esc_html($value); ?></option>
+								<?php endforeach; ?>
+							</select>
+							 
 						</div>
 					</div>
 					<div class="myStickyelements-position-on-screen-wrap" style="<?php echo esc_attr((isset($general_settings['position']) && $general_settings['position'] != 'bottom') ? 'display: none;' : ''); ?>">
@@ -97,34 +93,23 @@ if ( !$furl){
 						</div>
 					</div>
 					<div class="mystickyelements-content-section-wrap">
-						<span class="myStickyelements-label" ><?php _e( 'Position on mobile', 'mystickyelements' );?></span>
+						<span class="myStickyelements-label" for="myStickyelements-inputs-position_mobile" ><?php _e( 'Position on mobile', 'mystickyelements' );?></span>
 						<div class="myStickyelements-inputs">
-							<ul>
-								<li>
-									<label>
-										<input type="radio" name="general-settings[position_mobile]" value="left" <?php checked( @$general_settings['position_mobile'], 'left' );?> />
-										<?php _e( 'Left', 'mystickyelements' );?>
-									</label>
-								</li>
-								<li class="myStickyelements-pos-rtl">
-									<label>
-										<input type="radio" name="general-settings[position_mobile]" value="right" <?php checked( @$general_settings['position_mobile'], 'right' );?> />
-										<?php _e( 'Right', 'mystickyelements' );?>
-									</label>
-								</li>
-								<li>
-									<label>
-										<input type="radio" name="general-settings[position_mobile]" value="top" <?php checked( @$general_settings['position_mobile'], 'top' );?> />
-										<?php _e( 'Top', 'mystickyelements' );?>
-									</label>
-								</li>
-								<li>
-									<label>
-										<input type="radio" name="general-settings[position_mobile]" value="bottom" <?php checked( @$general_settings['position_mobile'], 'bottom' );?> />
-										<?php _e( 'Bottom', 'mystickyelements' );?>
-									</label>
-								</li>
-							</ul>
+							<?php
+								$position_mobiles = array(
+									'left' => __('Left', 'mystickyelements'),
+									'right' => __('Right', 'mystickyelements'),
+									'top' => __('Top', 'mystickyelements'),
+									'bottom' => __('Bottom', 'mystickyelements'),
+								);
+								$selected_position_mobile = (isset($general_settings['position']) && $general_settings['position'] != '') ? $general_settings['position'] : 'left';
+							?>
+							<select id="myStickyelements-inputs-position_mobile" name="general-settings[position_mobile]" >
+								<?php foreach( $position_mobiles as $key => $value ): ?>
+									<option value="<?php echo esc_attr($key); ?>" <?php selected( @$selected_position_mobile, $key ); ?>><?php echo esc_html($value); ?></option>
+								<?php endforeach; ?>
+							</select>
+							 
 						</div>
 					</div>
 					
@@ -157,35 +142,7 @@ if ( !$furl){
 							</div>
 						</div>
 						
-						<div class="mystickyelements-content-section-wrap" id="mystickyelements-tab-hover-bebahvior" >
-							<span class="myStickyelements-label" >
-							<label>
-								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
-									<p><?php esc_html_e("When turned on (on mobile), the first tap, will show the hover text first and it'll stay until the second tap", 'mystickyelements'); ?></p>
-								</div>
-								<?php _e( 'Improved mobile behavior', 'mystickyelements' );?>
-							</label>
-							
-							</span>
-							<div class="myStickyelements-inputs">
-								<ul>
-									<li>
-										<label>
-											<input type="radio" name="general-settings[mobile_behavior]" value="disable" <?php checked( @$general_settings['mobile_behavior'], 'disable' );?> />
-											<?php _e( 'First tap opens link', 'mystickyelements' );?>
-										</label>
-									</li>
-									<li>
-										<label>
-											<input type="radio" name="general-settings[mobile_behavior]" value="enable" <?php checked( @$general_settings['mobile_behavior'], 'enable' );?> />
-											<?php _e( 'First tap opens flyout', 'mystickyelements' );?>
-										</label>
-									</li>
-									
-								</ul>
-							</div>
-						</div>
+						
 						<div class="mystickyelements-content-section-wrap" id="mystickyelements-tab-flyout" style="display:none;">
 							<span class="myStickyelements-label" >
 							<label>
@@ -215,25 +172,7 @@ if ( !$furl){
 							</div>
 						</div>
 					
-						<div class="mystickyelements-content-section-wrap">
-							<span class="myStickyelements-label" >
-								<label for="myStickyelements-google-alanytics-enabled">
-									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
-										<p><?php esc_html_e("If enabled, you can track clicks to your widget using ", 'mystickyelements'); ?><a href='https://premio.io/help/mystickyelements/how-do-i-track-clicks-using-google-analytics/' target='_blank'><?php esc_html_e("Google Analytics","mystickyelements"); ?></a></p>
-									</div>
-									<?php _e( 'Google Analytics Events', 'mystickyelements' );?>
-								</label>
-								
-								<span class="upgrade-myStickyelements"><a href="<?php echo esc_url($upgrade_url); ?>" target="_blank"><i class="fas fa-lock"></i><?php _e('UPGRADE NOW', 'mystickyelements'); ?></a></span>
-							</span>
-							<div class="myStickyelements-inputs myStickyelements-label">
-								<label for="myStickyelements-google-alanytics-enabled" class="myStickyelements-switch" >
-									<input type="checkbox" id="myStickyelements-google-alanytics-enabled"name="general-settings[google_analytics]" value="1" <?php checked(@$general_settings['google_analytics'], '1'); ?>disabled />
-									<span class="slider round"></span>
-								</label>
-							</div>
-						</div>
+						
 					
 						<div class="mystickyelements-content-section-wrap">
 							<span class="myStickyelements-label" >
@@ -320,7 +259,7 @@ if ( !$furl){
 							<span class="myStickyelements-label" >
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip" style="margin-top: 5px;">
 									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
-									<p><?php esc_html_e("When the visitor opens the website, the selected channel tab or contact form will be opened by default. If the visitor closes the tab, hovers over another channel icon, or visits the channel link it would remain closed.","myStickyelements");?></p>
+									<p><?php esc_html_e("When the visitor opens the website, the selected channel tab or contact form will be opened by default. If the visitor closes the tab, hovers over another channel icon, or visits the channel link it would remain closed.",'mystickyelements');?></p>
 								</div>
 								<label for="myStickyelements-open_tab_default"><?php _e( 'Open tab by default', 'mystickyelements' );?></label>
 							</span>
@@ -354,12 +293,40 @@ if ( !$furl){
 								</select>
 							</div>
 						</div>
+							
+						<div class="mystickyelements-content-section-wrap">
+							<span class="myStickyelements-label" >
+								<label for="myStickyelements-inputs-attention-effect">
+									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
+										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<p>
+											<img src="<?php echo MYSTICKYELEMENTS_URL ?>/images/mse_attention_effects.gif"  alt="MSE Attention Effects" />
+											<br>
+											<br>
+											<?php esc_html_e("Grab your visitors' attention and increase interaction rates with subtle animations. Choose how your widget appears when the page loads.", 'mystickyelements'); ?>
+											
+											
+											
+										</p>
+									</div>
+									<?php _e( 'Attention Effect', 'mystickyelements' );?>
+								</label>
+								<span class="upgrade-myStickyelements"><a href="<?php echo esc_url($upgrade_url); ?>" target="_blank"><i class="fas fa-lock"></i><?php _e('UPGRADE NOW', 'mystickyelements'); ?></a></span>
+								
+							</span>
+							<div class="myStickyelements-inputs inputs-attention-effect  myStickyelements-label <?php echo esc_attr($is_pro_active?"is-pro":"not-pro") ?>">
+							
+								<select id="myStickyelements-inputs-attention-effect" disabled name="general-settings[attention_effect]" >
+									<option value=""><?php _e( 'Select Attention Effect', 'mystickyelements' );?></option> 
+								</select> 
+							</div>
+						</div> 
 						
 						<div class="mystickyelements-content-section-wrap">
 							<span class="myStickyelements-label">
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip" style="margin-top: 5px;">
 									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
-									<p><?php esc_html_e("Your My Sticky Elements widget will first appear to the user according to the selected trigger. After the widget appeared for the first time, it'll always be visible on-load - once the user is aware of the widget, the user expects it to always appear","myStickyelements");?></p>
+									<p><?php esc_html_e("Your My Sticky Elements widget will first appear to the user according to the selected trigger. After the widget appeared for the first time, it'll always be visible on-load - once the user is aware of the widget, the user expects it to always appear",'mystickyelements');?></p>
 								</div>
 								<label for="myStickyelements-time-delay"><?php esc_html_e('Display after', 'mystickyelements'); ?></label>
 								
@@ -378,7 +345,7 @@ if ( !$furl){
 							<span class="myStickyelements-label">
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip" style="margin-top: 5px;">
 									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
-									<p><?php esc_html_e("Set a scroll percentage after which the widget becomes visible","myStickyelements");?></p>
+									<p><?php esc_html_e("Set a scroll percentage after which the widget becomes visible",'mystickyelements');?></p>
 								</div>
 								<label for="myStickyelements-time-delay"><?php esc_html_e('Visible after scrolling', 'mystickyelements'); ?></label>
 								
@@ -606,123 +573,7 @@ if ( !$furl){
 					</div>
 					<!-- End Date Scheduling -->
 					
-					<!-- Traffic Source -->
-					<!--<div class="more-setting-rows"> -->
-						<div class="mystickyelements-content-section-wrap">
-							<span class="myStickyelements-label myStickyelements-extra-label" >
-								<label for="traffic-add-other-source">
-									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
-										<p><?php esc_html_e("Show the widget only to visitors who come from specific traffic sources including direct traffic, social networks, search engines, Google Ads, or any other traffic source", 'mystickyelements'); ?></p>
-									</div>
-									<?php _e( "Traffic source", 'mystickyelements' );?>
-								</label>
-								<span class="upgrade-myStickyelements"><a href="<?php echo esc_url($upgrade_url); ?>" target="_blank"><i class="fas fa-lock"></i><?php _e('UPGRADE NOW', 'mystickyelements'); ?></a></span>
-							</span>
-							<div class="myStickyelements-show-on-right myStickyelements-inputs myStickyelements-traffic-source-right">
-								<div class=" myStickyelements-label myStickyelements-traffic-source-inputs traffic-source-option not-pro" style="display:none;">
-									<div class="traffic-direct-source clear">
-										<label class="myStickyelements-switch">
-											<input type="checkbox" id="myStickyelements-direct-traffic-source" value="1"  disabled />
-											<span class="slider round"></span>
-										</label>
-										<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-											<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
-											<p><?php esc_html_e("Show the widget to visitors who arrived to your website from direct traffic", 'mystickyelements'); ?></p>
-										</div>
-										<label for="myStickyelements-direct-traffic-source">
-											Direct visit
-											
-										</label>
-									</div>
-									<br />
-									<div class="traffic-social-network-source clear">
-										<label class="myStickyelements-switch">
-											<input type="checkbox" id="myStickyelements-social-network-traffic-source" value="1" disabled />
-											<span class="slider round"></span>
-										</label>
-										<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-											<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
-											<p><?php esc_html_e("Show the widget to visitors who arrived to your website from social networks including: Facebook, Twitter, Pinterest, Instagram, Google+, LinkedIn, Delicious, Tumblr, Dribbble, StumbleUpon, Flickr, Plaxo, Digg and more", 'mystickyelements'); ?></p>
-										</div>
-										<label for="myStickyelements-social-network-traffic-source">
-											Social networks
-											
-										</label>
-									</div>
-									<br />
-									<div class="traffic-search-engines-source clear">
-										<label class="myStickyelements-switch">
-											<input type="checkbox" id="myStickyelements-search-engines-traffic-source" value="1" disabled />
-											<span class="slider round"></span>
-										</label>
-										<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-											<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
-											<p><?php esc_html_e("Show the widget to visitors who arrived from search engines including: Google, Bing, Yahoo!, Yandex, AOL, Ask, WOW,  WebCrawler, Baidu and more", 'mystickyelements'); ?></p>
-										</div>
-										<label for="myStickyelements-search-engines-traffic-source">
-											Search engines
-											
-										</label>
-									</div>
-									<br />
-									<div class="traffic-google-ads-source clear">
-										<label class="myStickyelements-switch">
-											<input type="checkbox" id="myStickyelements-google-ads-traffic-source" value="1" disabled />
-											<span class="slider round"></span>
-										</label>
-										<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-											<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
-											<p><?php esc_html_e("Show the widget to visitors who arrived from search engines including: Google, Bing, Yahoo!, Yandex, AOL, Ask, WOW,  WebCrawler, Baidu and more", 'mystickyelements'); ?></p>
-										</div>
-										<label for="myStickyelements-google-ads-traffic-source">
-										
-											Google Ads
-											
-										</label>
-									</div>
-									<br />
-									<div class="traffic-other-source clear">
-										<div class="other-source-features clear">
-											<table id="custom-traffic-source-lists" width="100%">
-												<thead>
-													<tr>
-														<th colspan="3">Specific URL</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															<select disabled >
-																<option value="contain" >Contains</option>
-																<option value="not_contain" >Not contains</option>
-															</select>
-														</td>
-														<td>
-															<input type="text" value="" placeholder="http://www.example.com" disabled />
-														</td>
-														<td>
-															<div class="day-buttons">
-															</div>
-														</td>
-													</tr>
-												</tbody>
-											</table>							
-										</div>
-									</div>
-									<span class="upgrade-myStickyelements">
-										<a href="<?php echo esc_url($upgrade_url); ?>" target="_blank">
-											<i class="fas fa-lock"></i><?php _e('UPGRADE NOW', 'mystickyelements'); ?>
-										</a>
-									</span>
-								</div>
-								<a href="javascript:void(0);" class="traffic-add-other-source create-rule" id="traffic-add-other-source"><?php esc_html_e( "Add Rule", "mystickyelements" );?></a>
-								<a href="javascript:void(0);" class="create-rule remove-rule" id="remove-traffic-add-other-source"  style="display:none"><?php esc_html_e( "Remove Rules", "mystickyelements" );?></a>
-							</div>
-						</div>
-					<!-- </div> -->
-					
-					<!-- END Traffic Source -->
+				
 					
 					<!--<div class="more-setting-rows"> -->
 						<div class="mystickyelements-content-section-wrap mystickyelements-content-section-wrap">
@@ -854,6 +705,174 @@ if ( !$furl){
 						</div>
 					</div>
 					<div class="more-setting-rows">
+						<div class="mystickyelements-content-section-wrap" id="mystickyelements-tab-hover-bebahvior" >
+							<span class="myStickyelements-label" >
+							<label>
+								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
+									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+									<p><?php esc_html_e("When turned on (on mobile), the first tap, will show the hover text first and it'll stay until the second tap", 'mystickyelements'); ?></p>
+								</div>
+								<?php _e( 'Improved mobile behavior', 'mystickyelements' );?>
+							</label>
+							
+							</span>
+							<div class="myStickyelements-inputs">
+								<ul>
+									<li>
+										<label>
+											<input type="radio" name="general-settings[mobile_behavior]" value="disable" <?php checked( @$general_settings['mobile_behavior'], 'disable' );?> />
+											<?php _e( 'First tap opens link', 'mystickyelements' );?>
+										</label>
+									</li>
+									<li>
+										<label>
+											<input type="radio" name="general-settings[mobile_behavior]" value="enable" <?php checked( @$general_settings['mobile_behavior'], 'enable' );?> />
+											<?php _e( 'First tap opens flyout', 'mystickyelements' );?>
+										</label>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="more-setting-rows">
+						<div class="mystickyelements-content-section-wrap">
+							<span class="myStickyelements-label" >
+								<label for="myStickyelements-google-alanytics-enabled">
+									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
+										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<p><?php esc_html_e("If enabled, you can track clicks to your widget using ", 'mystickyelements'); ?><a href='https://premio.io/help/mystickyelements/how-do-i-track-clicks-using-google-analytics/' target='_blank'><?php esc_html_e("Google Analytics","mystickyelements"); ?></a></p>
+									</div>
+									<?php _e( 'Google Analytics Events', 'mystickyelements' );?>
+								</label>
+								
+								<span class="upgrade-myStickyelements"><a href="<?php echo esc_url($upgrade_url); ?>" target="_blank"><i class="fas fa-lock"></i><?php _e('UPGRADE NOW', 'mystickyelements'); ?></a></span>
+							</span>
+							<div class="myStickyelements-inputs myStickyelements-label">
+								<label for="myStickyelements-google-alanytics-enabled" class="myStickyelements-switch" >
+									<input type="checkbox" id="myStickyelements-google-alanytics-enabled"name="general-settings[google_analytics]" value="1" <?php checked(@$general_settings['google_analytics'], '1'); ?>disabled />
+									<span class="slider round"></span>
+								</label>
+							</div>
+						</div>
+					</div>
+						<!-- Traffic Source -->
+					<div class="more-setting-rows">
+						<div class="mystickyelements-content-section-wrap">
+							<span class="myStickyelements-label myStickyelements-extra-label" >
+								<label for="traffic-add-other-source">
+									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
+										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<p><?php esc_html_e("Show the widget only to visitors who come from specific traffic sources including direct traffic, social networks, search engines, Google Ads, or any other traffic source", 'mystickyelements'); ?></p>
+									</div>
+									<?php _e( "Traffic source", 'mystickyelements' );?>
+								</label>
+								<span class="upgrade-myStickyelements"><a href="<?php echo esc_url($upgrade_url); ?>" target="_blank"><i class="fas fa-lock"></i><?php _e('UPGRADE NOW', 'mystickyelements'); ?></a></span>
+							</span>
+							<div class="myStickyelements-show-on-right myStickyelements-inputs myStickyelements-traffic-source-right">
+								<div class=" myStickyelements-label myStickyelements-traffic-source-inputs traffic-source-option not-pro" style="display:none;">
+									<div class="traffic-direct-source clear">
+										<label class="myStickyelements-switch">
+											<input type="checkbox" id="myStickyelements-direct-traffic-source" value="1"  disabled />
+											<span class="slider round"></span>
+										</label>
+										<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
+											<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+											<p><?php esc_html_e("Show the widget to visitors who arrived to your website from direct traffic", 'mystickyelements'); ?></p>
+										</div>
+										<label for="myStickyelements-direct-traffic-source">
+											Direct visit
+											
+										</label>
+									</div>
+									<br />
+									<div class="traffic-social-network-source clear">
+										<label class="myStickyelements-switch">
+											<input type="checkbox" id="myStickyelements-social-network-traffic-source" value="1" disabled />
+											<span class="slider round"></span>
+										</label>
+										<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
+											<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+											<p><?php esc_html_e("Show the widget to visitors who arrived to your website from social networks including: Facebook, Twitter, Pinterest, Instagram, Google+, LinkedIn, Delicious, Tumblr, Dribbble, StumbleUpon, Flickr, Plaxo, Digg and more", 'mystickyelements'); ?></p>
+										</div>
+										<label for="myStickyelements-social-network-traffic-source">
+											Social networks
+											
+										</label>
+									</div>
+									<br />
+									<div class="traffic-search-engines-source clear">
+										<label class="myStickyelements-switch">
+											<input type="checkbox" id="myStickyelements-search-engines-traffic-source" value="1" disabled />
+											<span class="slider round"></span>
+										</label>
+										<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
+											<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+											<p><?php esc_html_e("Show the widget to visitors who arrived from search engines including: Google, Bing, Yahoo!, Yandex, AOL, Ask, WOW,  WebCrawler, Baidu and more", 'mystickyelements'); ?></p>
+										</div>
+										<label for="myStickyelements-search-engines-traffic-source">
+											Search engines
+											
+										</label>
+									</div>
+									<br />
+									<div class="traffic-google-ads-source clear">
+										<label class="myStickyelements-switch">
+											<input type="checkbox" id="myStickyelements-google-ads-traffic-source" value="1" disabled />
+											<span class="slider round"></span>
+										</label>
+										<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
+											<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+											<p><?php esc_html_e("Show the widget to visitors who arrived from search engines including: Google, Bing, Yahoo!, Yandex, AOL, Ask, WOW,  WebCrawler, Baidu and more", 'mystickyelements'); ?></p>
+										</div>
+										<label for="myStickyelements-google-ads-traffic-source">
+										
+											Google Ads
+											
+										</label>
+									</div>
+									<br />
+									<div class="traffic-other-source clear">
+										<div class="other-source-features clear">
+											<table id="custom-traffic-source-lists" width="100%">
+												<thead>
+													<tr>
+														<th colspan="3">Specific URL</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															<select disabled >
+																<option value="contain" >Contains</option>
+																<option value="not_contain" >Not contains</option>
+															</select>
+														</td>
+														<td>
+															<input type="text" value="" placeholder="http://www.example.com" disabled />
+														</td>
+														<td>
+															<div class="day-buttons">
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>							
+										</div>
+									</div>
+									<span class="upgrade-myStickyelements">
+										<a href="<?php echo esc_url($upgrade_url); ?>" target="_blank">
+											<i class="fas fa-lock"></i><?php _e('UPGRADE NOW', 'mystickyelements'); ?>
+										</a>
+									</span>
+								</div>
+								<a href="javascript:void(0);" class="traffic-add-other-source create-rule" id="traffic-add-other-source"><?php esc_html_e( "Add Rule", "mystickyelements" );?></a>
+								<a href="javascript:void(0);" class="create-rule remove-rule" id="remove-traffic-add-other-source"  style="display:none"><?php esc_html_e( "Remove Rules", "mystickyelements" );?></a>
+							</div>
+						</div>
+					</div> 
+					<!-- END Traffic Source -->
+					<div class="more-setting-rows">
 						<div class="mystickyelements-content-section-wrap">
 							<span class="myStickyelements-label" >
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
@@ -867,7 +886,13 @@ if ( !$furl){
 								<label for="myStickyelements-form_open_automatic" class="myStickyelements-switch" >
 									<input type="checkbox" id="myStickyelements-form_open_automatic" name="general-settings[form_open_automatic]"<?php checked( @$general_settings['form_open_automatic'], '1' );?>  value="1" />
 									<span class="slider round"></span>
-								</label>												
+								</label>
+								&nbsp;
+								<span class="input-form-open-automatic-sec input-line-section" style="margin-left: 10px;margin-top: -8px; display:<?php echo ( isset($general_settings['form_open_automatic']) && $general_settings['form_open_automatic'] == 1 ) ? 'inline-block' : 'none';?>">
+									<?php esc_html_e("Display after ",'mystickyelements');?>
+									<input type="number" style="width: 70px;"  name="general-settings[form_open_delay_sec]"  min="0" value="<?php echo ( isset($general_settings['form_open_delay_sec']) && $general_settings['form_open_delay_sec'] != '' ) ? $general_settings['form_open_delay_sec'] : '0' ; ?>">
+									<?php esc_html_e(" seconds on the page",'mystickyelements'); ?>
+								</span>
 							</div>
 						</div>
 					</div>

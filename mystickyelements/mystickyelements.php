@@ -3,7 +3,7 @@
 Plugin Name: myStickyElements
 Plugin URI: https://premio.io/
 Description: myStickyElements is simple yet very effective plugin. It is perfect to fill out usually unused side space on webpages with some additional messages, videos, social widgets ...
-Version: 2.2.8
+Version: 2.2.9
 Author: Premio
 Author URI: https://premio.io/
 Domain Path: /languages
@@ -14,7 +14,10 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 
 define('MYSTICKYELEMENTS_URL', plugins_url('/', __FILE__));  // Define Plugin URL
 define('MYSTICKYELEMENTS_PATH', plugin_dir_path(__FILE__));  // Define Plugin Directory Path
-define("MY_STICKY_ELEMENT_VERSION", "2.2.8");
+define("MY_STICKY_ELEMENT_VERSION", "2.2.9");
+if(!defined('MSE_DEV_MODE')) {
+    define('MSE_DEV_MODE', false);
+}
 /*
  * redirect my sticky element setting page after plugin activated
  */
@@ -89,7 +92,7 @@ class MyStickyElementsPage
     }
 
     public function create_admin_page() {
-
+		
 
    // Set class property
    // $all_options = array (
@@ -1224,8 +1227,9 @@ class MyStickyElementsPage
 
 	public  function mw_enqueue_color_picker(  )
 	{
+        $min = MSE_DEV_MODE ? '' : '.min';
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_script( 'my-script-handle', plugins_url('js/iris-script.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
+		wp_enqueue_script( 'my-script-handle', plugins_url('js/iris-script'.esc_attr($min).'.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
 	}
 
 
@@ -2765,13 +2769,15 @@ function mystickyelements_script() {
 
 	$mysticky_options = get_option( 'mysticky_elements_options' );
 
+    $min = MSE_DEV_MODE ? '' : '.min';
+
 	if( wp_script_is( 'jquery' ) ) {
 	// do nothing
 	} else {
 	wp_enqueue_script( 'jquery' );
 	}
     //wp_enqueue_script( 'mystickyelements', 'https://code.jquery.com/jquery-3.5.0.js',false,'1.0.0', true );
-	wp_register_script('mystickyelements', WP_PLUGIN_URL. '/mystickyelements/js/mystickyelements.js', false,'1.0.0', true);
+	wp_register_script('mystickyelements', WP_PLUGIN_URL. '/mystickyelements/js/mystickyelements'.esc_attr($min).'.js', false,'1.0.0', true);
 	wp_enqueue_script( 'mystickyelements' );
 
 	// Localize mystickyelements.js script with myStickyElements options

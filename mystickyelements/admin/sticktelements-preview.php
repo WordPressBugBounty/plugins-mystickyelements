@@ -1,3 +1,18 @@
+
+<?php
+/**
+ * MSE Admin Preview
+ *
+ * @author  : Premio <contact@premio.io>
+ * @license : GPL2
+ * */
+
+if (defined('ABSPATH') === false) {
+    exit;
+}
+
+
+?>
 <div class="mystickyelements-preview" <?php if( isset($widget_tab_index) && $widget_tab_index == 'mystickyelements-live-chatway' ):?> style="display:none;" <?php endif;?>>
 	<div class="myStickyelements-preview-tab">
 		<div class="myStickyelements-preview-screen">
@@ -28,7 +43,7 @@
                 </div>
             </div>
 
-			<div class="mystickyelements-fixed <?php echo esc_attr((isset($contact_form['direction']) && $contact_form['direction'] == "RTL")?"is-rtl":"") ?> mystickyelements-position-<?php echo esc_attr($general_settings['position'])?> <?php echo esc_attr((isset($general_settings['position_on_screen']) && $general_settings['position_on_screen']!= '') ? 'mystickyelements-position-screen-' .$general_settings['position_on_screen'] : 'mystickyelements-position-screen-center');?> mystickyelements-position-mobile-<?php echo esc_attr($general_settings['position_mobile'])?> <?php echo esc_attr((isset($general_settings['widget-size']) && $general_settings['widget-size']!= '') ? 'mystickyelements-size-' .$general_settings['widget-size'] : 'mystickyelements-size-medium');?> <?php echo esc_attr((isset($general_settings['mobile-widget-size']) && $general_settings['mobile-widget-size']!= '') ? 'mystickyelements-mobile-size-' .$general_settings['mobile-widget-size'] : 'mystickyelements-mobile-size-medium');?> <?php echo esc_attr((isset($general_settings['entry-effect']) && $general_settings['entry-effect']!= '') ? 'mystickyelements-entry-effect-' .$general_settings['entry-effect'] : 'mystickyelements-entry-effect-slide-in');?> <?php echo esc_attr((isset($general_settings['templates']) && $general_settings['templates']!= '') ? 'mystickyelements-templates-' .$general_settings['templates'] : 'mystickyelements-templates-default');?>">
+			<div class="mystickyelements-fixed  <?php echo esc_attr((isset($contact_form['direction']) && $contact_form['direction'] == "RTL")?"is-rtl":"") ?> mystickyelements-position-<?php echo esc_attr($general_settings['position'])?> <?php echo esc_attr((isset($general_settings['position_on_screen']) && $general_settings['position_on_screen']!= '') ? 'mystickyelements-position-screen-' .$general_settings['position_on_screen'] : 'mystickyelements-position-screen-center');?> mystickyelements-position-mobile-<?php echo esc_attr($general_settings['position_mobile'])?> <?php echo esc_attr((isset($general_settings['widget-size']) && $general_settings['widget-size']!= '') ? 'mystickyelements-size-' .$general_settings['widget-size'] : 'mystickyelements-size-medium');?> <?php echo esc_attr((isset($general_settings['mobile-widget-size']) && $general_settings['mobile-widget-size']!= '') ? 'mystickyelements-mobile-size-' .$general_settings['mobile-widget-size'] : 'mystickyelements-mobile-size-medium');?> <?php echo esc_attr((isset($general_settings['entry-effect']) && $general_settings['entry-effect']!= '') ? 'mystickyelements-entry-effect-' .$general_settings['entry-effect'] : 'mystickyelements-entry-effect-slide-in');?> <?php echo esc_attr((isset($general_settings['templates']) && $general_settings['templates']!= '') ? 'mystickyelements-templates-' .$general_settings['templates'] : 'mystickyelements-templates-default');?> ">
 				<ul class="myStickyelements-preview-ul <?php if ( !isset($general_settings['minimize_tab'])) :?>remove-minimize <?php endif;?> ">
 					<?php if ( isset($general_settings['minimize_tab'])) :?>
 					<li class="mystickyelements-minimize">
@@ -248,26 +263,26 @@
 <div class="mystickyelements-action-popup-open  mystickyelements-action-popup-status" id="mystickyelements-load-google-enable-popup" style="display:none;">
 	
 	<div class="popup-ui-widget-header">
-		<span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e("Are you sure?",'mystickyelement')?></span>
+		<span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e("Are you sure?",'mystickyelements')?></span>
 		<span class="close-dialog" data-id="0" data-from='load-google-fonts'>&#10006</span>
 	</div>
 	<div id="widget-delete-confirm" class="ui-widget-content">
-		<p><?php _e("You're about to turn off loading Google fonts from Google server. By turning it off, fonts will not be loaded by default and you have to manually load them to use properly. Are you sure?",'mystickyelement');?></p>
+		<p><?php _e("You're about to turn off loading Google fonts from Google server. By turning it off, fonts will not be loaded by default and you have to manually load them to use properly. Are you sure?",'mystickyelements');?></p>
 	</div>
 	
-	<div class="popup-ui-dialog-buttonset"><button type="button" class="mystickyelement-cancel-widget-btn" id="mystickyelement-disable-loadfonts"  data-popupfrom=""><?php esc_html_e("Disable anyway",'mystickyelement');?></button><button type="button" class="mystickyelement-btn-orange mystickyelement-btn-ok" id="mystickyelement-button-keep-loadfonts"><?php esc_html_e('Keep using','mystickyelement');?></button></div>
+	<div class="popup-ui-dialog-buttonset"><button type="button" class="mystickyelement-cancel-widget-btn" id="mystickyelement-disable-loadfonts"  data-popupfrom=""><?php esc_html_e("Disable anyway",'mystickyelements');?></button><button type="button" class="mystickyelement-btn-orange mystickyelement-btn-ok" id="mystickyelement-button-keep-loadfonts"><?php esc_html_e('Keep using','mystickyelements');?></button></div>
 </div>
 <div id="mystickyelement-load-google-popup-overlay" class="stickyelement-overlay" style="display:none;"></div>
 <div class="mystickyelements-action-popup-open mystickyelements-missing-link-popup mystickyelements-action-popup-status" id="mystickyelements-missing-link-popup" style="display:none;">
 											
 	<div class="popup-ui-widget-header">
-		<span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e('Missing link','mystickyelement')?></span>
+		<span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e('Missing link','mystickyelements')?></span>
 		<span class="close-dialog" data-id="0" data-from='widget-social-link'>&#10006</span>
 	</div>
 	<div id="widget-delete-confirm" class="ui-widget-content">
 		<p>Please fill out the link information for all the selected channels</p>
 	</div>
 	
-	<div class="popup-ui-dialog-buttonset"><button type="button" class="mystickyelement-cancel-widget-btn mystickyelement-dolater-widget-btn"  data-popupfrom=""><?php esc_html_e("I'll do it later",'mystickyelement');?></button><button type="button" class="mystickyelement-btn-orange mystickyelement-btn-ok"><?php esc_html_e('Ok','mystickyelement');?></button></div>
+	<div class="popup-ui-dialog-buttonset"><button type="button" class="mystickyelement-cancel-widget-btn mystickyelement-dolater-widget-btn"  data-popupfrom=""><?php esc_html_e("I'll do it later",'mystickyelements');?></button><button type="button" class="mystickyelement-btn-orange mystickyelement-btn-ok"><?php esc_html_e('Ok','mystickyelements');?></button></div>
 </div>
 <div id="mystickyelement-missing-link-overlay" class="stickyelement-overlay" style="display:none;"></div>
