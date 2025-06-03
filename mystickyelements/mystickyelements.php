@@ -3,8 +3,9 @@
 Plugin Name: myStickyElements
 Plugin URI: https://premio.io/
 Description: myStickyElements is simple yet very effective plugin. It is perfect to fill out usually unused side space on webpages with some additional messages, videos, social widgets ...
-Version: 2.2.9
+Version: 2.3.0
 Author: Premio
+Text Domain: mystickyelements
 Author URI: https://premio.io/
 Domain Path: /languages
 License: GPLv3
@@ -14,7 +15,8 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 
 define('MYSTICKYELEMENTS_URL', plugins_url('/', __FILE__));  // Define Plugin URL
 define('MYSTICKYELEMENTS_PATH', plugin_dir_path(__FILE__));  // Define Plugin Directory Path
-define("MY_STICKY_ELEMENT_VERSION", "2.2.9");
+define('MYSTICKYELEMENTS_BASE', plugin_basename(__FILE__));
+define("MY_STICKY_ELEMENT_VERSION", "2.3.0");
 if(!defined('MSE_DEV_MODE')) {
     define('MSE_DEV_MODE', false);
 }
@@ -3709,6 +3711,7 @@ if ( !empty($mysticky_elements_options)) {
 	require_once MYSTICKYELEMENTS_PATH . 'mystickyelements-fonts.php';
 	require_once MYSTICKYELEMENTS_PATH . 'mystickyelements-fontawesome-icons.php'; 
 	require_once MYSTICKYELEMENTS_PATH . 'class-email-signup.php';
+	require_once MYSTICKYELEMENTS_PATH . 'class-help.php';
 	require_once MYSTICKYELEMENTS_PATH . 'mystickyelements-admin.php';
 	require_once MYSTICKYELEMENTS_PATH . 'mystickyelements-front.php';
 	require_once MYSTICKYELEMENTS_PATH . 'includes/class-affiliate.php';

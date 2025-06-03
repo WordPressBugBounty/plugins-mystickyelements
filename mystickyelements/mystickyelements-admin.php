@@ -4,7 +4,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 
 	class MyStickyElementsPage_pro {
 
-		public function __construct() {
+		public function __construct() { 
 			add_action( 'plugins_loaded', array( $this, 'mystickyelements_load_plugin_textdomain' ) );
 			add_action( 'admin_enqueue_scripts',  array( $this, 'mystickyelements_admin_enqueue_script' ), 99 );
 			add_action( 'admin_menu', array( $this, 'add_mystickyelement_plugin_page' ) );
@@ -15,14 +15,14 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 			add_action( 'wp_ajax_mystickyelement_widget_status', array( $this, 'mystickyelement_widget_status' ) );
 			add_action( 'wp_ajax_mystickyelement_widget_rename', array( $this, 'mystickyelement_widget_rename' ) );
 			add_action( 'wp_ajax_mystickyelement_widget_delete', array( $this, 'mystickyelement_widget_delete' ) );
-			add_filter( 'plugin_action_links_mystickyelements/mystickyelements.php', array( $this, 'settings_link' )  );
+			add_filter( 'plugin_action_links_'.MYSTICKYELEMENTS_BASE, array( $this, 'settings_link' )  );
 			
 			add_action( 'admin_footer', array( $this, 'mystickyelements_deactivate' ) );			
 			/* Send message to owner */
 			add_action( 'wp_ajax_mystickyelements_admin_send_message_to_owner', array( $this, 'mystickyelements_admin_send_message_to_owner' ) );
 			add_action( 'wp_ajax_mystickyelements_plugin_deactivate', array( $this, 'mystickyelements_plugin_deactivate' ) );
+ 
 
-           
 			add_action( 'wp_ajax_my_sticky_elements_bulks', array( $this, 'my_sticky_elements_bulks' ) );
 			
 			add_action( 'wp_ajax_mystickyelements_review_box', [$this, "mystickyelements_review_box"]);
@@ -34,7 +34,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 	
 		public function settings_link($links) {
 			$settings_link = '<a href="'.admin_url("admin.php?page=my-sticky-elements").'">Settings</a>';
-			$links['need_help'] = '<a href="https://premio.io/help/mystickyelements/?utm_source=pluginspage" target="_blank">'.__( 'Need help?', 'mystickyelements' ).'</a>';
+			$links['need_help'] = '<a href="https://wordpress.org/support/plugin/mystickyelements/" target="_blank">'.__( 'Need help?', 'mystickyelements' ).'</a>';
 			
 			$links['go_pro'] = '<a href="'.admin_url("admin.php?page=my-sticky-elements-upgrade").'" style="color: #FF5983; font-weight: bold; display: inline-block; border: solid 1px #FF5983; border-radius: 4px; padding: 0 5px;">'.__( 'Upgrade', 'mystickyelements' ).'</a>';			
 			
@@ -251,8 +251,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 				
 			} else {
 				include('mystickyelements-admin-widgetanalytics.php');				
-			}
-			require_once MYSTICKYELEMENTS_PATH . 'help.php';	
+			} 	
         }
 
 		public static function sanitize_options($value, $type = "") {
@@ -280,8 +279,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 				include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';			
 			} else {
 				include_once 'upgrade-to-pro.php';
-			}
-			require_once MYSTICKYELEMENTS_PATH . 'help.php';
+			} 
 		}		
 		
 		/*
@@ -705,8 +703,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 					<p><?php _e("The selected template doesn't support icons'text, please change to the Default templates. Would you like to publish it anyway?", 'mystickyelements' ); ?></p>
 				</div>
 				<?php
-				
-                require_once MYSTICKYELEMENTS_PATH . 'help.php';
+				 
 				
 				
 				if( isset($_GET['first_widget']) && $_GET['first_widget'] == 1 ) {
@@ -1240,8 +1237,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 				
 			} else {			
 				include( 'mystickyelements-admin-integration.php' );
-			}	
-			require_once MYSTICKYELEMENTS_PATH . 'help.php';			
+			}	 		
 		}
 
 		/*
@@ -1480,8 +1476,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 					</div>
 				</div>
 				<?php
-			}
-			require_once MYSTICKYELEMENTS_PATH . 'help.php';
+			} 
 		}
 		
 		public function mystickyelements_recommended_plugins(){
@@ -1491,8 +1486,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 				include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';			
 			} else {
 				include_once 'recommended-plugins.php';
-			}
-			require_once MYSTICKYELEMENTS_PATH . 'help.php';
+			} 
 		}
 		
 		public function mystickyelements_manage_chatway_plugin() {
@@ -1519,8 +1513,6 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 				/* Signup Form When first time activate plugin */				
 				include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';	
 				return;		
-			} else {
-				include_once 'recommended-plugins.php';
 			}
 
 			$upgrade_url = admin_url("admin.php?page=my-sticky-elements-upgrade");
@@ -1528,8 +1520,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 			<div class="mystickyelement-new-widget-wrap">
 				<?php include_once MYSTICKYELEMENTS_PATH . 'mystickyelements-widget.php';?>				
 			</div>
-			<?php
-			 require_once MYSTICKYELEMENTS_PATH . 'help.php';
+			<?php 
 		}
 
 		public function mystickyelement_delete_db_record(){
@@ -1657,7 +1648,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 				$response['error'] = 1;
 				$response['errors'] = $errorArray;
 			}
-			echo json_encode($response);
+			wp_send_json($response);
 			wp_die();
 		}
 		
@@ -2014,6 +2005,8 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 				wp_die();
 			}
 		}
+
+ 
 	}
 }
 
