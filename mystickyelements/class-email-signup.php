@@ -90,8 +90,8 @@ class MSE_SIGNUP_CLASS {
     public static function check_modal_status() {
         if(get_option(self::$update_message_option) == -1 || get_option(self::$update_message_option) == 2) {
             return false;
-        }
-
+        } 
+        
         $referer = isset($_SERVER['HTTP_REFERER']) ? sanitize_text_field($_SERVER['HTTP_REFERER']) : '';
 
         if (!str_contains($referer, 'my-sticky-elements')) {

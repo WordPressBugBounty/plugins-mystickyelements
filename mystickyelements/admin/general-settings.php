@@ -118,7 +118,7 @@ if ( !$furl){
 							<span class="myStickyelements-label" >
 								<label>
 									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 										<p><?php esc_html_e("Configure when the tabs will slide out with the full text", 'mystickyelements'); ?></p>
 									</div>
 									<?php _e( 'Open tabs when', 'mystickyelements' );?>
@@ -147,7 +147,7 @@ if ( !$furl){
 							<span class="myStickyelements-label" >
 							<label>
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+									<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 									<p><?php esc_html_e("If enabled, first click would open the flyout menu and second click would take users to the actual link", 'mystickyelements'); ?></p>
 								</div>
 								<?php _e( 'Flyout Option', 'mystickyelements' );?>
@@ -198,7 +198,7 @@ if ( !$furl){
 							<span class="myStickyelements-label" >
 								<label for="myStickyelements-load-google-fonts-enabled">
 									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 										<p><?php esc_html_e("Disabling the feature will stop loading the fonts from  Google's server and you have to manually load the font to make it work", 'mystickyelements'); ?></p>
 									</div>
 									<?php _e( 'Load Google fonts from Google (By default stays turned on)', 'mystickyelements' );?>
@@ -258,7 +258,7 @@ if ( !$furl){
 						<div class="mystickyelements-content-section-wrap">
 							<span class="myStickyelements-label" >
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip" style="margin-top: 5px;">
-									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+									<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 									<p><?php esc_html_e("When the visitor opens the website, the selected channel tab or contact form will be opened by default. If the visitor closes the tab, hovers over another channel icon, or visits the channel link it would remain closed.",'mystickyelements');?></p>
 								</div>
 								<label for="myStickyelements-open_tab_default"><?php _e( 'Open tab by default', 'mystickyelements' );?></label>
@@ -298,7 +298,7 @@ if ( !$furl){
 							<span class="myStickyelements-label" >
 								<label for="myStickyelements-inputs-attention-effect">
 									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 										<p>
 											<img src="<?php echo MYSTICKYELEMENTS_URL ?>/images/mse_attention_effects.gif"  alt="MSE Attention Effects" />
 											<br>
@@ -325,7 +325,7 @@ if ( !$furl){
 						<div class="mystickyelements-content-section-wrap">
 							<span class="myStickyelements-label">
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip" style="margin-top: 5px;">
-									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+									<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 									<p><?php esc_html_e("Your My Sticky Elements widget will first appear to the user according to the selected trigger. After the widget appeared for the first time, it'll always be visible on-load - once the user is aware of the widget, the user expects it to always appear",'mystickyelements');?></p>
 								</div>
 								<label for="myStickyelements-time-delay"><?php esc_html_e('Display after', 'mystickyelements'); ?></label>
@@ -344,7 +344,7 @@ if ( !$furl){
 						<div class="mystickyelements-content-section-wrap">
 							<span class="myStickyelements-label">
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip" style="margin-top: 5px;">
-									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+									<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 									<p><?php esc_html_e("Set a scroll percentage after which the widget becomes visible",'mystickyelements');?></p>
 								</div>
 								<label for="myStickyelements-time-delay"><?php esc_html_e('Visible after scrolling', 'mystickyelements'); ?></label>
@@ -367,7 +367,7 @@ if ( !$furl){
 							<span class="myStickyelements-label myStickyelements-extra-label">
 								<label>
 									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 										<p><?php esc_html_e("Show or don't show the widget on specific pages. You can use rules like contains, exact match, starts with, and ends with. WordPress pages, posts, tags, and categories are also options. If you have a WooCommerce store, you can choose any products or only the products that are currently on sale.", 'mystickyelements'); ?></p>
 									</div>
 									<?php _e( 'Show on Pages', 'mystickyelements' );?>
@@ -424,7 +424,7 @@ if ( !$furl){
 											</div>
 											<div class="myStickyelements-url-buttons">
 												<a class="myStickyelements-remove-rule"
-												   href="javascript:;">x</a>
+												   href="#">x</a>
 											</div>
 											<div class="clear"></div>
 										</div>
@@ -433,8 +433,8 @@ if ( !$furl){
 										<?php } ?>
 									</div>
 								</div>
-								<a href="javascript:void(0);" class="create-rule" id="create-rule" data-wrap="page-rules-wrap">Add Rule</a>
-								<a href="javascript:void(0);" class="create-rule remove-rule" id="remove-page-rules" data-wrap="page-rules-wrap" style="display:none" ><?php esc_html_e( "Remove Rules", "mystickyelements" );?></a>
+								<a href="#" class="create-rule" id="create-rule" data-wrap="page-rules-wrap">Add Rule</a>
+								<a href="#" class="create-rule remove-rule" id="remove-page-rules" data-wrap="page-rules-wrap" style="display:none" ><?php esc_html_e( "Remove Rules", "mystickyelements" );?></a>
 							</div>
 						</div>
 					</div>
@@ -446,7 +446,7 @@ if ( !$furl){
 							<span class="myStickyelements-label myStickyelements-extra-label">
 								<label>
 									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 										<p><?php esc_html_e("Display the widget on specific days and hours based on your opening days and hours", 'mystickyelements'); ?></p>
 									</div>
 									<?php _e( 'Days and Hours', 'mystickyelements' );?>
@@ -483,7 +483,7 @@ if ( !$furl){
 												</label>
 											</div>
 											<div class="myStickyelements-url-buttons">
-												<a class="myStickyelements-remove-rule" href="javascript:;">x</a>
+												<a class="myStickyelements-remove-rule" href="#">x</a>
 											</div>
 											<div class="clear"></div>
 										</div>
@@ -494,8 +494,8 @@ if ( !$furl){
 										</span>
 									</div>
 								</div>
-								<a href="javascript:void(0);" class="create-rule" id="create-data-and-time-rule" data-wrap="data-and-time-rule-wrap"><?php esc_html_e( "Add Rule", "mystickyelements" );?></a>
-								<a href="javascript:void(0);" class="create-rule remove-rule" id="remove-data-and-time-rule" data-wrap="data-and-time-rule-wrap" style="display:none" ><?php esc_html_e( "Remove Rules", "mystickyelements" );?></a>
+								<a href="#" class="create-rule" id="create-data-and-time-rule" data-wrap="data-and-time-rule-wrap"><?php esc_html_e( "Add Rule", "mystickyelements" );?></a>
+								<a href="#" class="create-rule remove-rule" id="remove-data-and-time-rule" data-wrap="data-and-time-rule-wrap" style="display:none" ><?php esc_html_e( "Remove Rules", "mystickyelements" );?></a>
 							</div>
 						</div>
 					</div>
@@ -505,7 +505,7 @@ if ( !$furl){
 						<span class="myStickyelements-label myStickyelements-extra-label" >
 							<label for="traffic-add-other-source">
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+									<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 									<p><?php esc_html_e('Set the date and time for when you want the widget to start showing and the time you would like it to stop showing. You can add up to 12 combinations of "on and off" triggers. This feature may be useful when you have an upcoming limited-time offer.', 'mystickyelements'); ?></p>
 								</div>
 								<?php esc_html_e( "Date Scheduling", 'mystickyelements' );?>
@@ -528,7 +528,7 @@ if ( !$furl){
 												<label>
 													<?php esc_html_e( 'Start date ', 'mystickyelements');?>
 													<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-														<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+														<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 														<p><?php esc_html_e('Schedule a date from which the widget will be displayed (the starting date is included)',"mystickyelements");?></p>
 													</div>
 												</label>
@@ -544,7 +544,7 @@ if ( !$furl){
 												<label>
 													<?php esc_html_e( 'End date ', 'mystickyelements');?>
 													<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-														<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+														<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 														<p><?php esc_html_e('Schedule a date from which the widget will stop being displayed (the end date is included)',"mystickyelements");?></p>
 													</div>
 												</label>
@@ -555,7 +555,7 @@ if ( !$furl){
 												<input autocomplete="off" type="text" class="myStickyelements-timepicker" id="date_schedule___count___end_time">
 											</div>
 											<div class="myStickyelements-url-buttons">
-												<a class="myStickyelements-remove-date-schedule" href="javascript:void(0);">x</a>
+												<a class="myStickyelements-remove-date-schedule" href="#">x</a>
 											</div>
 										</div>
 									</div>									
@@ -567,8 +567,8 @@ if ( !$furl){
 								</span>
 							</div>
 							
-							<a href="javascript:void(0);" class="create-rule" id="myStickyelements-date-schedling"><?php esc_html_e( "Add Rule", "mystickyelements" );?></a>
-							<a href="javascript:void(0);" class="create-rule remove-rule" id="remove-myStickyelements-date-schedling" style="display:none;"><?php esc_html_e( "Remove Rules", "mystickyelements" );?></a>
+							<a href="#" class="create-rule" id="myStickyelements-date-schedling"><?php esc_html_e( "Add Rule", "mystickyelements" );?></a>
+							<a href="#" class="create-rule remove-rule" id="remove-myStickyelements-date-schedling" style="display:none;"><?php esc_html_e( "Remove Rules", "mystickyelements" );?></a>
 						</div>
 					</div>
 					<!-- End Date Scheduling -->
@@ -580,7 +580,7 @@ if ( !$furl){
 							<span class="myStickyelements-label myStickyelements-extra-label" >
 								<label for="countries_list">
 									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 										<p><?php esc_html_e("Target your widget to specific countries. You can create different widgets for different countries", 'mystickyelements'); ?></p>
 									</div>
 									<?php _e( "Country targeting", 'mystickyelements' );?>
@@ -643,7 +643,7 @@ if ( !$furl){
                                     <input type="text" value=""name="general-settings[page_settings][__count__][value]" id="url_rules___count___value" <?php echo !$is_pro_active ? "disabled" : "" ?> />
                                 </div>
                                 <div class="myStickyelements-url-buttons">
-                                    <a class="myStickyelements-remove-rule" href="javascript:void(0);">x</a>
+                                    <a class="myStickyelements-remove-rule" href="#">x</a>
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -709,7 +709,7 @@ if ( !$furl){
 							<span class="myStickyelements-label" >
 							<label>
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+									<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 									<p><?php esc_html_e("When turned on (on mobile), the first tap, will show the hover text first and it'll stay until the second tap", 'mystickyelements'); ?></p>
 								</div>
 								<?php _e( 'Improved mobile behavior', 'mystickyelements' );?>
@@ -740,7 +740,7 @@ if ( !$furl){
 							<span class="myStickyelements-label" >
 								<label for="myStickyelements-google-alanytics-enabled">
 									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 										<p><?php esc_html_e("If enabled, you can track clicks to your widget using ", 'mystickyelements'); ?><a href='https://premio.io/help/mystickyelements/how-do-i-track-clicks-using-google-analytics/' target='_blank'><?php esc_html_e("Google Analytics","mystickyelements"); ?></a></p>
 									</div>
 									<?php _e( 'Google Analytics Events', 'mystickyelements' );?>
@@ -762,7 +762,7 @@ if ( !$furl){
 							<span class="myStickyelements-label myStickyelements-extra-label" >
 								<label for="traffic-add-other-source">
 									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 										<p><?php esc_html_e("Show the widget only to visitors who come from specific traffic sources including direct traffic, social networks, search engines, Google Ads, or any other traffic source", 'mystickyelements'); ?></p>
 									</div>
 									<?php _e( "Traffic source", 'mystickyelements' );?>
@@ -777,7 +777,7 @@ if ( !$furl){
 											<span class="slider round"></span>
 										</label>
 										<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-											<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+											<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 											<p><?php esc_html_e("Show the widget to visitors who arrived to your website from direct traffic", 'mystickyelements'); ?></p>
 										</div>
 										<label for="myStickyelements-direct-traffic-source">
@@ -792,7 +792,7 @@ if ( !$furl){
 											<span class="slider round"></span>
 										</label>
 										<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-											<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+											<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 											<p><?php esc_html_e("Show the widget to visitors who arrived to your website from social networks including: Facebook, Twitter, Pinterest, Instagram, Google+, LinkedIn, Delicious, Tumblr, Dribbble, StumbleUpon, Flickr, Plaxo, Digg and more", 'mystickyelements'); ?></p>
 										</div>
 										<label for="myStickyelements-social-network-traffic-source">
@@ -807,7 +807,7 @@ if ( !$furl){
 											<span class="slider round"></span>
 										</label>
 										<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-											<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+											<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 											<p><?php esc_html_e("Show the widget to visitors who arrived from search engines including: Google, Bing, Yahoo!, Yandex, AOL, Ask, WOW,  WebCrawler, Baidu and more", 'mystickyelements'); ?></p>
 										</div>
 										<label for="myStickyelements-search-engines-traffic-source">
@@ -822,7 +822,7 @@ if ( !$furl){
 											<span class="slider round"></span>
 										</label>
 										<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-											<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+											<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 											<p><?php esc_html_e("Show the widget to visitors who arrived from search engines including: Google, Bing, Yahoo!, Yandex, AOL, Ask, WOW,  WebCrawler, Baidu and more", 'mystickyelements'); ?></p>
 										</div>
 										<label for="myStickyelements-google-ads-traffic-source">
@@ -866,8 +866,8 @@ if ( !$furl){
 										</a>
 									</span>
 								</div>
-								<a href="javascript:void(0);" class="traffic-add-other-source create-rule" id="traffic-add-other-source"><?php esc_html_e( "Add Rule", "mystickyelements" );?></a>
-								<a href="javascript:void(0);" class="create-rule remove-rule" id="remove-traffic-add-other-source"  style="display:none"><?php esc_html_e( "Remove Rules", "mystickyelements" );?></a>
+								<a href="#" class="traffic-add-other-source create-rule" id="traffic-add-other-source"><?php esc_html_e( "Add Rule", "mystickyelements" );?></a>
+								<a href="#" class="create-rule remove-rule" id="remove-traffic-add-other-source"  style="display:none"><?php esc_html_e( "Remove Rules", "mystickyelements" );?></a>
 							</div>
 						</div>
 					</div> 
@@ -876,7 +876,7 @@ if ( !$furl){
 						<div class="mystickyelements-content-section-wrap">
 							<span class="myStickyelements-label" >
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+									<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 									<p><?php esc_html_e("The form will automatically open up on page load until the user closes the form or fills out the form", 'mystickyelements'); ?></p>
 								</div>
 								<label for="myStickyelements-form_open_automatic"><?php _e( 'Open the form automatically', 'mystickyelements' );?></label>
@@ -900,7 +900,7 @@ if ( !$furl){
 						<div class="mystickyelements-content-section-wrap">
 							<span class="myStickyelements-label">
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+									<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 									<p><?php esc_html_e("If enabled, a small black button will appear on top to minimize the widget", 'mystickyelements'); ?></p>
 								</div>
 								<label for="myStickyelements-minimize-tab">
@@ -921,7 +921,7 @@ if ( !$furl){
 						<div class="mystickyelements-content-section-wrap">
 							<span class="myStickyelements-label">
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+									<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 									<p><?php esc_html_e("If enabled, the widget will be hidden by default and will show an icon instead to restore to its full size", 'mystickyelements'); ?></p>
 								</div>
 								<label>
@@ -951,7 +951,7 @@ if ( !$furl){
 						<div class="mystickyelements-content-section-wrap">
 							<span class="myStickyelements-label" >
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+									<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 									<p><?php esc_html_e("Write custom CSS to customize the tabs", 'mystickyelements'); ?></p>
 								</div>
 								<label for="general-settings-tabs-css"><?php _e( 'Tabs CSS', 'mystickyelements' );?></label>
@@ -967,7 +967,7 @@ if ( !$furl){
 						<div class="mystickyelements-content-section-wrap">
 							<span class="myStickyelements-label" >
 								<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-									<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+									<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 									<p><?php esc_html_e("Write custom CSS to customize the form", 'mystickyelements'); ?></p>
 								</div>
 								<label> <?php _e('Form CSS','mystickyelements');?></label>

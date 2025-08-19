@@ -413,8 +413,8 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 						$post['contact_title_text'] = self::sanitize_options($contact['contact_title_text']);
 					}
 
-					if(isset($contact['send_leads'])) {
-						$post['send_leads'] = self::sanitize_options($contact['send_leads']);
+					if(isset($contact['send_leads'])) { 
+						$post['send_leads'] = array_map([self::class, 'sanitize_options'], $contact['send_leads']);
 					}
 
 					if(isset($contact['sent_to_mail'])) {
@@ -1167,7 +1167,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
                                         <label>
 											<?php _e('Pre Set Message', 'mystickyelements'); ?>
 											<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-												<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+												<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 												<p><?php esc_html_e('Add your own pre-set message that\'s automatically added to the user\'s message. You can also use merge tags and add the URL or the title of the current visitor\'s page. E.g. you can add the current URL of a product to the message so you know which product the visitor is talking about when the visitor messages you', 'mystickyelements'); ?></p>
 											</div>											
 										</label>

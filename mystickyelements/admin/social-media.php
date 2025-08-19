@@ -96,7 +96,7 @@ foreach ( $contact_field as $key=>$value ) {
 				
 				<div class="mystickyelement-social-buttons">
 					<div class="mystickyelement-more-less-channel">
-						<a id="myStickyelements-more-social" name="button_more_social_btn" href="javascript:void(0);">
+						<a id="myStickyelements-more-social" name="button_more_social_btn" href="#">
 							<svg class="more-icon" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M9 1.5L5 5.5L1 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
@@ -111,7 +111,7 @@ foreach ( $contact_field as $key=>$value ) {
 						<button id="myStickyelements-add-custom-social" name="button_add_custom_social" value = "<?php _e( 'Custom Channel', 'mystickyelements' ); ?>"><?php _e( 'Custom Channel', 'mystickyelements' ); ?><svg style="fill: #3F83F8;" id="plus-circle" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 36 36"><path id="Path_1928" data-name="Path 1928" d="M18,7.875A1.125,1.125,0,0,1,19.125,9v9A1.125,1.125,0,0,1,18,19.125H9a1.125,1.125,0,0,1,0-2.25h7.875V9A1.125,1.125,0,0,1,18,7.875Z" fill-rule="evenodd"/><path id="Path_1929" data-name="Path 1929" d="M16.875,18A1.125,1.125,0,0,1,18,16.875h9a1.125,1.125,0,0,1,0,2.25H19.125V27a1.125,1.125,0,0,1-2.25,0Z" fill-rule="evenodd"/><path id="Path_1930" data-name="Path 1930" d="M18,33.75A15.75,15.75,0,1,0,2.25,18,15.75,15.75,0,0,0,18,33.75ZM18,36A18,18,0,1,0,0,18,18,18,0,0,0,18,36Z" fill-rule="evenodd"/></svg></button>
 						<label>
 							<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-								<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+								<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 								<p><?php esc_html_e("Use custom channels to link to any web page, social service or even custom JavaScript code. ", 'mystickyelements'); ?><a href="https://premio.io/help/mystickyelements/how-do-i-create-a-custom-link-or-javascript-channel/" target="_blank"><?php esc_html_e('Learn more','mystickyelements');?></a></p>
 							</div><a class = "custom-social-channel-info-link" href="https://premio.io/help/mystickyelements/how-do-i-create-a-custom-link-or-javascript-channel/" target="_blank"><?php _e( 'How custom channels work?', 'mystickyelements' ); ?></a>
 						</label>
@@ -120,7 +120,7 @@ foreach ( $contact_field as $key=>$value ) {
 						<button id="myStickyelements-add-custom-shortcode" name="button_add_custom_shortcode" value = "<?php _e( 'Custom Shortcode', 'mystickyelements' ); ?>"  > <?php _e( 'Custom Shortcode', 'mystickyelements' ); ?><svg style="fill: #9061F9;" id="plus-circle" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 36 36"><path id="Path_1928" data-name="Path 1928" d="M18,7.875A1.125,1.125,0,0,1,19.125,9v9A1.125,1.125,0,0,1,18,19.125H9a1.125,1.125,0,0,1,0-2.25h7.875V9A1.125,1.125,0,0,1,18,7.875Z" fill-rule="evenodd"/><path id="Path_1929" data-name="Path 1929" d="M16.875,18A1.125,1.125,0,0,1,18,16.875h9a1.125,1.125,0,0,1,0,2.25H19.125V27a1.125,1.125,0,0,1-2.25,0Z" fill-rule="evenodd"/><path id="Path_1930" data-name="Path 1930" d="M18,33.75A15.75,15.75,0,1,0,2.25,18,15.75,15.75,0,0,0,18,33.75ZM18,36A18,18,0,1,0,0,18,18,18,0,0,0,18,36Z" fill-rule="evenodd"/></svg></button>
 						<label>
 							<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-								<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+								<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 								<p><?php esc_html_e("Add a custom shortcode/Iframe/HTML to your widget. Learn more or check out ", 'mystickyelements'); ?><a href="https://premio.io/help/mystickyelements/how-to-add-a-custom-shortcode-html-channel-to-your-widget/" target="_blank"><?php esc_html_e('some inspirations','mystickyelements');?></a></p>
 							</div><a class = "custom-social-channel-info-link" href="https://premio.io/help/mystickyelements/how-to-add-a-custom-shortcode-html-channel-to-your-widget/" target="_blank"><?php _e( 'How shortcodes work?', 'mystickyelements' ); ?></a>
 						</label>
@@ -133,7 +133,7 @@ foreach ( $contact_field as $key=>$value ) {
 						<span class="mystickyelement-tab-integration-action mystickyelement-upgrade-action">
 							<a class="upgradenow-box-btn" href="<?php echo esc_url($upgrade_url); ?>" target="_blank" class="btn">Upgrade Now</a>
 						</span>					
-						<a href="javascript:;" class="dismiss-btn premio-upgrade-dismiss-btn"><span class="dashicons dashicons-no-alt"></span></a>
+						<a href="#" class="dismiss-btn premio-upgrade-dismiss-btn"><span class="dashicons dashicons-no-alt"></span></a>
 					</p>
 					
 					<!--a href="<?php echo esc_url($upgrade_url) ?>" target="_blank">

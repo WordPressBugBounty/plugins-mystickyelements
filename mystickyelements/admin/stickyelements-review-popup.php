@@ -21,7 +21,7 @@ if( $page_views >= 1 && $reviewStatus ) { ?>
 		<div class="popup-form-content upgrade-modal rating-modal">
 			<div class="popup-content" style="position: relative;">
 				<div class="close-popup-button">
-					<a class="hide-upgrade-modal" href="javascript:;" ><span></span></a>
+					<a class="hide-upgrade-modal" href="#" ><span></span></a>
 				</div>				
 				<div class="rating-modal-steps active" id="step-1">
 					<div class="upgrade-title"><?php esc_html_e("Seems like My Sticky Elements is bringing you value 🥳", "mystickyelements"); ?></div>
@@ -96,12 +96,11 @@ if( $page_views >= 1 && $reviewStatus ) { ?>
 		width: 560px;
 	}
 	.rating-modal.popup-form-content {
-		 background: #ffffff url("../wp-content/plugins/mystickyelements-free/images/rating-top.png") top left no-repeat;
+		 background: #ffffff url(<?php echo MYSTICKYELEMENTS_URL; ?>/images/rating-top.png) top left no-repeat;
 	}
 	.rating-modal.popup-form-content:after {
-		content: "";
-		/* background: transparent url("../mystickyelements-pro/images/rating-bottom.png") bottom right no-repeat; */
-		background: transparent url("../wp-content/plugins/mystickyelements-free/images/rating-bottom.png") bottom right no-repeat;
+		content: ""; 
+		background: transparent url(<?php echo MYSTICKYELEMENTS_URL; ?>/images/rating-bottom.png) bottom right no-repeat;
 		width: 100%;
 		display: block;
 		height: 100%;

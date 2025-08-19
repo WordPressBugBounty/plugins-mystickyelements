@@ -22,15 +22,17 @@ $data = MSE_FOOTER_HELP_DATA;
     </div>
     <div class="premio-help-button-wrap">
     <!-- Free/Pro Only URL Change -->
-        <a class="premio-help-button" href="javascript:;"><img src="<?php echo esc_url($data['help_icon']) ?>" alt="<?php esc_html_e("Need help?", 'mystickyelements'); ?>"  /></a>
-        <a class="premio-help-close-btn" href="javascript:;"><img src="<?php echo esc_url($data['close_icon']) ?>" alt="<?php esc_html_e("Close", 'mystickyelements'); ?>"  /></a>
+        <a class="premio-help-button" href="#"><img src="<?php echo esc_url($data['help_icon']) ?>" alt="<?php esc_html_e("Need help?", 'mystickyelements'); ?>"  /></a>
+        <a class="premio-help-close-btn" href="#"><img src="<?php echo esc_url($data['close_icon']) ?>" alt="<?php esc_html_e("Close", 'mystickyelements'); ?>"  /></a>
         
-        <?php if (!isset($_COOKIE['mse-help-cta'])) :?>
-            <span class="tooltiptext"><?php esc_html_e("Support", "mystickyelements") ?></span>
-        <?php endif;?>
+        <?php 
+            $option = get_option("mse_help_cta");
+            if ($option !== "yes") { ?>
+                <span class="tooltiptext"><?php esc_html_e("Support", "mystickyelements") ?></span>
+        <?php  } ?> 
         <div class="premio-help-absulate-content">
             <?php foreach($data['support_widget'] as $key => $value): 
-                $link = $value['link'] == false ? 'javascript:;' : esc_url($value['link']);
+                $link = $value['link'] == false ? '#' : esc_url($value['link']);
                 $class = $key == 'contact' ? 'contact-us-btn' : 'premio-click-to-close';
                 $target = $key == 'contact' ? '' : '_blank';
                 $pro_class = $key == 'upgrade_to_pro' ? ' pro' : '';
@@ -76,6 +78,7 @@ $data = MSE_FOOTER_HELP_DATA;
 
 <script>
     jQuery(document).ready(function(){
+       
         jQuery(".premio-help-button").click(function(e){
             e.stopPropagation();
              jQuery(".premio-help-button-wrap .tooltiptext").hide();
@@ -146,8 +149,18 @@ $data = MSE_FOOTER_HELP_DATA;
             jQuery(".premio-help-absulate-content").removeClass('active');
             jQuery(".premio-help-absulate-content").addClass('hide');
             if(jQuery(".premio-help-button-wrap .tooltiptext").length) {
-                jQuery(".premio-help-button-wrap .tooltiptext").remove();
-                document.cookie = "mse-help-cta=hide"; 
+                jQuery(".premio-help-button-wrap .tooltiptext").remove(); 
+                jQuery.ajax({
+                    url: "<?php echo esc_url(admin_url('admin-ajax.php')) ?>",
+                    data: {
+                        nonce: "<?php echo esc_attr(wp_create_nonce("hide_mse_help_cta")) ?>",
+                        action: "hide_mse_help_cta"
+                    },
+                    type: "post",
+                    success: function (responseText) {
+
+                    }
+                });
             }
 
         });

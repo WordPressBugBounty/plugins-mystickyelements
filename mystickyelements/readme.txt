@@ -1,9 +1,9 @@
-=== All-in-one Floating Contact Form, Call, Chat, and 50+ Social Icon Tabs  - My Sticky Elements ===
+=== All-in-one Sticky Floating Contact Form, Call, Click to Chat, and 50+ Social Icon Tabs - My Sticky Elements ===
 Contributors: premio, galdub, tomeraharon
 Tags: whatsapp, contact form, facebook messenger, call now button, instagram
 Requires at least: 3.1
 Tested up to: 6.8
-Stable tag: 2.3.0
+Stable tag: 2.3.1
 Plugin URI: https://premio.io/downloads/mystickyelements/
 License: GPLv3
 
@@ -17,7 +17,7 @@ License: GPLv3
 
 With My Sticky Elements:
 
-* Capture more leads and messages through WhatsApp, Facebook Messenger, and many other chat and social channels 
+* Capture more leads and messages through WhatsApp, Facebook Messenger, and many other chat and social channels
 * Get more followers
 * Show important information such as open hours and address
 
@@ -37,7 +37,7 @@ Twitter / X.com
 Instagram page
 Instagram Direct Messenger (Instagram DM)
 Pinterest page
-Whatsapp chat
+WhatsApp chat
 YouTube channel
 Poptin
 Click to call
@@ -51,7 +51,7 @@ TikTok
 Threads
 Vimeo
 Spotify
-Itunes
+iTunes by Apple
 SoundCloud
 VK
 Viber
@@ -97,7 +97,7 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 2. Up to 2 different icons
 3. Floating contact form
 4. Set the position of the widget
-5. Variety of contact icons templates 
+5. Variety of contact icons templates
 6. Entry effect
 7. Bottom and top position for mobile
 8. Call-To-Action for each tab
@@ -115,7 +115,7 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 20. Change contact form fields order
 21. Full RTL support for RTL menus
 22. Change the font of all the buttons text
-23. Change the size of the widget bar 
+23. Change the size of the widget bar
 24. Add a custom icon
 25. Shortcode, IFrame or HTML icon and display any embedded content on-hover or on-click. Use it to show a YouTube/Vimeo video, contact form 7 or any other shortcode or IFrame
 26. Preset message that'll automatically be inserted to the WhatsApp messages your visitors send you
@@ -153,7 +153,7 @@ Unlock the Pro features for only $59/year
 24. Change the thank you message that's displayed after the contact form is submitted
 25. Log the IP address of visitors that submit your contact us form
 26. Add a Text block to your contact form - add text to the upper part of your forms
-27. Traffic source targeting 
+27. Traffic source targeting
 28. Available days and hours and specific date scheduling
 29. More text formatting options for the text block and consent checkbox text
 30. Add sender name in email subject for your contact form submissions
@@ -170,18 +170,18 @@ Add a country code formatting picker to your contact form, making it easier for 
 
 * Facebook page - add a link to your Facebook business page (fan page), and let your visitors find you on facebook.
 
-* Twitter page / X.com - add a link to your Twitter business page, and let your visitors find you on Twitter, follow your page and see your posts. 
+* Twitter page / X.com - add a link to your Twitter business page, and let your visitors find you on Twitter, follow your page and see your posts.
 
 * Instagram page - add a link to your Instagram business page or Instagram profile page, and let your visitors follow your brand on Instagram.
 
 * Instagram Direct Messenger - let visitors send you a DM directly through Instagram Direct Messenger.
 
-* Pinterest page - add a link to your Pinterest business page or even to a specific Pinterest board, and let your visitors follow your brand on Pinterest and like your pictures. 
+* Pinterest page - add a link to your Pinterest business page or even to a specific Pinterest board, and let your visitors follow your brand on Pinterest and like your pictures.
 
 * WhatsApp chat - enter your phone number and when your visitors click on the WhatsApp icon, WhatsApp chat interface will be launched. On mobile it will launch the WhatsApp app conversation window, and on desktop it will launch the desktop WhatsApp web interface. Add a preset message that'll automatically be inserted to the WhatsApp messages your visitors send you. On desktop decide if you prefer to redirect users to WhatsApp app or WhatsApp web.
 Adding WhatsApp button to your site will give 25 million new users every month (833,000 active users per day) and total of 65 million active users (10% of the total worldwide users), access to contact your immediately.
 
-* YouTube channel - add a link to your YouTube channel (YouTube page) and get more subscribers and views for your videos. 
+* YouTube channel - add a link to your YouTube channel (YouTube page) and get more subscribers and views for your videos.
 
 * Phone number (click to call) - A call button is very useful in mobile devices, but desktop visitors can also view your phone number or click to call you via different calling web apps (like WhatsApp).
 
@@ -191,7 +191,7 @@ Adding WhatsApp button to your site will give 25 million new users every month (
 
 * TikTok - enter your TikTok handle and let your website visitors discover your TikTok profile.
 
-* <a href="https://wordpress.org/plugins/poptin/" target="_blank" title="Poptin Plugin"><strong>Poptin</strong></a> - launch a Poptin pop up using the Poptin channel. Use Poptin to get more sales, leads, and email subscribers using smart pop ups and forms. 
+* <a href="https://wordpress.org/plugins/poptin/" target="_blank" title="Poptin Plugin"><strong>Poptin</strong></a> - launch a Poptin pop up using the Poptin channel. Use Poptin to get more sales, leads, and email subscribers using smart pop ups and forms.
 
 * Address - show your business address for website visitors that want to arrive to your store.
 
@@ -199,13 +199,13 @@ Adding WhatsApp button to your site will give 25 million new users every month (
 
 * WeChat - enter your WeChat User ID and let your visitors search for you easily on the WeChat app and message you about your business.
 
-* Telegram channel - add your Telegram channel link and let your visitors join your Telegram community. 
+* Telegram channel - add your Telegram channel link and let your visitors join your Telegram community.
 
 * Threads - add a link to your Threads profile so your visitors can connect with you easily
 
 * Vimeo - Let your visitors see all of your videos on Vimeo, comment, like your videos and follow your channel.
 
-* Spotify - Spotify is growing and if you run a podcast, Spotify is the best distribution channel.  
+* Spotify - Spotify is growing and if you run a podcast, Spotify is the best distribution channel.
 
 * Itunes - similar to Spotify but for Apple users. Add your itunes link to let your visitors find your itunes channel quickly.
 
@@ -231,7 +231,7 @@ Adding WhatsApp button to your site will give 25 million new users every month (
 
 * Dribbble - Like Behance, Dribbble is made for creatives and it is an online community.
 
-* Quora - Quora  is a great place to gain and share knowledge. 
+* Quora - Quora  is a great place to gain and share knowledge.
 
 * LinkedIn - Enter the link to your LinkedIn profile and let your visitors connect with you on LinkedIn.
 
@@ -335,6 +335,9 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 
 == Changelog ==
 
+= 2.3.1 =
+Removed cookie dependency
+
 = 2.3.0 =
 Improved support flow
 
@@ -409,9 +412,9 @@ Other bugs fixed
 Safety bug fixed
 
 = 2.1.3 =
-PHP compatibility 
+PHP compatibility
 Phone number validation is now available for the contact form
-Form preview is now available 
+Form preview is now available
 Added "defer" in script tag to boost performance
 Smaller screens contact form scroll improvement
 Added label for each input field (ADA)
@@ -422,7 +425,7 @@ Google PageSpeed improvement and custom channels bug fixed
 = 2.1.1 =
 WhatsApp web support for desktop (or you can just use a regular WhatsApp app link)
 Merge tags for WhatsApp (Pro feature)
-UI improvements 
+UI improvements
 = 2.1 =
 Widget analytics - discover the most frequently used chat and social channels (Pro feature)
 Fixed the auto close on hover bug
@@ -471,7 +474,7 @@ MCB Icon Picker bug fixed
 = 1.8.6 =
 New channels (Poptin, Fiverr, Shopify, Printful, Odnoklassniki (Одноклассники OK), Gumroad), more custom channels and HTML/IFrame channels, Javascript function to launch My Sticky Elements channels, option to auto-launch the form on page load, option to make your custom channels act as an existing channel, and some bug fixes
 = 1.8.5 =
-Remove jQuery.live function dependency 
+Remove jQuery.live function dependency
 = 1.8.4 =
 WP 5.5
 = 1.8.3 =
@@ -489,7 +492,7 @@ Preview fix for some of the new channels
 = 1.7.7 =
 New channels: Yelp, Amazon, Reddit, RSS, Flickr, eBay, Etsy, Slack, Trip Advisor, Medium, Google Play (Google), and App Store (Apple).
 = 1.7.6 =
-Added two new positions for the widget (bottom left and right), fixed settings view for small screens, 
+Added two new positions for the widget (bottom left and right), fixed settings view for small screens,
 = 1.7.5 =
 Font Awesome 1 conflict fixed + onboarding popup video
 = 1.7.4 =
@@ -517,7 +520,7 @@ Top position for mobile, support for Facebook Messenger pages that don't have a 
 = 1.6.3 =
 Use Font Awesome icons with the custom widget and shortcode widget. We've also fixed a line.me bug and some other minor bugs.
 = 1.6.2 =
-You can now change the the color of the contact icons. You can also see what was the URL  from which your contact form was submitted. 
+You can now change the the color of the contact icons. You can also see what was the URL  from which your contact form was submitted.
 = 1.6.1 =
 We've added 7 icon templates, you can make your icons rounded, diamond-shaped, arrowed shaped and more. You can also set an entry effect (fade or slide-in) for your widget. Desktop bottom position is also available for the widget. Change the color of the contact form headline.  We've also improved our RTL menu support and added Hummingbird cache compatibility.
 = 1.6 =
@@ -545,7 +548,7 @@ Brand new view for mobile, show all elements on the bottom of the screen. also a
 = 1.4.2 =
 Added font selection, bulk removal off leads, added date col to the leads table
 = 1.4.1 =
-* RTL support, easier facebook messenger integration, redirect after form submission to pro version 
+* RTL support, easier facebook messenger integration, redirect after form submission to pro version
 = 1.4 =
 * Added 16 new channels: Vimeo, Spotify, Itunes, SoundCloud, VK, Viber, Snapchat, Skype
 Line, SMS, Tumblr, Qzone, QQ, Behance, Dribbble, Quora

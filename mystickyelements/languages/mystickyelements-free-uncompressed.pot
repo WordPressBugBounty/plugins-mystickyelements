@@ -2,10 +2,10 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: myStickyElements 2.2.9\n"
+"Project-Id-Version: myStickyElements 2.3.1\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/mystickyelements-free-uncompressed\n"
-"POT-Creation-Date: 2025-06-02 04:47:46+00:00\n"
+"POT-Creation-Date: 2025-08-19 05:35:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -230,7 +230,7 @@ msgid "Show the field"
 msgstr ""
 
 #: admin/contact-forms.php:113 admin/contact-forms.php:117
-#: mystickyelements-admin.php:1345 mystickyelements-front.php:318
+#: mystickyelements-admin.php:1344 mystickyelements-front.php:314
 msgid "Name"
 msgstr ""
 
@@ -258,7 +258,7 @@ msgid "The field is hidden and won’t show."
 msgstr ""
 
 #: admin/contact-forms.php:159 admin/contact-forms.php:163
-#: mystickyelements-admin.php:1346 mystickyelements-front.php:319
+#: mystickyelements-admin.php:1345 mystickyelements-front.php:315
 msgid "Phone"
 msgstr ""
 
@@ -282,13 +282,13 @@ msgstr ""
 
 #: admin/contact-forms.php:223 admin/contact-forms.php:227
 #: admin/contact-forms.php:604 admin/help.php:58
-#: mystickyelements-admin.php:1347 mystickyelements-admin.php:1577
-#: mystickyelements-front.php:320
+#: mystickyelements-admin.php:1346 mystickyelements-admin.php:1574
+#: mystickyelements-front.php:316
 msgid "Email"
 msgstr ""
 
 #: admin/contact-forms.php:270 admin/contact-forms.php:274
-#: mystickyelements-admin.php:1349 mystickyelements-front.php:321
+#: mystickyelements-admin.php:1348 mystickyelements-front.php:317
 msgid "Message"
 msgstr ""
 
@@ -357,17 +357,17 @@ msgstr ""
 msgid "Contact Tab Settings"
 msgstr ""
 
-#: admin/contact-forms.php:448 mystickyelements-admin.php:965
+#: admin/contact-forms.php:448 mystickyelements-admin.php:964
 msgid "Devices"
 msgstr ""
 
 #: admin/contact-forms.php:452 admin/general-settings.php:936
-#: mystickyelements-admin.php:976
+#: mystickyelements-admin.php:975
 msgid "Desktop"
 msgstr ""
 
 #: admin/contact-forms.php:455 admin/general-settings.php:942
-#: mystickyelements-admin.php:988
+#: mystickyelements-admin.php:987
 msgid "Mobile"
 msgstr ""
 
@@ -432,8 +432,8 @@ msgid "Text in tab"
 msgstr ""
 
 #: admin/contact-forms.php:554 admin/contact-forms.php:567
-#: admin/contact-forms.php:698 mystickyelements-admin.php:1138
-#: mystickyelements-admin.php:1162
+#: admin/contact-forms.php:698 mystickyelements-admin.php:1137
+#: mystickyelements-admin.php:1161
 msgid "Enter text here..."
 msgstr ""
 
@@ -569,7 +569,7 @@ msgstr ""
 msgid "Number"
 msgstr ""
 
-#: admin/contact-forms.php:781 mystickyelements-admin.php:1360
+#: admin/contact-forms.php:781 mystickyelements-admin.php:1359
 msgid "Date"
 msgstr ""
 
@@ -1181,12 +1181,11 @@ msgstr ""
 msgid "Premio"
 msgstr ""
 
-#: admin/help.php:25 mystickyelements-admin.php:38
-#: mystickyelements-admin.php:2022
+#: admin/help.php:25 mystickyelements-admin.php:37
 msgid "Need help?"
 msgstr ""
 
-#: admin/help.php:26 mystickyelements-admin.php:733
+#: admin/help.php:26 mystickyelements-admin.php:732
 msgid "Close"
 msgstr ""
 
@@ -1208,7 +1207,7 @@ msgstr ""
 msgid "How can I help you?"
 msgstr ""
 
-#: admin/help.php:65 admin/help.php:119
+#: admin/help.php:65 admin/help.php:120
 msgid "Chat"
 msgstr ""
 
@@ -1220,19 +1219,19 @@ msgstr ""
 msgid "Visit our Help Center >>"
 msgstr ""
 
-#: admin/help.php:108
+#: admin/help.php:109
 msgid "Sending Request..."
 msgstr ""
 
-#: admin/help.php:125
+#: admin/help.php:126
 msgid "Done!"
 msgstr ""
 
-#: admin/help.php:132
+#: admin/help.php:133
 msgid "Your message is sent successfully."
 msgstr ""
 
-#: admin/help.php:138
+#: admin/help.php:139
 msgid "There is some problem in sending request. Please send us mail on %1$s"
 msgstr ""
 
@@ -1377,8 +1376,8 @@ msgstr ""
 msgid "Duplicate"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:61 mystickyelements-admin.php:1363
-#: mystickyelements-admin.php:1450
+#: admin/stickyelements-dashboard.php:61 mystickyelements-admin.php:1362
+#: mystickyelements-admin.php:1449
 msgid "Delete"
 msgstr ""
 
@@ -1464,7 +1463,7 @@ msgstr ""
 
 #: admin/stickyelements-dashboard.php:231
 #: admin/stickyelements-dashboard.php:244
-#: mystickyelements-admin-integration.php:57
+#: mystickyelements-admin-integration.php:58
 msgid "Connect"
 msgstr ""
 
@@ -1494,7 +1493,7 @@ msgstr ""
 msgid "Add A Live Chat Widget"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:287 mystickyelements-admin.php:631
+#: admin/stickyelements-dashboard.php:287 mystickyelements-admin.php:630
 msgid "Welcome to My Sticky Elements"
 msgstr ""
 
@@ -1622,6 +1621,10 @@ msgstr ""
 msgid "Based on 500+ Reviews"
 msgstr ""
 
+#: class-help.php:111 class-help.php:116 mystickyelements-admin.php:1774
+msgid "Your request is not valid"
+msgstr ""
+
 #: class-review-box.php:463
 msgid "Your"
 msgstr ""
@@ -1681,7 +1684,7 @@ msgstr ""
 msgid "Don't remind me about this "
 msgstr ""
 
-#: mystickyelements-admin-integration.php:24
+#: mystickyelements-admin-integration.php:25
 msgid ""
 "Upgrade to Pro and connect your My Sticky Elements form to the following "
 "platforms to automatically receive leads"
@@ -1714,157 +1717,157 @@ msgid ""
 "<strong>click-through rate</strong>"
 msgstr ""
 
-#: mystickyelements-admin.php:40 mystickyelements-admin.php:2023
+#: mystickyelements-admin.php:39
 msgid "Upgrade"
 msgstr ""
 
-#: mystickyelements-admin.php:111
+#: mystickyelements-admin.php:110
 msgid ""
 "Please remove the JavaScript from the channels or ask the website's "
 "administrator to give you access to add JavaScript."
 msgstr ""
 
-#: mystickyelements-admin.php:112
+#: mystickyelements-admin.php:111
 msgid "Remove"
 msgstr ""
 
-#: mystickyelements-admin.php:301 mystickyelements-admin.php:1262
+#: mystickyelements-admin.php:300 mystickyelements-admin.php:1261
 msgid "Unable to complete your request"
 msgstr ""
 
-#: mystickyelements-admin.php:638 mystickyelements-popup.php:2
+#: mystickyelements-admin.php:637 mystickyelements-popup.php:2
 msgid ""
 "Select your contact form fields, chat, and social channels. Need help? "
 "Visit our "
 msgstr ""
 
-#: mystickyelements-admin.php:638 mystickyelements-popup.php:2
+#: mystickyelements-admin.php:637 mystickyelements-popup.php:2
 msgid "Help Center"
 msgstr ""
 
-#: mystickyelements-admin.php:638 mystickyelements-popup.php:2
+#: mystickyelements-admin.php:637 mystickyelements-popup.php:2
 msgid " and check the video."
 msgstr ""
 
-#: mystickyelements-admin.php:659
+#: mystickyelements-admin.php:658
 msgid "Congratulations 🎉"
 msgstr ""
 
-#: mystickyelements-admin.php:660
+#: mystickyelements-admin.php:659
 msgid ""
 "You just got your first My Sticky Elements lead. Click on the Show Me "
 "button to display your contact form leads"
 msgstr ""
 
-#: mystickyelements-admin.php:703
+#: mystickyelements-admin.php:702
 msgid "Icons' text isn't supported in this template"
 msgstr ""
 
-#: mystickyelements-admin.php:704
+#: mystickyelements-admin.php:703
 msgid ""
 "The selected template doesn't support icons'text, please change to the "
 "Default templates. Would you like to publish it anyway?"
 msgstr ""
 
-#: mystickyelements-admin.php:723
+#: mystickyelements-admin.php:722
 msgid "Congratulations! 🎉"
 msgstr ""
 
-#: mystickyelements-admin.php:724
+#: mystickyelements-admin.php:723
 msgid "Your first widget is now up and running on your website!"
 msgstr ""
 
-#: mystickyelements-admin.php:726
+#: mystickyelements-admin.php:725
 msgid "Upgrade to pro today"
 msgstr ""
 
-#: mystickyelements-admin.php:727
+#: mystickyelements-admin.php:726
 msgid "🛠️ Show unlimited social icon such as Whatsapp,twitter,phone and so on"
 msgstr ""
 
-#: mystickyelements-admin.php:728
+#: mystickyelements-admin.php:727
 msgid "📱Create multiple widgets for different devices, pages and languages."
 msgstr ""
 
-#: mystickyelements-admin.php:729
+#: mystickyelements-admin.php:728
 msgid "📈 Unlock analytics about each channel usage and different widgets "
 msgstr ""
 
-#: mystickyelements-admin.php:730
+#: mystickyelements-admin.php:729
 msgid ""
 "📩 Get contact form leads to Your email and integrate with MailChimp and "
 "MailPoet"
 msgstr ""
 
-#: mystickyelements-admin.php:732 mystickyelements.php:3682
+#: mystickyelements-admin.php:731 mystickyelements.php:3682
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: mystickyelements-admin.php:935
+#: mystickyelements-admin.php:934
 msgid "Icon link"
 msgstr ""
 
-#: mystickyelements-admin.php:997
+#: mystickyelements-admin.php:996
 msgid "Open link in a new tab"
 msgstr ""
 
-#: mystickyelements-admin.php:1010
+#: mystickyelements-admin.php:1009
 msgid "Appearance Settings"
 msgstr ""
 
-#: mystickyelements-admin.php:1024
+#: mystickyelements-admin.php:1023
 msgid "Upload Custom Icon"
 msgstr ""
 
-#: mystickyelements-admin.php:1046
+#: mystickyelements-admin.php:1045
 msgid "Stretch custom icon"
 msgstr ""
 
-#: mystickyelements-admin.php:1057
+#: mystickyelements-admin.php:1056
 msgid "Select FontAwesome Icon"
 msgstr ""
 
-#: mystickyelements-admin.php:1071
+#: mystickyelements-admin.php:1070
 msgid "Channel Type"
 msgstr ""
 
-#: mystickyelements-admin.php:1078 mystickyelements-front.php:802
+#: mystickyelements-admin.php:1077 mystickyelements-front.php:798
 msgid "Custom channel"
 msgstr ""
 
-#: mystickyelements-admin.php:1097
+#: mystickyelements-admin.php:1096
 msgid "Background Color"
 msgstr ""
 
-#: mystickyelements-admin.php:1108
+#: mystickyelements-admin.php:1107
 msgid "Icon Color"
 msgstr ""
 
-#: mystickyelements-admin.php:1120
+#: mystickyelements-admin.php:1119
 msgid "Icon Text Color"
 msgstr ""
 
-#: mystickyelements-admin.php:1131
+#: mystickyelements-admin.php:1130
 msgid "Icon Text"
 msgstr ""
 
-#: mystickyelements-admin.php:1143
+#: mystickyelements-admin.php:1142
 msgid "Icon Text Size"
 msgstr ""
 
-#: mystickyelements-admin.php:1150
+#: mystickyelements-admin.php:1149
 msgid "Enter font size here..."
 msgstr ""
 
-#: mystickyelements-admin.php:1155
+#: mystickyelements-admin.php:1154
 msgid "Flyout Text"
 msgstr ""
 
-#: mystickyelements-admin.php:1169
+#: mystickyelements-admin.php:1168
 msgid "Pre Set Message"
 msgstr ""
 
-#: mystickyelements-admin.php:1172
+#: mystickyelements-admin.php:1171
 msgid ""
 "Add your own pre-set message that's automatically added to the user's "
 "message. You can also use merge tags and add the URL or the title of the "
@@ -1873,104 +1876,100 @@ msgid ""
 "visitor messages you"
 msgstr ""
 
-#: mystickyelements-admin.php:1179
+#: mystickyelements-admin.php:1178
 msgid "Enter message here..."
 msgstr ""
 
-#: mystickyelements-admin.php:1183
+#: mystickyelements-admin.php:1182
 msgid "{title} tag grabs the page title of the webpage"
 msgstr ""
 
-#: mystickyelements-admin.php:1184
+#: mystickyelements-admin.php:1183
 msgid "{url} tag grabs the URL of the webpage"
 msgstr ""
 
-#: mystickyelements-admin.php:1189
+#: mystickyelements-admin.php:1188
 msgid "Use WhatsApp Web directly on desktop"
 msgstr ""
 
-#: mystickyelements-admin.php:1194
+#: mystickyelements-admin.php:1193
 msgid ""
 "Automatically send desktop visitors to WhatsApp Web by turning on the "
 "feature"
 msgstr ""
 
-#: mystickyelements-admin.php:1217
+#: mystickyelements-admin.php:1216
 msgid "Remove channel"
 msgstr ""
 
-#: mystickyelements-admin.php:1283
+#: mystickyelements-admin.php:1282
 msgid "Contact Form Leads"
 msgstr ""
 
-#: mystickyelements-admin.php:1285
+#: mystickyelements-admin.php:1284
 msgid ""
 "Contact's data is saved locally do make backup or export before "
 "uninstalling plugin"
 msgstr ""
 
-#: mystickyelements-admin.php:1292
+#: mystickyelements-admin.php:1291
 msgid "Download & Export All Subscriber to CSV file:"
 msgstr ""
 
-#: mystickyelements-admin.php:1294
+#: mystickyelements-admin.php:1293
 msgid "Download & Export to CSV"
 msgstr ""
 
-#: mystickyelements-admin.php:1298
+#: mystickyelements-admin.php:1297
 msgid "Delete All Subscibers from Database:"
 msgstr ""
 
-#: mystickyelements-admin.php:1300
+#: mystickyelements-admin.php:1299
 msgid "Delete All Data"
 msgstr ""
 
-#: mystickyelements-admin.php:1334 mystickyelements-admin.php:1336
+#: mystickyelements-admin.php:1333 mystickyelements-admin.php:1335
 msgid "Search"
 msgstr ""
 
-#: mystickyelements-admin.php:1342
+#: mystickyelements-admin.php:1341
 msgid "Bulk"
 msgstr ""
 
-#: mystickyelements-admin.php:1343
+#: mystickyelements-admin.php:1342
 msgid "ID"
 msgstr ""
 
-#: mystickyelements-admin.php:1344
+#: mystickyelements-admin.php:1343
 msgid "Widget Name"
 msgstr ""
 
-#: mystickyelements-admin.php:1348
+#: mystickyelements-admin.php:1347
 msgid "Option"
 msgstr ""
 
-#: mystickyelements-admin.php:1350
+#: mystickyelements-admin.php:1349
 msgid "Consent"
 msgstr ""
 
-#: mystickyelements-admin.php:1361
+#: mystickyelements-admin.php:1360
 msgid "URL"
 msgstr ""
 
-#: mystickyelements-admin.php:1362
+#: mystickyelements-admin.php:1361
 msgid "IP Address"
 msgstr ""
 
-#: mystickyelements-admin.php:1457
+#: mystickyelements-admin.php:1456
 msgid "No Contact Form Leads Found!"
 msgstr ""
 
-#: mystickyelements-admin.php:1565
+#: mystickyelements-admin.php:1562
 msgid "%s is required"
 msgstr ""
 
-#: mystickyelements-admin.php:1570
+#: mystickyelements-admin.php:1567
 msgid "Please enter your message"
-msgstr ""
-
-#: mystickyelements-admin.php:1777
-msgid "Your request is not valid"
 msgstr ""
 
 #: mystickyelements-deactivate-form.php:122
@@ -1995,21 +1994,21 @@ msgstr ""
 msgid "Anonymous feedback"
 msgstr ""
 
-#: mystickyelements-front.php:345 mystickyelements-front.php:357
-#: mystickyelements-front.php:370 mystickyelements-front.php:382
-#: mystickyelements-front.php:392
+#: mystickyelements-front.php:341 mystickyelements-front.php:353
+#: mystickyelements-front.php:366 mystickyelements-front.php:378
+#: mystickyelements-front.php:388
 msgid "*"
 msgstr ""
 
-#: mystickyelements-front.php:897 mystickyelements-front.php:1040
+#: mystickyelements-front.php:893 mystickyelements-front.php:1036
 msgid "Something went wrong. Please contact site administrator"
 msgstr ""
 
-#: mystickyelements-front.php:1036
+#: mystickyelements-front.php:1032
 msgid "Your request is submitted successfully"
 msgstr ""
 
-#: mystickyelements-front.php:1060
+#: mystickyelements-front.php:1056
 msgid "Your message was sent successfully"
 msgstr ""
 

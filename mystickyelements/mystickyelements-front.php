@@ -112,7 +112,7 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 					}					
 			</style>	
 			<?php
-			wp_enqueue_script('mystickyelements-cookie-js', plugins_url('/js/jquery.cookie.js', __FILE__), array('jquery'), MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ]);
+			// wp_enqueue_script('mystickyelements-cookie-js', plugins_url('/js/jquery.cookie.js', __FILE__), array('jquery'), MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ]);
 			wp_enqueue_script( 'mailcheck-js', plugins_url('/js/mailcheck'.esc_attr($min).'.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ]);
 			wp_enqueue_script('autocomplete-email-js', plugins_url('/js/jquery.email-autocomplete'.esc_attr($min).'.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ]);
 					
@@ -169,9 +169,9 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
                 $contact_form_class .= ' element-mobile-on';
             }
 			$form_open_delay_sec = 0;
-			if (isset($general_settings['form_open_automatic']) && $general_settings['form_open_automatic'] == 1 && !isset($_COOKIE['closed_contactform'])) {
+			if (isset($general_settings['form_open_automatic']) && $general_settings['form_open_automatic'] == 1) {                            
 				$contact_form_class .= ' elements-open-form-active';
-				
+	
 				if( isset($general_settings['form_open_delay_sec']) && $general_settings['form_open_delay_sec'] != '' ) { 
 					$form_open_delay_sec = $general_settings['form_open_delay_sec'];
 				}
@@ -186,17 +186,13 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 				$general_settings['position_mobile'] = 'left';
 			}
 
-            $minimize_class = '';
-			if ( isset($general_settings['minimize_tab']) && $general_settings['minimize_tab'] == 1 ) {
-				if ( !isset($_COOKIE['minimize_desktop']) && isset($general_settings['minimize_desktop']) && $general_settings['minimize_desktop'] == 'desktop' && !wp_is_mobile() ) {
+			$minimize_class = '';
+			if (isset($general_settings['minimize_tab']) && $general_settings['minimize_tab'] == 1) {
+				if (isset($general_settings['minimize_desktop']) && $general_settings['minimize_desktop'] == 'desktop' && !wp_is_mobile()) {
 					$minimize_class = 'element-minimize';
-				} elseif ( !isset($_COOKIE['minimize_mobile']) && isset($general_settings['minimize_mobile']) && $general_settings['minimize_mobile'] == 'mobile' && wp_is_mobile() ) {
+				} elseif (isset($general_settings['minimize_mobile']) && $general_settings['minimize_mobile'] == 'mobile' && wp_is_mobile()) {
 					$minimize_class = 'element-minimize';
-				} else if ( isset($_COOKIE['minimize_desktop']) && $_COOKIE['minimize_desktop'] == 'minimize' && !wp_is_mobile() ) {
-					$minimize_class = 'element-minimize';
-				} elseif (isset($_COOKIE['minimize_mobile']) && $_COOKIE['minimize_mobile'] == 'minimize' && wp_is_mobile()) {
-					$minimize_class = 'element-minimize';
-				}
+				} 
 			} else {
 				$minimize_class = 'no-minimize';
 			}
@@ -267,9 +263,9 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 								<span class="mystickyelements-minimize minimize-position-<?php echo esc_attr($general_settings['position'])?> minimize-position-mobile-<?php echo esc_attr($general_settings['position_mobile'])?>" <?php if (isset($general_settings['minimize_tab_background_color']) && $general_settings['minimize_tab_background_color'] != ''): ?>style="background: <?php echo esc_attr($general_settings['minimize_tab_background_color']); ?>" <?php endif;
 								?>>
 								<?php
-								if ( !isset($_COOKIE['minimize_desktop']) && isset($general_settings['minimize_desktop']) && $general_settings['minimize_desktop'] == 'desktop' && !wp_is_mobile() ) :
+								if ( isset($general_settings['minimize_desktop']) && $general_settings['minimize_desktop'] == 'desktop' && !wp_is_mobile() ) :
 									echo "<i class='fas fa-envelope'></i>";
-								elseif ( !isset($_COOKIE['minimize_mobile']) && isset($general_settings['minimize_mobile']) && $general_settings['minimize_mobile'] == 'mobile' && wp_is_mobile() ) :
+								elseif ( isset($general_settings['minimize_mobile']) && $general_settings['minimize_mobile'] == 'mobile' && wp_is_mobile() ) :
 									echo "<i class='fas fa-envelope'></i>";
 								elseif ( $general_settings['position'] == 'left' && !wp_is_mobile() ) :
 									echo esc_attr(($minimize_class == "" ) ? "&larr;" : "&rarr;") ;
@@ -328,7 +324,7 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 									} ?>
 									<div class="contact-form-heading" style="<?php echo esc_attr($heading_color); ?>">
 										<?php echo esc_html($contact_title_text); ?>
-										<span href="javascript:void(0);" class="element-contact-close"><i class="fas fa-times"></i></span>
+										<span href="#" class="element-contact-close"><i class="fas fa-times"></i></span>
 									</div>
 
 									<form id="stickyelements-form" class="stickyelements-form" action="" method="post" autocomplete="off" data-close-after="<?php echo esc_attr($close_after); ?>">
@@ -997,7 +993,7 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 
 				$_POST['contact-form-phone'] = (isset($_POST['contact_code'])) ? "+".$_POST['contact_code']." ".$_POST['contact-form-phone'] : $_POST['contact-form-phone'];
 
-                if (isset($contact_form['send_leads']) && $contact_form['send_leads'] == 'mail') {
+                if (isset($contact_form['send_leads']) && in_array('mail', $contact_form['send_leads'])) {
 
                     $send_mail = (isset($contact_form['sent_to_mail']) && $contact_form['sent_to_mail'] != '') ? $contact_form['sent_to_mail'] : get_option('admin_email');
 

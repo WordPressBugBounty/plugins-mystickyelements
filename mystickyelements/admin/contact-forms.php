@@ -164,7 +164,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 										</div>
 										<label class="mystickyelement-permision-code"><input type="checkbox" name="contact-form[phone_formate]" value="1" <?php checked( @$contact_form['phone_formate'], '1' );?> > &nbsp;<?php esc_html_e('Use country code formatting', 'mystickyelements');?> 
 											<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip myStickyelements-hide-tooltip">
-												<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+												<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 												<p><?php esc_html_e("Add country code picker for easier phone number input", 'mystickyelements'); ?>
 													<img src="<?php echo MYSTICKYELEMENTS_URL ?>/images/countryformtaing.png">
 												</p>
@@ -173,7 +173,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 
 										<label class="mystickyelement-number-length"><input type="checkbox" name="contact-form[phone_number_length]" value="1"  disabled><span class="number-length-span"> &nbsp;<?php esc_html_e('Validate phone number length', 'mystickyelements');?> </span>
 											<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip myStickyelements-hide-tooltip">
-												<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+												<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 												<p><?php esc_html_e("It validates the phone number by checking if the length is correct for the selected country", 'mystickyelements'); ?></p>
 											</div>
 											<span class="upgrade-myStickyelements"><a href="<?php echo esc_url($upgrade_url); ?>" target="_blank"><i class="fas fa-lock"></i>UPGRADE NOW</a></span>
@@ -314,7 +314,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 									<div class="sticky-col-1">
 										<span class="myStickyelements-label">
 											<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip myStickyelements-hide-tooltip">
-												<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+												<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 												<p><?php esc_html_e("Show dropdown in contact form", 'mystickyelements'); ?>
 													<img src="<?php echo MYSTICKYELEMENTS_URL ?>/images/dropdown-image.jpeg">
 												</p>
@@ -382,7 +382,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 					<div class="sticky-col-1">
 						<!--<span class="myStickyelements-label"> -->
 							<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip myStickyelements-hide-tooltip">
-								<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+								<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 								<p><?php esc_html_e("Add a checkbox that asks for users' consent while submitting a form", 'mystickyelements'); ?>
 									<img src="<?php echo MYSTICKYELEMENTS_URL ?>/images/consent-gif.gif">
 								</p>
@@ -427,7 +427,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 			<div class="myStickyelements-contact-form-field-hide myStickyelements-contact-form-field-option">
 				<div class="mystickyelements-add-custom-fields">
 					<div class="mystickyelements-custom-fields-tooltip">
-						<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a><p><?php esc_html_e("Add custom fields to your contact form including text, text area, dropdowns, file upload, website, date, and number fields", 'mystickyelements'); ?></p>
+						<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a><p><?php esc_html_e("Add custom fields to your contact form including text, text area, dropdowns, file upload, website, date, and number fields", 'mystickyelements'); ?></p>
 					</div>
 				<!--	<span class="upgrade-myStickyelements"><a href="<?php //echo esc_url($upgrade_url); ?>" target="_blank"><i class="fas fa-lock"></i><?php //_e('UPGRADE NOW', 'mystickyelements'); ?></a></span> -->
 					<a href="#" class="mystickyelements-add-custom-fields"> <?php esc_html_e( 'Add new field', 'mystickyelements'); ?><svg style="fill: #fff;"id="plus-circle" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 36 36"><path id="Path_1928" data-name="Path 1928" d="M18,7.875A1.125,1.125,0,0,1,19.125,9v9A1.125,1.125,0,0,1,18,19.125H9a1.125,1.125,0,0,1,0-2.25h7.875V9A1.125,1.125,0,0,1,18,7.875Z" fill-rule="evenodd"/><path id="Path_1929" data-name="Path 1929" d="M16.875,18A1.125,1.125,0,0,1,18,16.875h9a1.125,1.125,0,0,1,0,2.25H19.125V27a1.125,1.125,0,0,1-2.25,0Z" fill-rule="evenodd"/><path id="Path_1930" data-name="Path 1930" d="M18,33.75A15.75,15.75,0,1,0,2.25,18,15.75,15.75,0,0,0,18,33.75ZM18,36A18,18,0,1,0,0,18,18,18,0,0,0,18,36Z" fill-rule="evenodd"/></svg><!--<i class="fas fa-plus"></i> --></a>
@@ -473,7 +473,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 							<div class="mystickyelements-setting-wrap-left">
 								<label>
 									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 										<p><?php esc_html_e("Change the background color of the floating bar that opens the contact form", 'mystickyelements'); ?></p>
 									</div>
 									<?php esc_html_e( 'Background Color:', 'mystickyelements' );?>
@@ -487,7 +487,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 							<div class="mystickyelements-setting-wrap-left">
 								<label>
 									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 										<p><?php esc_html_e("Change the text color of the floating bar that opens the contact form", 'mystickyelements'); ?></p>
 									</div>
 									<?php esc_html_e( 'Text Color:', 'mystickyelements' );?>
@@ -501,7 +501,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 							<div class="mystickyelements-setting-wrap-left">
 								<label>
 									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 										<p><?php esc_html_e("The background color of the form that appears when someone hover/clicks to open the contact form", 'mystickyelements'); ?></p>
 									</div>
 									<?php esc_html_e('Form Background Color:', 'mystickyelements'); ?>
@@ -515,7 +515,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 							<div class="mystickyelements-setting-wrap-left">
 								<label>
 									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 										<p><?php esc_html_e("The headline color of the form that appears when someone hover/clicks to open the contact form", 'mystickyelements'); ?></p>
 									</div>
 									<?php esc_html_e( 'Form Headline Color:', 'mystickyelements' );?>
@@ -530,7 +530,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 							<div class="mystickyelements-setting-wrap-left">								
 								<label>
 									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 										<p><?php esc_html_e("Change the placeholder color of fields inside the contact form", 'mystickyelements'); ?></p>
 									</div>
 									<?php esc_html_e( 'Placeholder text color', 'mystickyelements' );?>
@@ -579,7 +579,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 										<div id="checkboxes">
 											<label>
 											 	<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-                                                    <a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+                                                    <a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
                                                     <p><?php esc_html_e("Save the leads locally in your website", 'mystickyelements'); ?></p>
                                                 </div>
 												<input type="checkbox" name="contact-form[send_leads][]" id="send_leads_database" value="database" <?php if ( !empty($contact_form['send_leads']) && in_array( 'database', $contact_form['send_leads']) ) { echo 'checked="checked"'; } ?> checked="checked"  />&nbsp;<?php printf(esc_html__( 'Save leads to %s', 'mystickyelements' ), '<a href="'. admin_url('admin.php?page=my-sticky-elements-leads') .'" target="_blank">'.esc_html__("this site", 'mystickyelements').'</a>');?>
@@ -591,7 +591,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 										<div id="checkboxes">
 											<label>
 												<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-													<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+													<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 													<p><?php esc_html_e("Get notified when someone submits a response to the contact form", 'mystickyelements'); ?></p>
 												</div>
 												<input type="checkbox"  id="send_leads_mail" value="mail" data-url = "<?php echo admin_url("admin.php?page=my-sticky-elements-upgrade"); ?>"  />&nbsp;<?php esc_html_e( 'Send leads to your email', 'mystickyelements' );?>
@@ -607,7 +607,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 											<input type="text" name="contact-form[sent_to_mail]" value="<?php echo @$contact_form['sent_to_mail'];?>" placeholder="<?php esc_html_e('Enter your email','mystickyelements');?>" />
 											<p class="description"><?php esc_html_e( 'Check your Spam folder and Promotions tab', 'mystickyelements');?></p>
 											<div class="mystickyelements-custom-fields-tooltip mystickyelements-email-tooltip">
-												<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+												<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 												<p><?php esc_html_e( 'If you want to send leads to more than one email address, please add your email addresses separated by commas', 'mystickyelements');?></p>
 											</div>
 										</div>
@@ -620,7 +620,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 											<?php $contact_form['sender_name'] = ( isset($contact_form['sender_name'])) ? $contact_form['sender_name'] : '';?>
 											<input type="text" name="contact-form[sender_name]" value="<?php echo esc_attr($contact_form['sender_name']);?>" placeholder="<?php esc_html_e('Enter sender name', 'mystickyelements');?>" />
 											<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-												<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+												<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 												<p><?php esc_html_e("The name that will appear as the sender name in your email", 'mystickyelements'); ?></p>
 											</div>
 										</div>
@@ -633,7 +633,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 											<?php $email_subject_line = ( isset($contact_form['email_subject_line'])) ? $contact_form['email_subject_line'] : 'New lead from MyStickyElements from {name} on {date} {hour}'; ?>
 											<input type="text" name="contact-form[email_subject_line]" value="<?php echo esc_attr($email_subject_line);?>" placeholder="<?php esc_html_e('Enter your email subject line','mystickyelements');?>" />
 											<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-												<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+												<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 												<p><?php esc_html_e("The subject line of the emails that you'll recieve from each contact form submission", 'mystickyelements'); ?></p>
 											</div>
 										</div>
@@ -642,7 +642,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 										<div id="checkboxes">
 											<label>
 												<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-													<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+													<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 													<p><?php esc_html_e("Integrate Mailchimp to directly sync email leads on Mailchimp", 'mystickyelements'); ?></p>
 												</div>
 												<input type="checkbox" name="contact-form[send_leads][]" id="send_leads_mailchimp" data-url = "<?php echo admin_url("admin.php?page=my-sticky-elements-upgrade"); ?>" value="mailchimp" <?php if ( !empty($contact_form['send_leads']) && in_array( 'mailchimp', $contact_form['send_leads']) ) { echo 'checked="checked"'; } ?> />&nbsp;<?php esc_html_e( 'Send leads to Mailchimp', 'mystickyelements' );?>
@@ -655,7 +655,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 										<div id="checkboxes">
 											<label>
 												<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-													<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+													<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 													<p><?php esc_html_e("Integrate MailPoet to directly sync email leads on MailPoet", 'mystickyelements'); ?></p>
 												</div>
 												<input type="checkbox" name="contact-form[send_leads][]" id="send_leads_mailpoet" data-url="<?php echo admin_url("admin.php?page=my-sticky-elements-upgrade"); ?>" value="mailpoet" <?php if ( !empty($contact_form['send_leads']) && in_array( 'mailpoet', $contact_form['send_leads']) ) { echo 'checked="checked"'; } ?>/>&nbsp;<?php esc_html_e( 'Send leads to MailPoet', 'mystickyelements' );?>
@@ -728,7 +728,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 							<div class="mystickyelements-setting-wrap-left">
 								<label for="myStickyelements-contact-form-close">
 									<span class="mystickyelements-custom-fields-tooltip">
-										<a href="javascript:void(0);" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
 										<p>Close the form automatically after a few seconds based on your choice</p>
 									</span>
 									<?php esc_html_e( 'Close form automatically after submission', 'mystickyelements' );?>

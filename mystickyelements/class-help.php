@@ -28,6 +28,9 @@ class MSE_HELP {
             // add need help in footer
             add_action('admin_footer', array($this, 'admin_footer_need_help_content'));
         } 
+
+        // add ajax action
+        add_action('wp_ajax_hide_mse_help_cta', array($this, 'hide_mse_help_cta')); 
   
 	}//end __construct()
 
@@ -93,6 +96,34 @@ class MSE_HELP {
 
         include_once MYSTICKYELEMENTS_PATH.'/admin/help.php';
     } 
+
+
+    // Hide MSE Help CTA
+    public function hide_mse_help_cta(){   
+        $response = array();
+        $response['status'] = 0;
+        $response['error'] = 0;
+        $response['data'] = array();
+        $response['message'] = "";
+        $postData = filter_input_array(INPUT_POST);
+        $errorCounter = 0;
+        if (!isset($postData['nonce']) || empty($postData['nonce'])) {
+            $response['message'] =  esc_html__("Your request is not valid", 'mystickyelements');
+            $errorCounter++;
+        } else {
+            $nonce = esc_attr($postData['nonce']);
+            if(!wp_verify_nonce($nonce, 'hide_mse_help_cta')) {
+                $response['message'] =  esc_html__("Your request is not valid", 'mystickyelements');
+                $errorCounter++;
+            }
+        }
+        if($errorCounter == 0) {
+            $response['status'] = 1;
+            add_option("mse_help_cta", "yes");
+        }
+        echo wp_json_encode($response); die; 
+    
+    }
     
 }
 new MSE_HELP();
