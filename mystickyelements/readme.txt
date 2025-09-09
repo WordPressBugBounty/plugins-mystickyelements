@@ -1,9 +1,9 @@
-=== All-in-one Sticky Floating Contact Form, Call, Click to Chat, and 50+ Social Icon Tabs - My Sticky Elements ===
+=== All-in-one Sticky Floating Contact Form, Call, Click to Chat, and 50+ Social Icon Tabs  - My Sticky Elements ===
 Contributors: premio, galdub, tomeraharon
 Tags: whatsapp, contact form, facebook messenger, call now button, instagram
 Requires at least: 3.1
 Tested up to: 6.8
-Stable tag: 2.3.1
+Stable tag: 2.3.2
 Plugin URI: https://premio.io/downloads/mystickyelements/
 License: GPLv3
 
@@ -334,6 +334,9 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 9. Change the color of your icons, contact form, text, and anything else!
 
 == Changelog ==
+
+= 2.3.2 =
+Mobile and desktop view bug fixed
 
 = 2.3.1 =
 Removed cookie dependency

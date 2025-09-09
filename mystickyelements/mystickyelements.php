@@ -3,7 +3,7 @@
 Plugin Name: myStickyElements
 Plugin URI: https://premio.io/
 Description: myStickyElements is simple yet very effective plugin. It is perfect to fill out usually unused side space on webpages with some additional messages, videos, social widgets ...
-Version: 2.3.1
+Version: 2.3.2
 Author: Premio
 Author URI: https://premio.io/
 Domain Path: /languages
@@ -15,7 +15,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 define('MYSTICKYELEMENTS_URL', plugins_url('/', __FILE__));  // Define Plugin URL
 define('MYSTICKYELEMENTS_PATH', plugin_dir_path(__FILE__));  // Define Plugin Directory Path
 define('MYSTICKYELEMENTS_BASE', plugin_basename(__FILE__));
-define("MY_STICKY_ELEMENT_VERSION", "2.3.1");
+define("MY_STICKY_ELEMENT_VERSION", "2.3.2");
 if(!defined('MSE_DEV_MODE')) {
     define('MSE_DEV_MODE', false);
 }

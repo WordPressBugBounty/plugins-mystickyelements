@@ -102,7 +102,7 @@ if ( !$furl){
 									'top' => __('Top', 'mystickyelements'),
 									'bottom' => __('Bottom', 'mystickyelements'),
 								);
-								$selected_position_mobile = (isset($general_settings['position']) && $general_settings['position'] != '') ? $general_settings['position'] : 'left';
+								$selected_position_mobile = (isset($general_settings['position_mobile']) && $general_settings['position_mobile'] != '') ? $general_settings['position_mobile'] : 'left';
 							?>
 							<select id="myStickyelements-inputs-position_mobile" name="general-settings[position_mobile]" >
 								<?php foreach( $position_mobiles as $key => $value ): ?>
