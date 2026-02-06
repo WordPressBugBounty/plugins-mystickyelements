@@ -2,12 +2,12 @@
 Contributors: premio, galdub, tomeraharon
 Tags: whatsapp, contact form, facebook messenger, call now button, instagram
 Requires at least: 3.1
-Tested up to: 6.8
-Stable tag: 2.3.2
+Tested up to: 6.9
+Stable tag: 2.3.4
 Plugin URI: https://premio.io/downloads/mystickyelements/
 License: GPLv3
 
-🔥 Get leads with a floating contact form tab, chat & social buttons like Facebook Messenger, WhatsApp, Viber, Telegram, Twitter, Instagram & more 🎉
+Get leads with a floating contact form tab, chat & social buttons like Facebook Messenger, WhatsApp, Viber, Telegram, Twitter, Instagram & more 🎉
 
 == Description ==
 
@@ -33,12 +33,12 @@ Tabs that will help your website visitors contact you on any popular social chan
 = 🚀 Show My Sticky Elements contact and social tabs =
 Contact form
 Facebook
-Twitter / X.com
+X.com - Twitter 
 Instagram page
 Instagram Direct Messenger (Instagram DM)
-Pinterest page
+Pinterest
 WhatsApp chat
-YouTube channel
+YouTube
 Poptin
 Click to call
 Facebook Messenger
@@ -90,7 +90,7 @@ Shortcode, IFrame or HTML icon
 Upgrade to the Pro version of My Sticky Elements and connect your My Sticky Elements contact forms to MailChimp or MailPoet.
 
 =▶️ Live Demo =
-A live demo for My Sticky Elements plugin is available at <a href="https://demo.premio.io/mystickyelements/?utm_source=wordpressorg" target="_blank" title="Premio.io demo site">Premio's demo site</a>.
+A live demo of My Sticky Elements plugin is available at <a href="https://demo.premio.io/mystickyelements/?utm_source=wordpressorg" target="_blank" title="Premio.io demo site">Premio's demo site</a>.
 
 = 🆓 Free plan includes: =
 1. Floating contact form
@@ -170,7 +170,7 @@ Add a country code formatting picker to your contact form, making it easier for 
 
 * Facebook page - add a link to your Facebook business page (fan page), and let your visitors find you on facebook.
 
-* Twitter page / X.com - add a link to your Twitter business page, and let your visitors find you on Twitter, follow your page and see your posts.
+* X.com Twitter page - add a link to your X.com Twitter business page, and let your visitors find you on X.com Twitter, follow your page and see your posts.
 
 * Instagram page - add a link to your Instagram business page or Instagram profile page, and let your visitors follow your brand on Instagram.
 
@@ -207,9 +207,9 @@ Adding WhatsApp button to your site will give 25 million new users every month (
 
 * Spotify - Spotify is growing and if you run a podcast, Spotify is the best distribution channel.
 
-* Itunes - similar to Spotify but for Apple users. Add your itunes link to let your visitors find your itunes channel quickly.
+* iTunes - similar to Spotify but for Apple users. Add your iTunes link to let your visitors find your iTunes channel quickly.
 
-* SoundCloud - this is another great channel like itunes and Spotify to distribute music, interviews and podcasts.
+* SoundCloud - this is another great channel like iTunes and Spotify to distribute music, interviews and podcasts.
 
 * VK - Add your VK VKontakte username in the field and it will automatically let your visitors chat with you.
 
@@ -274,7 +274,7 @@ Adding WhatsApp button to your site will give 25 million new users every month (
 = ✉️ Add a Floating Contact Form to your WordPress website =
 With My Sticky Elements, create a floating contact form for your visitors. In the Pro version, customize this form by adding various types of input fields, such as dropdown, file upload, phone number, etc. Get leads to email.
 
-= 💬 Social, chat buttons custom links, and shortcode support =
+= 💬 Social, chat buttons custom links & shortcode support =
 Select from 50+ chat and social buttons
 
 = 🎯 Smart Targeting Options =
@@ -283,7 +283,7 @@ Choose to show or not show the widget on specific using various rules combinatio
 = 🛡️ Spam Protection using Google reCAPTCHA =
 With our Pro version integrate with reCAPTCHA and protect your contact form from spam and bots.
 
-= 🔒 My Sticky Elements is GDPR complaint =
+= 🔒 My Sticky Elements is GDPR compliant =
 All the data is saved locally.
 
 = 🤗 Testimonials =
@@ -334,6 +334,15 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 9. Change the color of your icons, contact form, text, and anything else!
 
 == Changelog ==
+
+= 2.3.4 =
+Contact form leads page bug was fixed
+Fonts bug fixed
+Phone field bug fixed
+
+= 2.3.3 =
+Live chat integration flow improvement
+Menu structure improved
 
 = 2.3.2 =
 Mobile and desktop view bug fixed

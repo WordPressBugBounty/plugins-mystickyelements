@@ -36,10 +36,37 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 			
             wp_enqueue_style('font-awesome-css', plugins_url('/css/font-awesome.min.css', __FILE__), array() , MY_STICKY_ELEMENT_VERSION);
             wp_enqueue_style('mystickyelements-front-css', plugins_url('/css/mystickyelements-front'. esc_attr($min) .'.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION );
-
+			$custom_css = '';
+			
             // Add Themme custom CSS
-           if (  isset($contact_form['form_css']) || isset($general_settings['tabs_css']) || ( isset($general_settings['font_family']) && $general_settings['font_family'] != '') ) {
-                $custom_css = '';
+			if ( ( isset($contact_form['direction']) && $contact_form['direction'] == 'RTL'  ) || isset($contact_form['form_css']) || isset($general_settings['tabs_css']) || ( isset($general_settings['font_family']) && $general_settings['font_family'] != '') ) {
+				
+				/*
+				 * Call Open Sans Hebrew font file called one when the user choose direction RTL
+				 */		
+                $custom_css .= "@font-face {
+					font-family: 'Open Sans Hebrew';
+					src: url('" . plugins_url('/fonts/OpenSansHebrew-Regular.woff', __FILE__) . "') format('woff');
+					font-weight: normal;
+					font-style: normal;
+					font-display: swap;
+				}
+				
+				.mystickyelements-contact-form[dir='rtl'],
+				.mystickyelements-contact-form[dir='rtl'] .element-contact-form .contact-form-heading,
+				.mystickyelements-contact-form[dir='rtl'] form.stickyelements-form input,
+				.mystickyelements-contact-form[dir='rtl'] form.stickyelements-form textarea,
+				.mystickyelements-fixed[dir='rtl'] .mystickyelements-social-icon,
+				.mystickyelements-fixed[dir='rtl'] .mystickyelements-social-text,
+				html[dir='rtl'] .mystickyelements-contact-form,
+				html[dir='rtl'] .mystickyelements-contact-form .element-contact-form .contact-form-heading,
+				html[dir='rtl'] .mystickyelements-contact-form form.stickyelements-form input,
+				html[dir='rtl'] .mystickyelements-contact-form form.stickyelements-form textarea,
+				html[dir='rtl'] .mystickyelements-fixed .mystickyelements-social-icon,
+				html[dir='rtl'] .mystickyelements-fixed .mystickyelements-social-text  {
+					font-family: 'Open Sans Hebrew';
+				}
+				";
 
 				if ( isset($general_settings['font_family']) && $general_settings['font_family'] != '' ) {
 					if(isset($general_settings['font_family'] ) && $general_settings['font_family'] == 'System Stack' ){
@@ -82,9 +109,8 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 				}
 				if (isset($general_settings['tabs_css']) && $general_settings['tabs_css'] !='' ) {
 					$custom_css .= trim(strip_tags($general_settings['tabs_css']));
-				}
+				}				
 				
-
                 if (!empty($custom_css)) {
 					wp_add_inline_style('mystickyelements-front-css', $custom_css);
                 }
@@ -116,20 +142,21 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 			wp_enqueue_script( 'mailcheck-js', plugins_url('/js/mailcheck'.esc_attr($min).'.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ]);
 			wp_enqueue_script('autocomplete-email-js', plugins_url('/js/jquery.email-autocomplete'.esc_attr($min).'.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ]);
 					
+			if( apply_filters('mystickyelements_enable_intlTelInput_library', true ) ) {
+				wp_enqueue_style('intl-tel-input', plugins_url('/intl-tel-input-src/build/css/intlTelInput.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
+			
+				wp_enqueue_script('intl-tel-input-js', plugins_url('/intl-tel-input-src/build/js/intlTelInput.js', __FILE__), array('jquery'), MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ]);
+			}
+			
 			wp_enqueue_script('mystickyelements-fronted-js', plugins_url('/js/mystickyelements-fronted'.esc_attr($min).'.js', __FILE__), array('jquery'), MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ] );
 
             $locale_settings = array(
                 'ajaxurl' => admin_url('admin-ajax.php'),
                 'ajax_nonce' => wp_create_nonce('mystickyelements'),
+				'plugin_url' => MYSTICKYELEMENTS_URL
             );
             wp_localize_script('mystickyelements-fronted-js', 'mystickyelements', $locale_settings);
 			
-			
-			wp_enqueue_style('intl-tel-input', plugins_url('/intl-tel-input-src/build/css/intlTelInput.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
-			
-			 wp_enqueue_script('intl-tel-input-js', plugins_url('/intl-tel-input-src/build/js/intlTelInput.js', __FILE__), array('jquery'), MY_STICKY_ELEMENT_VERSION, ['strategy'  => 'defer', 'in_footer'=> true ]);
-				
-			wp_localize_script('intl-tel-input-js', 'mystickyelement_obj', array('plugin_url' => MYSTICKYELEMENTS_URL));	
 		}
 
         public function mystickyelement_element_footer()

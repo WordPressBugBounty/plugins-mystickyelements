@@ -18,12 +18,7 @@ if (defined('ABSPATH') === false) {
         <div class="px-7 py-8 flex-1">
             <h2 class="mystickyelement-widgetanalytic-heading"><?php _e("Unlock My Sticky Elements <span>Analytics</span> 🚀", "mystickyelements") ?></h2>
 			
-			<div class="flex items-center mt-5 space-x-3">
-                <a class="btn rounded-lg drop-shadow-3xl font-normal" href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements-upgrade")) ?>" title="Upgrade to Pro">
-                    <?php esc_html_e('Upgrade to Pro 🚀', 'mystickyelements'); ?>
-                </a>                
-            </div>
-			
+	 
 			<div class="mystickyelement-licenseimage">
 				<img class="h-full w-auto" src="<?php echo esc_url(plugins_url('/images/analytics-image.png', __FILE__)); ?>" alt="StickyElements analytics" />
 			</div>

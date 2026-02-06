@@ -5,9 +5,12 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 	class MyStickyElementsPage_pro {
 
 		public function __construct() { 
+			
+			add_action( 'admin_menu', array( $this, 'add_mystickyelement_plugin_page' ), 9 );
 			add_action( 'plugins_loaded', array( $this, 'mystickyelements_load_plugin_textdomain' ) );
 			add_action( 'admin_enqueue_scripts',  array( $this, 'mystickyelements_admin_enqueue_script' ), 99 );
-			add_action( 'admin_menu', array( $this, 'add_mystickyelement_plugin_page' ) );
+			add_action( 'admin_head', array( $this, 'mystickyelement_inline_css_admin' ) );
+			add_action( 'admin_init', array($this, 'check_for_redirection'));
 			add_action( 'wp_ajax_mystickyelement-social-tab', array( $this, 'mystickyelement_social_tab_add' ) );
 			add_action( 'wp_ajax_mystickyelement_delete_db_record', array( $this, 'mystickyelement_delete_db_record' ) );
 			
@@ -55,7 +58,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 		 */
 		public  function mystickyelements_admin_enqueue_script( ) {
             $min = MSE_DEV_MODE ? '' : '.min';
-			if ( isset($_GET['page']) && ( $_GET['page'] == 'my-sticky-elements' || $_GET['page'] == 'my-sticky-elements-leads' || $_GET['page'] == 'my-sticky-elements-new-widget' || $_GET['page'] == 'recommended-plugins' || $_GET['page'] == 'my-sticky-elements-analytics' || $_GET['page'] == 'my-sticky-elements-integration' || $_GET['page'] == 'my-sticky-elements-upgrade' ) ) {
+			if ( isset($_GET['page']) && ( $_GET['page'] == 'my-sticky-elements' || $_GET['page'] == 'my-sticky-elements-leads' || $_GET['page'] == 'my-sticky-elements-new-widget' || $_GET['page'] == 'recommended-plugins' || $_GET['page'] == 'my-sticky-elements-analytics' || $_GET['page'] == 'my-sticky-elements-integration' || $_GET['page'] == 'my-sticky-elements-upgrade'  || $_GET['page'] == 'my-sticky-elements-chatway-plugin') ) {
            
 				$is_shown = MSE_SIGNUP_CLASS::check_modal_status();
                 if($is_shown) {
@@ -86,7 +89,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 					wp_enqueue_style('jquery-ui-css', plugins_url('/css/datepicker.min.css', __FILE__), [], MY_STICKY_ELEMENT_VERSION);
 
 					wp_enqueue_script('jquery-ui-datepicker');
-
+ 
 					// include the thickbox styles
 					wp_enqueue_style('thickbox.css', '/'.WPINC.'/js/thickbox/thickbox.css', null, '1.0');
 					
@@ -126,6 +129,97 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 			}
 		}
 
+		public function check_for_redirection(){
+			$page = isset($_GET['page']) ? sanitize_text_field($_GET['page']) : '';
+			if($page == 'my-sticky-elements-leads'){
+				$total_leads = $this->total_my_sticky_elements_widgets(); // Total number of my sticky elements contact form leads
+				$contact_form_channel_active = $this->is_contact_form_channel_active(); // True if contact form is enabled, false otherwise
+				if($total_leads == 0 && !$contact_form_channel_active){
+					wp_redirect(admin_url('admin.php?page=my-sticky-elements'));
+					exit;
+				}
+			}
+		}
+
+		public function mystickyelement_inline_css_admin(){ 
+			global $submenu;
+			$parent_slug = 'my-sticky-elements'; 
+			$elements_widgets 			= get_option( 'mystickyelements-widgets' );
+			$total_leads = $this->total_my_sticky_elements_widgets(); // Total number of my sticky elements contact form leads
+			$contact_form_channel_active = $this->is_contact_form_channel_active(); // True if contact form is enabled, false otherwise
+ 
+			if (isset($submenu[$parent_slug])) {
+				foreach ($submenu[$parent_slug] as &$item) {
+					if (isset($item[2]) && $item[2] === 'my-sticky-elements-leads') {
+						$item[4] = 'mse-admin-menu-leads'; // add your class here
+					}
+					if (isset($item[2]) && $item[2] === 'my-sticky-elements-new-widget') {
+						$item[4] = 'mse-admin-menu-upgrade'; // add your class here
+					}
+					if (isset($item[0]) && $item[0] === 'MSE upgrade') {
+						$item[4] = 'mse-admin-menu-upgrade'; // add your class here
+					}
+				}
+			} 
+ 
+			?>
+			<style>  
+				.mse-admin-menu-upgrade {
+					display: none !important;
+				}
+				<?php  
+					if( empty($elements_widgets)  ){
+						echo '#toplevel_page_my-sticky-elements ul.wp-submenu .wp-first-item {
+							display: none !important;
+						}';
+					}
+					if( $total_leads == 0 && !$contact_form_channel_active) {
+						echo '#toplevel_page_my-sticky-elements ul.wp-submenu .mse-admin-menu-leads {
+							display: none !important;
+						}';
+					}
+				?>
+			</style>
+			<?php
+		}
+
+
+		/**
+		 * Total number of my sticky elements contact form leads 
+		 *
+		 * @return int Total number of contact form leads
+		 */
+		public function total_my_sticky_elements_widgets() {
+			global $wpdb;
+			$tableName = $wpdb->prefix . 'mystickyelement_contact_lists';
+			$total_leads = 0;
+			// Check if table exists using prepared statement for security
+			$table_check = $wpdb->get_var($wpdb->prepare("SHOW TABLES LIKE %s", $tableName));
+			if ($table_check === $tableName) { 
+				// Use prepared statement with identifier placeholder for table name
+				$total_leads = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM %i", $tableName));
+				$total_leads = absint($total_leads);
+			} 
+			return $total_leads;
+		}
+
+
+		/**
+		 * Is contact Form active
+		 *
+		 * @return bool True if contact form is enabled, false otherwise 
+		 */
+		public function is_contact_form_channel_active() { 
+			$contact_form = get_option('mystickyelements-contact-form', false);
+			
+			// Check if contact form exists and is enabled
+			if ($contact_form && isset($contact_form['enable']) && intval($contact_form['enable']) === 1) {
+				return true;
+			}
+			
+			return false;
+		} 
+		
 		/*
 		 * Add My Sticky Element Page in admin menu.
 		 */
@@ -143,8 +237,10 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
             }
 			$hide_mserecommended_plugin = get_option('hide_mserecommended_plugin');
 			$elements_widgets 			= get_option( 'mystickyelements-widgets' );
-			
-			$new_widget_link 			= ( !empty($elements_widgets)) ? 'my-sticky-elements-new-widget' : 'my-sticky-elements&widget=0';
+
+			$total_leads = $this->total_my_sticky_elements_widgets(); // Total number of my sticky elements contact form leads
+			$contact_form_channel_active = $this->is_contact_form_channel_active(); // True if contact form is enabled, false otherwise
+			$new_widget_link 			= ( !empty($elements_widgets) ) ? 'my-sticky-elements-new-widget' : 'my-sticky-elements&widget=0';
 			$default_widget_name = 'Dashboard';
 			add_menu_page(
 				'Settings Admin',
@@ -154,22 +250,35 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 				array( $this, 'mystickyelements_admin_settings_page' ),
 				'dashicons-sticky'
 			);
+			if(!empty($elements_widgets) && count($elements_widgets) > 0){
+				add_submenu_page(
+					'my-sticky-elements',
+					'Settings Admin',
+					'Dashboard',
+					'manage_options',
+					'my-sticky-elements',
+					array( $this, 'mystickyelements_admin_settings_page' )
+				);
+			}else{
+				add_submenu_page(
+					'my-sticky-elements',
+					'Settings Admin',
+					'+ Create New Widget',
+					'manage_options',
+					$new_widget_link,
+					array( $this, 'mystickyelements_admin_new_widget_page' )
+				);
+			}
 			add_submenu_page(
 				'my-sticky-elements',
 				'Settings Admin',
-				'Dashboard',
-				'manage_options',
-				'my-sticky-elements',
-				array( $this, 'mystickyelements_admin_settings_page' )
-			);
-			add_submenu_page(
-				'my-sticky-elements',
-				'Settings Admin',
-				'+ Create New Widget',
+				'MSE upgrade',
 				'manage_options',
 				$new_widget_link,
 				array( $this, 'mystickyelements_admin_new_widget_page' )
 			);
+			
+		
 			
 			if( class_exists( 'Chatway' ) ) {
 				add_submenu_page(
@@ -190,15 +299,18 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 					array( $this, 'mystickyelements_install_chatway_plugin' )
 				);
 			}
-			add_submenu_page(
-				'my-sticky-elements',
-				'Settings Admin',
-				'Integrations',
-				'manage_options',
-				'my-sticky-elements-integration',
-				array( $this, 'mystickyelements_admin_integration_page' )
-			);
 
+			if($contact_form_channel_active == true){
+				add_submenu_page(
+					'my-sticky-elements',
+					'Settings Admin',
+					'Integrations',
+					'manage_options',
+					'my-sticky-elements-integration',
+					array( $this, 'mystickyelements_admin_integration_page' )
+				); 
+			}
+	
 
 			add_submenu_page(
                 'my-sticky-elements',
@@ -293,7 +405,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 				/* Signup Form When first time activate plugin */	 
 				require_once MYSTICKYELEMENTS_PATH . 'admin/stickyelements-review-popup.php';	
 			}
-			
+	
 			$widget_tab_index = 'mystickyelements-contact-form';
 			if ( isset($_POST['mystickyelement-submit']) && !wp_verify_nonce( $_POST['mystickyelement-submit'], 'mystickyelement-submit' ) ) {
 				
@@ -549,8 +661,9 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 				}
 				$this->mystickyelements_clear_all_caches();	
 				
-				
+			
 				if(isset($_POST['save_view']) && $_POST['save_view'] == 'Save View'){
+				
 					echo '<script type="text/javascript"> jQuery("#loader").show(); </script>';
 					
 					if( isset($_POST['widgest_status']) && $_POST['widgest_status'] == 0 ){
@@ -561,10 +674,13 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 				}
 				
 				if(( isset($_POST['submit']) && $_POST['submit'] == 'Save' ) || ( isset($_POST['submit']) && $_POST['submit'] == 'Publish' )){
+				
 					if( isset($_POST['widgest_status']) && $_POST['widgest_status'] == 0 ){
 						$this->show_save_popup();
 					}
 					echo '<script type="text/javascript"> jQuery("#flash_message").addClass("show");setTimeout(function(){jQuery("#flash_message").removeClass("show");}, 3000);</script>';
+
+					echo '<script>window.location.reload();</script>';
 				}
 							
 			}
@@ -1545,6 +1661,10 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 		}
 		
 		public function myStickyelements_intro_popup_action() {
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_die(0); 
+			}
+			
 			if( !empty( $_REQUEST['nonce'] ) && wp_verify_nonce( $_REQUEST['nonce'], 'myStickyelements_update_popup_status' ) ) {
 				update_option( "mystickyelements_intro_popup", "hide" );
 			}
@@ -1553,6 +1673,10 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 		}
 		
 		public function mystickyelements_admin_send_message_to_owner() {
+			
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_die(0); 
+			}
 			$response = array();
 			$response['status'] = 0;
 			$response['error'] = 0;
@@ -1671,7 +1795,11 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 		
 		public function my_sticky_elements_bulks(){
 			global $wpdb;
-
+			
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_die(0); 
+			}
+			
 			check_ajax_referer( 'mystickyelements', 'wpnonce' );
 			
 			if( isset($_POST['wpnonce']) ){
