@@ -1,5 +1,6 @@
 <?php
 $mystickyelement_class =  ( isset($_GET['page']) && $_GET['page'] == 'my-sticky-elements-settings' && !isset($_GET['widget']) ) ? 'mystickyelement-wrap-default' : '' ;
+$mystickyelement_class .= is_plugin_active('chatway-live-chat/chatway.php') ? ' has-chatway-chat' : '';
 ?>
 <div class="wrap mystickyelement-wrap <?php echo esc_attr($mystickyelement_class); ?>">
 	<h2 class="mystickyelement-empty-h2" style="font-size: 0px;margin-bottom: 0px;"></h2>

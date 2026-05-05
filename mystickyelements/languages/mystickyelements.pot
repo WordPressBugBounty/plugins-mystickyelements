@@ -1,14 +1,14 @@
-# Copyright (C) 2025 Premio
+# Copyright (C) 2026 Premio
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: myStickyElements 2.2.8\n"
+"Project-Id-Version: myStickyElements 2.3.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mystickyelements\n"
-"POT-Creation-Date: 2025-05-20 12:27:02+00:00\n"
+"POT-Creation-Date: 2026-03-19 06:05:42+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en\n"
@@ -24,147 +24,201 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: admin/chatway-plugin.php:46
-msgid "Install Chatway Live Chat"
+#: admin/chatway-plugin.php:48
+msgid "Chatway: Free Live Chat, AI Chatbot"
 msgstr ""
 
-#: admin/chatway-plugin.php:91 recommended-plugins.php:140
+#: admin/chatway-plugin.php:49
+msgid ""
+"Live chat with your website's visitors through your WordPress website. "
+"Chatway includes unlimited chats, an AI support agent chatbot, iOS & "
+"Android mobile apps, team collaboration, saved replies, integrations, and "
+"more."
+msgstr ""
+
+#: admin/chatway-plugin.php:193 recommended-plugins.php:228
 #. translators: %s: Plugin author.
 msgid "By %s"
 msgstr ""
 
-#: admin/chatway-plugin.php:117 recommended-plugins.php:166
+#: admin/chatway-plugin.php:217 recommended-plugins.php:252
+#. translators: %s: Plugin name and version.
+msgid "Install %s now"
+msgstr ""
+
+#: admin/chatway-plugin.php:219 recommended-plugins.php:254
 msgid "Install Now"
 msgstr ""
 
-#: admin/chatway-plugin.php:139 recommended-plugins.php:188
+#: admin/chatway-plugin.php:224 recommended-plugins.php:259
+msgid "Cannot Install"
+msgstr ""
+
+#: admin/chatway-plugin.php:239 recommended-plugins.php:274
+#. translators: %s: Plugin name and version.
+msgid "Update %s now"
+msgstr ""
+
+#: admin/chatway-plugin.php:241 recommended-plugins.php:276
 msgid "Update Now"
 msgstr ""
 
-#: admin/chatway-plugin.php:158 recommended-plugins.php:207
+#: admin/chatway-plugin.php:246 recommended-plugins.php:281
+msgid "Cannot Update"
+msgstr ""
+
+#: admin/chatway-plugin.php:257 recommended-plugins.php:292
+msgid "Active"
+msgstr ""
+
+#: admin/chatway-plugin.php:260 recommended-plugins.php:295
 msgid "Activate"
 msgstr ""
 
-#: admin/chatway-plugin.php:171 recommended-plugins.php:220
+#: admin/chatway-plugin.php:262 recommended-plugins.php:297
+#. translators: %s: Plugin name.
+msgid "Activate %s"
+msgstr ""
+
+#: admin/chatway-plugin.php:273 recommended-plugins.php:308
 msgid "Network Activate"
 msgstr ""
 
-#: admin/chatway-plugin.php:202 recommended-plugins.php:251
+#: admin/chatway-plugin.php:275 recommended-plugins.php:310
+#. translators: %s: Plugin name.
+msgid "Network Activate %s"
+msgstr ""
+
+#: admin/chatway-plugin.php:288 recommended-plugins.php:323
+msgid "Installed"
+msgstr ""
+
+#: admin/chatway-plugin.php:303 recommended-plugins.php:338
 #. translators: %s: Plugin name and version.
 msgid "More information about %s"
 msgstr ""
 
-#: admin/chatway-plugin.php:204 recommended-plugins.php:253
+#: admin/chatway-plugin.php:305 recommended-plugins.php:340
 msgid "More Details"
 msgstr ""
 
-#: admin/chatway-plugin.php:234 recommended-plugins.php:283
+#: admin/chatway-plugin.php:335 recommended-plugins.php:370
 msgid "This plugin doesn&#8217;t work with your versions of WordPress and PHP."
 msgstr ""
 
-#: admin/chatway-plugin.php:238 recommended-plugins.php:287
+#: admin/chatway-plugin.php:339 recommended-plugins.php:374
 #. translators: 1: URL to WordPress Updates screen, 2: URL to Update PHP page.
 msgid ""
 "<a href=\"%1$s\">Please update WordPress</a>, and then <a "
 "href=\"%2$s\">learn more about updating PHP</a>."
 msgstr ""
 
-#: admin/chatway-plugin.php:246 admin/chatway-plugin.php:262
-#: recommended-plugins.php:295 recommended-plugins.php:311
+#: admin/chatway-plugin.php:347 admin/chatway-plugin.php:363
+#: recommended-plugins.php:382 recommended-plugins.php:398
 #. translators: %s: URL to WordPress Updates screen.
 msgid "<a href=\"%s\">Please update WordPress</a>."
 msgstr ""
 
-#: admin/chatway-plugin.php:252 admin/chatway-plugin.php:271
-#: recommended-plugins.php:301 recommended-plugins.php:320
+#: admin/chatway-plugin.php:353 admin/chatway-plugin.php:372
+#: recommended-plugins.php:388 recommended-plugins.php:407
 #. translators: %s: URL to Update PHP page.
 msgid "<a href=\"%s\">Learn more about updating PHP</a>."
 msgstr ""
 
-#: admin/chatway-plugin.php:258 recommended-plugins.php:307
+#: admin/chatway-plugin.php:359 recommended-plugins.php:394
 msgid "This plugin doesn&#8217;t work with your version of WordPress."
 msgstr ""
 
-#: admin/chatway-plugin.php:267 recommended-plugins.php:316
+#: admin/chatway-plugin.php:368 recommended-plugins.php:403
 msgid "This plugin doesn&#8217;t work with your version of PHP."
 msgstr ""
 
-#: admin/chatway-plugin.php:315 recommended-plugins.php:364
+#: admin/chatway-plugin.php:417 recommended-plugins.php:452
 msgid "Last Updated:"
 msgstr ""
 
-#: admin/chatway-plugin.php:318 recommended-plugins.php:367
+#: admin/chatway-plugin.php:420 recommended-plugins.php:455
 #. translators: %s: Human-readable time difference.
 msgid "%s ago"
 msgstr ""
 
-#: admin/chatway-plugin.php:336 recommended-plugins.php:385
+#: admin/chatway-plugin.php:433 recommended-plugins.php:468
+msgid "Less Than 10"
+msgstr ""
+
+#: admin/chatway-plugin.php:439 recommended-plugins.php:474
 #. translators: %s: Number of installations.
 msgid "%s Active Installations"
 msgstr ""
 
-#: admin/chatway-plugin.php:342 recommended-plugins.php:391
+#: admin/chatway-plugin.php:445 recommended-plugins.php:480
 msgid "Untested with your version of WordPress"
 msgstr ""
 
-#: admin/chatway-plugin.php:344 recommended-plugins.php:393
-msgid "<strong>Incompatible</strong> with your version of WordPress"
+#: admin/chatway-plugin.php:461 admin/chatway.php:17
+msgid "Install Chatway: Live Chat & AI"
 msgstr ""
 
-#: admin/chatway-plugin.php:346 recommended-plugins.php:395
-msgid "<strong>Compatible</strong> with your version of WordPress"
-msgstr ""
-
-#: admin/chatway.php:56 admin/stickyelements-settings.php:77
-msgid "Live Chat"
-msgstr ""
-
-#: admin/chatway.php:60
-msgid "You already have Chatway installed for live chat. "
-msgstr ""
-
-#: admin/chatway.php:63
+#: admin/chatway-plugin.php:462 admin/chatway.php:20
 msgid ""
-"If you wish to disable the Live Chat for a specific page and only display "
-"the MySticky Elements widget, you can disable it from here."
+"Talk to visitors instantly. Automate support with AI. Turn chats into "
+"customers."
 msgstr ""
 
-#: admin/chatway.php:68
-msgid "Need better way to connect with visitors?"
+#: admin/chatway-plugin.php:465 admin/chatway.php:48
+msgid "24/7 AI support that handles repetitive questions"
 msgstr ""
 
-#: admin/chatway.php:71
-msgid ""
-"Add the Chatway Live Chat widget to your website and effectively "
-"communicate with visitors with features such as:"
+#: admin/chatway-plugin.php:466 admin/chatway.php:49
+msgid "All chats in one inbox (Website, Email, Messenger, Instagram)"
 msgstr ""
 
-#: admin/chatway.php:74
-msgid "Unlimited conversations, email, and Facebook Messenger integrations"
+#: admin/chatway-plugin.php:467 admin/chatway.php:50
+msgid "WooCommerce integration"
 msgstr ""
 
-#: admin/chatway.php:75
-msgid "Team collaboration with agents"
+#: admin/chatway-plugin.php:468 admin/chatway.php:51
+msgid "Custom automations & canned replies"
 msgstr ""
 
-#: admin/chatway.php:76
-msgid "Canned responses, private notes, reminders, and more"
+#: admin/chatway-plugin.php:469 admin/chatway.php:52
+msgid "Multiple widgets & inboxes"
 msgstr ""
 
-#: admin/chatway.php:77
-msgid "iOS & Android apps available"
+#: admin/chatway-plugin.php:470 admin/chatway.php:53
+msgid "Live visitor insights and Multilingual support"
 msgstr ""
 
-#: admin/chatway.php:85 admin/stickyelements-dashboard.php:261
-msgid "Manage Live Chat"
+#: admin/chatway.php:7
+msgid "Step 4:"
 msgstr ""
 
-#: admin/chatway.php:91
+#: admin/chatway.php:7
+msgid "Add live chat + AI support agent"
+msgstr ""
+
+#: admin/chatway.php:25
 msgid "Add Live Chat"
 msgstr ""
 
-#: admin/chatway.php:94
-msgid "You can skip this step by saving the widget"
+#: admin/chatway.php:27 admin/chatway.php:43
+msgid "Skip this step by saving the widget"
+msgstr ""
+
+#: admin/chatway.php:32
+msgid "Chatway installed successfully! 🚀"
+msgstr ""
+
+#: admin/chatway.php:35
+msgid "Talk to your visitors instantly and turn conversations into customers."
+msgstr ""
+
+#: admin/chatway.php:40 admin/stickyelements-dashboard.php:261
+msgid "Manage Live Chat"
+msgstr ""
+
+#: admin/chatway.php:57
+msgid "Why Chatway?"
 msgstr ""
 
 #: admin/contact-forms.php:54
@@ -201,12 +255,12 @@ msgid ""
 msgstr ""
 
 #: admin/contact-forms.php:80 admin/social-media.php:44
-#: admin/sticktelements-preview.php:273 admin/stickyelements-dashboard.php:47
+#: admin/sticktelements-preview.php:273 admin/stickyelements-dashboard.php:48
 msgid "Disable anyway"
 msgstr ""
 
 #: admin/contact-forms.php:80 admin/social-media.php:44
-#: admin/sticktelements-preview.php:273 admin/stickyelements-dashboard.php:47
+#: admin/sticktelements-preview.php:273 admin/stickyelements-dashboard.php:48
 msgid "Keep using"
 msgstr ""
 
@@ -229,7 +283,7 @@ msgid "Show the field"
 msgstr ""
 
 #: admin/contact-forms.php:113 admin/contact-forms.php:117
-#: mystickyelements-admin.php:1340 mystickyelements-front.php:318
+#: mystickyelements-admin.php:1464 mystickyelements-front.php:341
 msgid "Name"
 msgstr ""
 
@@ -257,7 +311,7 @@ msgid "The field is hidden and won’t show."
 msgstr ""
 
 #: admin/contact-forms.php:159 admin/contact-forms.php:163
-#: mystickyelements-admin.php:1341 mystickyelements-front.php:319
+#: mystickyelements-admin.php:1465 mystickyelements-front.php:342
 msgid "Phone"
 msgstr ""
 
@@ -280,13 +334,14 @@ msgid ""
 msgstr ""
 
 #: admin/contact-forms.php:223 admin/contact-forms.php:227
-#: admin/contact-forms.php:604 help.php:9 mystickyelements-admin.php:1342
-#: mystickyelements-admin.php:1575 mystickyelements-front.php:320
+#: admin/contact-forms.php:604 admin/help.php:58
+#: mystickyelements-admin.php:1466 mystickyelements-admin.php:1712
+#: mystickyelements-front.php:343
 msgid "Email"
 msgstr ""
 
 #: admin/contact-forms.php:270 admin/contact-forms.php:274
-#: mystickyelements-admin.php:1344 mystickyelements-front.php:321
+#: mystickyelements-admin.php:1468 mystickyelements-front.php:344
 msgid "Message"
 msgstr ""
 
@@ -304,8 +359,8 @@ msgstr ""
 #: admin/general-settings.php:689 admin/general-settings.php:749
 #: admin/general-settings.php:770 admin/general-settings.php:865
 #: admin/general-settings.php:958 admin/general-settings.php:974
-#: admin/stickyelements-dashboard.php:233
-#: admin/stickyelements-dashboard.php:246
+#: admin/stickyelements-dashboard.php:234
+#: admin/stickyelements-dashboard.php:247
 msgid "UPGRADE NOW"
 msgstr ""
 
@@ -355,17 +410,17 @@ msgstr ""
 msgid "Contact Tab Settings"
 msgstr ""
 
-#: admin/contact-forms.php:448 mystickyelements-admin.php:959
+#: admin/contact-forms.php:448 mystickyelements-admin.php:1084
 msgid "Devices"
 msgstr ""
 
 #: admin/contact-forms.php:452 admin/general-settings.php:936
-#: mystickyelements-admin.php:970
+#: mystickyelements-admin.php:1095
 msgid "Desktop"
 msgstr ""
 
 #: admin/contact-forms.php:455 admin/general-settings.php:942
-#: mystickyelements-admin.php:982
+#: mystickyelements-admin.php:1107
 msgid "Mobile"
 msgstr ""
 
@@ -430,8 +485,8 @@ msgid "Text in tab"
 msgstr ""
 
 #: admin/contact-forms.php:554 admin/contact-forms.php:567
-#: admin/contact-forms.php:698 mystickyelements-admin.php:1132
-#: mystickyelements-admin.php:1156
+#: admin/contact-forms.php:698 mystickyelements-admin.php:1257
+#: mystickyelements-admin.php:1281
 msgid "Enter text here..."
 msgstr ""
 
@@ -567,7 +622,7 @@ msgstr ""
 msgid "Number"
 msgstr ""
 
-#: admin/contact-forms.php:781 mystickyelements-admin.php:1355
+#: admin/contact-forms.php:781 mystickyelements-admin.php:1479
 msgid "Date"
 msgstr ""
 
@@ -603,7 +658,7 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: admin/contact-forms.php:850 admin/stickyelements-settings.php:103
+#: admin/contact-forms.php:850 admin/stickyelements-settings.php:104
 msgid "Save"
 msgstr ""
 
@@ -659,7 +714,7 @@ msgstr ""
 msgid "Unsubscribe Anytime"
 msgstr ""
 
-#: admin/general-settings.php:40 admin/stickyelements-settings.php:71
+#: admin/general-settings.php:40 admin/stickyelements-settings.php:72
 msgid "Display & Behavior Settings"
 msgstr ""
 
@@ -1171,6 +1226,68 @@ msgstr ""
 msgid "Less Settings"
 msgstr ""
 
+#: admin/help.php:20
+msgid "Powered by "
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Premio"
+msgstr ""
+
+#: admin/help.php:25 mystickyelements-admin.php:41
+msgid "Need help?"
+msgstr ""
+
+#: admin/help.php:26 mystickyelements-admin.php:852
+msgid "Close"
+msgstr ""
+
+#: admin/help.php:31
+msgid "Support"
+msgstr ""
+
+#: admin/help.php:52
+msgid "Co-Founder at Premio"
+msgstr ""
+
+#: admin/help.php:55
+msgid ""
+"Hello! Are you experiencing any problems with My Sticky Elements? Please "
+"let me know :)"
+msgstr ""
+
+#: admin/help.php:62
+msgid "How can I help you?"
+msgstr ""
+
+#: admin/help.php:65 admin/help.php:120
+msgid "Chat"
+msgstr ""
+
+#: admin/help.php:71
+msgid "Or"
+msgstr ""
+
+#: admin/help.php:72
+msgid "Visit our Help Center >>"
+msgstr ""
+
+#: admin/help.php:109
+msgid "Sending Request..."
+msgstr ""
+
+#: admin/help.php:126
+msgid "Done!"
+msgstr ""
+
+#: admin/help.php:133
+msgid "Your message is sent successfully."
+msgstr ""
+
+#: admin/help.php:139
+msgid "There is some problem in sending request. Please send us mail on %1$s"
+msgstr ""
+
 #: admin/social-media.php:15
 msgid "Show Chat & Social Icons"
 msgstr ""
@@ -1258,8 +1375,8 @@ msgstr ""
 msgid "Live Preview"
 msgstr ""
 
-#: admin/sticktelements-preview.php:266 admin/stickyelements-dashboard.php:42
-#: recommended-plugins.php:405
+#: admin/sticktelements-preview.php:266 admin/stickyelements-dashboard.php:43
+#: recommended-plugins.php:495
 msgid "Are you sure?"
 msgstr ""
 
@@ -1282,168 +1399,168 @@ msgstr ""
 msgid "Ok"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:20 class-email-signup.php:60
+#: admin/stickyelements-dashboard.php:21 class-email-signup.php:60
 msgid "My Sticky Elements"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:21
+#: admin/stickyelements-dashboard.php:22
 msgid "Edit"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:22
+#: admin/stickyelements-dashboard.php:23
 msgid "Status"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:23
+#: admin/stickyelements-dashboard.php:24
 msgid "Quick Action"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:45
+#: admin/stickyelements-dashboard.php:46
 msgid ""
 "You're about to turn off the widget. By turning it off, this widget won't "
 "appear on your website. Are you sure?"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:55 admin/stickyelements-dashboard.php:87
+#: admin/stickyelements-dashboard.php:56 admin/stickyelements-dashboard.php:88
 msgid "Rename"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:58
+#: admin/stickyelements-dashboard.php:59
 msgid "Duplicate"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:61 mystickyelements-admin.php:1358
-#: mystickyelements-admin.php:1445
+#: admin/stickyelements-dashboard.php:62 mystickyelements-admin.php:1482
+#: mystickyelements-admin.php:1569
 msgid "Delete"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:65
+#: admin/stickyelements-dashboard.php:66
 msgid "Are you sure about deleting the widget?"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:70
+#: admin/stickyelements-dashboard.php:71
 msgid ""
 "Are you sure want to delete the widget? By doing this, you'll delete your "
 "saved settings, channels, & information within the widget. You will lose "
 "the widget permanently and will not be able to retrieve it."
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:74 admin/stickyelements-dashboard.php:87
+#: admin/stickyelements-dashboard.php:75 admin/stickyelements-dashboard.php:88
 #: mystickyelements-deactivate-form.php:141
 msgid "Cancel"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:74
+#: admin/stickyelements-dashboard.php:75
 msgid "Delete anyway"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:81
+#: admin/stickyelements-dashboard.php:82
 msgid "Rename widget"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:162
+#: admin/stickyelements-dashboard.php:163
 msgid "DOCUMENTATION"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:166
+#: admin/stickyelements-dashboard.php:167
 msgid "How to use MyStickyElements like a pro?"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:167
+#: admin/stickyelements-dashboard.php:168
 msgid "How do I change or translate My Sticky Elements placeholders?"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:168
+#: admin/stickyelements-dashboard.php:169
 msgid "How do I send my contact form leads to email?"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:169
+#: admin/stickyelements-dashboard.php:170
 msgid "How do I create a custom link or JavaScript channel?"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:170
+#: admin/stickyelements-dashboard.php:171
 msgid "How do I create a custom shortcode/HTML channel to your widget?"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:173
+#: admin/stickyelements-dashboard.php:174
 msgid "Explore all docs"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:181
+#: admin/stickyelements-dashboard.php:182
 msgid "RECENT FORM LEADS"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:200
+#: admin/stickyelements-dashboard.php:201
 msgid "View all leads"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:209
+#: admin/stickyelements-dashboard.php:210
 msgid "You're all caught up."
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:209
+#: admin/stickyelements-dashboard.php:210
 msgid "When you receive a new lead, it'll show up here."
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:219
+#: admin/stickyelements-dashboard.php:220
 msgid "INTEGRATION"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:227
+#: admin/stickyelements-dashboard.php:228
 msgid "Mailchimp"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:228
+#: admin/stickyelements-dashboard.php:229
 msgid " Sync your leads automatically to your Mailchimp list"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:231
-#: admin/stickyelements-dashboard.php:244
-#: mystickyelements-admin-integration.php:57
+#: admin/stickyelements-dashboard.php:232
+#: admin/stickyelements-dashboard.php:245
+#: mystickyelements-admin-integration.php:58
 msgid "Connect"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:240
+#: admin/stickyelements-dashboard.php:241
 msgid "Mailpoet"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:241
+#: admin/stickyelements-dashboard.php:242
 msgid "Sync your leads automatically to your Mailpoet list"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:257
+#: admin/stickyelements-dashboard.php:258
 msgid "Chatway"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:266
-msgid "Connect with customers through Live Chat"
+#: admin/stickyelements-dashboard.php:267
+msgid "Add Live Chat & AI Chatbot to Your Website"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:269
+#: admin/stickyelements-dashboard.php:270
 msgid ""
-"Chatway empowers you and your team to provide live chat support "
-"effortlessly to your visitors."
+"Use Chatway’s live chat and AI support agent to answer questions instantly, "
+"automate conversations, and support your visitors 24/7."
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:273
+#: admin/stickyelements-dashboard.php:274
 msgid "Add A Live Chat Widget"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:287 mystickyelements-admin.php:624
+#: admin/stickyelements-dashboard.php:288 mystickyelements-admin.php:750
 msgid "Welcome to My Sticky Elements"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:292
+#: admin/stickyelements-dashboard.php:293
 msgid ""
 "Add different elements like forms, chat icons, social media icon channels, "
 "custom fields, and combine them together into 1 element"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:293
+#: admin/stickyelements-dashboard.php:294
 msgid "Customize your form, chat, and social icons as you see fit"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:294
+#: admin/stickyelements-dashboard.php:295
 msgid ""
 "Configure triggers & targeting rules for the behavior of the widget. "
 "Explore advanced settings for fine tuning even the smallest detail"
@@ -1501,43 +1618,47 @@ msgstr ""
 msgid "Don't remind me"
 msgstr ""
 
-#: admin/stickyelements-settings.php:59
+#: admin/stickyelements-settings.php:60
 msgid "Add Contact Form"
 msgstr ""
 
-#: admin/stickyelements-settings.php:60
+#: admin/stickyelements-settings.php:61
 msgid "Collect form responses"
 msgstr ""
 
-#: admin/stickyelements-settings.php:65
+#: admin/stickyelements-settings.php:66
 msgid "Add Chat and Social media"
 msgstr ""
 
-#: admin/stickyelements-settings.php:66
+#: admin/stickyelements-settings.php:67
 msgid "Integrate chat & social media"
 msgstr ""
 
-#: admin/stickyelements-settings.php:72
+#: admin/stickyelements-settings.php:73
 msgid "Triggers & targeting"
 msgstr ""
 
 #: admin/stickyelements-settings.php:78
+msgid "Live Chat"
+msgstr ""
+
+#: admin/stickyelements-settings.php:79
 msgid "Add a Chatway live chat widget"
 msgstr ""
 
-#: admin/stickyelements-settings.php:83
+#: admin/stickyelements-settings.php:84
 msgid "Settings saved."
 msgstr ""
 
-#: admin/stickyelements-settings.php:97
+#: admin/stickyelements-settings.php:98
 msgid "Back"
 msgstr ""
 
-#: admin/stickyelements-settings.php:100
+#: admin/stickyelements-settings.php:101
 msgid "Next"
 msgstr ""
 
-#: admin/stickyelements-settings.php:106
+#: admin/stickyelements-settings.php:107
 msgid "Save & View Dashboard"
 msgstr ""
 
@@ -1555,6 +1676,10 @@ msgstr ""
 
 #: class-email-signup.php:64
 msgid "Based on 500+ Reviews"
+msgstr ""
+
+#: class-help.php:111 class-help.php:116 mystickyelements-admin.php:1916
+msgid "Your request is not valid"
 msgstr ""
 
 #: class-review-box.php:463
@@ -1616,43 +1741,7 @@ msgstr ""
 msgid "Don't remind me about this "
 msgstr ""
 
-#: help.php:7
-msgid ""
-"Hello! Are you experiencing any problems with My Sticky Elements? Please "
-"let me know :)"
-msgstr ""
-
-#: help.php:12
-msgid "How can I help you?"
-msgstr ""
-
-#: help.php:15 help.php:50
-msgid "Chat"
-msgstr ""
-
-#: help.php:29 help.php:31 mystickyelements-admin.php:37
-msgid "Need help?"
-msgstr ""
-
-#: help.php:38
-msgid "Sending Request..."
-msgstr ""
-
-#: help.php:56
-msgid "Done!"
-msgstr ""
-
-#: help.php:59
-msgid "Your message was sent successfully."
-msgstr ""
-
-#: help.php:62
-msgid ""
-"There is some problem in sending request. Please send us mail on <a "
-"href='mailto:contact@premio.io'>contact@premio.io</a>"
-msgstr ""
-
-#: mystickyelements-admin-integration.php:24
+#: mystickyelements-admin-integration.php:25
 msgid ""
 "Upgrade to Pro and connect your My Sticky Elements form to the following "
 "platforms to automatically receive leads"
@@ -1662,184 +1751,179 @@ msgstr ""
 msgid "Unlock My Sticky Elements <span>Analytics</span> 🚀"
 msgstr ""
 
-#: mystickyelements-admin-widgetanalytics.php:23
-#: mystickyelements-admin-widgetanalytics.php:49
-msgid "Upgrade to Pro 🚀"
-msgstr ""
-
-#: mystickyelements-admin-widgetanalytics.php:31
+#: mystickyelements-admin-widgetanalytics.php:26
 msgid "What can you use it for?"
 msgstr ""
 
-#: mystickyelements-admin-widgetanalytics.php:35
+#: mystickyelements-admin-widgetanalytics.php:30
 msgid "<strong>Discover</strong> the most frequently used channels"
 msgstr ""
 
-#: mystickyelements-admin-widgetanalytics.php:39
+#: mystickyelements-admin-widgetanalytics.php:34
 msgid "Keep <strong>track</strong> of how each widget performs"
 msgstr ""
 
-#: mystickyelements-admin-widgetanalytics.php:43
+#: mystickyelements-admin-widgetanalytics.php:38
 msgid ""
 "<strong>Analyze</strong> the number of unique clicks and the "
 "<strong>click-through rate</strong>"
 msgstr ""
 
-#: mystickyelements-admin.php:39
+#: mystickyelements-admin-widgetanalytics.php:44
+msgid "Upgrade to Pro 🚀"
+msgstr ""
+
+#: mystickyelements-admin.php:43
 msgid "Upgrade"
 msgstr ""
 
-#: mystickyelements-admin.php:110
+#: mystickyelements-admin.php:117
 msgid ""
 "Please remove the JavaScript from the channels or ask the website's "
 "administrator to give you access to add JavaScript."
 msgstr ""
 
-#: mystickyelements-admin.php:111
+#: mystickyelements-admin.php:118
 msgid "Remove"
 msgstr ""
 
-#: mystickyelements-admin.php:294 mystickyelements-admin.php:1257
+#: mystickyelements-admin.php:416 mystickyelements-admin.php:1381
 msgid "Unable to complete your request"
 msgstr ""
 
-#: mystickyelements-admin.php:631 mystickyelements-popup.php:2
+#: mystickyelements-admin.php:757 mystickyelements-popup.php:2
 msgid ""
 "Select your contact form fields, chat, and social channels. Need help? "
 "Visit our "
 msgstr ""
 
-#: mystickyelements-admin.php:631 mystickyelements-popup.php:2
+#: mystickyelements-admin.php:757 mystickyelements-popup.php:2
 msgid "Help Center"
 msgstr ""
 
-#: mystickyelements-admin.php:631 mystickyelements-popup.php:2
+#: mystickyelements-admin.php:757 mystickyelements-popup.php:2
 msgid " and check the video."
 msgstr ""
 
-#: mystickyelements-admin.php:652
+#: mystickyelements-admin.php:778
 msgid "Congratulations 🎉"
 msgstr ""
 
-#: mystickyelements-admin.php:653
+#: mystickyelements-admin.php:779
 msgid ""
 "You just got your first My Sticky Elements lead. Click on the Show Me "
 "button to display your contact form leads"
 msgstr ""
 
-#: mystickyelements-admin.php:696
+#: mystickyelements-admin.php:822
 msgid "Icons' text isn't supported in this template"
 msgstr ""
 
-#: mystickyelements-admin.php:697
+#: mystickyelements-admin.php:823
 msgid ""
 "The selected template doesn't support icons'text, please change to the "
 "Default templates. Would you like to publish it anyway?"
 msgstr ""
 
-#: mystickyelements-admin.php:717
+#: mystickyelements-admin.php:842
 msgid "Congratulations! 🎉"
 msgstr ""
 
-#: mystickyelements-admin.php:718
+#: mystickyelements-admin.php:843
 msgid "Your first widget is now up and running on your website!"
 msgstr ""
 
-#: mystickyelements-admin.php:720
+#: mystickyelements-admin.php:845
 msgid "Upgrade to pro today"
 msgstr ""
 
-#: mystickyelements-admin.php:721
+#: mystickyelements-admin.php:846
 msgid "🛠️ Show unlimited social icon such as Whatsapp,twitter,phone and so on"
 msgstr ""
 
-#: mystickyelements-admin.php:722
+#: mystickyelements-admin.php:847
 msgid "📱Create multiple widgets for different devices, pages and languages."
 msgstr ""
 
-#: mystickyelements-admin.php:723
+#: mystickyelements-admin.php:848
 msgid "📈 Unlock analytics about each channel usage and different widgets "
 msgstr ""
 
-#: mystickyelements-admin.php:724
+#: mystickyelements-admin.php:849
 msgid ""
 "📩 Get contact form leads to Your email and integrate with MailChimp and "
 "MailPoet"
 msgstr ""
 
-#: mystickyelements-admin.php:726 mystickyelements.php:3681
+#: mystickyelements-admin.php:851 mystickyelements.php:3682
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: mystickyelements-admin.php:727
-msgid "Close"
-msgstr ""
-
-#: mystickyelements-admin.php:929
+#: mystickyelements-admin.php:1054
 msgid "Icon link"
 msgstr ""
 
-#: mystickyelements-admin.php:991
+#: mystickyelements-admin.php:1116
 msgid "Open link in a new tab"
 msgstr ""
 
-#: mystickyelements-admin.php:1004
+#: mystickyelements-admin.php:1129
 msgid "Appearance Settings"
 msgstr ""
 
-#: mystickyelements-admin.php:1018
+#: mystickyelements-admin.php:1143
 msgid "Upload Custom Icon"
 msgstr ""
 
-#: mystickyelements-admin.php:1040
+#: mystickyelements-admin.php:1165
 msgid "Stretch custom icon"
 msgstr ""
 
-#: mystickyelements-admin.php:1051
+#: mystickyelements-admin.php:1176
 msgid "Select FontAwesome Icon"
 msgstr ""
 
-#: mystickyelements-admin.php:1065
+#: mystickyelements-admin.php:1190
 msgid "Channel Type"
 msgstr ""
 
-#: mystickyelements-admin.php:1072 mystickyelements-front.php:802
+#: mystickyelements-admin.php:1197 mystickyelements-front.php:825
 msgid "Custom channel"
 msgstr ""
 
-#: mystickyelements-admin.php:1091
+#: mystickyelements-admin.php:1216
 msgid "Background Color"
 msgstr ""
 
-#: mystickyelements-admin.php:1102
+#: mystickyelements-admin.php:1227
 msgid "Icon Color"
 msgstr ""
 
-#: mystickyelements-admin.php:1114
+#: mystickyelements-admin.php:1239
 msgid "Icon Text Color"
 msgstr ""
 
-#: mystickyelements-admin.php:1125
+#: mystickyelements-admin.php:1250
 msgid "Icon Text"
 msgstr ""
 
-#: mystickyelements-admin.php:1137
+#: mystickyelements-admin.php:1262
 msgid "Icon Text Size"
 msgstr ""
 
-#: mystickyelements-admin.php:1144
+#: mystickyelements-admin.php:1269
 msgid "Enter font size here..."
 msgstr ""
 
-#: mystickyelements-admin.php:1149
+#: mystickyelements-admin.php:1274
 msgid "Flyout Text"
 msgstr ""
 
-#: mystickyelements-admin.php:1163
+#: mystickyelements-admin.php:1288
 msgid "Pre Set Message"
 msgstr ""
 
-#: mystickyelements-admin.php:1166
+#: mystickyelements-admin.php:1291
 msgid ""
 "Add your own pre-set message that's automatically added to the user's "
 "message. You can also use merge tags and add the URL or the title of the "
@@ -1848,104 +1932,104 @@ msgid ""
 "visitor messages you"
 msgstr ""
 
-#: mystickyelements-admin.php:1173
+#: mystickyelements-admin.php:1298
 msgid "Enter message here..."
 msgstr ""
 
-#: mystickyelements-admin.php:1177
+#: mystickyelements-admin.php:1302
 msgid "{title} tag grabs the page title of the webpage"
 msgstr ""
 
-#: mystickyelements-admin.php:1178
+#: mystickyelements-admin.php:1303
 msgid "{url} tag grabs the URL of the webpage"
 msgstr ""
 
-#: mystickyelements-admin.php:1183
+#: mystickyelements-admin.php:1308
 msgid "Use WhatsApp Web directly on desktop"
 msgstr ""
 
-#: mystickyelements-admin.php:1188
+#: mystickyelements-admin.php:1313
 msgid ""
 "Automatically send desktop visitors to WhatsApp Web by turning on the "
 "feature"
 msgstr ""
 
-#: mystickyelements-admin.php:1211
+#: mystickyelements-admin.php:1336
 msgid "Remove channel"
 msgstr ""
 
-#: mystickyelements-admin.php:1278
+#: mystickyelements-admin.php:1402
 msgid "Contact Form Leads"
 msgstr ""
 
-#: mystickyelements-admin.php:1280
+#: mystickyelements-admin.php:1404
 msgid ""
 "Contact's data is saved locally do make backup or export before "
 "uninstalling plugin"
 msgstr ""
 
-#: mystickyelements-admin.php:1287
+#: mystickyelements-admin.php:1411
 msgid "Download & Export All Subscriber to CSV file:"
 msgstr ""
 
-#: mystickyelements-admin.php:1289
+#: mystickyelements-admin.php:1413
 msgid "Download & Export to CSV"
 msgstr ""
 
-#: mystickyelements-admin.php:1293
+#: mystickyelements-admin.php:1417
 msgid "Delete All Subscibers from Database:"
 msgstr ""
 
-#: mystickyelements-admin.php:1295
+#: mystickyelements-admin.php:1419
 msgid "Delete All Data"
 msgstr ""
 
-#: mystickyelements-admin.php:1329 mystickyelements-admin.php:1331
+#: mystickyelements-admin.php:1453 mystickyelements-admin.php:1455
 msgid "Search"
 msgstr ""
 
-#: mystickyelements-admin.php:1337
+#: mystickyelements-admin.php:1461
 msgid "Bulk"
 msgstr ""
 
-#: mystickyelements-admin.php:1338
+#: mystickyelements-admin.php:1462
 msgid "ID"
 msgstr ""
 
-#: mystickyelements-admin.php:1339
+#: mystickyelements-admin.php:1463
 msgid "Widget Name"
 msgstr ""
 
-#: mystickyelements-admin.php:1343
+#: mystickyelements-admin.php:1467
 msgid "Option"
 msgstr ""
 
-#: mystickyelements-admin.php:1345
+#: mystickyelements-admin.php:1469
 msgid "Consent"
 msgstr ""
 
-#: mystickyelements-admin.php:1356
+#: mystickyelements-admin.php:1480
 msgid "URL"
 msgstr ""
 
-#: mystickyelements-admin.php:1357
+#: mystickyelements-admin.php:1481
 msgid "IP Address"
 msgstr ""
 
-#: mystickyelements-admin.php:1452
+#: mystickyelements-admin.php:1576
 msgid "No Contact Form Leads Found!"
 msgstr ""
 
-#: mystickyelements-admin.php:1563
+#: mystickyelements-admin.php:1649
+msgid "You are not allowed to perform this action."
+msgstr ""
+
+#: mystickyelements-admin.php:1700
 msgid "%s is required"
 msgstr ""
 
-#: mystickyelements-admin.php:1568
+#: mystickyelements-admin.php:1705
 msgid "Please enter your message"
-msgstr ""
-
-#: mystickyelements-admin.php:1775
-msgid "Your request is not valid"
 msgstr ""
 
 #: mystickyelements-deactivate-form.php:122
@@ -1970,21 +2054,21 @@ msgstr ""
 msgid "Anonymous feedback"
 msgstr ""
 
-#: mystickyelements-front.php:345 mystickyelements-front.php:357
-#: mystickyelements-front.php:370 mystickyelements-front.php:382
-#: mystickyelements-front.php:392
+#: mystickyelements-front.php:368 mystickyelements-front.php:380
+#: mystickyelements-front.php:393 mystickyelements-front.php:405
+#: mystickyelements-front.php:415
 msgid "*"
 msgstr ""
 
-#: mystickyelements-front.php:897 mystickyelements-front.php:1040
+#: mystickyelements-front.php:920 mystickyelements-front.php:1063
 msgid "Something went wrong. Please contact site administrator"
 msgstr ""
 
-#: mystickyelements-front.php:1036
+#: mystickyelements-front.php:1059
 msgid "Your request is submitted successfully"
 msgstr ""
 
-#: mystickyelements-front.php:1060
+#: mystickyelements-front.php:1083
 msgid "Your message was sent successfully"
 msgstr ""
 
@@ -1998,178 +2082,178 @@ msgid ""
 "it for?"
 msgstr ""
 
-#: mystickyelements.php:113
+#: mystickyelements.php:114
 msgid "myStickylements Settings"
 msgstr ""
 
-#: mystickyelements.php:269 mystickyelements.php:312 mystickyelements.php:391
-#: mystickyelements.php:471 mystickyelements.php:550 mystickyelements.php:629
-#: mystickyelements.php:711 mystickyelements.php:796 mystickyelements.php:878
-#: mystickyelements.php:960 mystickyelements.php:1042
+#: mystickyelements.php:270 mystickyelements.php:313 mystickyelements.php:392
+#: mystickyelements.php:472 mystickyelements.php:551 mystickyelements.php:630
+#: mystickyelements.php:712 mystickyelements.php:797 mystickyelements.php:879
+#: mystickyelements.php:961 mystickyelements.php:1043
 msgid "myStickyElements Options"
 msgstr ""
 
-#: mystickyelements.php:276
+#: mystickyelements.php:277
 msgid "Disable at Small Screen Sizes"
 msgstr ""
 
-#: mystickyelements.php:292
+#: mystickyelements.php:293
 msgid "Change on Event"
 msgstr ""
 
-#: mystickyelements.php:300
+#: mystickyelements.php:301
 msgid "CSS style"
 msgstr ""
 
-#: mystickyelements.php:318 mystickyelements.php:397 mystickyelements.php:477
-#: mystickyelements.php:556 mystickyelements.php:635 mystickyelements.php:717
-#: mystickyelements.php:802 mystickyelements.php:884 mystickyelements.php:966
-#: mystickyelements.php:1048
+#: mystickyelements.php:319 mystickyelements.php:398 mystickyelements.php:478
+#: mystickyelements.php:557 mystickyelements.php:636 mystickyelements.php:718
+#: mystickyelements.php:803 mystickyelements.php:885 mystickyelements.php:967
+#: mystickyelements.php:1049
 msgid "Enable Element"
 msgstr ""
 
-#: mystickyelements.php:325 mystickyelements.php:405 mystickyelements.php:484
-#: mystickyelements.php:563 mystickyelements.php:644 mystickyelements.php:726
-#: mystickyelements.php:811 mystickyelements.php:893 mystickyelements.php:975
-#: mystickyelements.php:1057
+#: mystickyelements.php:326 mystickyelements.php:406 mystickyelements.php:485
+#: mystickyelements.php:564 mystickyelements.php:645 mystickyelements.php:727
+#: mystickyelements.php:812 mystickyelements.php:894 mystickyelements.php:976
+#: mystickyelements.php:1058
 msgid "Horizontal Position"
 msgstr ""
 
-#: mystickyelements.php:332 mystickyelements.php:412 mystickyelements.php:491
-#: mystickyelements.php:570 mystickyelements.php:651 mystickyelements.php:733
-#: mystickyelements.php:818 mystickyelements.php:900 mystickyelements.php:982
-#: mystickyelements.php:1064
+#: mystickyelements.php:333 mystickyelements.php:413 mystickyelements.php:492
+#: mystickyelements.php:571 mystickyelements.php:652 mystickyelements.php:734
+#: mystickyelements.php:819 mystickyelements.php:901 mystickyelements.php:983
+#: mystickyelements.php:1065
 msgid "Vertical Position"
 msgstr ""
 
-#: mystickyelements.php:339 mystickyelements.php:419 mystickyelements.php:498
-#: mystickyelements.php:577 mystickyelements.php:658 mystickyelements.php:740
-#: mystickyelements.php:825 mystickyelements.php:907 mystickyelements.php:989
-#: mystickyelements.php:1071
+#: mystickyelements.php:340 mystickyelements.php:420 mystickyelements.php:499
+#: mystickyelements.php:578 mystickyelements.php:659 mystickyelements.php:741
+#: mystickyelements.php:826 mystickyelements.php:908 mystickyelements.php:990
+#: mystickyelements.php:1072
 msgid "Icon bg Color"
 msgstr ""
 
-#: mystickyelements.php:346 mystickyelements.php:426 mystickyelements.php:505
-#: mystickyelements.php:584 mystickyelements.php:665 mystickyelements.php:747
-#: mystickyelements.php:832 mystickyelements.php:914 mystickyelements.php:996
-#: mystickyelements.php:1078
+#: mystickyelements.php:347 mystickyelements.php:427 mystickyelements.php:506
+#: mystickyelements.php:585 mystickyelements.php:666 mystickyelements.php:748
+#: mystickyelements.php:833 mystickyelements.php:915 mystickyelements.php:997
+#: mystickyelements.php:1079
 msgid "Icon bg Image"
 msgstr ""
 
-#: mystickyelements.php:353 mystickyelements.php:433 mystickyelements.php:512
-#: mystickyelements.php:591 mystickyelements.php:672 mystickyelements.php:754
-#: mystickyelements.php:839 mystickyelements.php:921 mystickyelements.php:1003
-#: mystickyelements.php:1085
+#: mystickyelements.php:354 mystickyelements.php:434 mystickyelements.php:513
+#: mystickyelements.php:592 mystickyelements.php:673 mystickyelements.php:755
+#: mystickyelements.php:840 mystickyelements.php:922 mystickyelements.php:1004
+#: mystickyelements.php:1086
 msgid "Content bg Color"
 msgstr ""
 
-#: mystickyelements.php:360 mystickyelements.php:440 mystickyelements.php:519
-#: mystickyelements.php:598 mystickyelements.php:679 mystickyelements.php:761
-#: mystickyelements.php:846 mystickyelements.php:928 mystickyelements.php:1010
-#: mystickyelements.php:1092
+#: mystickyelements.php:361 mystickyelements.php:441 mystickyelements.php:520
+#: mystickyelements.php:599 mystickyelements.php:680 mystickyelements.php:762
+#: mystickyelements.php:847 mystickyelements.php:929 mystickyelements.php:1011
+#: mystickyelements.php:1093
 msgid "Content Text Color"
 msgstr ""
 
-#: mystickyelements.php:367 mystickyelements.php:447 mystickyelements.php:526
-#: mystickyelements.php:605 mystickyelements.php:686 mystickyelements.php:768
-#: mystickyelements.php:853 mystickyelements.php:935 mystickyelements.php:1017
-#: mystickyelements.php:1099
+#: mystickyelements.php:368 mystickyelements.php:448 mystickyelements.php:527
+#: mystickyelements.php:606 mystickyelements.php:687 mystickyelements.php:769
+#: mystickyelements.php:854 mystickyelements.php:936 mystickyelements.php:1018
+#: mystickyelements.php:1100
 msgid "Content Width"
 msgstr ""
 
-#: mystickyelements.php:374 mystickyelements.php:454 mystickyelements.php:533
-#: mystickyelements.php:612 mystickyelements.php:693 mystickyelements.php:775
-#: mystickyelements.php:860 mystickyelements.php:942 mystickyelements.php:1024
-#: mystickyelements.php:1106
+#: mystickyelements.php:375 mystickyelements.php:455 mystickyelements.php:534
+#: mystickyelements.php:613 mystickyelements.php:694 mystickyelements.php:776
+#: mystickyelements.php:861 mystickyelements.php:943 mystickyelements.php:1025
+#: mystickyelements.php:1107
 msgid "Content Padding"
 msgstr ""
 
-#: mystickyelements.php:381 mystickyelements.php:461 mystickyelements.php:540
-#: mystickyelements.php:619 mystickyelements.php:700 mystickyelements.php:782
-#: mystickyelements.php:867 mystickyelements.php:949 mystickyelements.php:1031
-#: mystickyelements.php:1113
+#: mystickyelements.php:382 mystickyelements.php:462 mystickyelements.php:541
+#: mystickyelements.php:620 mystickyelements.php:701 mystickyelements.php:783
+#: mystickyelements.php:868 mystickyelements.php:950 mystickyelements.php:1032
+#: mystickyelements.php:1114
 msgid "Content"
 msgstr ""
 
-#: mystickyelements.php:1241
+#: mystickyelements.php:1242
 msgid "Add sticky elements to your blog."
 msgstr ""
 
-#: mystickyelements.php:1251
+#: mystickyelements.php:1252
 msgid "less than "
 msgstr ""
 
-#: mystickyelements.php:1251
+#: mystickyelements.php:1252
 msgid "px width, 0 to disable."
-msgstr ""
-
-#: mystickyelements.php:1273 mystickyelements.php:1280
-#: mystickyelements.php:1287
-msgid "click"
 msgstr ""
 
 #: mystickyelements.php:1274 mystickyelements.php:1281
 #: mystickyelements.php:1288
+msgid "click"
+msgstr ""
+
+#: mystickyelements.php:1275 mystickyelements.php:1282
+#: mystickyelements.php:1289
 msgid "hover"
 msgstr ""
 
-#: mystickyelements.php:1299
+#: mystickyelements.php:1300
 msgid "Add/Edit css to manage advanced elements style."
 msgstr ""
 
-#: mystickyelements.php:1311
+#: mystickyelements.php:1312
 msgid "Element 1 Settings."
 msgstr ""
 
-#: mystickyelements.php:1452
+#: mystickyelements.php:1453
 msgid "Element 2 Settings."
 msgstr ""
 
-#: mystickyelements.php:1587
+#: mystickyelements.php:1588
 msgid "Element 3 Settings."
 msgstr ""
 
-#: mystickyelements.php:1725
+#: mystickyelements.php:1726
 msgid "Element 4 Settings."
 msgstr ""
 
-#: mystickyelements.php:1862
+#: mystickyelements.php:1863
 msgid "Element 5 Settings."
 msgstr ""
 
-#: mystickyelements.php:2000
+#: mystickyelements.php:2001
 msgid "Element 6 Settings."
 msgstr ""
 
-#: mystickyelements.php:2136
+#: mystickyelements.php:2137
 msgid "Element 7 Settings."
 msgstr ""
 
-#: mystickyelements.php:2272
+#: mystickyelements.php:2273
 msgid "Element 8 Settings."
 msgstr ""
 
-#: mystickyelements.php:2410
+#: mystickyelements.php:2411
 msgid "Element 9 Settings."
 msgstr ""
 
-#: mystickyelements.php:2547
+#: mystickyelements.php:2548
 msgid "Element 10 Settings."
 msgstr ""
 
-#: mystickyelements.php:3644
+#: mystickyelements.php:3645
 msgid "Move to the new version"
 msgstr ""
 
-#: recommended-plugins.php:92
+#: recommended-plugins.php:180
 msgid "Try out our recommended plugins"
 msgstr ""
 
-#: recommended-plugins.php:94
+#: recommended-plugins.php:181
 msgid "Hide From Menu"
 msgstr ""
 
-#: recommended-plugins.php:406
+#: recommended-plugins.php:496
 msgid ""
 "If you hide the recommended plugins page from your menu, it won't appear "
 "there again. Are you sure you'd like to do it?"
@@ -2471,63 +2555,10 @@ msgid ""
 "videos, social widgets ..."
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "Premio"
-msgstr ""
-
-#: admin/chatway-plugin.php:115 recommended-plugins.php:164
-#. translators: %s: Plugin name and version.
-msgctxt "plugin"
-msgid "Install %s now"
-msgstr ""
-
-#: admin/chatway-plugin.php:122 recommended-plugins.php:171
-msgctxt "plugin"
-msgid "Cannot Install"
-msgstr ""
-
-#: admin/chatway-plugin.php:137 recommended-plugins.php:186
-#. translators: %s: Plugin name and version.
-msgctxt "plugin"
-msgid "Update %s now"
-msgstr ""
-
-#: admin/chatway-plugin.php:144 recommended-plugins.php:193
-msgctxt "plugin"
-msgid "Cannot Update"
-msgstr ""
-
-#: admin/chatway-plugin.php:155 recommended-plugins.php:204
-msgctxt "plugin"
-msgid "Active"
-msgstr ""
-
-#: admin/chatway-plugin.php:160 recommended-plugins.php:209
-#. translators: %s: Plugin name.
-msgctxt "plugin"
-msgid "Activate %s"
-msgstr ""
-
-#: admin/chatway-plugin.php:173 recommended-plugins.php:222
-#. translators: %s: Plugin name.
-msgctxt "plugin"
-msgid "Network Activate %s"
-msgstr ""
-
-#: admin/chatway-plugin.php:186 recommended-plugins.php:235
-msgctxt "plugin"
-msgid "Installed"
-msgstr ""
-
-#: admin/chatway-plugin.php:327 recommended-plugins.php:376
+#: admin/chatway-plugin.php:429 recommended-plugins.php:464
 #. translators: %s: Number of millions.
 msgctxt "Active plugin installations"
 msgid "%s+ Million"
 msgid_plural "%s+ Million"
 msgstr[0] ""
 msgstr[1] ""
-
-#: admin/chatway-plugin.php:331 recommended-plugins.php:380
-msgctxt "Active plugin installations"
-msgid "Less Than 10"
-msgstr ""

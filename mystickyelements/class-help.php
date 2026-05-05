@@ -44,7 +44,7 @@ class MSE_HELP {
             'footer_menu' => array( 
                 'support' => array(
                     'title' => esc_html("Get Support", "mystickyelements"),
-                    'link' =>  esc_url("https://wordpress.org/support/plugin/mystickyelements/"),
+                    'link' =>  esc_url("https://premio.io/help/mystickyelements"),
                     'status' => true,
                 ),
                 'upgrade_to_pro' => array(
@@ -71,7 +71,7 @@ class MSE_HELP {
                 ),
                 'get_support' => array(
                     'title' => esc_html("Get Support", "mystickyelements"),
-                    'link' =>   esc_url("https://wordpress.org/support/plugin/mystickyelements/"),
+                    'link' =>   esc_url("https://premio.io/help/mystickyelements"),
                     'icon' => esc_url(MYSTICKYELEMENTS_URL."images/help/help-circle.svg"),
                 ),
                 'contact' => array(

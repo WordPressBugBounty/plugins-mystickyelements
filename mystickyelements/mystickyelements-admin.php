@@ -13,7 +13,8 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 			add_action( 'admin_init', array($this, 'check_for_redirection'));
 			add_action( 'wp_ajax_mystickyelement-social-tab', array( $this, 'mystickyelement_social_tab_add' ) );
 			add_action( 'wp_ajax_mystickyelement_delete_db_record', array( $this, 'mystickyelement_delete_db_record' ) );
-			
+			add_action( 'wp_ajax_get_mse_chatway_status', array( $this, 'get_mse_chatway_status' ) );
+
 			add_action( 'wp_ajax_myStickyelements_intro_popup_action', array( $this, 'myStickyelements_intro_popup_action' ) );
 			add_action( 'wp_ajax_mystickyelement_widget_status', array( $this, 'mystickyelement_widget_status' ) );
 			add_action( 'wp_ajax_mystickyelement_widget_rename', array( $this, 'mystickyelement_widget_rename' ) );
@@ -37,7 +38,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 	
 		public function settings_link($links) {
 			$settings_link = '<a href="'.admin_url("admin.php?page=my-sticky-elements").'">Settings</a>';
-			$links['need_help'] = '<a href="https://wordpress.org/support/plugin/mystickyelements/" target="_blank">'.__( 'Need help?', 'mystickyelements' ).'</a>';
+			$links['need_help'] = '<a href="https://premio.io/help/mystickyelements" target="_blank">'.__( 'Need help?', 'mystickyelements' ).'</a>';
 			
 			$links['go_pro'] = '<a href="'.admin_url("admin.php?page=my-sticky-elements-upgrade").'" style="color: #FF5983; font-weight: bold; display: inline-block; border: solid 1px #FF5983; border-radius: 4px; padding: 0 5px;">'.__( 'Upgrade', 'mystickyelements' ).'</a>';			
 			
@@ -56,7 +57,12 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 		/*
 		 * enqueue admin side script and style.
 		 */
-		public  function mystickyelements_admin_enqueue_script( ) {
+		public  function mystickyelements_admin_enqueue_script($page) {
+            if($page == 'mystickyelements_page_my-sticky-elements-chatway-plugin') {
+                wp_enqueue_script('thickbox', null, array('jquery'));
+                wp_enqueue_style('thickbox.css', '/'.WPINC.'/js/thickbox/thickbox.css', null, '1.0');
+                return;
+            }
             $min = MSE_DEV_MODE ? '' : '.min';
 			if ( isset($_GET['page']) && ( $_GET['page'] == 'my-sticky-elements' || $_GET['page'] == 'my-sticky-elements-leads' || $_GET['page'] == 'my-sticky-elements-new-widget' || $_GET['page'] == 'recommended-plugins' || $_GET['page'] == 'my-sticky-elements-analytics' || $_GET['page'] == 'my-sticky-elements-integration' || $_GET['page'] == 'my-sticky-elements-upgrade'  || $_GET['page'] == 'my-sticky-elements-chatway-plugin') ) {
            
@@ -85,9 +91,7 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
                     wp_enqueue_media();
 					// include the javascript
 					wp_enqueue_script('thickbox', null, array('jquery'));
-					
 					wp_enqueue_style('jquery-ui-css', plugins_url('/css/datepicker.min.css', __FILE__), [], MY_STICKY_ELEMENT_VERSION);
-
 					wp_enqueue_script('jquery-ui-datepicker');
  
 					// include the thickbox styles
@@ -1638,6 +1642,16 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 			</div>
 			<?php 
 		}
+
+        public function get_mse_chatway_status()
+        {
+            if ( ! current_user_can( 'manage_options' ) ) {
+                wp_send_json_error( array( 'message' => __( 'You are not allowed to perform this action.', 'mystickyelements' ) ), 403 );
+            }
+            check_ajax_referer( 'mystickyelements', 'wpnonce' );
+            $status = is_plugin_active( 'chatway-live-chat/chatway.php' ) ? 'active' : '';
+            wp_send_json_success( array( 'status' => $status ) );
+        }
 
 		public function mystickyelement_delete_db_record(){
 			global $wpdb;

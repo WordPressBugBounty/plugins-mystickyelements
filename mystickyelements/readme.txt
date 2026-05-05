@@ -3,7 +3,7 @@ Contributors: premio, galdub, tomeraharon
 Tags: whatsapp, contact form, facebook messenger, call now button, instagram
 Requires at least: 3.1
 Tested up to: 6.9
-Stable tag: 2.3.4
+Stable tag: 2.3.5
 Plugin URI: https://premio.io/downloads/mystickyelements/
 License: GPLv3
 
@@ -68,7 +68,7 @@ Yelp
 Amazon
 Reddit
 RSS
-Flickr
+Flickrliv
 eBay
 Etsy
 Slack
@@ -92,6 +92,13 @@ Upgrade to the Pro version of My Sticky Elements and connect your My Sticky Elem
 =▶️ Live Demo =
 A live demo of My Sticky Elements plugin is available at <a href="https://demo.premio.io/mystickyelements/?utm_source=wordpressorg" target="_blank" title="Premio.io demo site">Premio's demo site</a>.
 
+= 👩‍💻 Need a Live Chat & AI Chatbot plugin? =
+If you're not interested in WhatsApp, Facebook Messenger, or other chat buttons, and instead want a live chat & AI chatbot solution for your website, <a href="https://chatway.app/?utm_source=mselisting" target="_blank" title="Chatway Live Chat">Chatway Live Chat</a> is a great choice. Adding Chatway, a WordPress live chat plugin, can help improve customer engagement on your site.
+Chatway also comes with an AI chatbot that can instantly respond to common questions, support visitors in real time, and lower your support workload. It helps you stay available around the clock, speed up response times, and provide better customer support even outside business hours.
+Chatway works smoothly with My Sticky Elements, giving you full control over the live chat icon. Add it along with your My Sticky Elements chat icons or display it anywhere on your website.
+
+<a href="https://wordpress.org/plugins/chatway-live-chat/" target="_blank" title="Chatway Live Chat"><strong>Try Chatway Now 🔗</strong></a>
+
 = 🆓 Free plan includes: =
 1. Floating contact form
 2. Up to 2 different icons
@@ -101,15 +108,15 @@ A live demo of My Sticky Elements plugin is available at <a href="https://demo.p
 6. Entry effect
 7. Bottom and top position for mobile
 8. Call-To-Action for each tab
-9. Auto-launch the contact us form on page load
+9. Auto-launch the contact us form
 10. Icons' text - add a label, for example, WhatsApp label for the WhatsApp channel, or Facebook Messenger label for the Facebook Messenger icon
 11. Background colors
 12. Change the order of icons
 13. Set tabs for mobile/desktop
-14. Open on hover or click, you can also open the contact form automatically after a few seconds
-15. Custom channels can act as existing channels. For example, create two WhatsApp buttons or two Facebook Messenger, etc
-16. LTR/RTL support
-17. Save contact form leads into your local database
+14. Open on hover or click or open the contact form automatically after a few seconds
+15. Duplicate channels - create two WhatsApp buttons or two Facebook Messenger, etc
+16. RTL support
+17. Save contact form leads
 18. Minimize tab
 19. Launch your contact form and chat channels using a JavaScript
 20. Change contact form fields order
@@ -118,36 +125,36 @@ A live demo of My Sticky Elements plugin is available at <a href="https://demo.p
 23. Change the size of the widget bar
 24. Add a custom icon
 25. Shortcode, IFrame or HTML icon and display any embedded content on-hover or on-click. Use it to show a YouTube/Vimeo video, contact form 7 or any other shortcode or IFrame
-26. Preset message that'll automatically be inserted to the WhatsApp messages your visitors send you
+26. Preset messages for WhatsApp messages
 27. Track the URL from which your contact form was submitted
-28. Use Font Awesome icons
+28. Font Awesome icons
 29. My Sticky Elements is fully compatible with page builders like Elementor, Divi, Oxygen, SiteOrigin, Zion, Beaver, Visual Composer, and more :)
 30. Load Google fonts locally from your website
 
 = 🔥 Pro plan includes: =
 Unlock the Pro features for only $59/year
 
-1. Show unlimited tabs at the same time
-2. Get the leads directly to your email
-3. Upload up to 6 custom icons for your tabs
+1. Unlimited tabs at the same time
+2. Get leads to your email
+3. Upload up to 6 custom icons
 4. Page targeting - show or hide your contact form, chat, call, and social networks channels on specific pages
-5. Widget analytics - discover the most frequently used chat and social channels (e.g., WhatsApp, Facebook Messenger, contact form, etc)
-6. Country targeting for specific countries
-7. Show the widget after a few seconds or based on page scroll percentage
-8. Integrations with MailChimp and MailPoet - connect your My Sticky Elements contact forms to MailChimp and MailPoet
+5. Widget analytics - discover most frequently used chat and social channels (e.g., WhatsApp, Facebook Messenger, contact form, etc)
+6. Country targeting
+7. Show the widget after a few seconds or page scroll
+8. Integrations with MailChimp & MailPoet - connect contact forms to MailChimp & MailPoet
 9. Create different bars for different pages. Show different icons, form and language based on page targeting rules
-10. Attention effects - grab your visitors' attention to your chat and social buttons
+10. Attention effects - grab attention to your chat and social buttons
 11. Custom CSS
-12. Custom height position of the contact us form and the chat channels on the screen for desktop and mobile
+12. Custom height position of the contact us form and the chat channels
 13. Custom fields to your floating contact form
 14. Automatically close the contact form after submission
-15. Google reCAPTCHA support (reCAPTCHA v2 and reCAPTCHA v3 are supported)
-16. Add a file uploader to your contact form
+15. Google reCAPTCHA 
+16. Contact form file uploader
 17. Consent checkbox
 18. Google Analytics events
 19. Dropdown multi select field to your contact form
-20. Redirect your visitors to another page after the form is submitted
-21. Create 6 shortcode, IFrame or HTML icon and display any embedded content like YouTube videos, contact form 7 or any other form, maps, or any other shortcode or IFrame.
+20. Redirect to another page after the form is submitted
+21. Create 6 shortcode, IFrame or HTML icons and display any embedded content like YouTube videos, contact form 7 or any other form, maps, or any other shortcode or IFrame.
 22. Add custom text fields to your contact form
 23. Send your contact form leads to as many email addresses you want
 24. Change the thank you message that's displayed after the contact form is submitted
@@ -168,46 +175,46 @@ Unlock the Pro features for only $59/year
 The phone and emails field have a built-in validation feature, and all the leads will be displayed on your “Contact Leads” tab in your admin panel. Get these leads by email in the Pro plan.
 Add a country code formatting picker to your contact form, making it easier for your visitors to enter their phone number.
 
-* Facebook page - add a link to your Facebook business page (fan page), and let your visitors find you on facebook.
+* Facebook page - add a link to your Facebook business page, and let your visitors find you on Facebook.
 
-* X.com Twitter page - add a link to your X.com Twitter business page, and let your visitors find you on X.com Twitter, follow your page and see your posts.
+* X.com Twitter page - add a link to your X.com Twitter business page, and let your visitors find you on X.com Twitter.
 
 * Instagram page - add a link to your Instagram business page or Instagram profile page, and let your visitors follow your brand on Instagram.
 
 * Instagram Direct Messenger - let visitors send you a DM directly through Instagram Direct Messenger.
 
-* Pinterest page - add a link to your Pinterest business page or even to a specific Pinterest board, and let your visitors follow your brand on Pinterest and like your pictures.
+* Pinterest page - add a link to your Pinterest business page or even to a specific Pinterest board, and let your visitors follow your brand on Pinterest.
 
 * WhatsApp chat - enter your phone number and when your visitors click on the WhatsApp icon, WhatsApp chat interface will be launched. On mobile it will launch the WhatsApp app conversation window, and on desktop it will launch the desktop WhatsApp web interface. Add a preset message that'll automatically be inserted to the WhatsApp messages your visitors send you. On desktop decide if you prefer to redirect users to WhatsApp app or WhatsApp web.
-Adding WhatsApp button to your site will give 25 million new users every month (833,000 active users per day) and total of 65 million active users (10% of the total worldwide users), access to contact your immediately.
+Adding WhatsApp button to your site will give WhatsApp users access to contact your immediately.
 
-* YouTube channel - add a link to your YouTube channel (YouTube page) and get more subscribers and views for your videos.
+* YouTube channel - add a link to your YouTube channel or YouTube page.
 
 * Phone number (click to call) - A call button is very useful in mobile devices, but desktop visitors can also view your phone number or click to call you via different calling web apps (like WhatsApp).
 
 * Facebook Messenger - enter the direct link to the Facebook Messenger of your business page. and once the visitors click on the Facebook Messenger button, the Messenger conversation tab will be opened and they will be able to send you a message. You will get the message into your Facebook page inbox and if you have a bot (native Facebook Messenger bot, Manychat or Chatfuel) it will work automatically.
 
-* Email - enter your business email, and let your visitors click on the email button and send you an email via their email client (Gmail or Outlook).
+* Email - enter your business email, and let your visitors click on the email button and send you an email via their email client.
 
 * TikTok - enter your TikTok handle and let your website visitors discover your TikTok profile.
 
 * <a href="https://wordpress.org/plugins/poptin/" target="_blank" title="Poptin Plugin"><strong>Poptin</strong></a> - launch a Poptin pop up using the Poptin channel. Use Poptin to get more sales, leads, and email subscribers using smart pop ups and forms.
 
-* Address - show your business address for website visitors that want to arrive to your store.
+* Address - show your business address for website visitors that want to arrive to your business.
 
 * Open hours - show your business hours for website visitors that want to arrive to your store. Add your workdays.
 
-* WeChat - enter your WeChat User ID and let your visitors search for you easily on the WeChat app and message you about your business.
+* WeChat - enter your WeChat User ID and let your visitors search for you easily on the WeChat app and message you.
 
 * Telegram channel - add your Telegram channel link and let your visitors join your Telegram community.
 
 * Threads - add a link to your Threads profile so your visitors can connect with you easily
 
-* Vimeo - Let your visitors see all of your videos on Vimeo, comment, like your videos and follow your channel.
+* Vimeo - Let your visitors see all of your videos on Vimeo.
 
-* Spotify - Spotify is growing and if you run a podcast, Spotify is the best distribution channel.
+* Spotify - link to your Spotify page.
 
-* iTunes - similar to Spotify but for Apple users. Add your iTunes link to let your visitors find your iTunes channel quickly.
+* iTunes - similar to Spotify but for Apple users. Add your iTunes link to let your visitors find your iTunes channel.
 
 * SoundCloud - this is another great channel like iTunes and Spotify to distribute music, interviews and podcasts.
 
@@ -221,13 +228,13 @@ Adding WhatsApp button to your site will give 25 million new users every month (
 
 * SMS - Let your visitors send you SMS via their mobile phone.
 
-* Tumblr - Let your visitors read your Tumblr posts and images and follow your brand.
+* Tumblr - Let your visitors read your Tumblr posts and images and follow you.
 
-* Qzone -  QZone is a very popular  social networking website in China.
+* Qzone -  QZone is a very popular social network in China.
 
 * QQ - Tencent QQ is an instant messaging software service and web portal in China.
 
-* Behance - If you are in the design business, you should definitely show your portfolio there and let your visitors see it.
+* Behance - show your Behance portfolio
 
 * Dribbble - Like Behance, Dribbble is made for creatives and it is an online community.
 
@@ -237,7 +244,7 @@ Adding WhatsApp button to your site will give 25 million new users every month (
 
 * Yelp - Link to your Yelp profile and let your visitors find your business with ease.
 
-* Amazon - Link to your Amazon store or Amazon product to increase sales.
+* Amazon - Link to your Amazon store or Amazon products to increase sales.
 
 * Reddit - Link to your Reddit community and help your visitors join the conversation.
 
@@ -257,17 +264,17 @@ Adding WhatsApp button to your site will give 25 million new users every month (
 
 * Google Play (Google) - Let your visitors download and use your apps.
 
-* Fiverr is an online marketplace for freelance services.
+* Fiverr - online marketplace for freelance services.
 
-* Shopify is an online retailers a suite of services.
+* Shopify - online retailers a suite of services.
 
 * Printful a platform to create & sell your own custom design products online with print-on-demand dropshipping.
 
-* Odnoklassniki (OK Одноклассники) is a social network service for classmates and old friends.
+* Odnoklassniki (OK Одноклассники) - social network service for classmates and old friends.
 
-* Gumroad is an online platform that enables creators to sell products directly to consumers.
+* Gumroad - online platform that enables creators to sell products directly to consumers.
 
-* App Store (Apple) - Let your visitors download your apps from the App Store.
+* App Store (Apple) - download apps from the App Store.
 
 * Custom icons - add up to 3 customs icons on the Pro version and link to any website you want.
 
@@ -334,6 +341,9 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 9. Change the color of your icons, contact form, text, and anything else!
 
 == Changelog ==
+
+= 2.3.5 =
+Improved support method
 
 = 2.3.4 =
 Contact form leads page bug was fixed

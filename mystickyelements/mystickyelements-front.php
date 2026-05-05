@@ -639,7 +639,7 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
 										$social_link   = "https://ig.me/m/".esc_attr($value['text']);
 										$social_link   = esc_url($social_link);
 										break;
-									default;
+                                    default:
 										if ( $channel_type == 'whatsapp') {
 											$value['text'] = str_replace( ['http://','https://','+',' ','-'], [''], $value['text']);
 											$value['text'] = "+" . $value['text'];										
