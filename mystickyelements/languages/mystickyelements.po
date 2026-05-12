@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: myStickyelements\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mystickyelements-"
 "free-uncompressed\n"
-"POT-Creation-Date: 2026-05-05 09:37:52+00:00\n"
+"POT-Creation-Date: 2026-05-12 09:26:01+00:00\n"
 "PO-Revision-Date: 2016-12-01 17:52+0100\n"
 "Last-Translator: damir <jahmirda@gmail.com>\n"
 "Language-Team: TFN <jahmirda@gmail.com>\n"
@@ -328,7 +328,7 @@ msgid ""
 msgstr ""
 
 #: admin/contact-forms.php:223 admin/contact-forms.php:227
-#: admin/contact-forms.php:604 admin/help.php:58
+#: admin/contact-forms.php:604 admin/help.php:57
 #: mystickyelements-admin.php:1466 mystickyelements-admin.php:1712
 #: mystickyelements-front.php:343
 msgid "Email"
@@ -1244,44 +1244,36 @@ msgid "Support"
 msgstr ""
 
 #: admin/help.php:52
-msgid "Co-Founder at Premio"
+msgid "Contact Us"
 msgstr ""
 
 #: admin/help.php:55
 msgid ""
-"Hello! Are you experiencing any problems with My Sticky Elements? Please let "
-"me know :)"
+"Are you experiencing any issues with My Sticky Elements? Please let us know, "
+"we’d be happy to help 🙏"
 msgstr ""
 
-#: admin/help.php:62
+#: admin/help.php:60
 msgid "How can I help you?"
 msgstr ""
 
-#: admin/help.php:65 admin/help.php:120
+#: admin/help.php:63 admin/help.php:114
 msgid "Chat"
 msgstr ""
 
-#: admin/help.php:71
-msgid "Or"
-msgstr ""
-
-#: admin/help.php:72
-msgid "Visit our Help Center >>"
-msgstr ""
-
-#: admin/help.php:109
+#: admin/help.php:103
 msgid "Sending Request..."
 msgstr ""
 
-#: admin/help.php:126
+#: admin/help.php:120
 msgid "Done!"
 msgstr ""
 
-#: admin/help.php:133
+#: admin/help.php:127
 msgid "Your message is sent successfully."
 msgstr ""
 
-#: admin/help.php:139
+#: admin/help.php:133
 msgid "There is some problem in sending request. Please send us mail on %1$s"
 msgstr ""
 
