@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: myStickyElements 2.3.4\n"
+"Project-Id-Version: myStickyElements 2.3.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mystickyelements\n"
-"POT-Creation-Date: 2026-03-19 06:05:42+00:00\n"
+"POT-Creation-Date: 2026-05-19 09:30:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -283,7 +283,7 @@ msgid "Show the field"
 msgstr ""
 
 #: admin/contact-forms.php:113 admin/contact-forms.php:117
-#: mystickyelements-admin.php:1464 mystickyelements-front.php:341
+#: mystickyelements-admin.php:1464 mystickyelements-front.php:364
 msgid "Name"
 msgstr ""
 
@@ -311,7 +311,7 @@ msgid "The field is hidden and won’t show."
 msgstr ""
 
 #: admin/contact-forms.php:159 admin/contact-forms.php:163
-#: mystickyelements-admin.php:1465 mystickyelements-front.php:342
+#: mystickyelements-admin.php:1465 mystickyelements-front.php:365
 msgid "Phone"
 msgstr ""
 
@@ -334,14 +334,14 @@ msgid ""
 msgstr ""
 
 #: admin/contact-forms.php:223 admin/contact-forms.php:227
-#: admin/contact-forms.php:604 admin/help.php:58
+#: admin/contact-forms.php:604 admin/help.php:57
 #: mystickyelements-admin.php:1466 mystickyelements-admin.php:1712
-#: mystickyelements-front.php:343
+#: mystickyelements-front.php:366
 msgid "Email"
 msgstr ""
 
 #: admin/contact-forms.php:270 admin/contact-forms.php:274
-#: mystickyelements-admin.php:1468 mystickyelements-front.php:344
+#: mystickyelements-admin.php:1468 mystickyelements-front.php:367
 msgid "Message"
 msgstr ""
 
@@ -349,16 +349,16 @@ msgstr ""
 #: admin/contact-forms.php:599 admin/contact-forms.php:650
 #: admin/contact-forms.php:663 admin/contact-forms.php:713
 #: admin/contact-forms.php:719 admin/contact-forms.php:755
-#: admin/contact-forms.php:813 admin/general-settings.php:314
-#: admin/general-settings.php:334 admin/general-settings.php:353
-#: admin/general-settings.php:375 admin/general-settings.php:432
-#: admin/general-settings.php:454 admin/general-settings.php:492
-#: admin/general-settings.php:513 admin/general-settings.php:565
-#: admin/general-settings.php:588 admin/general-settings.php:601
-#: admin/general-settings.php:652 admin/general-settings.php:667
-#: admin/general-settings.php:689 admin/general-settings.php:749
-#: admin/general-settings.php:770 admin/general-settings.php:865
-#: admin/general-settings.php:958 admin/general-settings.php:974
+#: admin/contact-forms.php:813 admin/general-settings.php:318
+#: admin/general-settings.php:338 admin/general-settings.php:357
+#: admin/general-settings.php:379 admin/general-settings.php:436
+#: admin/general-settings.php:458 admin/general-settings.php:496
+#: admin/general-settings.php:517 admin/general-settings.php:569
+#: admin/general-settings.php:592 admin/general-settings.php:605
+#: admin/general-settings.php:691 admin/general-settings.php:706
+#: admin/general-settings.php:728 admin/general-settings.php:788
+#: admin/general-settings.php:809 admin/general-settings.php:904
+#: admin/general-settings.php:997 admin/general-settings.php:1013
 #: admin/stickyelements-dashboard.php:234
 #: admin/stickyelements-dashboard.php:247
 msgid "UPGRADE NOW"
@@ -414,12 +414,12 @@ msgstr ""
 msgid "Devices"
 msgstr ""
 
-#: admin/contact-forms.php:452 admin/general-settings.php:936
+#: admin/contact-forms.php:452 admin/general-settings.php:975
 #: mystickyelements-admin.php:1095
 msgid "Desktop"
 msgstr ""
 
-#: admin/contact-forms.php:455 admin/general-settings.php:942
+#: admin/contact-forms.php:455 admin/general-settings.php:981
 #: mystickyelements-admin.php:1107
 msgid "Mobile"
 msgstr ""
@@ -714,210 +714,210 @@ msgstr ""
 msgid "Unsubscribe Anytime"
 msgstr ""
 
-#: admin/general-settings.php:40 admin/stickyelements-settings.php:72
+#: admin/general-settings.php:44 admin/stickyelements-settings.php:72
 msgid "Display & Behavior Settings"
 msgstr ""
 
-#: admin/general-settings.php:45
+#: admin/general-settings.php:49
 msgid "Templates"
 msgstr ""
 
-#: admin/general-settings.php:49
+#: admin/general-settings.php:53
 msgid "Default"
 msgstr ""
 
-#: admin/general-settings.php:50
+#: admin/general-settings.php:54
 msgid "Sharp "
 msgstr ""
 
-#: admin/general-settings.php:51
+#: admin/general-settings.php:55
 msgid "Rounded"
 msgstr ""
 
-#: admin/general-settings.php:52
+#: admin/general-settings.php:56
 msgid "Leaf right"
 msgstr ""
 
-#: admin/general-settings.php:53
+#: admin/general-settings.php:57
 msgid "Round"
 msgstr ""
 
-#: admin/general-settings.php:54
+#: admin/general-settings.php:58
 msgid "Diamond"
 msgstr ""
 
-#: admin/general-settings.php:55
+#: admin/general-settings.php:59
 msgid "Leaf left"
 msgstr ""
 
-#: admin/general-settings.php:56
+#: admin/general-settings.php:60
 msgid "Arrow"
 msgstr ""
 
-#: admin/general-settings.php:57
+#: admin/general-settings.php:61
 msgid "Triangle"
 msgstr ""
 
-#: admin/general-settings.php:64
+#: admin/general-settings.php:68
 msgid "Position on desktop"
 msgstr ""
 
-#: admin/general-settings.php:68 admin/general-settings.php:89
-#: admin/general-settings.php:100
+#: admin/general-settings.php:72 admin/general-settings.php:93
+#: admin/general-settings.php:104
 msgid "Left"
 msgstr ""
 
-#: admin/general-settings.php:69 admin/general-settings.php:90
-#: admin/general-settings.php:101
+#: admin/general-settings.php:73 admin/general-settings.php:94
+#: admin/general-settings.php:105
 msgid "Right"
 msgstr ""
 
-#: admin/general-settings.php:70 admin/general-settings.php:103
+#: admin/general-settings.php:74 admin/general-settings.php:107
 msgid "Bottom"
 msgstr ""
 
-#: admin/general-settings.php:84
+#: admin/general-settings.php:88
 msgid "Position on screen"
 msgstr ""
 
-#: admin/general-settings.php:88
+#: admin/general-settings.php:92
 msgid "Center"
 msgstr ""
 
-#: admin/general-settings.php:96
+#: admin/general-settings.php:100
 msgid "Position on mobile"
 msgstr ""
 
-#: admin/general-settings.php:102
+#: admin/general-settings.php:106
 msgid "Top"
 msgstr ""
 
-#: admin/general-settings.php:122
+#: admin/general-settings.php:126
 msgid "Configure when the tabs will slide out with the full text"
 msgstr ""
 
-#: admin/general-settings.php:124
+#: admin/general-settings.php:128
 msgid "Open tabs when"
 msgstr ""
 
-#: admin/general-settings.php:132
+#: admin/general-settings.php:136
 msgid "Hover"
 msgstr ""
 
-#: admin/general-settings.php:138
+#: admin/general-settings.php:142
 msgid "Click"
 msgstr ""
 
-#: admin/general-settings.php:151
+#: admin/general-settings.php:155
 msgid ""
 "If enabled, first click would open the flyout menu and second click would "
 "take users to the actual link"
 msgstr ""
 
-#: admin/general-settings.php:153
+#: admin/general-settings.php:157
 msgid "Flyout Option"
 msgstr ""
 
-#: admin/general-settings.php:162
+#: admin/general-settings.php:166
 msgid "First click opens the flyout"
 msgstr ""
 
-#: admin/general-settings.php:168
+#: admin/general-settings.php:172
 msgid "First click opens the link"
 msgstr ""
 
-#: admin/general-settings.php:179
+#: admin/general-settings.php:183
 msgid "Font Family"
 msgstr ""
 
-#: admin/general-settings.php:183
+#: admin/general-settings.php:187
 msgid "Select font family"
 msgstr ""
 
-#: admin/general-settings.php:202
+#: admin/general-settings.php:206
 msgid ""
 "Disabling the feature will stop loading the fonts from  Google's server and "
 "you have to manually load the font to make it work"
 msgstr ""
 
-#: admin/general-settings.php:204
+#: admin/general-settings.php:208
 msgid "Load Google fonts from Google (By default stays turned on)"
 msgstr ""
 
-#: admin/general-settings.php:218
+#: admin/general-settings.php:222
 msgid "Desktop Widget Size"
 msgstr ""
 
-#: admin/general-settings.php:223 admin/general-settings.php:238
+#: admin/general-settings.php:227 admin/general-settings.php:242
 msgid "Small"
 msgstr ""
 
-#: admin/general-settings.php:224 admin/general-settings.php:239
+#: admin/general-settings.php:228 admin/general-settings.php:243
 msgid "Medium"
 msgstr ""
 
-#: admin/general-settings.php:225 admin/general-settings.php:240
+#: admin/general-settings.php:229 admin/general-settings.php:244
 msgid "Large"
 msgstr ""
 
-#: admin/general-settings.php:226
+#: admin/general-settings.php:230
 msgid "Extra Large"
 msgstr ""
 
-#: admin/general-settings.php:233
+#: admin/general-settings.php:237
 msgid "Mobile Widget size"
 msgstr ""
 
-#: admin/general-settings.php:247
+#: admin/general-settings.php:251
 msgid "Entry effect"
 msgstr ""
 
-#: admin/general-settings.php:252
+#: admin/general-settings.php:256
 msgid "None"
 msgstr ""
 
-#: admin/general-settings.php:253
+#: admin/general-settings.php:257
 msgid "Slide in"
 msgstr ""
 
-#: admin/general-settings.php:254
+#: admin/general-settings.php:258
 msgid "Fade"
 msgstr ""
 
-#: admin/general-settings.php:262
+#: admin/general-settings.php:266
 msgid ""
 "When the visitor opens the website, the selected channel tab or contact "
 "form will be opened by default. If the visitor closes the tab, hovers over "
 "another channel icon, or visits the channel link it would remain closed."
 msgstr ""
 
-#: admin/general-settings.php:264
+#: admin/general-settings.php:268
 msgid "Open tab by default"
 msgstr ""
 
-#: admin/general-settings.php:281
+#: admin/general-settings.php:285
 msgid "Select open channel"
 msgstr ""
 
-#: admin/general-settings.php:286
+#: admin/general-settings.php:290
 msgid "Contact Form"
 msgstr ""
 
-#: admin/general-settings.php:306
+#: admin/general-settings.php:310
 msgid ""
 "Grab your visitors' attention and increase interaction rates with subtle "
 "animations. Choose how your widget appears when the page loads."
 msgstr ""
 
-#: admin/general-settings.php:312
+#: admin/general-settings.php:316
 msgid "Attention Effect"
 msgstr ""
 
-#: admin/general-settings.php:320
+#: admin/general-settings.php:324
 msgid "Select Attention Effect"
 msgstr ""
 
-#: admin/general-settings.php:329
+#: admin/general-settings.php:333
 msgid ""
 "Your My Sticky Elements widget will first appear to the user according to "
 "the selected trigger. After the widget appeared for the first time, it'll "
@@ -925,27 +925,27 @@ msgid ""
 "expects it to always appear"
 msgstr ""
 
-#: admin/general-settings.php:331
+#: admin/general-settings.php:335
 msgid "Display after"
 msgstr ""
 
-#: admin/general-settings.php:339
+#: admin/general-settings.php:343
 msgid "seconds on the page"
 msgstr ""
 
-#: admin/general-settings.php:348
+#: admin/general-settings.php:352
 msgid "Set a scroll percentage after which the widget becomes visible"
 msgstr ""
 
-#: admin/general-settings.php:350
+#: admin/general-settings.php:354
 msgid "Visible after scrolling"
 msgstr ""
 
-#: admin/general-settings.php:358
+#: admin/general-settings.php:362
 msgid "% of the page"
 msgstr ""
 
-#: admin/general-settings.php:371 upgrade-to-pro.php:190
+#: admin/general-settings.php:375 upgrade-to-pro.php:190
 msgid ""
 "Show or don't show the widget on specific pages. You can use rules like "
 "contains, exact match, starts with, and ends with. WordPress pages, posts, "
@@ -953,91 +953,91 @@ msgid ""
 "can choose any products or only the products that are currently on sale."
 msgstr ""
 
-#: admin/general-settings.php:373
+#: admin/general-settings.php:377
 msgid "Show on Pages"
 msgstr ""
 
-#: admin/general-settings.php:395 admin/general-settings.php:621
+#: admin/general-settings.php:399 admin/general-settings.php:660
 msgid "Link that contain"
 msgstr ""
 
-#: admin/general-settings.php:396 admin/general-settings.php:622
+#: admin/general-settings.php:400 admin/general-settings.php:661
 msgid "A specific link"
 msgstr ""
 
-#: admin/general-settings.php:397 admin/general-settings.php:623
+#: admin/general-settings.php:401 admin/general-settings.php:662
 msgid "Links starting with"
 msgstr ""
 
-#: admin/general-settings.php:398 admin/general-settings.php:624
+#: admin/general-settings.php:402 admin/general-settings.php:663
 msgid "Links ending with"
 msgstr ""
 
-#: admin/general-settings.php:399 admin/general-settings.php:625
+#: admin/general-settings.php:403 admin/general-settings.php:664
 msgid "WordPress Pages"
 msgstr ""
 
-#: admin/general-settings.php:400 admin/general-settings.php:626
+#: admin/general-settings.php:404 admin/general-settings.php:665
 msgid "WordPress Posts"
 msgstr ""
 
-#: admin/general-settings.php:401 admin/general-settings.php:627
+#: admin/general-settings.php:405 admin/general-settings.php:666
 msgid "WordPress Categories"
 msgstr ""
 
-#: admin/general-settings.php:402 admin/general-settings.php:628
+#: admin/general-settings.php:406 admin/general-settings.php:667
 msgid "WordPress Tags"
 msgstr ""
 
-#: admin/general-settings.php:405 admin/general-settings.php:631
+#: admin/general-settings.php:409 admin/general-settings.php:670
 msgid "WooCommerce products"
 msgstr ""
 
-#: admin/general-settings.php:406 admin/general-settings.php:632
+#: admin/general-settings.php:410 admin/general-settings.php:671
 msgid "WooCommerce products on sale"
 msgstr ""
 
-#: admin/general-settings.php:415
+#: admin/general-settings.php:419
 msgid "Pages"
 msgstr ""
 
-#: admin/general-settings.php:416
+#: admin/general-settings.php:420
 msgid "Posts"
 msgstr ""
 
-#: admin/general-settings.php:417
+#: admin/general-settings.php:421
 msgid "Categories"
 msgstr ""
 
-#: admin/general-settings.php:418
+#: admin/general-settings.php:422
 msgid "Tags"
 msgstr ""
 
-#: admin/general-settings.php:419 admin/general-settings.php:420
+#: admin/general-settings.php:423 admin/general-settings.php:424
 msgid "Products"
 msgstr ""
 
-#: admin/general-settings.php:437 admin/general-settings.php:498
-#: admin/general-settings.php:571 admin/general-settings.php:870
+#: admin/general-settings.php:441 admin/general-settings.php:502
+#: admin/general-settings.php:575 admin/general-settings.php:909
 msgid "Remove Rules"
 msgstr ""
 
-#: admin/general-settings.php:450 upgrade-to-pro.php:206
+#: admin/general-settings.php:454 upgrade-to-pro.php:206
 msgid ""
 "Display the widget on specific days and hours based on your opening days "
 "and hours"
 msgstr ""
 
-#: admin/general-settings.php:452
+#: admin/general-settings.php:456
 msgid "Days and Hours"
 msgstr ""
 
-#: admin/general-settings.php:497 admin/general-settings.php:570
-#: admin/general-settings.php:869
+#: admin/general-settings.php:501 admin/general-settings.php:574
+#: admin/general-settings.php:908
 msgid "Add Rule"
 msgstr ""
 
-#: admin/general-settings.php:509
+#: admin/general-settings.php:513
 msgid ""
 "Set the date and time for when you want the widget to start showing and the "
 "time you would like it to stop showing. You can add up to 12 combinations "
@@ -1045,118 +1045,134 @@ msgid ""
 "upcoming limited-time offer."
 msgstr ""
 
-#: admin/general-settings.php:511
+#: admin/general-settings.php:515
 msgid "Date Scheduling"
 msgstr ""
 
-#: admin/general-settings.php:519
+#: admin/general-settings.php:523
 msgid "Timezone"
 msgstr ""
 
-#: admin/general-settings.php:521
+#: admin/general-settings.php:525
 msgid "Select a city or country"
 msgstr ""
 
-#: admin/general-settings.php:529
+#: admin/general-settings.php:533
 msgid "Start date "
 msgstr ""
 
-#: admin/general-settings.php:532
+#: admin/general-settings.php:536
 msgid ""
 "Schedule a date from which the widget will be displayed (the starting date "
 "is included)"
 msgstr ""
 
-#: admin/general-settings.php:538
+#: admin/general-settings.php:542
 msgid "Start time "
 msgstr ""
 
-#: admin/general-settings.php:545
+#: admin/general-settings.php:549
 msgid "End date "
 msgstr ""
 
-#: admin/general-settings.php:548
+#: admin/general-settings.php:552
 msgid ""
 "Schedule a date from which the widget will stop being displayed (the end "
 "date is included)"
 msgstr ""
 
-#: admin/general-settings.php:554
+#: admin/general-settings.php:558
 msgid "End time "
 msgstr ""
 
-#: admin/general-settings.php:584 upgrade-to-pro.php:194
+#: admin/general-settings.php:588 upgrade-to-pro.php:194
 msgid ""
 "Target your widget to specific countries. You can create different widgets "
 "for different countries"
 msgstr ""
 
-#: admin/general-settings.php:586 upgrade-to-pro.php:193
+#: admin/general-settings.php:590 upgrade-to-pro.php:193
 msgid "Country targeting"
 msgstr ""
 
-#: admin/general-settings.php:592 admin/general-settings.php:596
+#: admin/general-settings.php:596 admin/general-settings.php:600
 msgid "All countries"
 msgstr ""
 
-#: admin/general-settings.php:659
+#: admin/general-settings.php:615
+msgid "Add a line between various channels to show separation"
+msgstr ""
+
+#: admin/general-settings.php:618
+msgid "Show Separator Between Channels"
+msgstr ""
+
+#: admin/general-settings.php:630
+msgid "Separator Color"
+msgstr ""
+
+#: admin/general-settings.php:636
+msgid "Separator width"
+msgstr ""
+
+#: admin/general-settings.php:698
 msgid "More Settings"
 msgstr ""
 
-#: admin/general-settings.php:666
+#: admin/general-settings.php:705
 msgid "On-Screen Position Y Desktop"
 msgstr ""
 
-#: admin/general-settings.php:688
+#: admin/general-settings.php:727
 msgid "On-Screen Position Y Mobile"
 msgstr ""
 
-#: admin/general-settings.php:713
+#: admin/general-settings.php:752
 msgid ""
 "When turned on (on mobile), the first tap, will show the hover text first "
 "and it'll stay until the second tap"
 msgstr ""
 
-#: admin/general-settings.php:715
+#: admin/general-settings.php:754
 msgid "Improved mobile behavior"
 msgstr ""
 
-#: admin/general-settings.php:724
+#: admin/general-settings.php:763
 msgid "First tap opens link"
 msgstr ""
 
-#: admin/general-settings.php:730
+#: admin/general-settings.php:769
 msgid "First tap opens flyout"
 msgstr ""
 
-#: admin/general-settings.php:744
+#: admin/general-settings.php:783
 msgid "If enabled, you can track clicks to your widget using "
 msgstr ""
 
-#: admin/general-settings.php:744 upgrade-to-pro.php:209
+#: admin/general-settings.php:783 upgrade-to-pro.php:209
 msgid "Google Analytics"
 msgstr ""
 
-#: admin/general-settings.php:746
+#: admin/general-settings.php:785
 msgid "Google Analytics Events"
 msgstr ""
 
-#: admin/general-settings.php:766 upgrade-to-pro.php:202
+#: admin/general-settings.php:805 upgrade-to-pro.php:202
 msgid ""
 "Show the widget only to visitors who come from specific traffic sources "
 "including direct traffic, social networks, search engines, Google Ads, or "
 "any other traffic source"
 msgstr ""
 
-#: admin/general-settings.php:768
+#: admin/general-settings.php:807
 msgid "Traffic source"
 msgstr ""
 
-#: admin/general-settings.php:781
+#: admin/general-settings.php:820
 msgid "Show the widget to visitors who arrived to your website from direct traffic"
 msgstr ""
 
-#: admin/general-settings.php:796
+#: admin/general-settings.php:835
 msgid ""
 "Show the widget to visitors who arrived to your website from social "
 "networks including: Facebook, Twitter, Pinterest, Instagram, Google+, "
@@ -1164,65 +1180,65 @@ msgid ""
 "more"
 msgstr ""
 
-#: admin/general-settings.php:811 admin/general-settings.php:826
+#: admin/general-settings.php:850 admin/general-settings.php:865
 msgid ""
 "Show the widget to visitors who arrived from search engines including: "
 "Google, Bing, Yahoo!, Yandex, AOL, Ask, WOW,  WebCrawler, Baidu and more"
 msgstr ""
 
-#: admin/general-settings.php:880
+#: admin/general-settings.php:919
 msgid ""
 "The form will automatically open up on page load until the user closes the "
 "form or fills out the form"
 msgstr ""
 
-#: admin/general-settings.php:882
+#: admin/general-settings.php:921
 msgid "Open the form automatically"
 msgstr ""
 
-#: admin/general-settings.php:892
+#: admin/general-settings.php:931
 msgid "Display after "
 msgstr ""
 
-#: admin/general-settings.php:894
+#: admin/general-settings.php:933
 msgid " seconds on the page"
 msgstr ""
 
-#: admin/general-settings.php:904
+#: admin/general-settings.php:943
 msgid "If enabled, a small black button will appear on top to minimize the widget"
 msgstr ""
 
-#: admin/general-settings.php:907
+#: admin/general-settings.php:946
 msgid "Minimize tab"
 msgstr ""
 
-#: admin/general-settings.php:925
+#: admin/general-settings.php:964
 msgid ""
 "If enabled, the widget will be hidden by default and will show an icon "
 "instead to restore to its full size"
 msgstr ""
 
-#: admin/general-settings.php:928
+#: admin/general-settings.php:967
 msgid "Minimized bar on load"
 msgstr ""
 
-#: admin/general-settings.php:955
+#: admin/general-settings.php:994
 msgid "Write custom CSS to customize the tabs"
 msgstr ""
 
-#: admin/general-settings.php:957
+#: admin/general-settings.php:996
 msgid "Tabs CSS"
 msgstr ""
 
-#: admin/general-settings.php:971
+#: admin/general-settings.php:1010
 msgid "Write custom CSS to customize the form"
 msgstr ""
 
-#: admin/general-settings.php:973
+#: admin/general-settings.php:1012
 msgid "Form CSS"
 msgstr ""
 
-#: admin/general-settings.php:985
+#: admin/general-settings.php:1024
 msgid "Less Settings"
 msgstr ""
 
@@ -1247,44 +1263,36 @@ msgid "Support"
 msgstr ""
 
 #: admin/help.php:52
-msgid "Co-Founder at Premio"
+msgid "Contact Us"
 msgstr ""
 
 #: admin/help.php:55
 msgid ""
-"Hello! Are you experiencing any problems with My Sticky Elements? Please "
-"let me know :)"
+"Are you experiencing any issues with My Sticky Elements? Please let us "
+"know, we’d be happy to help 🙏"
 msgstr ""
 
-#: admin/help.php:62
+#: admin/help.php:60
 msgid "How can I help you?"
 msgstr ""
 
-#: admin/help.php:65 admin/help.php:120
+#: admin/help.php:63 admin/help.php:114
 msgid "Chat"
 msgstr ""
 
-#: admin/help.php:71
-msgid "Or"
-msgstr ""
-
-#: admin/help.php:72
-msgid "Visit our Help Center >>"
-msgstr ""
-
-#: admin/help.php:109
+#: admin/help.php:103
 msgid "Sending Request..."
 msgstr ""
 
-#: admin/help.php:126
+#: admin/help.php:120
 msgid "Done!"
 msgstr ""
 
-#: admin/help.php:133
+#: admin/help.php:127
 msgid "Your message is sent successfully."
 msgstr ""
 
-#: admin/help.php:139
+#: admin/help.php:133
 msgid "There is some problem in sending request. Please send us mail on %1$s"
 msgstr ""
 
@@ -1887,7 +1895,7 @@ msgstr ""
 msgid "Channel Type"
 msgstr ""
 
-#: mystickyelements-admin.php:1197 mystickyelements-front.php:825
+#: mystickyelements-admin.php:1197 mystickyelements-front.php:849
 msgid "Custom channel"
 msgstr ""
 
@@ -2054,21 +2062,21 @@ msgstr ""
 msgid "Anonymous feedback"
 msgstr ""
 
-#: mystickyelements-front.php:368 mystickyelements-front.php:380
-#: mystickyelements-front.php:393 mystickyelements-front.php:405
-#: mystickyelements-front.php:415
+#: mystickyelements-front.php:391 mystickyelements-front.php:403
+#: mystickyelements-front.php:416 mystickyelements-front.php:428
+#: mystickyelements-front.php:438
 msgid "*"
 msgstr ""
 
-#: mystickyelements-front.php:920 mystickyelements-front.php:1063
+#: mystickyelements-front.php:944 mystickyelements-front.php:1087
 msgid "Something went wrong. Please contact site administrator"
 msgstr ""
 
-#: mystickyelements-front.php:1059
+#: mystickyelements-front.php:1083
 msgid "Your request is submitted successfully"
 msgstr ""
 
-#: mystickyelements-front.php:1083
+#: mystickyelements-front.php:1107
 msgid "Your message was sent successfully"
 msgstr ""
 

@@ -92,8 +92,8 @@ class Sticky_elements_review_box
 
 	public function enqueue_scripts() {
 		if (current_user_can('manage_options')) {
-			wp_enqueue_style($this->pluginSlug."-star-rating-svg", plugins_url('css/star-rating-svg.css', __FILE__), [], MY_STICKY_ELEMENT_VERSION);
-			wp_enqueue_script($this->pluginSlug."-star-rating-svg", plugins_url('js/jquery.star-rating-svg.min.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
+			wp_enqueue_style($this->pluginSlug."-star-rating-svg", plugins_url('dist/css/star-rating-svg.css', __FILE__), [], MY_STICKY_ELEMENT_VERSION);
+			wp_enqueue_script($this->pluginSlug."-star-rating-svg", plugins_url('dist/js/star-rating-svg.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
             wp_localize_script(
                 $this->pluginSlug."-star-rating-svg",
                 'pr_rating_settings',

@@ -48,9 +48,9 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 ?>
 <div id="mystickyelements-tab-contact-form" class="mystickyelements-tab-contact-form mystickyelements-options" style="display: <?php echo esc_attr(( isset($widget_tab_index) && $widget_tab_index == 'mystickyelements-contact-form' ) ? 'block' : 'none'); ?>;">
 	<div class="">
-		<div class="myStickyelements-header-title mystickyelements-option-field">
+		<div class="myStickyelements-header-title mystickyelements-option-field border-0! mb-0!">
 			<div class="myStickyelements-header-title-left">
-				<h3 for="myStickyelements-contact-form-enabled">
+				<h3 for="myStickyelements-contact-form-enabled" class="p-0!">
 					<?php esc_html_e('Show the Contact Form', 'mystickyelements'); ?>
 				</h3>
 			</div>
@@ -62,7 +62,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 					<span class="slider round"></span>
 				</label>
 			</div>
-			<p class="contact-form-description" id="contact-form-disabled-info"><?php esc_html_e( 'Collect form submissions right from sticky side, top, or bottom bar of your website.', 'mystickyelements');?></p>
+			<p class="contact-form-description mt-1! mb-4!" id="contact-form-disabled-info"><?php esc_html_e( 'Collect form submissions right from sticky side, top, or bottom bar of your website.', 'mystickyelements');?></p>
 			<div class="turn-off-message" style="display:none;">
 				<p><i class="fas fa-info-circle"></i><span><?php esc_html_e('Contact form in sticky bar has been turned off.','mystickyelements');?></span>&nbsp;&nbsp;<a href="javascript:void(0)" class="mystickyelements-turnit-on" data-turnit="myStickyelements-contact-form-enabled"><?php esc_html_e( 'Turn it on', 'mystickyelements' );?></a><?php esc_html_e( ' to collect user submitted forms from sidebar.', 'mystickyelements' );?></p>
 			</div>
@@ -89,7 +89,7 @@ $contact_form['message_value'] 			= isset($contact_form['message_value']) ? $con
 				</div>
 			</div>
 			<div class="myStickyelements-header-title mystickyelements-option-field mystickyelements-sub-header-color">
-				<h3><?php esc_html_e( 'Customize Form Fields', 'mystickyelements' );?></h3>
+				<h3 class="p-0!"><?php esc_html_e( 'Customize Form Fields', 'mystickyelements' );?></h3>
 			</div>
 			<div id="mystickyelements-contact-form-fields" class="mystickyelements-contact-form-fields">
 				<?php 

@@ -21,6 +21,10 @@ $general_settings['custom_position'] 		= isset($general_settings['custom_positio
 $general_settings['custom_position_mobile'] = isset($general_settings['custom_position_mobile']) ? $general_settings['custom_position_mobile'] : '';
 $general_settings['minimize_tab'] 			= isset($general_settings['minimize_tab']) ? $general_settings['minimize_tab'] : '';
 $general_settings['font_family'] 			= isset($general_settings['font_family']) ? $general_settings['font_family'] : '';
+$general_settings['separator_color'] 		= isset($general_settings['separator_color']) ? $general_settings['separator_color'] : '#000000';
+$general_settings['separator_width'] 		= isset($general_settings['separator_width']) ? $general_settings['separator_width'] : '1';
+$general_settings['separator_between_channels'] = isset($general_settings['separator_between_channels']) ? $general_settings['separator_between_channels'] : 0;
+
 $furl = false;
 foreach( $other_source_url as $surl ){
 	if ( $surl != '') {
@@ -576,33 +580,68 @@ if ( !$furl){
 				
 					
 					<!--<div class="more-setting-rows"> -->
-						<div class="mystickyelements-content-section-wrap mystickyelements-content-section-wrap">
-							<span class="myStickyelements-label myStickyelements-extra-label" >
-								<label for="countries_list">
-									<div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
-										<a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
-										<p><?php esc_html_e("Target your widget to specific countries. You can create different widgets for different countries", 'mystickyelements'); ?></p>
-									</div>
-									<?php _e( "Country targeting", 'mystickyelements' );?>
-								</label>
-								<span class="upgrade-myStickyelements"><a href="<?php echo esc_url($upgrade_url); ?>" target="_blank"><i class="fas fa-lock"></i><?php _e('UPGRADE NOW', 'mystickyelements'); ?></a></span>
-							</span>
-							<div class="myStickyelements-inputs myStickyelements-country-inputs <?php echo esc_attr($is_pro_active?"is-pro":"not-pro") ?>">
-							
-								<button type="button" class="myStickyelements-country-button"><?php _e("All countries", 'mystickyelements'); ?></button>
-								<div class="myStickyelements-country-list-box">
-									
-									<select name="general-settings[countries_list][]" placeholder="Select Country" class="myStickyelements-country-list">
-										<option value=""><?php _e("All countries", 'mystickyelements'); ?></option>
-									</select>
-								</div>
-								<span class="upgrade-myStickyelements">
-									<a href="<?php echo esc_url($upgrade_url); ?>" target="_blank">
-										<i class="fas fa-lock"></i><?php _e('UPGRADE NOW', 'mystickyelements'); ?>
-									</a>
-								</span>
-							</div>
-						</div>
+                    <div class="mystickyelements-content-section-wrap mystickyelements-content-section-wrap">
+                        <span class="myStickyelements-label myStickyelements-extra-label" >
+                            <label for="countries_list">
+                                <div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
+                                    <a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+                                    <p><?php esc_html_e("Target your widget to specific countries. You can create different widgets for different countries", 'mystickyelements'); ?></p>
+                                </div>
+                                <?php _e( "Country targeting", 'mystickyelements' );?>
+                            </label>
+                            <span class="upgrade-myStickyelements"><a href="<?php echo esc_url($upgrade_url); ?>" target="_blank"><i class="fas fa-lock"></i><?php _e('UPGRADE NOW', 'mystickyelements'); ?></a></span>
+                        </span>
+                        <div class="myStickyelements-inputs myStickyelements-country-inputs <?php echo esc_attr($is_pro_active?"is-pro":"not-pro") ?>">
+
+                            <button type="button" class="myStickyelements-country-button"><?php _e("All countries", 'mystickyelements'); ?></button>
+                            <div class="myStickyelements-country-list-box">
+
+                                <select name="general-settings[countries_list][]" placeholder="Select Country" class="myStickyelements-country-list">
+                                    <option value=""><?php _e("All countries", 'mystickyelements'); ?></option>
+                                </select>
+                            </div>
+                            <span class="upgrade-myStickyelements">
+                                <a href="<?php echo esc_url($upgrade_url); ?>" target="_blank">
+                                    <i class="fas fa-lock"></i><?php _e('UPGRADE NOW', 'mystickyelements'); ?>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="mystickyelements-content-section-wrap" id="separator_between_channels_wrap">
+                        <span class="myStickyelements-label">
+                            <div class="mystickyelements-custom-fields-tooltip myStickyelements-country-tooltip">
+                                <a href="#" class="mystickyelements-tooltip mystickyelements-new-custom-btn"><i class="fas fa-info"></i></a>
+                                <p><?php esc_html_e("Add a line between various channels to show separation", 'mystickyelements'); ?></p>
+                            </div>
+                            <label for="separator_between_channels">
+                                <?php esc_html_e( 'Show Separator Between Channels', 'mystickyelements' );?>
+                            </label>
+                        </span>
+                        <div class="myStickyelements-inputs myStickyelements-label flex gap-4 flex-col">
+                            <label for="separator_between_channels" class="myStickyelements-switch" >
+                                <input type="hidden" name="general-settings[separator_between_channels]" value="0" />
+                                <input type="checkbox" id="separator_between_channels" name="general-settings[separator_between_channels]" <?php checked( @$general_settings['separator_between_channels'], '1' );?>  value="1" />
+                                <span class="slider round"></span>
+                            </label>
+                            <div id="channel-separator-options" class="inline-flex gap-2 flex-col bg-gray-100/80 py-2.5 px-3 rounded-lg <?php echo esc_attr( @$general_settings['separator_between_channels'] !== '1' ? 'hidden' : '' ) ?>">
+                                <div class="inline-flex gap-2 items-center">
+                                    <label for="separator_color" class="myStickyelements-separator-color-label">
+                                        <?php esc_html_e( 'Separator Color', 'mystickyelements' );?>
+                                    </label>
+                                    <input type="text" id="separator_color" name="general-settings[separator_color]" value="<?php echo esc_attr($general_settings['separator_color']);?>" />
+                                </div>
+                                <div class="inline-flex gap-2 items-center">
+                                    <label for="separator_width" class="myStickyelements-separator-color-label">
+                                        <?php esc_html_e( 'Separator width', 'mystickyelements' );?>
+                                    </label>
+                                    <input type="number" class="w-20!" min="0" max="10" step="1" id="separator_width" name="general-settings[separator_width]" value="<?php echo esc_attr($general_settings['separator_width']);?>" />
+                                    <span>px</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
 					<!--</div>	-->	
                     <div class="myStickyelements-page-options-html" style="display: none">
                         <div class="myStickyelements-page-option">

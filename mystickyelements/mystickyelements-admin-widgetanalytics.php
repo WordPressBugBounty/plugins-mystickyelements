@@ -96,6 +96,7 @@ if (defined('ABSPATH') === false) {
     display: flex;
     flex-direction: column;
     margin-top: 1.75rem;
+    justify-content: center;
 }
 
 .mystickyelement-widgetanalytic-body img {
@@ -127,6 +128,7 @@ if (defined('ABSPATH') === false) {
 	flex-direction:column;
 	flex-flow:wrap;
 	margin-bottom: 1.75rem;
+    justify-content: center;
 }
 
 .mystickyelement-widgetanalytic-body .mt-5{
@@ -134,6 +136,7 @@ if (defined('ABSPATH') === false) {
 	border-radius:8px;
 	margin-top:3.25rem;
 	margin-bottom:2.25rem;
+    justify-content: center;
 }
 
 .mystickyelement-widgetanalytic-body span{

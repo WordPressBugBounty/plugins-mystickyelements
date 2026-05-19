@@ -63,26 +63,24 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
                 wp_enqueue_style('thickbox.css', '/'.WPINC.'/js/thickbox/thickbox.css', null, '1.0');
                 return;
             }
-            $min = MSE_DEV_MODE ? '' : '.min';
 			if ( isset($_GET['page']) && ( $_GET['page'] == 'my-sticky-elements' || $_GET['page'] == 'my-sticky-elements-leads' || $_GET['page'] == 'my-sticky-elements-new-widget' || $_GET['page'] == 'recommended-plugins' || $_GET['page'] == 'my-sticky-elements-analytics' || $_GET['page'] == 'my-sticky-elements-integration' || $_GET['page'] == 'my-sticky-elements-upgrade'  || $_GET['page'] == 'my-sticky-elements-chatway-plugin') ) {
            
 				$is_shown = MSE_SIGNUP_CLASS::check_modal_status();
                 if($is_shown) {
-                    wp_enqueue_script( 'mailcheck-js', plugins_url('/js/mailcheck'.esc_attr($min).'.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
-                    wp_enqueue_script('autocomplete-email-js', plugins_url('/js/jquery.email-autocomplete'.esc_attr($min).'.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, true);
-                    wp_enqueue_style('mystickyelements-help-css', plugins_url('/css/mystickyelements-help'.esc_attr($min).'.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
+                    wp_enqueue_script( 'mailcheck-js', plugins_url('/dist/js/mailcheck.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
+                    wp_enqueue_script('autocomplete-email-js', plugins_url('/dist/js/email-autocomplete.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, true);
+                    wp_enqueue_style('mystickyelements-help-css', plugins_url('/dist/css/mystickyelements-help.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
                     wp_style_add_data('mystickyelements-help-css', 'rtl', 'replace');
                 } else {
                     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
-                    wp_enqueue_style('font-awesome-css', plugins_url('/css/font-awesome.min.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
+                    wp_enqueue_style('font-awesome-css', plugins_url('/dist/css/font-awesome.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
                     wp_enqueue_style('wp-color-picker');
-                    wp_enqueue_style('mystickyelements-admin-css', plugins_url('/css/mystickyelements-admin'.esc_attr($min).'.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
-                    wp_style_add_data('mystickyelements-admin-css', 'rtl', 'replace');
-					
-					wp_enqueue_style('select2-css', plugins_url('/css/select2.min.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
-                    wp_enqueue_style('mystickyelements-front-css', plugins_url('/css/mystickyelements-front'.esc_attr($min).'.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
-                    wp_enqueue_style('mystickyelements-help-css', plugins_url('/css/mystickyelements-help'.esc_attr($min).'.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
-                    wp_style_add_data('mystickyelements-help-css', 'rtl', 'replace');
+                    wp_enqueue_style('mystickyelements-admin-css', plugins_url('/dist/css/mystickyelements-admin.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
+                    wp_enqueue_style('mse-app', plugins_url('/dist/css/app.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
+
+					wp_enqueue_style('select2-css', plugins_url('/css/select2.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
+                    wp_enqueue_style('mystickyelements-front-css', plugins_url('/dist/css/mystickyelements-front.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
+                    wp_enqueue_style('mystickyelements-help-css', plugins_url('/dist/css/mystickyelements-help.css', __FILE__), array(), MY_STICKY_ELEMENT_VERSION);
 					wp_enqueue_style( 'wp-jquery-ui-dialog' );
 					wp_enqueue_script( 'jquery-ui-dialog' );
                     wp_enqueue_script('wp-color-picker');
@@ -91,25 +89,26 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
                     wp_enqueue_media();
 					// include the javascript
 					wp_enqueue_script('thickbox', null, array('jquery'));
-					wp_enqueue_style('jquery-ui-css', plugins_url('/css/datepicker.min.css', __FILE__), [], MY_STICKY_ELEMENT_VERSION);
+					wp_enqueue_style('jquery-ui-css', plugins_url('/dist/css/datepicker.css', __FILE__), [], MY_STICKY_ELEMENT_VERSION);
 					wp_enqueue_script('jquery-ui-datepicker');
  
 					// include the thickbox styles
 					wp_enqueue_style('thickbox.css', '/'.WPINC.'/js/thickbox/thickbox.css', null, '1.0');
 					
-					wp_enqueue_style("mystickyelements-star-rating-svg", plugins_url('css/star-rating-svg.css', __FILE__), [], MY_STICKY_ELEMENT_VERSION);
-					wp_enqueue_script("mystickyelements-star-rating-svg", plugins_url('js/jquery.star-rating-svg.min.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
+					wp_enqueue_style("mystickyelements-star-rating-svg", plugins_url('dist/css/star-rating-svg.css', __FILE__), [], MY_STICKY_ELEMENT_VERSION);
+					wp_enqueue_script("mystickyelements-star-rating-svg", plugins_url('dist/js/star-rating-svg.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
 					
 					//wp_enqueue_script('plugin-install', admin_url('/js/plugin-install.min', __FILE__), array( 'jquery' ), MY_STICKY_ELEMENT_VERSION, true ) ;
-					wp_enqueue_script('select2-js', plugins_url('/js/select2.min.js', __FILE__), array( 'jquery' ), MY_STICKY_ELEMENT_VERSION, true ) ;
-					wp_enqueue_script('timepicker-js', plugins_url('/js/timepicker.min.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, false);
-					wp_enqueue_script('confetti-js', plugins_url('/js/confetti.min.js', __FILE__), array( 'jquery' ), MY_STICKY_ELEMENT_VERSION, true ) ;
+					wp_enqueue_script('select2-js', plugins_url('dist/js/select2.js', __FILE__), array( 'jquery' ), MY_STICKY_ELEMENT_VERSION, true ) ;
+					wp_enqueue_script('timepicker-js', plugins_url('dist/js/timepicker.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, false);
+					wp_enqueue_script('confetti-js', plugins_url('dist/js/confetti.js', __FILE__), array( 'jquery' ), MY_STICKY_ELEMENT_VERSION, true ) ;
 					
-					wp_enqueue_script( 'mailcheck-js', plugins_url('/js/mailcheck'.esc_attr($min).'.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
-					wp_enqueue_script('autocomplete-email-js', plugins_url('/js/jquery.email-autocomplete'.esc_attr($min).'.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, true);
+					wp_enqueue_script( 'mailcheck-js', plugins_url('dist/js/mailcheck.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
+					wp_enqueue_script('autocomplete-email-js', plugins_url('dist/js/email-autocomplete.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, true);
 					
-                    wp_enqueue_script('mystickyelements-js', plugins_url('/js/mystickyelements-admin'.esc_attr($min).'.js', __FILE__), array('jquery'), MY_STICKY_ELEMENT_VERSION, true);
-					
+                    wp_enqueue_script('mystickyelements-js', plugins_url('dist/js/mystickyelements-admin.js', __FILE__), array('jquery'), MY_STICKY_ELEMENT_VERSION, true);
+                    wp_enqueue_script('mse-app', plugins_url('dist/js/app.js', __FILE__), array('jquery'), MY_STICKY_ELEMENT_VERSION, true);
+
 					$locale_settings = array(
 						'ajaxurl' => admin_url('admin-ajax.php'),
 						'ajax_nonce' => wp_create_nonce('mystickyelements'),
@@ -122,14 +121,14 @@ if ( !class_exists('MyStickyElementsPage_pro') ) {
 			}
 			
 			if ( isset($_GET['page']) && $_GET['page'] == 'my-sticky-elements-upgrade'  ) {
-				wp_enqueue_style('mystickyelements-pricing-table', plugins_url('/css/pricing-table'.esc_attr($min).'.css', __FILE__), [], MY_STICKY_ELEMENT_VERSION);
+				wp_enqueue_style('mystickyelements-pricing-table', plugins_url('dist/css/pricing-table.css', __FILE__), [], MY_STICKY_ELEMENT_VERSION);
 				$queryArgs = [
 					'family' => 'Poppins:wght@400;500;600;700&display=swap',
 					'subset' => 'latin,latin-ext',
 				];
 				wp_enqueue_style('google-poppins-fonts', add_query_arg($queryArgs, "//fonts.googleapis.com/css2"), [], null);
 				
-				wp_enqueue_script('mystickyelements-slick', plugins_url('/js/slick.min.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
+				wp_enqueue_script('mystickyelements-slick', plugins_url('dist/js/slick.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
 			}
 		}
 

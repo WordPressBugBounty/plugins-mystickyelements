@@ -86,7 +86,7 @@ class MSE_HELP {
     // enqueue scripts
     public function admin_enqueue_scripts(){ 
         // enqueue css
-        wp_enqueue_style('mystickyelements-help-css', MYSTICKYELEMENTS_URL . 'css/help.css', array(), MY_STICKY_ELEMENT_VERSION);   
+        wp_enqueue_style('mystickyelements-help-css', MYSTICKYELEMENTS_URL . 'dist/css/help.css', array(), MY_STICKY_ELEMENT_VERSION);
 
     } 
 
