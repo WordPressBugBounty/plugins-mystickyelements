@@ -3,7 +3,7 @@ Contributors: premio, galdub, tomeraharon
 Tags: whatsapp, contact form, facebook messenger, call now button, instagram
 Requires at least: 3.1
 Tested up to: 7.0
-Stable tag: 2.3.7
+Stable tag: 2.3.8
 Plugin URI: https://premio.io/downloads/mystickyelements/
 License: GPLv3
 
@@ -341,6 +341,9 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 9. Change the color of your icons, contact form, text, and anything else!
 
 == Changelog ==
+
+= 2.3.8 =
+Fixed JavaScript quick actions bug
 
 = 2.3.7 =
 Separator between buttons - Added a new option to show a separator between channels, including separator color and width settings. The separator appears both in preview and on the live widget.
