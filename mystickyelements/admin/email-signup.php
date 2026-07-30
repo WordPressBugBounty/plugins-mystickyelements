@@ -1,8 +1,10 @@
-<?php if (!defined('ABSPATH')) { exit; }
-$email = (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == "playground.wordpress.net")?"":get_option('admin_email'); 
+<?php if (!defined('ABSPATH')) {
+    exit;
+}
+$email = (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == "playground.wordpress.net") ? "" : get_option('admin_email');
 $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
- 
- 
+
+
 ?>
 <style>
     

@@ -7,204 +7,204 @@
  * */
 
 if (defined('ABSPATH') === false) {
-	exit;
+    exit;
 }
 
 class Sticky_elements_review_box
 {
+    /**
+     * The Name of this plugin.
+     *
+     * @var    string    $pluginName    The Name of this plugin.
+     * @since  1.0.0
+     * @access public
+     */
+    public $pluginName = "My Sticky Elements";
 
-	/**
-	 * The Name of this plugin.
-	 *
-	 * @var    string    $pluginName    The Name of this plugin.
-	 * @since  1.0.0
-	 * @access public
-	 */
-	public $pluginName = "My Sticky Elements";
+    /**
+     * The Slug of this plugin.
+     *
+     * @var    string    $pluginSlug    The Slug of this plugin.
+     * @since  1.0.0
+     * @access public
+     */
+    public $pluginSlug = "mystickyelements";
 
-	/**
-	 * The Slug of this plugin.
-	 *
-	 * @var    string    $pluginSlug    The Slug of this plugin.
-	 * @since  1.0.0
-	 * @access public
-	 */
-	public $pluginSlug = "mystickyelements";
+    /**
+     * The Plugin review status.
+     *
+     * @var    string    $reviewStatus    The Slug of this plugin.
+     * @since  1.0.0
+     * @access public
+     */
+    public $reviewStatus = true;
 
-	/**
-	 * The Plugin review status.
-	 *
-	 * @var    string    $reviewStatus    The Slug of this plugin.
-	 * @since  1.0.0
-	 * @access public
-	 */
-	public $reviewStatus = true;
+    /**
+     * The plugin slug for WordPress
+     *
+     * @var    string    $wpPluginSlug    The Slug of this plugin.
+     * @since  1.0.0
+     * @access public
+     */
+    public $wpPluginSlug = "mystickyelements";
 
-	/**
-	 * The plugin slug for WordPress
-	 *
-	 * @var    string    $wpPluginSlug    The Slug of this plugin.
-	 * @since  1.0.0
-	 * @access public
-	 */
-	public $wpPluginSlug = "mystickyelements";
+    /**
+     * Define the core functionality of the plugin.
+     *
+     * Set the plugin name and the plugin version that can be used throughout the plugin.
+     * Load the dependencies, define the locale, and set the hooks for the admin area and
+     * the public-facing side of the site.
+     *
+     * @since 1.0.0
+     */
+    public function __construct()
+    {
+        $isHidden = get_option($this->pluginSlug . "_hide_review_box");
+        if ($isHidden !== false) {
+            $this->reviewStatus = false;
+        }
 
-	/**
-	 * Define the core functionality of the plugin.
-	 *
-	 * Set the plugin name and the plugin version that can be used throughout the plugin.
-	 * Load the dependencies, define the locale, and set the hooks for the admin area and
-	 * the public-facing side of the site.
-	 *
-	 * @since 1.0.0
-	 */
-	public function __construct()
-	{
-		$isHidden = get_option( $this->pluginSlug . "_hide_review_box" );
-		if ( $isHidden !== false ) {
-			$this->reviewStatus = false;
-		}
+        $currentCount = get_option($this->pluginSlug . "_show_review_box_after");
+        if ($currentCount === false) {
+            $date = date("Y-m-d", strtotime("+14 days"));
+            add_option($this->pluginSlug . "_show_review_box_after", $date);
+            $this->reviewStatus = false;
+        }
 
-		$currentCount = get_option( $this->pluginSlug . "_show_review_box_after" );
-		if ( $currentCount === false ) {
-			$date = date( "Y-m-d", strtotime( "+14 days" ) );
-			add_option( $this->pluginSlug . "_show_review_box_after", $date );
-			$this->reviewStatus = false;
-		}
+        $dateToShow = get_option($this->pluginSlug . "_show_review_box_after");
+        if ($dateToShow !== false) {
+            $currentDate = date("Y-m-d");
+            if ($currentDate < $dateToShow) {
+                $this->reviewStatus = false;
+            }
+        }
 
-		$dateToShow = get_option( $this->pluginSlug . "_show_review_box_after" );
-		if ( $dateToShow !== false ) {
-			$currentDate = date( "Y-m-d" );
-			if ( $currentDate < $dateToShow ) {
-				$this->reviewStatus = false;
-			}
-		}
-		
-		if($this->reviewStatus) {
-			add_action('admin_enqueue_scripts', [$this, 'enqueue_scripts']);
-			add_action('admin_notices', [$this, 'admin_notices']);
-		}
-		add_action("wp_ajax_".$this->pluginSlug."_review_box", [$this, "form_review_box"]);
-		add_action("wp_ajax_".$this->pluginSlug."_review_box_message", [$this, "form_review_box_message"]);
+        if ($this->reviewStatus) {
+            add_action('admin_enqueue_scripts', [$this, 'enqueue_scripts']);
+            add_action('admin_notices', [$this, 'admin_notices']);
+        }
+        add_action("wp_ajax_".$this->pluginSlug."_review_box", [$this, "form_review_box"]);
+        add_action("wp_ajax_".$this->pluginSlug."_review_box_message", [$this, "form_review_box_message"]);
 
 
-	}//end __construct()
+    }//end __construct()
 
-	public function enqueue_scripts() {
-		if (current_user_can('manage_options')) {
-			wp_enqueue_style($this->pluginSlug."-star-rating-svg", plugins_url('dist/css/star-rating-svg.css', __FILE__), [], MY_STICKY_ELEMENT_VERSION);
-			wp_enqueue_script($this->pluginSlug."-star-rating-svg", plugins_url('dist/js/star-rating-svg.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
+    public function enqueue_scripts()
+    {
+        if (current_user_can('manage_options')) {
+            wp_enqueue_style($this->pluginSlug."-star-rating-svg", plugins_url('dist/css/star-rating-svg.css', __FILE__), [], MY_STICKY_ELEMENT_VERSION);
+            wp_enqueue_script($this->pluginSlug."-star-rating-svg", plugins_url('dist/js/star-rating-svg.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
             wp_localize_script(
                 $this->pluginSlug."-star-rating-svg",
                 'pr_rating_settings',
                 ['has_settings' => 1]
             );
-		}
-	}
-
-    
-
-	/**
-	 * Updates settings for Review Box Message
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return status
-	 */
-	public function form_review_box_message()
-	{
-		if (current_user_can('manage_options')) {
-			$nonce = filter_input(INPUT_POST, 'nonce');
-
-			if (!empty($nonce) && wp_verify_nonce($nonce, $this->pluginSlug."_review_box_message")) {
-				add_option($this->pluginSlug."_hide_review_box", "1");
-				$rating  = filter_input(INPUT_POST, 'rating');
-				$message = filter_input(INPUT_POST, 'message');
-
-				global $current_user;
-				$postMessage = [];
-
-				$domain    = site_url();
-				$user_name = $current_user->first_name." ".$current_user->last_name;
-				$email     = $current_user->user_email;
-
-				$messageData          = [];
-				$messageData['key']   = "email";
-				$messageData['value'] = $email;
-				$postMessage[]        = $messageData;
-
-				$messageData          = [];
-				$messageData['key']   = "stars";
-				$messageData['value'] = $rating;
-				$postMessage[]        = $messageData;
-
-				$messageData          = [];
-				$messageData['key']   = "message";
-				$messageData['value'] = $message;
-				$postMessage[]        = $messageData;
-
-				$apiParams = [
-					'title'   => 'Review for '.$this->pluginName.' WordPress',
-					'domain'  => $domain,
-					'email'   => "contact@premio.io",
-					'url'     => site_url(),
-					'name'    => $user_name,
-					'message' => $postMessage,
-					'plugin'  => $this->pluginName,
-					'type'    => "Review",
-				];
-
-				// Sending message to Crisp API
-				$apiResponse = wp_safe_remote_post("https://premioapps.com/premio/send-feedback-api.php", ['body' => $apiParams, 'timeout' => 15, 'sslverify' => true]);
-
-				if (is_wp_error($apiResponse)) {
-					wp_safe_remote_post("https://premioapps.com/premio/send-feedback-api.php", ['body' => $apiParams, 'timeout' => 15, 'sslverify' => false]);
-				}
-			}
-			die;
-		}
-
-	}//end form_review_box_message()
-
-	/**
-	 * Updates settings for Review Box
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return status
-	 */
-	public function form_review_box()
-	{
-		if (current_user_can('manage_options')) {
-			$nonce = filter_input(INPUT_POST, 'nonce');
-			$days  = filter_input(INPUT_POST, 'days');
-			if (!empty($nonce) && wp_verify_nonce($nonce, $this->pluginSlug."_review_box")) {
-				if ($days == -1) {
-					add_option($this->pluginSlug."_hide_review_box", "1");
-				} else {
-					$date = date("Y-m-d", strtotime("+".$days." days"));
-					update_option($this->pluginSlug."_show_review_box_after", $date);
-				}
-			}
-			die;
-		}
-
-	}//end form_review_box()
+        }
+    }
 
 
-	/**
-	 * Show Review HTML
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return html
-	 */
-	public function admin_notices()
-	{
-		if (!current_user_can('manage_options')) {
-			return;
-		}
-		?>
+
+    /**
+     * Updates settings for Review Box Message
+     *
+     * @since  1.0.0
+     * @access public
+     * @return status
+     */
+    public function form_review_box_message()
+    {
+        if (current_user_can('manage_options')) {
+            $nonce = filter_input(INPUT_POST, 'nonce');
+
+            if (!empty($nonce) && wp_verify_nonce($nonce, $this->pluginSlug."_review_box_message")) {
+                add_option($this->pluginSlug."_hide_review_box", "1");
+                $rating  = filter_input(INPUT_POST, 'rating');
+                $message = filter_input(INPUT_POST, 'message');
+
+                global $current_user;
+                $postMessage = [];
+
+                $domain    = site_url();
+                $user_name = $current_user->first_name." ".$current_user->last_name;
+                $email     = $current_user->user_email;
+
+                $messageData          = [];
+                $messageData['key']   = "email";
+                $messageData['value'] = $email;
+                $postMessage[]        = $messageData;
+
+                $messageData          = [];
+                $messageData['key']   = "stars";
+                $messageData['value'] = $rating;
+                $postMessage[]        = $messageData;
+
+                $messageData          = [];
+                $messageData['key']   = "message";
+                $messageData['value'] = $message;
+                $postMessage[]        = $messageData;
+
+                $apiParams = [
+                    'title'   => 'Review for '.$this->pluginName.' WordPress',
+                    'domain'  => $domain,
+                    'email'   => "contact@premio.io",
+                    'url'     => site_url(),
+                    'name'    => $user_name,
+                    'message' => $postMessage,
+                    'plugin'  => $this->pluginName,
+                    'type'    => "Review",
+                ];
+
+                // Sending message to Crisp API
+                $apiResponse = wp_safe_remote_post("https://premioapps.com/premio/send-feedback-api.php", ['body' => $apiParams, 'timeout' => 15, 'sslverify' => true]);
+
+                if (is_wp_error($apiResponse)) {
+                    wp_safe_remote_post("https://premioapps.com/premio/send-feedback-api.php", ['body' => $apiParams, 'timeout' => 15, 'sslverify' => false]);
+                }
+            }
+            die;
+        }
+
+    }//end form_review_box_message()
+
+    /**
+     * Updates settings for Review Box
+     *
+     * @since  1.0.0
+     * @access public
+     * @return status
+     */
+    public function form_review_box()
+    {
+        if (current_user_can('manage_options')) {
+            $nonce = filter_input(INPUT_POST, 'nonce');
+            $days  = filter_input(INPUT_POST, 'days');
+            if (!empty($nonce) && wp_verify_nonce($nonce, $this->pluginSlug."_review_box")) {
+                if ($days == -1) {
+                    add_option($this->pluginSlug."_hide_review_box", "1");
+                } else {
+                    $date = date("Y-m-d", strtotime("+".$days." days"));
+                    update_option($this->pluginSlug."_show_review_box_after", $date);
+                }
+            }
+            die;
+        }
+
+    }//end form_review_box()
+
+
+    /**
+     * Show Review HTML
+     *
+     * @since  1.0.0
+     * @access public
+     * @return html
+     */
+    public function admin_notices()
+    {
+        if (!current_user_can('manage_options')) {
+            return;
+        }
+        ?>
 
         <!-- premio default review box -->
         <div class="notice notice-info premio-notice <?php echo esc_attr($this->pluginSlug) ?>-premio-review-box">
@@ -467,7 +467,7 @@ class Sticky_elements_review_box
                     <span class="dashicons dashicons-no-alt"></span>
                 </button>
 
-                <p><?php printf( esc_html__("Hi there, it seems like %s is bringing you some value, and that's pretty awesome! Can you please show us some love and rate %s on WordPress? It'll only take 2 minutes of your time, and will really help us spread the word", 'mystickyelements'), "<b>".esc_attr($this->pluginName)."</b>", $this->pluginName);?></p>
+                <p><?php printf(esc_html__("Hi there, it seems like %s is bringing you some value, and that's pretty awesome! Can you please show us some love and rate %s on WordPress? It'll only take 2 minutes of your time, and will really help us spread the word", 'mystickyelements'), "<b>".esc_attr($this->pluginName)."</b>", $this->pluginName);?></p>
 
                 <div class="<?php echo esc_attr($this->pluginSlug) ?>-premio-review-box__default__co-founder">
                     <span>
@@ -716,7 +716,7 @@ class Sticky_elements_review_box
         </script>
 		<?php
 
-	}//end admin_notices()
+    }//end admin_notices()
 
 }//end class
 

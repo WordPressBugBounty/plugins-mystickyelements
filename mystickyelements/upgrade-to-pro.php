@@ -193,7 +193,7 @@ $features = [
         'title' => esc_html__("Country targeting", "mystickyelements"),
         'tooltip' => esc_html__("Target your widget to specific countries. You can create different widgets for different countries", "mystickyelements")
     ],
-	[
+    [
         'title' => esc_html__("Set triggers", "mystickyelements"),
         'tooltip' => esc_html__("Set your widget to appear after a specific time delay or when users scroll to a certain percentage of the page, helping you capture attention at the perfect moment", "mystickyelements")
     ],
@@ -251,8 +251,8 @@ $features = [
                                 </div>
                             </div>
                             <?php
-                            if(!empty($options) && is_array($options)) {
-                                foreach ($options as $key=>$option) { ?>
+                            if (!empty($options) && is_array($options)) {
+                                foreach ($options as $key => $option) { ?>
                                     <div class="plan-col plan-detail plan-info" data-plan="<?php echo esc_attr($key) ?>">
                                         <span class="best-value"><?php echo esc_attr($option['plans']['0']['desc']) ?></span>
                                         <div class="app-plan-top">
@@ -262,14 +262,14 @@ $features = [
                                                 <?php echo nl2br(esc_attr($option['postfix'])) ?>
                                             </div>
                                             <div class="plan-type"><?php echo esc_attr($option['plan_type']) ?></div>
-                                            <?php if($key == 'lifetime') { ?>
+                                            <?php if ($key == 'lifetime') { ?>
                                                 <div class="plan-monthly">Lifetime License 🚀</div>
                                             <?php } else { ?>
                                                 <div class="plan-monthly"><span><?php echo esc_attr($option['plans']['0']['month']) ?></span></div>
                                             <?php } ?>
                                             <div class="plan-selector">
                                                 <select class="website-list" data-plan="<?php echo esc_attr($key) ?>">
-                                                    <?php foreach($option['plans'] as $planKey=>$plan) { ?>
+                                                    <?php foreach ($option['plans'] as $planKey => $plan) { ?>
                                                         <option <?php selected($planKey, 0) ?> value="<?php echo esc_attr($planKey) ?>"><?php echo esc_attr($plan['websites']) ?></option>
                                                     <?php } ?>
                                                 </select>
@@ -280,8 +280,8 @@ $features = [
                                         </div>
                                     </div>
                                 <?php }
-                            }
-                            ?>
+                                }
+?>
                         </div>
                     </div>
                 </div>
@@ -290,7 +290,7 @@ $features = [
                     foreach ($features as $feature) { ?>
                         <div class="plan-row">
                             <div class="plan-col first-row">
-                                <?php if(!empty($feature['tooltip'])) { ?>
+                                <?php if (!empty($feature['tooltip'])) { ?>
                                     <div class="has-tooltip">
                                         <span class="table-text"><?php echo esc_attr($feature['title']); ?></span>
                                         <span class="table-tooltip">
@@ -327,14 +327,14 @@ $features = [
             </div>
             <div class="mobile-table">
                 <div class="mobile-plans">
-                    <?php if(!empty($options) && is_array($options)) {
-                        foreach ($options as $key=>$option) {
-                            $is_free_plan = (empty($option['plans']['0']['price']))?1:0;
+                    <?php if (!empty($options) && is_array($options)) {
+                        foreach ($options as $key => $option) {
+                            $is_free_plan = (empty($option['plans']['0']['price'])) ? 1 : 0;
                             ?>
                             <div class="mobile-plan is-v2-table" data-plan="<?php echo esc_attr($key) ?>">
                                 <div class="mobile-pin"></div>
                                 <div class="plan-head mobile-head-plan plan-info" data-plan="<?php echo esc_attr($key) ?>">
-                                    <?php if($key == 'lifetime') { ?>
+                                    <?php if ($key == 'lifetime') { ?>
                                         <span class="best-value">🎉 Best Value</span>
                                     <?php } ?>
                                     <div class="app-plan-top">
@@ -344,7 +344,7 @@ $features = [
                                             <?php echo nl2br(esc_attr($option['postfix'])) ?>
                                         </div>
                                         <div class="plan-type"><?php echo esc_attr($option['plan_type']) ?></div>
-                                        <?php if($key == 'lifetime') { ?>
+                                        <?php if ($key == 'lifetime') { ?>
                                             <div class="plan-monthly">Lifetime License 🚀</div>
                                         <?php } else { ?>
                                             <div class="plan-monthly">Less than $<span><?php echo esc_attr($option['plans']['0']['month']) ?></span>/mo</div>
@@ -352,7 +352,7 @@ $features = [
 
                                         <div class="plan-selector">
                                             <select class="website-list" data-plan="<?php echo esc_attr($key) ?>">
-                                                <?php foreach($option['plans'] as $planKey=>$plan) { ?>
+                                                <?php foreach ($option['plans'] as $planKey => $plan) { ?>
                                                     <option <?php selected($planKey, 0) ?> value="<?php echo esc_attr($planKey) ?>"><?php echo esc_attr($plan['websites']) ?></option>
                                                 <?php } ?>
                                             </select>
@@ -453,9 +453,9 @@ $features = [
                         'image'     => plugins_url('/images/iwebcrafter.webp', __FILE__),
                         'profile'   => 'https://wordpress.org/support/topic/great-space-saver-and-very-useful/',
                         'comment'   => "A must have for going social. Saves Space on your pages and works great."
-                    ],                    
+                    ],
                 ];
-                foreach($reviews as $review) { ?>
+foreach ($reviews as $review) { ?>
                     <div class="client-testimonial">
                         <div class="client-testimonial-slide">
                             <a href="<?php echo esc_url($review['profile']) ?>" target="_blank">
@@ -500,28 +500,28 @@ $features = [
         <div class="faq-lists">
             <?php
             $faqs = [
-                [
-                    'question' => "How long is my paid plugin license valid for?",
-                    'answer' => "Once you purchase any paid plan of My Sticky Elements, you can use it forever. Support and updates are available for 1 year. You can renew your license each year to get another year of support and updates."
-                ],
-                [
-                    'question' => "Can I use the plugin on more than 1 domain?",
-                    'answer' => "There are 2 ways to do it:
+[
+    'question' => "How long is my paid plugin license valid for?",
+    'answer' => "Once you purchase any paid plan of My Sticky Elements, you can use it forever. Support and updates are available for 1 year. You can renew your license each year to get another year of support and updates."
+],
+[
+    'question' => "Can I use the plugin on more than 1 domain?",
+    'answer' => "There are 2 ways to do it:
                         <ul>
                         <li>You can install the free My Sticky Elements plugin on any website you want</li>
                         <li>You can buy the Pro plan that includes licenses for 5 domains, or the Agency plan that includes licenses for 50 domains (bigger plans are also available).</li>
                         </ul>"
-                ],
-                [
-                    'question' => "Is there a time limit for the free plan?",
-                    'answer' => "No. you can use the free plan as long as you want."
-                ],
-                [
-                    'question' => "Will the plugin stop working if I don’t renew my license?",
-                    'answer' => "Of course NOT!<br/>My Sticky Elements plugin and all your settings will continue to work as before; however, you will no longer receive plugin updates including feature additions, improvements, and support."
-                ],
+],
+[
+    'question' => "Is there a time limit for the free plan?",
+    'answer' => "No. you can use the free plan as long as you want."
+],
+[
+    'question' => "Will the plugin stop working if I don’t renew my license?",
+    'answer' => "Of course NOT!<br/>My Sticky Elements plugin and all your settings will continue to work as before; however, you will no longer receive plugin updates including feature additions, improvements, and support."
+],
             ];
-            foreach($faqs as $key => $faq) { ?>
+foreach ($faqs as $key => $faq) { ?>
                 <div class="faq-list">
                     <div class="faq-question">
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -534,7 +534,7 @@ $features = [
                         <?php echo wp_kses($faq['answer'], $allowedTags); ?>
                     </div>
                 </div>
-                <?php if($key%2 != 0) { ?>
+                <?php if ($key % 2 != 0) { ?>
                     <div class="clear-both"></div>
                 <?php } ?>
             <?php } ?>

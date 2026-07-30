@@ -1,9 +1,9 @@
 === All-in-one Sticky Floating Contact Form, Call, Click to Chat, and 50+ Social Icon Tabs  - My Sticky Elements ===
 Contributors: premio, galdub, tomeraharon
 Tags: whatsapp, contact form, facebook messenger, call now button, instagram
-Requires at least: 3.1
+Requires at least: 4.7
 Tested up to: 7.0
-Stable tag: 2.3.8
+Stable tag: 2.3.9
 Plugin URI: https://premio.io/downloads/mystickyelements/
 License: GPLv3
 
@@ -30,7 +30,7 @@ pro plans"><strong>My Sticky Elements Pro Plans</strong></a>.
 = 📝 Contact form and social buttons in one plugin =
 Tabs that will help your website visitors contact you on any popular social channel such as Facebook, Messenger, Instagram, Threads, WhatsApp, Telegram, Pinterest, YouTube, WeChat, Line Messenger & more.
 
-= 🚀 Show My Sticky Elements contact and social tabs =
+= 🚀 My Sticky Elements contact form, social & chat buttons =
 Contact form
 Facebook
 X.com - Twitter 
@@ -86,8 +86,8 @@ Shortcode, IFrame or HTML icon
 6 Custom icons (Pro)
 6 Shortcode, IFrame or HTML icons (Pro)
 
-= 🔗 Integrations =
-Upgrade to the Pro version of My Sticky Elements and connect your My Sticky Elements contact forms to MailChimp or MailPoet.
+= 🔗 MailChimp & MailPoet Integrations =
+Upgrade to the Pro version of My Sticky Elements & connect your My Sticky Elements contact forms to MailChimp or MailPoet.
 
 =▶️ Live Demo =
 A live demo of My Sticky Elements plugin is available at <a href="https://demo.premio.io/mystickyelements/?utm_source=wordpressorg" target="_blank" title="Premio.io demo site">Premio's demo site</a>.
@@ -155,7 +155,7 @@ Unlock the Pro features for only $59/year
 19. Dropdown multi select field to your contact form
 20. Redirect to another page after the form is submitted
 21. Create 6 shortcode, IFrame or HTML icons and display any embedded content like YouTube videos, contact form 7 or any other form, maps, or any other shortcode or IFrame.
-22. Add custom text fields to your contact form
+22. Contact form custom text fields 
 23. Send your contact form leads to as many email addresses you want
 24. Change the thank you message that's displayed after the contact form is submitted
 25. Log the IP address of visitors that submit your contact us form
@@ -341,6 +341,14 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 9. Change the color of your icons, contact form, text, and anything else!
 
 == Changelog ==
+
+= 2.3.9 =
+Added a close option for custom channels, making embedded custom content easier for visitors to dismiss.
+Improved contact form notifications so submitted fields appear in the same order as the form.
+Fixed widget visibility issues when positioned near the bottom of the screen on desktop and mobile.
+Fixed several contact form and lead management issues, including automatic closing after submission and missing exported field values.
+Resolved Font Awesome conflicts affecting phone, RSS, and TripAdvisor icons.
+Added various UI and UX improvements, including better alignment, spacing, labels, buttons, toggles, and hover states.
 
 = 2.3.8 =
 Fixed JavaScript quick actions bug

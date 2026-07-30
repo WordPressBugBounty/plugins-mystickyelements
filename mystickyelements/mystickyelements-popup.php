@@ -1,7 +1,6 @@
-<div class="myStickyelements-intro-popup" id="myStickyelements-intro-popup" style="display:none;" title="<?php esc_attr_e( 'Welcome to My Sticky Elements &#127881;', 'mystickyelements' ); ?>">
-	<p><?php _e( 'Select your contact form fields, chat, and social channels. Need help? Visit our ', 'mystickyelements' ); ?><a href="https://premio.io/help/mystickyelements/?utm_soruce=wordpressmystickyelements" target="_blank"><?php _e( 'Help Center', 'mystickyelements' ); ?></a><?php _e( ' and check the video.', 'mystickyelements' ); ?></p>
-	
-	<iframe width="420" height="240" src="https://www.youtube.com/embed/VR9S_yuN1ko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="myStickyelements-intro-popup" id="myStickyelements-intro-popup" style="display:none;" title="<?php esc_attr_e('Welcome to My Sticky Elements &#127881;', 'mystickyelements'); ?>">
+	<p><?php _e('Select your contact form fields, chat, and social channels. Need help? Visit our ', 'mystickyelements'); ?><a href="https://premio.io/help/mystickyelements/?utm_soruce=wordpressmystickyelements" target="_blank"><?php _e('Help Center', 'mystickyelements'); ?></a><?php _e(' and check the video.', 'mystickyelements'); ?></p>
+	<iframe width="420" class="w-full! h-80!" height="240" src="https://www.youtube.com/embed/VR9S_yuN1ko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	<input type="hidden" id="myStickyelements_update_popup_status" value="<?php echo wp_create_nonce("myStickyelements_update_popup_status") ?>">
 </div>
 <script>
@@ -9,6 +8,7 @@
 		"use strict";
 		$( document ).ready( function(){
 			jQuery( "#myStickyelements-intro-popup" ).dialog({
+                closeText: "",
 				resizable: false,
 				modal: true,
 				draggable: false,
@@ -22,7 +22,7 @@
 							myStickyelements_intro_popup_close();
 						},
 						text: 'Go to My Sticky Elements',
-						class: 'purple-btn'
+						class: 'mse-primary-button'
 					},
 				}
 			});

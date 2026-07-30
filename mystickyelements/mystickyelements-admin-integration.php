@@ -5,7 +5,7 @@ $plugins_allowedtags = array(
         'href'   => array(),
         'title'  => array(),
         'target' => array(),
-		'class' => array(),
+        'class' => array(),
     ),
     'abbr'    => array( 'title' => array() ),
     'acronym' => array( 'title' => array() ),
@@ -21,58 +21,56 @@ $plugins_allowedtags = array(
 );
 ?>
 <div class="mystickyelement-new-widget-wrap">
-	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" />	
-	<h2 class="text-center mystickyelement-integrate-title-main"><?php esc_html_e( 'Upgrade to Pro and connect your My Sticky Elements form to the following platforms to automatically receive leads', 'mystickyelements' ); ?></h2>
-	<div class="mystickyelement-new-widget-row">
-		<div class="mystickyelement-features">
-			<ul>
-				<li>
-					<div class="elements-int-container mystickyelement-feature">
-						<div class="mystickyelement-feature-top">
-							<img src="<?php echo MYSTICKYELEMENTS_URL ?>/images/mailchimp.png" />
-						</div>
-						<div class="feature-title">Connect your forms to Mailchimp</div>
-						<div id="elements-int-container-content feature-description">
-							<p>
-							<a href="#" class="integrate-element-form button-primary  ">
-								<?php echo 'Connect';?>
-							</a>
-							</p>
-						</div>
-					</div>
-					<div class="mystickyelement-integration-button">
-						<a href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements-upgrade")); ?>" class="new-upgrade-button" target="blank">Upgrade to Pro</a>
-					</div>
-				</li>
-				<li>
-					<div class="elements-int-container mystickyelement-feature">
-						<div class="mystickyelement-feature-top">
-							<img src="<?php echo MYSTICKYELEMENTS_URL ?>/images/mailpoet.png" />
-						</div>
-						<div class="feature-title">Connect your forms to MailPoet</div>
-						<div id="elements-int-container-content feature-description">
-							<?php							
-							$admin_message = '';
-							$activation_url = '#';
-								
-							$admin_message .= '<p>' . sprintf( '<a href="%s" class="button-primary integrate-element-form">%s</a>', $activation_url, esc_html__( 'Connect' , 'mystickyelements') ) . '</p>';
-							
-							echo wp_kses($admin_message, $plugins_allowedtags);
-							
-							?>			
-						</div>
-					</div>
-					<div class="mystickyelement-integration-button">
-						<a href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements-upgrade")); ?>" class="new-upgrade-button" target="blank">Upgrade to Pro</a>
-					</div>
-				</li>
-			</ul>
-			<div class="clear clearfix"></div>
-		</div>
-        <div class="mystickyelement-integration-upgrade-button">
-		    <a href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements-upgrade")); ?>" class="new-upgrade-button" target="blank">Upgrade to Pro</a>
+    <div class="p-5 w-full">
+        <h2 class="text-center mystickyelement-integrate-title-main text-2xl!">
+            <?php esc_html_e('Upgrade to Pro and connect your My Sticky Elements form to the following platforms to automatically receive leads', 'mystickyelements'); ?>
+        </h2>
+        <div class="mystickyelement-new-widget-row">
+            <div class="mystickyelement-features">
+                <div class="flex flex-col md:flex-row gap-5 w-full">
+                    <div class="flex-1 relative mse-pro-rules">
+                        <div class="elements-int-container mystickyelement-feature">
+                            <div class="mystickyelement-feature-top">
+                                <img src="<?php echo MYSTICKYELEMENTS_URL ?>/images/mailchimp.png" />
+                            </div>
+                            <div class="feature-title">Connect your forms to Mailchimp</div>
+                            <div class="feature-description">
+                                <p class="text-center">
+                                    <a href="#" class="mse-secondary-button small-button main-button whitespace-nowrap">
+                                        <?php esc_html_e('Connect', 'mystickyelements'); ?>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mse-pro-modal">
+                            <?php do_action('mse_pro_button') ?>
+                        </div>
+                    </div>
+                    <div class="flex-1 relative mse-pro-rules">
+                        <div class="elements-int-container mystickyelement-feature">
+                            <div class="mystickyelement-feature-top">
+                                <img src="<?php echo MYSTICKYELEMENTS_URL ?>/images/mailpoet.png" />
+                            </div>
+                            <div class="feature-title">Connect your forms to MailPoet</div>
+                            <div class="feature-description">
+                                <p class="text-center">
+                                    <a href="#" class="mse-secondary-button small-button main-button whitespace-nowrap">
+                                        <?php esc_html_e('Connect', 'mystickyelements'); ?>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mse-pro-modal">
+                            <?php do_action('mse_pro_button') ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mystickyelement-integration-upgrade-button mt-10">
+                <?php do_action('mse_pro_button') ?>
+            </div>
         </div>
-	</div>	
+    </div>
 </div>
 
 <style>
@@ -81,12 +79,10 @@ $plugins_allowedtags = array(
 }
 /*New Widget Page css*/
 .mystickyelement-new-widget-wrap {
-	background: #fff;
-	padding: 30px;
-	margin: 20px auto 0 auto;
-	width: 100%;
-	font-family: Poppins;
-	line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 95px);
 }
 .mystickyelement-features {
 	padding-top: 40px;
@@ -96,6 +92,7 @@ $plugins_allowedtags = array(
 .mystickyelement-new-widget-wrap h2 {
 	font-style: normal;
 	font-weight: 600;
+	font-size: 20px;
 	font-size: 20px;
 	line-height: 30px;
 	color: #1e1e1e;
@@ -109,20 +106,12 @@ $plugins_allowedtags = array(
 	line-height: 1.5;
 	color: #1E1E1E;
 	margin: 0 auto;
-	max-width: 530px;
+	max-width: 620px;
 	position: relative;
 	padding-bottom: 30px;
 }
-.mystickyelement-new-widget-wrap h2.mystickyelement-integrate-title-main::after {
-	content: "";
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	width: 158px;
-	height: 1px;
-	background-color: #3C85F7;
-	margin: 0 auto;
+.mystickyelement-new-widget-wrap h2.mystickyelement-integrate-title-main:after {
+    display: none;
 }
 .mystickyelement-features ul {
     margin: 0;
@@ -141,7 +130,7 @@ $plugins_allowedtags = array(
 	padding: 60px 20px 10px 20px;
 	height: 100%;
 	position: relative;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #E3EAEE;
 }
 .mystickyelement-feature-top {
 	width: 73px;
@@ -153,7 +142,7 @@ $plugins_allowedtags = array(
 	margin: 0 auto;
 	top: -25px;
 	background: #fff;
-	z-index: 11;
+	z-index: 2;
 	padding: 10px;
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -228,27 +217,6 @@ a.new-demo-button {
 	border: 1px solid #E2E8F0;
 	color: #9CA3AF;
 	font-size: 12px;
-}
-.mystickyelement-feature .button-primary {
-	border: 1px solid #3C85F7;
-	background-color: transparent;
-	color: #3C85F7;
-	padding: 5px 17px;
-	line-height: 1;
-	border-radius: 2px;
-}
-.mystickyelement-feature a.button-primary {
-	padding-top: 7px;
-}
-.mystickyelement-feature .button-primary.btn-connected {
-	border-color: #057A55;
-	color: #057A55;
-}
-.mystickyelement-feature .button-primary.btn-disconnected {
-	color: #B91C1C;
-	border: 0;
-	padding: 0;
-	background-color: transparent;
 }
 .mystickyelement-integration-upgrade-button {
 	text-align: center;

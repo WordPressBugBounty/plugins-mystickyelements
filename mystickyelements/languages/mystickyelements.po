@@ -356,7 +356,7 @@ msgstr "Bye"
 #: admin/general-settings.php:997 admin/general-settings.php:1013
 #: admin/stickyelements-dashboard.php:234
 #: admin/stickyelements-dashboard.php:247
-msgid "UPGRADE NOW"
+msgid "Upgrade Now"
 msgstr ""
 
 #: admin/contact-forms.php:318

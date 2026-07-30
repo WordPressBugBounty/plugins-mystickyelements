@@ -1,22 +1,22 @@
 <?php
-$page_views 	= intval( get_option("get_mystickyelements_page_views") );
+$page_views 	= intval(get_option("get_mystickyelements_page_views"));
 $reviewStatus 	= true;
-$isHidden 		= get_option( "mystickyelements_hide_review_box" );
-$currentCount 	= get_option( "mystickyelements_show_review_box_after" );
-$dateToShow 	= get_option(  "mystickyelements_show_review_box_after" );
-$currentDate 	= date( "Y-m-d" );
+$isHidden 		= get_option("mystickyelements_hide_review_box");
+$currentCount 	= get_option("mystickyelements_show_review_box_after");
+$dateToShow 	= get_option("mystickyelements_show_review_box_after");
+$currentDate 	= date("Y-m-d");
 
-if ( $isHidden !== false ) {
-	
-	$reviewStatus = false;
+if ($isHidden !== false) {
+
+    $reviewStatus = false;
 }
 
-if ( $dateToShow !== false ) {	
-	if ( $currentDate < $dateToShow ) {
-		$reviewStatus = false;
-	}
+if ($dateToShow !== false) {
+    if ($currentDate < $dateToShow) {
+        $reviewStatus = false;
+    }
 }
-if( $page_views >= 1 && $reviewStatus ) { ?>
+if ($page_views >= 1 && $reviewStatus) { ?>
 	<div class="mystickyelement-popup-form" id="rating-modal-popup" >		
 		<div class="popup-form-content upgrade-modal rating-modal">
 			<div class="popup-content" style="position: relative;">
@@ -25,7 +25,7 @@ if( $page_views >= 1 && $reviewStatus ) { ?>
 				</div>				
 				<div class="rating-modal-steps active" id="step-1">
 					<div class="upgrade-title"><?php esc_html_e("Seems like My Sticky Elements is bringing you value 🥳", "mystickyelements"); ?></div>
-					<div class="upgrade-desc"><?php echo sprintf( esc_html__("Can you please show us some love and rate %s My Sticky Elements %s? It'll really help us spread the word ", "mystickyelements"), '<strong>', '</strong>'); ?></div>
+					<div class="upgrade-desc"><?php echo sprintf(esc_html__("Can you please show us some love and rate %s My Sticky Elements %s? It'll really help us spread the word ", "mystickyelements"), '<strong>', '</strong>'); ?></div>
 					<div class="upgrade-rating">
 						<div id="mystickyelement-rating"></div>
 						
@@ -334,5 +334,5 @@ if( $page_views >= 1 && $reviewStatus ) { ?>
 	}
 	</style>
 
-<?php 
+<?php
 }

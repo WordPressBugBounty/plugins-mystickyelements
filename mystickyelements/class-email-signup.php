@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Update Popup Class
  *
@@ -6,8 +7,8 @@
  * @license : GPL2
  * */
 
- if (defined('ABSPATH') === false) {
-	exit;
+if (defined('ABSPATH') === false) {
+    exit;
 }
 
 /**
@@ -16,8 +17,8 @@
  * Handles signup modal status, update actions, and manages display configurations
  * for the My Sticky Elements plugin update-related content.
  */
-class MSE_SIGNUP_CLASS {
-
+class MSE_SIGNUP_CLASS
+{
     /**
      * Option name used to store the update message for the "mysticky_element" feature.
      */
@@ -42,17 +43,18 @@ class MSE_SIGNUP_CLASS {
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
         // ajax callback
-        add_action( 'wp_ajax_sticky_element_update_status', array($this, 'update_status'));
+        add_action('wp_ajax_sticky_element_update_status', array($this, 'update_status'));
 
 
-	}//end __construct()
+    }//end __construct()
 
 
     public static function load_signup_settings()
     {
-        if(defined('MSE_UPDATE_POPUP_CONTENT')) {
+        if (defined('MSE_UPDATE_POPUP_CONTENT')) {
             return;
         }
 
@@ -87,28 +89,29 @@ class MSE_SIGNUP_CLASS {
      *
      * @return bool Returns true if the modal should be displayed; otherwise, false.
      */
-    public static function check_modal_status() {
-        if(get_option(self::$update_message_option) == -1 || get_option(self::$update_message_option) == 2) {
+    public static function check_modal_status()
+    {
+        if (get_option(self::$update_message_option) == -1 || get_option(self::$update_message_option) == 2) {
             return false;
-        } 
-        
+        }
+
         $referer = isset($_SERVER['HTTP_REFERER']) ? sanitize_text_field($_SERVER['HTTP_REFERER']) : '';
 
         if (!str_contains($referer, 'my-sticky-elements')) {
-            $elements_widgets = get_option( 'mystickyelements-widgets' );
+            $elements_widgets = get_option('mystickyelements-widgets');
 
-            if(!empty($elements_widgets) && $elements_widgets != false){
+            if (!empty($elements_widgets) && $elements_widgets != false) {
                 add_option(self::$show_modal_name, 1);
             }
         }
 
         if (get_option(self::$show_modal_name)) {
             $next_signup_date = get_option(self::$next_signup_date);
-            if($next_signup_date === false) {
+            if ($next_signup_date === false) {
                 self::load_signup_settings();
                 return true;
             } else {
-                if($next_signup_date < date('Y-m-d')) {
+                if ($next_signup_date < date('Y-m-d')) {
                     self::load_signup_settings();
                     return true;
                 }
@@ -127,11 +130,12 @@ class MSE_SIGNUP_CLASS {
      *
      * @return void
      */
-    public function update_status() {
-        if(!empty($_REQUEST['nonce']) && wp_verify_nonce($_REQUEST['nonce'], 'my_sticky_elements_update_nonce')) {
+    public function update_status()
+    {
+        if (!empty($_REQUEST['nonce']) && wp_verify_nonce($_REQUEST['nonce'], 'my_sticky_elements_update_nonce')) {
             $status = sanitize_text_field($_REQUEST['status']);
             $email = sanitize_text_field($_REQUEST['email']);
-            if($status == 1) {
+            if ($status == 1) {
                 update_option(self::$update_message_option, -1);
                 $url = 'https://premioapps.com/premio/signup/email.php';
                 $apiParams = [
@@ -148,7 +152,7 @@ class MSE_SIGNUP_CLASS {
             } else {
                 $next_date = date('Y-m-d', strtotime('+7 days'));
                 $next_signup_date = get_option(self::$next_signup_date);
-                if($next_signup_date === false) {
+                if ($next_signup_date === false) {
                     add_option(self::$next_signup_date, $next_date);
                 } else {
                     update_option(self::$update_message_option, -1);
@@ -158,6 +162,6 @@ class MSE_SIGNUP_CLASS {
         echo "1";
         die;
     }
-    
+
 }
 new MSE_SIGNUP_CLASS();

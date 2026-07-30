@@ -2,7 +2,7 @@
 if (! defined('ABSPATH')) {
     exit;
 }
-$data = MSE_FOOTER_HELP_DATA;  
+$data = MSE_FOOTER_HELP_DATA;
 ?>
  
 <div class="premio-footer-help">
@@ -10,8 +10,8 @@ $data = MSE_FOOTER_HELP_DATA;
 
         <div class="premio-help-menu">
  
-            <?php foreach($data['footer_menu'] as $key => $value):  ?>
-                <?php if($value['status'] == 1): ?>
+            <?php foreach ($data['footer_menu'] as $key => $value):  ?>
+                <?php if ($value['status'] == 1): ?>
                     <a target="_blank" href="<?php echo esc_url($value['link']) ?>"><?php echo esc_html($value['title']) ?></a>
                 <?php endif; ?>
             <?php endforeach; ?> 
@@ -25,19 +25,19 @@ $data = MSE_FOOTER_HELP_DATA;
         <a class="premio-help-button" href="#"><img src="<?php echo esc_url($data['help_icon']) ?>" alt="<?php esc_html_e("Need help?", 'mystickyelements'); ?>"  /></a>
         <a class="premio-help-close-btn" href="#"><img src="<?php echo esc_url($data['close_icon']) ?>" alt="<?php esc_html_e("Close", 'mystickyelements'); ?>"  /></a>
         
-        <?php 
+        <?php
             $option = get_option("mse_help_cta");
-            if ($option !== "yes") { ?>
+if ($option !== "yes") { ?>
                 <span class="tooltiptext"><?php esc_html_e("Support", "mystickyelements") ?></span>
         <?php  } ?> 
         <div class="premio-help-absulate-content">
-            <?php foreach($data['support_widget'] as $key => $value): 
+            <?php foreach ($data['support_widget'] as $key => $value):
                 $link = $value['link'] == false ? '#' : esc_url($value['link']);
                 $class = $key == 'contact' ? 'contact-us-btn' : 'premio-click-to-close';
                 $target = $key == 'contact' ? '' : '_blank';
                 $pro_class = $key == 'upgrade_to_pro' ? ' pro' : '';
-            ?>
-                <a target="<?php echo esc_attr($target); ?>" href="<?php echo esc_attr( $link ) ?>" class="premio-help-absulate-content-single <?php echo esc_attr($class); ?>">
+                ?>
+                <a target="<?php echo esc_attr($target); ?>" href="<?php echo esc_attr($link) ?>" class="premio-help-absulate-content-single <?php echo esc_attr($class); ?>">
                     <span class="text"><?php  echo esc_html($value['title']) ?></span>
                     <span class="icon-img <?php echo esc_attr($pro_class); ?>"><img src="<?php echo esc_url($value['icon']) ?>" alt=""></span>
                 </a>

@@ -1,18 +1,21 @@
 <?php
-class Sticky_elements_upgrade_box {
+class Sticky_elements_upgrade_box
+{
     public $plugin_name = "myStickyElements";
     public $plugin_slug = "mystickyelements";
 
-    public function __construct() {
+    public function __construct()
+    {
         add_action("wp_ajax_".$this->plugin_slug."_upgrade_box", array($this, "mystickyelement_upgradetopro"));
         add_action('admin_notices', array($this, 'admin_notices'));
     }
 
-    public function mystickyelement_upgradetopro() {
+    public function mystickyelement_upgradetopro()
+    {
         $nonce = filter_input(INPUT_POST, 'nonce', FILTER_SANITIZE_STRING);
         $days = filter_input(INPUT_POST, 'days', FILTER_SANITIZE_STRING);
-        if(!empty($nonce) && wp_verify_nonce($nonce, $this->plugin_slug."_upgrade_box")) {
-            if($days == -1) {
+        if (!empty($nonce) && wp_verify_nonce($nonce, $this->plugin_slug."_upgrade_box")) {
+            if ($days == -1) {
                 add_option($this->plugin_slug."_hide_upgrade_box", "1");
             } else {
                 $date = date("Y-m-d", strtotime("+".$days." days"));
@@ -22,23 +25,24 @@ class Sticky_elements_upgrade_box {
         die;
     }
 
-    public function admin_notices() {
+    public function admin_notices()
+    {
         $is_hidden = get_option($this->plugin_slug."_hide_upgrade_box");
-        if($is_hidden !== false) {
+        if ($is_hidden !== false) {
             return;
         }
         $current_count = get_option($this->plugin_slug."_show_upgrade_box_after");
-        if($current_count === false) {
+        if ($current_count === false) {
             $date = date("Y-m-d", strtotime("+15 days"));
             add_option($this->plugin_slug."_show_upgrade_box_after", $date);
             return;
-        } else if($current_count < 35) {
+        } elseif ($current_count < 35) {
             return;
         }
         $date_to_show = get_option($this->plugin_slug."_show_upgrade_box_after");
-        if($date_to_show !== false) {
+        if ($date_to_show !== false) {
             $current_date = date("Y-m-d");
-            if($current_date < $date_to_show) {
+            if ($current_date < $date_to_show) {
                 return;
             }
         }
@@ -217,7 +221,7 @@ class Sticky_elements_upgrade_box {
                 <p>
 					<strong>Upgrade to MyStickyElements Pro</strong> ‍🚀 for unlimited channels, custom fields, syncing leads to Email/MailChimp/MailPoet with more triggers & targeting rules
 					<span class="mystickyelement-tab-integration-action">
-						<a class="upgradenow-box-btn" data-days="-1" href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements-upgrade")); ?>" target="_blank" class="btn">Upgrade now</a>
+						<a class="upgradenow-box-btn" data-days="-1" href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements-upgrade")); ?>" target="_blank" class="btn">Upgrade Now</a>
 					</span>					
                     <a href="#" class="dismiss-btn <?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-dismiss-btn"><span class="dashicons dashicons-no-alt"></span></a>
                 </p>

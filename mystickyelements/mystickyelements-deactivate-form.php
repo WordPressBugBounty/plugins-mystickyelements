@@ -124,7 +124,7 @@
             <div class="mystickyelements--popup-body">
                 <h3><?php _e('Your feedback will help us improve the product, please tell us why did you decide to deactivate My Sticky Elements :)', "mystickyelements"); ?></h3>
                 <div class="form-control">
-                    <input type="email" value="<?php echo get_option( 'admin_email' ) ?>" placeholder="<?php echo _e("Email address", "mystickyelements") ?>" id="mystickyelements-deactivation-email_id">
+                    <input type="email" value="<?php echo get_option('admin_email') ?>" placeholder="<?php echo _e("Email address", "mystickyelements") ?>" id="mystickyelements-deactivation-email_id">
                 </div>
                 <div class="form-control">                    
                     <textarea placeholder="<?php echo _e("Your comment", "mystickyelements") ?>" id="mystickyelements-deactivation-comment"></textarea>
