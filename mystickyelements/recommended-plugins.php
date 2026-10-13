@@ -54,39 +54,39 @@ if (defined('ABSPATH') === false) {
         font-size: 16px;
         min-width: 150px;
         color: #1da1f4;
-		border-radius: 0 !important;
-		font-weight: 400;
+        border-radius: 0 !important;
+        font-weight: 400;
     }
     .ui-dialog-buttonpane .ui-dialog-buttonset .red-btn {
         background-color: #1da1f4;
         border-color: #1da1f4;
         color: #ffffff;
     }
-	.ui-widget-overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		min-height: 360px;
-		background: #000 !important;
-		opacity: .7;
-		z-index: 100101;
-	}
-	.ui-dialog-titlebar-close {
-		display: inline-grid !important;
-	}
-	.ui-dialog-titlebar-close:hover {
+    .ui-widget-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        min-height: 360px;
+        background: #000 !important;
+        opacity: .7;
+        z-index: 100101;
+    }
+    .ui-dialog-titlebar-close {
+        display: inline-grid !important;
+    }
+    .ui-dialog-titlebar-close:hover {
 
-		background: transparent !important;
-		border: none;
-	}
+        background: transparent !important;
+        border: none;
+    }
 </style>
 <?php
 wp_enqueue_style('wp-jquery-ui-dialog');
 wp_enqueue_script('jquery-ui-dialog');
 // You may comment this out IF you're sure the function exists.
-require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+require_once ABSPATH.'wp-admin/includes/plugin-install.php';
 remove_all_filters('plugins_api');
 $pluginsAllowedTags = array(
     'a'       => array(
@@ -118,9 +118,9 @@ $args = [
     ],
 ];
 $data = plugins_api('plugin_information', $args);
-if ($data && ! is_wp_error($data)) {
-    $recommendedPlugins['poptin'] = $data;
-    $recommendedPlugins['poptin']->name = 'Poptin: Beautiful Pop Ups and Embedded Inline Contact Forms for Your Website';
+if ($data && !is_wp_error($data)) {
+    $recommendedPlugins['poptin']                    = $data;
+    $recommendedPlugins['poptin']->name              = 'Poptin: Beautiful Pop Ups and Embedded Inline Contact Forms for Your Website';
     $recommendedPlugins['poptin']->short_description = 'Pop ups and contact forms builder for your website. Get more sales, leads, and subscribers with beautiful popups & inline forms templates, no coding skills required';
 }
 
@@ -135,9 +135,9 @@ $args = [
     ],
 ];
 $data = plugins_api('plugin_information', $args);
-if ($data && ! is_wp_error($data)) {
-    $recommendedPlugins['chatway-live-chat'] = $data;
-    $recommendedPlugins['chatway-live-chat']->name = 'Free Live Chat, WordPress Website Chat Plugin, Support Chat App: Chatway';
+if ($data && !is_wp_error($data)) {
+    $recommendedPlugins['chatway-live-chat']                    = $data;
+    $recommendedPlugins['chatway-live-chat']->name              = 'Free Live Chat, WordPress Website Chat Plugin, Support Chat App: Chatway';
     $recommendedPlugins['chatway-live-chat']->short_description = 'Live chat with your website’s visitors through your WordPress website. With Chatway – live chat app, you can do just that and much more!';
 }
 
@@ -152,9 +152,9 @@ $args = [
     ],
 ];
 $data = plugins_api('plugin_information', $args);
-if ($data && ! is_wp_error($data)) {
-    $recommendedPlugins['chaty'] = $data;
-    $recommendedPlugins['chaty']->name = 'Chaty: WhatsApp, Facebook Messenger, and Many Other Chat Buttons For Your Website';
+if ($data && !is_wp_error($data)) {
+    $recommendedPlugins['chaty']                    = $data;
+    $recommendedPlugins['chaty']->name              = 'Chaty: WhatsApp, Facebook Messenger, and Many Other Chat Buttons For Your Website';
     $recommendedPlugins['chaty']->short_description = 'Let your visitors contact you via Facebook Messenger, Whatsapp, Telegram, Viber, Email, Phone call, SMS and more with customizable chat & call bututons';
 }
 
@@ -168,16 +168,16 @@ $args = [
     ],
 ];
 $data = plugins_api('plugin_information', $args);
-if ($data && ! is_wp_error($data)) {
-    $recommendedPlugins['folders'] = $data;
-    $recommendedPlugins['folders']->name = 'Folders: Organize Your Media Library, Posts, Pages, and Custom posts Using Drag and Drop';
+if ($data && !is_wp_error($data)) {
+    $recommendedPlugins['folders']                    = $data;
+    $recommendedPlugins['folders']->name              = 'Folders: Organize Your Media Library, Posts, Pages, and Custom posts Using Drag and Drop';
     $recommendedPlugins['folders']->short_description = 'Folders is a powerful WordPress plugin that will help you quickly and easily organize and manage your Media library files, Pages, Posts, and Custom Posts in folders';
 }
 ?>
 <div class="wrap mse-wrap mystickyelement-wrap recommended-plugins">
     <h2 class="pt-6! flex! gap-5 justify-between items-center px-2! pb-0!">
         <?php esc_html_e('Try out our recommended plugins', 'mystickyelements'); ?>
-        <a class="mse-primary-button hide-recommended-btn" href="#" class=""><?php esc_html_e('Hide From Menu', 'mystickyelements');?></a>
+        <a class="mse-primary-button hide-recommended-btn" href="#" class=""><?php esc_html_e('Hide From Menu', 'mystickyelements'); ?></a>
     </h2>
 
     <div class="wp-list-table widefat plugin-install">
@@ -200,7 +200,7 @@ if ($data && ! is_wp_error($data)) {
                     }
 
                     // Starting a new group, close off the divs of the last one.
-                    if (! empty($group)) {
+                    if (!empty($group)) {
                         echo '</div></div>';
                     }
 
@@ -220,7 +220,7 @@ if ($data && ! is_wp_error($data)) {
                 $name = wp_strip_all_tags($title.' '.$version);
 
                 $author = wp_kses($plugin['author'], $pluginsAllowedTags);
-                if (! empty($author)) {
+                if (!empty($author)) {
                     // translators: %s: Plugin author.
                     $author = ' <cite>'.sprintf(esc_html__('By %s', 'mystickyelements'), $author).'</cite>';
                 }
@@ -238,88 +238,88 @@ if ($data && ! is_wp_error($data)) {
                     $status = install_plugin_install_status($plugin);
 
                     switch ($status['status']) {
-                        case 'install':
-                            if ($status['url']) {
-                                if ($compatible_php && $compatible_wp) {
-                                    $action_links[] = sprintf(
-                                        '<a class="install-now button" data-slug="%s" href="%s" aria-label="%s" data-name="%s">%s</a>',
-                                        esc_attr($plugin['slug']),
-                                        esc_url($status['url']),
-                                        // translators: %s: Plugin name and version.
-                                        esc_attr(sprintf(esc_html__('Install %s now', 'mystickyelements'), $name)),
-                                        esc_attr($name),
-                                        esc_html__('Install Now', 'mystickyelements')
-                                    );
-                                } else {
-                                    $action_links[] = sprintf(
-                                        '<button type="button" class="button button-disabled" disabled="disabled">%s</button>',
-                                        esc_html__('Cannot Install', 'mystickyelements')
-                                    );
-                                }
-                            }
-                            break;
-
-                        case 'update_available':
-                            if ($status['url']) {
-                                if ($compatible_php && $compatible_wp) {
-                                    $action_links[] = sprintf(
-                                        '<a class="update-now button aria-button-if-js" data-plugin="%s" data-slug="%s" href="%s" aria-label="%s" data-name="%s">%s</a>',
-                                        esc_attr($status['file']),
-                                        esc_attr($plugin['slug']),
-                                        esc_url($status['url']),
-                                        // translators: %s: Plugin name and version.
-                                        esc_attr(sprintf(esc_html__('Update %s now', 'mystickyelements'), $name)),
-                                        esc_attr($name),
-                                        esc_html__('Update Now', 'mystickyelements')
-                                    );
-                                } else {
-                                    $action_links[] = sprintf(
-                                        '<button type="button" class="button button-disabled" disabled="disabled">%s</button>',
-                                        esc_html__('Cannot Update', 'mystickyelements')
-                                    );
-                                }
-                            }
-                            break;
-
-                        case 'latest_installed':
-                        case 'newer_installed':
-                            if (is_plugin_active($status['file'])) {
+                    case 'install':
+                        if ($status['url']) {
+                            if ($compatible_php && $compatible_wp) {
                                 $action_links[] = sprintf(
-                                    '<button type="button" class="button button-disabled" disabled="disabled">%s</button>',
-                                    esc_html__('Active', 'mystickyelements')
-                                );
-                            } elseif (current_user_can('activate_plugin', $status['file'])) {
-                                $button_text = esc_html__('Activate', 'mystickyelements');
-                                // translators: %s: Plugin name.
-                                $button_label = esc_html__('Activate %s', 'mystickyelements');
-                                $activate_url = add_query_arg(
-                                    [
-                                        '_wpnonce' => wp_create_nonce('activate-plugin_'.$status['file']),
-                                        'action'   => 'activate',
-                                        'plugin'   => $status['file'],
-                                    ],
-                                    network_admin_url('plugins.php')
-                                );
-
-                                if (is_network_admin()) {
-                                    $button_text = esc_html__('Network Activate', 'mystickyelements');
-                                    // translators: %s: Plugin name.
-                                    $button_label = esc_html__('Network Activate %s', 'mystickyelements');
-                                    $activate_url = add_query_arg([ 'networkwide' => 1 ], $activate_url);
-                                }
-
-                                $action_links[] = sprintf(
-                                    '<a href="%1$s" class="button activate-now" aria-label="%2$s">%3$s</a>',
-                                    esc_url($activate_url),
-                                    esc_attr(sprintf($button_label, $plugin['name'])),
-                                    $button_text
+                                    '<a class="install-now button" data-slug="%s" href="%s" aria-label="%s" data-name="%s">%s</a>',
+                                    esc_attr($plugin['slug']),
+                                    esc_url($status['url']),
+                                    // translators: %s: Plugin name and version.
+                                    esc_attr(sprintf(esc_html__('Install %s now', 'mystickyelements'), $name)),
+                                    esc_attr($name),
+                                    esc_html__('Install Now', 'mystickyelements')
                                 );
                             } else {
                                 $action_links[] = sprintf(
                                     '<button type="button" class="button button-disabled" disabled="disabled">%s</button>',
-                                    esc_html__('Installed', 'mystickyelements')
+                                    esc_html__('Cannot Install', 'mystickyelements')
                                 );
-                            }//end if
+                            }
+                        }
+                            break;
+
+                    case 'update_available':
+                        if ($status['url']) {
+                            if ($compatible_php && $compatible_wp) {
+                                $action_links[] = sprintf(
+                                    '<a class="update-now button aria-button-if-js" data-plugin="%s" data-slug="%s" href="%s" aria-label="%s" data-name="%s">%s</a>',
+                                    esc_attr($status['file']),
+                                    esc_attr($plugin['slug']),
+                                    esc_url($status['url']),
+                                    // translators: %s: Plugin name and version.
+                                    esc_attr(sprintf(esc_html__('Update %s now', 'mystickyelements'), $name)),
+                                    esc_attr($name),
+                                    esc_html__('Update Now', 'mystickyelements')
+                                );
+                            } else {
+                                $action_links[] = sprintf(
+                                    '<button type="button" class="button button-disabled" disabled="disabled">%s</button>',
+                                    esc_html__('Cannot Update', 'mystickyelements')
+                                );
+                            }
+                        }
+                            break;
+
+                    case 'latest_installed':
+                    case 'newer_installed':
+                        if (is_plugin_active($status['file'])) {
+                            $action_links[] = sprintf(
+                                '<button type="button" class="button button-disabled" disabled="disabled">%s</button>',
+                                esc_html__('Active', 'mystickyelements')
+                            );
+                        } elseif (current_user_can('activate_plugin', $status['file'])) {
+                            $button_text = esc_html__('Activate', 'mystickyelements');
+                            // translators: %s: Plugin name.
+                            $button_label = esc_html__('Activate %s', 'mystickyelements');
+                            $activate_url = add_query_arg(
+                                [
+                                    '_wpnonce' => wp_create_nonce('activate-plugin_'.$status['file']),
+                                    'action'   => 'activate',
+                                    'plugin'   => $status['file'],
+                                ],
+                                network_admin_url('plugins.php')
+                            );
+
+                            if (is_network_admin()) {
+                                $button_text = esc_html__('Network Activate', 'mystickyelements');
+                                // translators: %s: Plugin name.
+                                $button_label = esc_html__('Network Activate %s', 'mystickyelements');
+                                $activate_url = add_query_arg([ 'networkwide' => 1 ], $activate_url);
+                            }
+
+                            $action_links[] = sprintf(
+                                '<a href="%1$s" class="button activate-now" aria-label="%2$s">%3$s</a>',
+                                esc_url($activate_url),
+                                esc_attr(sprintf($button_label, $plugin['name'])),
+                                $button_text
+                            );
+                        } else {
+                            $action_links[] = sprintf(
+                                '<button type="button" class="button button-disabled" disabled="disabled">%s</button>',
+                                esc_html__('Installed', 'mystickyelements')
+                            );
+                        }//end if
                             break;
                     }//end switch
                 }//end if
@@ -337,11 +337,11 @@ if ($data && ! is_wp_error($data)) {
                     esc_html__('More Details', 'mystickyelements')
                 );
 
-                if (! empty($plugin['icons']['svg'])) {
+                if (!empty($plugin['icons']['svg'])) {
                     $plugin_icon_url = $plugin['icons']['svg'];
-                } elseif (! empty($plugin['icons']['2x'])) {
+                } elseif (!empty($plugin['icons']['2x'])) {
                     $plugin_icon_url = $plugin['icons']['2x'];
-                } elseif (! empty($plugin['icons']['1x'])) {
+                } elseif (!empty($plugin['icons']['1x'])) {
                     $plugin_icon_url = $plugin['icons']['1x'];
                 } else {
                     $plugin_icon_url = $plugin['icons']['default'];
@@ -362,9 +362,9 @@ if ($data && ! is_wp_error($data)) {
                 <div class="plugin-flex flex-1 md:flex-1/2">
                     <div class="plugin-card plugin-card-<?php echo sanitize_html_class($plugin['slug']); ?>">
                         <?php
-                        if (! $compatible_php || ! $compatible_wp) {
+                        if (!$compatible_php || !$compatible_wp) {
                             echo '<div class="notice inline notice-error notice-alt"><p>';
-                            if (! $compatible_php && ! $compatible_wp) {
+                            if (!$compatible_php && !$compatible_wp) {
                                 esc_html_e('This plugin doesn&#8217;t work with your versions of WordPress and PHP.', 'mystickyelements');
                                 if (current_user_can('update_core') && current_user_can('update_php')) {
                                     printf(
@@ -388,7 +388,7 @@ if ($data && ! is_wp_error($data)) {
                                     );
                                     wp_update_php_annotation('</p><p><em>', '</em>');
                                 }//end if
-                            } elseif (! $compatible_wp) {
+                            } elseif (!$compatible_wp) {
                                 esc_html_e('This plugin doesn&#8217;t work with your version of WordPress.', 'mystickyelements');
                                 if (current_user_can('update_core')) {
                                     printf(
@@ -397,7 +397,7 @@ if ($data && ! is_wp_error($data)) {
                                         esc_url(self_admin_url('update-core.php'))
                                     );
                                 }
-                            } elseif (! $compatible_php) {
+                            } elseif (!$compatible_php) {
                                 esc_html_e('This plugin doesn&#8217;t work with your version of PHP.', 'mystickyelements');
                                 if (current_user_can('update_php')) {
                                     printf(
@@ -411,7 +411,7 @@ if ($data && ! is_wp_error($data)) {
 
                             echo '</p></div>';
                         }//end if
-                ?>
+                        ?>
                         <div class="plugin-card-top">
                             <div class="name column-name">
                                 <h3>
@@ -423,10 +423,10 @@ if ($data && ! is_wp_error($data)) {
                             </div>
                             <div class="action-links">
                                 <?php
-                        if ($action_links) {
-                            echo '<ul class="plugin-action-buttons"><li>'.implode('</li><li>', $action_links).'</li></ul>';
-                        }
-                ?>
+                                if ($action_links) {
+                                    echo '<ul class="plugin-action-buttons"><li>'.implode('</li><li>', $action_links).'</li></ul>';
+                                }
+                                ?>
                             </div>
                             <div class="desc column-description">
                                 <p><?php echo esc_html($description); ?></p>
@@ -436,63 +436,63 @@ if ($data && ! is_wp_error($data)) {
                         <div class="plugin-card-bottom">
                             <div class="vers column-rating">
                                 <?php
-                wp_star_rating(
-                    [
-                        'rating' => $plugin['rating'],
-                        'type'   => 'percent',
-                        'number' => $plugin['num_ratings'],
-                    ]
-                );
-                ?>
+                                wp_star_rating(
+                                    [
+                                        'rating' => $plugin['rating'],
+                                        'type'   => 'percent',
+                                        'number' => $plugin['num_ratings'],
+                                    ]
+                                );
+                                ?>
                                 <span class="num-ratings" aria-hidden="true">(<?php echo esc_attr(number_format_i18n($plugin['num_ratings'])); ?>)</span>
                             </div>
                             <div class="column-updated">
                                 <strong><?php esc_html_e('Last Updated:', 'mystickyelements'); ?></strong>
                                 <?php
-                // translators: %s: Human-readable time difference.
-                printf(esc_html__('%s ago', 'mystickyelements'), esc_attr(human_time_diff($last_updated_timestamp)));
-                ?>
+                                // translators: %s: Human-readable time difference.
+                                printf(esc_html__('%s ago', 'mystickyelements'), esc_attr(human_time_diff($last_updated_timestamp)));
+                                ?>
                             </div>
                             <div class="column-downloaded">
                                 <?php
-                if ($plugin['active_installs'] >= 1000000) {
-                    $active_installs_millions = floor(($plugin['active_installs'] / 1000000));
-                    $active_installs_text     = sprintf(
-                        // translators: %s: Number of millions.
-                        _nx('%s+ Million', '%s+ Million', $active_installs_millions, 'Active plugin installations', 'mystickyelements'),
-                        number_format_i18n($active_installs_millions)
-                    );
-                } elseif (0 == $plugin['active_installs']) {
-                    $active_installs_text = esc_html__('Less Than 10', 'mystickyelements');
-                } else {
-                    $active_installs_text = number_format_i18n($plugin['active_installs']).'+';
-                }
+                                if ($plugin['active_installs'] >= 1000000) {
+                                    $active_installs_millions = floor(($plugin['active_installs'] / 1000000));
+                                    $active_installs_text     = sprintf(
+                                        // translators: %s: Number of millions.
+                                        _nx('%s+ Million', '%s+ Million', $active_installs_millions, 'Active plugin installations', 'mystickyelements'),
+                                        number_format_i18n($active_installs_millions)
+                                    );
+                                } elseif (0 == $plugin['active_installs']) {
+                                    $active_installs_text = esc_html__('Less Than 10', 'mystickyelements');
+                                } else {
+                                    $active_installs_text = number_format_i18n($plugin['active_installs']).'+';
+                                }
 
-                // translators: %s: Number of installations.
-                printf(esc_html__('%s Active Installations', 'mystickyelements'), esc_attr($active_installs_text));
-                ?>
+                                // translators: %s: Number of installations.
+                                printf(esc_html__('%s Active Installations', 'mystickyelements'), esc_attr($active_installs_text));
+                                ?>
                             </div>
                             <div class="column-compatibility">
                                 <?php
-                if (! $tested_wp) {
-                    echo '<span class="compatibility-untested">'.esc_html__('Untested with your version of WordPress', 'mystickyelements').'</span>';
-                } elseif (! $compatible_wp) {
-                    echo '<span class="compatibility-incompatible">'.wp_kses('<strong>Incompatible</strong> with your version of WordPress', $pluginsAllowedTags).'</span>';
-                } else {
-                    echo '<span class="compatibility-compatible">'.wp_kses('<strong>Compatible</strong> with your version of WordPress', $pluginsAllowedTags).'</span>';
-                }
-                ?>
+                                if (!$tested_wp) {
+                                    echo '<span class="compatibility-untested">'.esc_html__('Untested with your version of WordPress', 'mystickyelements').'</span>';
+                                } elseif (!$compatible_wp) {
+                                    echo '<span class="compatibility-incompatible">'.wp_kses('<strong>Incompatible</strong> with your version of WordPress', $pluginsAllowedTags).'</span>';
+                                } else {
+                                    echo '<span class="compatibility-compatible">'.wp_kses('<strong>Compatible</strong> with your version of WordPress', $pluginsAllowedTags).'</span>';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
                 </div>
                 <?php
             }//end foreach
-?>
+            ?>
         </div>
     </div>
-    <div id="hide-recommeded-plugins" style="display:none;" title="<?php esc_html_e('Are you sure?', 'mystickyelements');?>">
-        <p><?php esc_html_e("If you hide the recommended plugins page from your menu, it won't appear there again. Are you sure you'd like to do it?", 'mystickyelements');?></p>
+    <div id="hide-recommeded-plugins" style="display:none;" title="<?php esc_html_e('Are you sure?', 'mystickyelements'); ?>">
+        <p><?php esc_html_e("If you hide the recommended plugins page from your menu, it won't appear there again. Are you sure you'd like to do it?", 'mystickyelements'); ?></p>
     </div>
 
 </div>
@@ -519,7 +519,7 @@ if ($data && ! is_wp_error($data)) {
                     buttons: {
                         "Hide it": {
                             click: function () {
-                                window.location = "<?php echo admin_url('admin.php?page=my-sticky-elements&hide_mserecommended_plugin=1&nonce='.wp_create_nonce("mse_recommended_plugin"));?>";
+                                window.location = "<?php echo admin_url('admin.php?page=my-sticky-elements&hide_mserecommended_plugin=1&nonce='.wp_create_nonce("mse_recommended_plugin")); ?>";
                             },
                             text: 'Hide it',
                             class: 'mse-secondary-button'

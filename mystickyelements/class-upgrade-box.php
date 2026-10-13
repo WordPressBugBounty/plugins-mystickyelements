@@ -13,7 +13,7 @@ class Sticky_elements_upgrade_box
     public function mystickyelement_upgradetopro()
     {
         $nonce = filter_input(INPUT_POST, 'nonce', FILTER_SANITIZE_STRING);
-        $days = filter_input(INPUT_POST, 'days', FILTER_SANITIZE_STRING);
+        $days  = filter_input(INPUT_POST, 'days', FILTER_SANITIZE_STRING);
         if (!empty($nonce) && wp_verify_nonce($nonce, $this->plugin_slug."_upgrade_box")) {
             if ($days == -1) {
                 add_option($this->plugin_slug."_hide_upgrade_box", "1");
@@ -48,30 +48,30 @@ class Sticky_elements_upgrade_box
         }
         ?>
         <style>
-			.mystickyelement-tab-integration-action{
-				padding: 0 10px;
-				float: right;
-			}
-			.<?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-box .mystickyelement-tab-integration-action a {
+            .mystickyelement-tab-integration-action{
+                padding: 0 10px;
+                float: right;
+            }
+            .<?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-box .mystickyelement-tab-integration-action a {
                 display: inline-block;
                 float: right;
-                text-decoration: none;                
+                text-decoration: none;
                 position: unset;
-				padding: 0px;
-				font-size: 13px;
+                padding: 0px;
+                font-size: 13px;
                 right: 50px;
                 top: 7px;
-				color: #3C85F7;
-				background-color: #fff;
-				border-radius: 5px;
-				border: 2px solid #3C85F7;
-				min-width: 110px;
-				text-align: center;
-				line-height: 25px;
+                color: #3C85F7;
+                background-color: #fff;
+                border-radius: 5px;
+                border: 2px solid #3C85F7;
+                min-width: 110px;
+                text-align: center;
+                line-height: 25px;
             }
-			.<?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-box .mystickyelement-tab-integration-action a:hover{
-				background-color:#fff
-			}
+            .<?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-box .mystickyelement-tab-integration-action a:hover{
+                background-color:#fff
+            }
             .<?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-box p a {
                 display: inline-block;
                 float: right;
@@ -161,11 +161,11 @@ class Sticky_elements_upgrade_box
                 font-size: 14px;
                 text-decoration: underline;
             }
-            .<?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-box p {                
+            .<?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-box p {
                 line-height: 30px;
                 vertical-align: middle;
                 padding: 0 10px 0 0;
-				font-size: 14px;
+                font-size: 14px;
             }
             .<?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-box p img {
                 width: 30px;
@@ -219,14 +219,14 @@ class Sticky_elements_upgrade_box
         <div class="notice notice-info premio-notice <?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-box <?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-box">
             <div class="upgrade-box-default" id="default-upgrade-box-<?php echo esc_attr($this->plugin_slug) ?>">
                 <p>
-					<strong>Upgrade to MyStickyElements Pro</strong> ‍🚀 for unlimited channels, custom fields, syncing leads to Email/MailChimp/MailPoet with more triggers & targeting rules
-					<span class="mystickyelement-tab-integration-action">
-						<a class="upgradenow-box-btn" data-days="-1" href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements-upgrade")); ?>" target="_blank" class="btn">Upgrade Now</a>
-					</span>					
+                    <strong>Upgrade to MyStickyElements Pro</strong> ‍🚀 for unlimited channels, custom fields, syncing leads to Email/MailChimp/MailPoet with more triggers & targeting rules
+                    <span class="mystickyelement-tab-integration-action">
+                        <a class="upgradenow-box-btn" data-days="-1" href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements-upgrade")); ?>" target="_blank" class="btn">Upgrade Now</a>
+                    </span>
                     <a href="#" class="dismiss-btn <?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-dismiss-btn"><span class="dashicons dashicons-no-alt"></span></a>
                 </p>
                 <div class="clear clearfix"></div>
-            </div>            
+            </div>
         </div>
         <div class="<?php echo esc_attr($this->plugin_slug) ?>-upgrade-box-popup">
             <div class="<?php echo esc_attr($this->plugin_slug) ?>-upgrade-box-popup-content">
@@ -242,17 +242,17 @@ class Sticky_elements_upgrade_box
         <script>
             jQuery(document).ready(function(){
                 jQuery("body").addClass("has-premio-box");
-				
-				jQuery(document).on("click",".upgradenow-box-btn",function(){
-					jQuery(".notice.notice-info.premio-notice").hide();
-					
-					var dataDays = jQuery(this).attr("data-days");
-					
+
+                jQuery(document).on("click",".upgradenow-box-btn",function(){
+                    jQuery(".notice.notice-info.premio-notice").hide();
+
+                    var dataDays = jQuery(this).attr("data-days");
+
                     jQuery(".<?php echo esc_attr($this->plugin_slug) ?>-upgrade-box-popup").remove();
                     jQuery(".<?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-box").remove();
                     jQuery("body").removeClass("has-premio-box");
-                    
-					jQuery.ajax({
+
+                    jQuery.ajax({
                         url: "<?php echo admin_url("admin-ajax.php") ?>",
                         data: "action=<?php echo esc_attr($this->plugin_slug) ?>_upgrade_box&days="+dataDays+"&nonce=<?php echo esc_attr(wp_create_nonce($this->plugin_slug."_upgrade_box")) ?>",
                         type: "post",
@@ -261,14 +261,14 @@ class Sticky_elements_upgrade_box
                             jQuery(".<?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-box").remove();
                         }
                     });
-				});
+                });
                 jQuery(document).on("click", ".<?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-dismiss-btn, .<?php echo esc_attr($this->plugin_slug) ?>-premio-upgrade-box-future-btn", function(){
                     jQuery(".<?php echo esc_attr($this->plugin_slug) ?>-upgrade-box-popup").show();
                 });
                 jQuery(document).on("click", ".<?php echo esc_attr($this->plugin_slug) ?>-close-upgrade-box-popup", function(){
                     jQuery(".<?php echo esc_attr($this->plugin_slug) ?>-upgrade-box-popup").hide();
-                });               
-                
+                });
+
                 jQuery(document).on("click", ".<?php echo esc_attr($this->plugin_slug) ?>-upgrade-box-options a", function(){
                     var dataDays = jQuery(this).attr("data-days");
                     jQuery(".<?php echo esc_attr($this->plugin_slug) ?>-upgrade-box-popup").remove();

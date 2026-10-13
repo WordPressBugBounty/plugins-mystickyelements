@@ -2,8 +2,8 @@
 Contributors: premio, galdub, tomeraharon
 Tags: whatsapp, contact form, facebook messenger, call now button, instagram
 Requires at least: 4.7
-Tested up to: 7.0
-Stable tag: 2.3.9
+Tested up to: 7.1
+Stable tag: 2.4.0
 Plugin URI: https://premio.io/downloads/mystickyelements/
 License: GPLv3
 
@@ -21,7 +21,7 @@ With My Sticky Elements:
 * Get more followers
 * Show important information such as open hours and address
 
-= 🎥 Check out My Sticky Elements in action (Video with audio) =
+= 🎥 My Sticky Elements overview =
 [youtube  https://www.youtube.com/watch?v=VR9S_yuN1ko]
 
 Check out <a href="https://premio.io/downloads/mystickyelements/?utm_source=wordpressorg" target="_blank" title="My Sticky Elements
@@ -123,7 +123,7 @@ Chatway works smoothly with My Sticky Elements, giving you full control over the
 21. Full RTL support for RTL menus
 22. Change the font of all the buttons text
 23. Change the size of the widget bar
-24. Add a custom icon
+24. Custom icons
 25. Shortcode, IFrame or HTML icon and display any embedded content on-hover or on-click. Use it to show a YouTube/Vimeo video, contact form 7 or any other shortcode or IFrame
 26. Preset messages for WhatsApp messages
 27. Track the URL from which your contact form was submitted
@@ -171,7 +171,7 @@ Unlock the Pro features for only $59/year
 
 = 💻 How does each social button work? =
 
-* My Sticky Elements Contact Form - your contact form can include Name field, Phone number field, Email field and Message field (textarea).
+* My Sticky Elements Contact Form - create a contact form with a name, phone number, email & message fields (textarea).
 The phone and emails field have a built-in validation feature, and all the leads will be displayed on your “Contact Leads” tab in your admin panel. Get these leads by email in the Pro plan.
 Add a country code formatting picker to your contact form, making it easier for your visitors to enter their phone number.
 
@@ -228,7 +228,7 @@ Adding WhatsApp button to your site will give WhatsApp users access to contact y
 
 * SMS - Let your visitors send you SMS via their mobile phone.
 
-* Tumblr - Let your visitors read your Tumblr posts and images and follow you.
+* Tumblr - Visitors can read your Tumblr posts and images and follow you.
 
 * Qzone -  QZone is a very popular social network in China.
 
@@ -341,6 +341,13 @@ A live demo for My Sticky Elements plugin is available at <a href="https://demo.
 9. Change the color of your icons, contact form, text, and anything else!
 
 == Changelog ==
+
+= 2.4.0 =
+Email and URL validation for more reliable form submissions.
+Live preview for attention effects, making it easier to customize animations.
+Border radius customization for contact form input fields.
+Improved compatibility with the MailPoet plugin.
+Removed default hover text when custom channel hover text is cleared.
 
 = 2.3.9 =
 Added a close option for custom channels, making embedded custom content easier for visitors to dismiss.

@@ -24,7 +24,7 @@ $days = array(
             </div>
             <div class="flex-1 flex flex-col gap-0.5 w-full ">
                 <label class="myStickyelements-days-hours-label-wrap w-auto!">Select day</label>
-                <select class="pr-7! text-ellipsis" name="general-settings[days-hours][<?php echo esc_attr($count); ?>][days]" id="days_rule_<?php echo esc_attr($count)  ?>_option">
+                <select class="pr-7! text-ellipsis" name="general-settings[days-hours][<?php echo esc_attr($count); ?>][days]" id="days_rule_<?php echo esc_attr($count) ?>_option">
                 </select>
             </div>
         </div>

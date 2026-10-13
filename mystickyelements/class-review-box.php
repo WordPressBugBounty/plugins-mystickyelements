@@ -59,19 +59,19 @@ class Sticky_elements_review_box
      */
     public function __construct()
     {
-        $isHidden = get_option($this->pluginSlug . "_hide_review_box");
+        $isHidden = get_option($this->pluginSlug."_hide_review_box");
         if ($isHidden !== false) {
             $this->reviewStatus = false;
         }
 
-        $currentCount = get_option($this->pluginSlug . "_show_review_box_after");
+        $currentCount = get_option($this->pluginSlug."_show_review_box_after");
         if ($currentCount === false) {
             $date = date("Y-m-d", strtotime("+14 days"));
-            add_option($this->pluginSlug . "_show_review_box_after", $date);
+            add_option($this->pluginSlug."_show_review_box_after", $date);
             $this->reviewStatus = false;
         }
 
-        $dateToShow = get_option($this->pluginSlug . "_show_review_box_after");
+        $dateToShow = get_option($this->pluginSlug."_show_review_box_after");
         if ($dateToShow !== false) {
             $currentDate = date("Y-m-d");
             if ($currentDate < $dateToShow) {
@@ -85,7 +85,6 @@ class Sticky_elements_review_box
         }
         add_action("wp_ajax_".$this->pluginSlug."_review_box", [$this, "form_review_box"]);
         add_action("wp_ajax_".$this->pluginSlug."_review_box_message", [$this, "form_review_box_message"]);
-
 
     }//end __construct()
 
@@ -460,14 +459,14 @@ class Sticky_elements_review_box
             <!-- default layout -->
             <div class="<?php echo esc_attr($this->pluginSlug) ?>-premio-review-box__default">
                 <h2 class="<?php echo esc_attr($this->pluginSlug) ?>-premio-review-box__default__title">
-					<?php esc_html_e('Your', 'mystickyelements') ?> <span><?php esc_html_e('feedback', 'mystickyelements') ?></span> <?php esc_html_e('matters, please leave a review', 'mystickyelements') ?> 🙏
+                    <?php esc_html_e('Your', 'mystickyelements') ?> <span><?php esc_html_e('feedback', 'mystickyelements') ?></span> <?php esc_html_e('matters, please leave a review', 'mystickyelements') ?> 🙏
                 </h2>
 
                 <button class="<?php echo esc_attr($this->pluginSlug) ?>-review-box-default__dismiss-btn">
                     <span class="dashicons dashicons-no-alt"></span>
                 </button>
 
-                <p><?php printf(esc_html__("Hi there, it seems like %s is bringing you some value, and that's pretty awesome! Can you please show us some love and rate %s on WordPress? It'll only take 2 minutes of your time, and will really help us spread the word", 'mystickyelements'), "<b>".esc_attr($this->pluginName)."</b>", $this->pluginName);?></p>
+                <p><?php printf(esc_html__("Hi there, it seems like %s is bringing you some value, and that's pretty awesome! Can you please show us some love and rate %s on WordPress? It'll only take 2 minutes of your time, and will really help us spread the word", 'mystickyelements'), "<b>".esc_attr($this->pluginName)."</b>", $this->pluginName); ?></p>
 
                 <div class="<?php echo esc_attr($this->pluginSlug) ?>-premio-review-box__default__co-founder">
                     <span>
@@ -492,9 +491,9 @@ class Sticky_elements_review_box
                     <img class="<?php echo esc_attr($this->pluginSlug) ?>-premio-review-box__thank-you__image" width="200" src="<?php echo esc_url(MYSTICKYELEMENTS_URL."images/thanks.gif") ?>" />
 
                     <div class="<?php echo esc_attr($this->pluginSlug) ?>-premio-review-box__thank-you__message">
-                        <div class="title"><?php esc_html_e("You are awesome ", 'mystickyelements')?> &#128591;</div>
-                        <div class="desc"><?php esc_html_e("Thanks for your support, we really appreciate it!", 'mystickyelements')?></div>
-                        <div class="footer"><?php esc_html_e("Premio team ", 'mystickyelements')?></div>
+                        <div class="title"><?php esc_html_e("You are awesome ", 'mystickyelements') ?> &#128591;</div>
+                        <div class="desc"><?php esc_html_e("Thanks for your support, we really appreciate it!", 'mystickyelements') ?></div>
+                        <div class="footer"><?php esc_html_e("Premio team ", 'mystickyelements') ?></div>
                     </div>
                 </div>
             </div> <!--end .premio-review-box__thank-you-->
@@ -506,13 +505,13 @@ class Sticky_elements_review_box
                         <span class="dashicons dashicons-no-alt"></span>
                     </button>
                     <div class="<?php echo esc_attr($this->pluginSlug) ?>-review-box-popup__title">
-						<?php esc_html_e("Would you like us to remind you about this later?", 'mystickyelements')?>
+                        <?php esc_html_e("Would you like us to remind you about this later?", 'mystickyelements') ?>
                     </div>
 
                     <div class="<?php echo esc_attr($this->pluginSlug) ?>-review-box-popup__options">
-                        <a href="#" data-days="3"><?php esc_html_e("Remind me in 3 days ", 'mystickyelements')?></a>
-                        <a href="#" data-days="10"><?php esc_html_e("Remind me in 10 days ", 'mystickyelements')?></a>
-                        <a href="#" data-days="-1" class="dismiss"><?php esc_html_e("Don't remind me about this ", 'mystickyelements')?></a>
+                        <a href="#" data-days="3"><?php esc_html_e("Remind me in 3 days ", 'mystickyelements') ?></a>
+                        <a href="#" data-days="10"><?php esc_html_e("Remind me in 10 days ", 'mystickyelements') ?></a>
+                        <a href="#" data-days="-1" class="dismiss"><?php esc_html_e("Don't remind me about this ", 'mystickyelements') ?></a>
                     </div>
                 </div>
             </div> <!--end .review-box-popup-->
@@ -714,7 +713,7 @@ class Sticky_elements_review_box
 
             })( jQuery )
         </script>
-		<?php
+        <?php
 
     }//end admin_notices()
 

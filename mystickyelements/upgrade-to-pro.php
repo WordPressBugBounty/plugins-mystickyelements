@@ -252,7 +252,8 @@ $features = [
                             </div>
                             <?php
                             if (!empty($options) && is_array($options)) {
-                                foreach ($options as $key => $option) { ?>
+                                foreach ($options as $key => $option) {
+                                    ?>
                                     <div class="plan-col plan-detail plan-info" data-plan="<?php echo esc_attr($key) ?>">
                                         <span class="best-value"><?php echo esc_attr($option['plans']['0']['desc']) ?></span>
                                         <div class="app-plan-top">
@@ -279,15 +280,17 @@ $features = [
                                             </div>
                                         </div>
                                     </div>
-                                <?php }
+                                    <?php
                                 }
-?>
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
                 <div class="pricing-body">
                     <?php
-                    foreach ($features as $feature) { ?>
+                    foreach ($features as $feature) {
+                        ?>
                         <div class="plan-row">
                             <div class="plan-col first-row">
                                 <?php if (!empty($feature['tooltip'])) { ?>
@@ -327,7 +330,8 @@ $features = [
             </div>
             <div class="mobile-table">
                 <div class="mobile-plans">
-                    <?php if (!empty($options) && is_array($options)) {
+                    <?php
+                    if (!empty($options) && is_array($options)) {
                         foreach ($options as $key => $option) {
                             $is_free_plan = (empty($option['plans']['0']['price'])) ? 1 : 0;
                             ?>
@@ -382,7 +386,8 @@ $features = [
                             </div>
                             <?php
                         }
-                    } ?>
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -455,7 +460,8 @@ $features = [
                         'comment'   => "A must have for going social. Saves Space on your pages and works great."
                     ],
                 ];
-foreach ($reviews as $review) { ?>
+                foreach ($reviews as $review) {
+                    ?>
                     <div class="client-testimonial">
                         <div class="client-testimonial-slide">
                             <a href="<?php echo esc_url($review['profile']) ?>" target="_blank">
@@ -478,7 +484,7 @@ foreach ($reviews as $review) { ?>
                             </a>
                         </div>
                     </div>
-                <?php } ?>
+                                <?php } ?>
             </div>
             <div id="slick-slider-options" class="slick-options">
                 <button type="button" class="slick-btn slick-prev-btn ml-5 slick-arrow" style=""><svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15.5" cy="15.5" r="15" stroke="#6641E5"/><path d="M18 11L13 16L18 21" stroke="#6641E5" stroke-linecap="round"/></svg></button>
@@ -490,8 +496,8 @@ foreach ($reviews as $review) { ?>
 </div>
 <div class="premio-customers">
     <div class="price-container">
-        <div class="customer-title"><?php esc_html_e("TRUSTED BY LEADING COMPANIES WORLDWIDE", "mystickyelements") ?></div>        
-		<img src="<?php echo plugins_url('/images/companies.webp', __FILE__);?>" alt="premio customers" />
+        <div class="customer-title"><?php esc_html_e("TRUSTED BY LEADING COMPANIES WORLDWIDE", "mystickyelements") ?></div>
+        <img src="<?php echo plugins_url('/images/companies.webp', __FILE__); ?>" alt="premio customers" />
     </div>
 </div>
 <div class="premio-faqs">
@@ -500,44 +506,45 @@ foreach ($reviews as $review) { ?>
         <div class="faq-lists">
             <?php
             $faqs = [
-[
-    'question' => "How long is my paid plugin license valid for?",
-    'answer' => "Once you purchase any paid plan of My Sticky Elements, you can use it forever. Support and updates are available for 1 year. You can renew your license each year to get another year of support and updates."
-],
-[
-    'question' => "Can I use the plugin on more than 1 domain?",
-    'answer' => "There are 2 ways to do it:
+                [
+                    'question' => "How long is my paid plugin license valid for?",
+                    'answer' => "Once you purchase any paid plan of My Sticky Elements, you can use it forever. Support and updates are available for 1 year. You can renew your license each year to get another year of support and updates."
+                ],
+                [
+                    'question' => "Can I use the plugin on more than 1 domain?",
+                    'answer' => "There are 2 ways to do it:
                         <ul>
                         <li>You can install the free My Sticky Elements plugin on any website you want</li>
                         <li>You can buy the Pro plan that includes licenses for 5 domains, or the Agency plan that includes licenses for 50 domains (bigger plans are also available).</li>
                         </ul>"
-],
-[
-    'question' => "Is there a time limit for the free plan?",
-    'answer' => "No. you can use the free plan as long as you want."
-],
-[
-    'question' => "Will the plugin stop working if I don’t renew my license?",
-    'answer' => "Of course NOT!<br/>My Sticky Elements plugin and all your settings will continue to work as before; however, you will no longer receive plugin updates including feature additions, improvements, and support."
-],
+                ],
+                [
+                    'question' => "Is there a time limit for the free plan?",
+                    'answer' => "No. you can use the free plan as long as you want."
+                ],
+                [
+                    'question' => "Will the plugin stop working if I don’t renew my license?",
+                    'answer' => "Of course NOT!<br/>My Sticky Elements plugin and all your settings will continue to work as before; however, you will no longer receive plugin updates including feature additions, improvements, and support."
+                ],
             ];
-foreach ($faqs as $key => $faq) { ?>
+            foreach ($faqs as $key => $faq) {
+                ?>
                 <div class="faq-list">
                     <div class="faq-question">
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="0.5" width="20" height="20" rx="4" fill="#F2EEFF"/>
                             <path d="M9.80425 12.2145C9.72958 12.2145 9.66425 12.1865 9.60825 12.1305C9.55225 12.0745 9.52425 12.0092 9.52425 11.9345C9.52425 11.8692 9.52425 11.8039 9.52425 11.7385C9.52425 11.6732 9.52425 11.6079 9.52425 11.5425C9.57092 11.1972 9.67358 10.8892 9.83225 10.6185C10.0003 10.3385 10.1916 10.0819 10.4062 9.84855C10.6302 9.61521 10.8496 9.40055 11.0642 9.20455C11.2789 8.99921 11.4609 8.79388 11.6102 8.58855C11.7596 8.38321 11.8389 8.17788 11.8483 7.97255C11.8763 7.72988 11.8296 7.52921 11.7083 7.37055C11.5963 7.20255 11.4376 7.07655 11.2323 6.99255C11.0363 6.89921 10.8263 6.85255 10.6023 6.85255C10.1916 6.85255 9.86025 6.95521 9.60825 7.16055C9.36558 7.35655 9.19758 7.65988 9.10425 8.07055C9.06692 8.17321 9.01558 8.25255 8.95025 8.30855C8.88492 8.36455 8.79625 8.39255 8.68425 8.39255H7.22825C7.14425 8.39255 7.06958 8.35988 7.00425 8.29455C6.93892 8.22921 6.90625 8.14521 6.90625 8.04255C6.91558 7.66921 7.00425 7.30521 7.17225 6.95055C7.34025 6.59588 7.58758 6.27855 7.91425 5.99855C8.24092 5.70921 8.63758 5.48055 9.10425 5.31255C9.57092 5.14455 10.1123 5.06055 10.7283 5.06055C11.4002 5.06055 11.9556 5.14455 12.3943 5.31255C12.8423 5.48055 13.1969 5.69988 13.4583 5.97055C13.7289 6.23188 13.9202 6.51655 14.0323 6.82455C14.1442 7.12321 14.1909 7.40788 14.1723 7.67855C14.1629 8.02388 14.0883 8.33655 13.9482 8.61655C13.8176 8.88721 13.6543 9.13921 13.4583 9.37255C13.2716 9.60588 13.0709 9.83455 12.8563 10.0585C12.6509 10.2732 12.4643 10.4925 12.2963 10.7165C12.1376 10.9405 12.0209 11.1739 11.9463 11.4165C11.9276 11.4912 11.9089 11.5659 11.8903 11.6405C11.8809 11.7059 11.8716 11.7759 11.8623 11.8505C11.8156 11.9719 11.7643 12.0652 11.7083 12.1305C11.6523 12.1865 11.5682 12.2145 11.4562 12.2145H9.80425ZM9.80425 15.0005C9.70158 15.0005 9.61758 14.9679 9.55225 14.9025C9.48692 14.8372 9.45425 14.7532 9.45425 14.6505V13.2505C9.45425 13.1572 9.48692 13.0779 9.55225 13.0125C9.61758 12.9379 9.70158 12.9005 9.80425 12.9005H11.3723C11.4656 12.9005 11.5449 12.9379 11.6102 13.0125C11.6849 13.0779 11.7222 13.1572 11.7222 13.2505V14.6505C11.7222 14.7532 11.6849 14.8372 11.6102 14.9025C11.5449 14.9679 11.4656 15.0005 11.3723 15.0005H9.80425Z" fill="#6641E5"/>
                         </svg>
-                        <?php echo esc_attr($faq['question']); ?>
+                                    <?php echo esc_attr($faq['question']); ?>
                     </div>
                     <div class="faq-answer">
-                        <?php echo wp_kses($faq['answer'], $allowedTags); ?>
+                                    <?php echo wp_kses($faq['answer'], $allowedTags); ?>
                     </div>
                 </div>
-                <?php if ($key % 2 != 0) { ?>
+                            <?php if ($key % 2 != 0) { ?>
                     <div class="clear-both"></div>
                 <?php } ?>
-            <?php } ?>
+                        <?php } ?>
             <div class="clear-both"></div>
         </div>
     </div>

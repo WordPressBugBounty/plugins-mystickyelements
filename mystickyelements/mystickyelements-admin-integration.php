@@ -1,5 +1,5 @@
 <?php
-global $wp_version ;
+global $wp_version;
 $plugins_allowedtags = array(
     'a'       => array(
         'href'   => array(),
@@ -85,30 +85,30 @@ $plugins_allowedtags = array(
     min-height: calc(100vh - 95px);
 }
 .mystickyelement-features {
-	padding-top: 40px;
-	max-width: 776px;
-	margin: 0 auto;
+    padding-top: 40px;
+    max-width: 776px;
+    margin: 0 auto;
 }
 .mystickyelement-new-widget-wrap h2 {
-	font-style: normal;
-	font-weight: 600;
-	font-size: 20px;
-	font-size: 20px;
-	line-height: 30px;
-	color: #1e1e1e;
-	margin: 0;
-	text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    font-size: 20px;
+    line-height: 30px;
+    color: #1e1e1e;
+    margin: 0;
+    text-align: center;
 }
 .mystickyelement-new-widget-wrap h2.mystickyelement-integrate-title-main {
-	font-style: normal;
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 1.5;
-	color: #1E1E1E;
-	margin: 0 auto;
-	max-width: 620px;
-	position: relative;
-	padding-bottom: 30px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #1E1E1E;
+    margin: 0 auto;
+    max-width: 620px;
+    position: relative;
+    padding-bottom: 30px;
 }
 .mystickyelement-new-widget-wrap h2.mystickyelement-integrate-title-main:after {
     display: none;
@@ -122,38 +122,38 @@ $plugins_allowedtags = array(
     width: 50%;
     float: left;
     padding: 10px;
-	position: relative;
+    position: relative;
 }
 .mystickyelement-feature {
-	background: #fff;
-	border-radius: 10px;
-	padding: 60px 20px 10px 20px;
-	height: 100%;
-	position: relative;
+    background: #fff;
+    border-radius: 10px;
+    padding: 60px 20px 10px 20px;
+    height: 100%;
+    position: relative;
     border: 1px solid #E3EAEE;
 }
 .mystickyelement-feature-top {
-	width: 73px;
-	height: 73px;
-	border-radius: 50%;
-	position: absolute;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
-	top: -25px;
-	background: #fff;
-	z-index: 2;
-	padding: 10px;
-	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
+    width: 73px;
+    height: 73px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -25px;
+    background: #fff;
+    z-index: 2;
+    padding: 10px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 .feature-title {
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 18px;
-	color: #64748B;
-	margin-bottom: 15px;
-	text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #64748B;
+    margin-bottom: 15px;
+    text-align: center;
 }
 .mystickyelement-feature.second {
     min-height: 155px;
@@ -203,10 +203,10 @@ a.new-demo-button {
 }
 
 .mystickyelement-features ul li:hover .mystickyelement-integration-button{
-	display: block;
+    display: block;
 }
 .mystickyelement-integration-button {
-	display: none;
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -214,12 +214,12 @@ a.new-demo-button {
     z-index: 9;
 }
 .mystickyelement-feature input[type="text"] {
-	border: 1px solid #E2E8F0;
-	color: #9CA3AF;
-	font-size: 12px;
+    border: 1px solid #E2E8F0;
+    color: #9CA3AF;
+    font-size: 12px;
 }
 .mystickyelement-integration-upgrade-button {
-	text-align: center;
+    text-align: center;
 }
 
 </style>

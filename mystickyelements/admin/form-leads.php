@@ -1,20 +1,17 @@
 <?php
 global $wpdb;
-$where_search = '';
-$table_name = $wpdb->prefix . "mystickyelement_contact_lists";
-$whereCond = [];
-$elements_widgets = get_option( 'mystickyelements-widgets' );
+$where_search     = '';
+$table_name       = $wpdb->prefix."mystickyelement_contact_lists";
+$whereCond        = [];
+$elements_widgets = get_option('mystickyelements-widgets');
 if (isset($_POST['stickyelement-contatc-submit']) && !wp_verify_nonce($_POST['stickyelement-contatc-submit'], 'stickyelement-contatc-submit')) {
-
-    echo '<div class="error settings-error notice is-dismissible "><p><strong>' . esc_html__('Unable to complete your request', 'mystickyelements') . '</p></strong></div>';
-
+    echo '<div class="error settings-error notice is-dismissible "><p><strong>'.esc_html__('Unable to complete your request', 'mystickyelements').'</p></strong></div>';
 } elseif (isset($_POST['stickyelement-contatc-submit']) && wp_verify_nonce($_POST['stickyelement-contatc-submit'], 'stickyelement-contatc-submit')) {
     if (isset($_POST['delete_message']) && !empty($_POST['delete_message']) && !wp_doing_ajax()) {
-
         $count = count($_POST['delete_message']);
         foreach ($_POST['delete_message'] as $key => $ID) {
             if (is_int($ID)) {
-                $ID = sanitize_text_field($ID);
+                $ID    = sanitize_text_field($ID);
                 $query = "DELETE FROM {$table_name} WHERE ID = %d";
                 $query = $wpdb->prepare($query, $ID);
                 //$wpdb->query($query);
@@ -22,19 +19,18 @@ if (isset($_POST['stickyelement-contatc-submit']) && !wp_verify_nonce($_POST['st
                 $wpdb->delete($table_name, array( 'ID' => sanitize_text_field($ID) ), array( '%d' ));
             }
         }
-        echo '<div class="updated settings-error notice is-dismissible "><p><strong>' . esc_html__($count . ' message deleted.', 'mystickyelements'). '</p></strong></div>';
-
+        echo '<div class="updated settings-error notice is-dismissible "><p><strong>'.esc_html__($count.' message deleted.', 'mystickyelements').'</p></strong></div>';
     }
 }
 $elements_widgets = get_option('mystickyelements-widgets');
-$custom_fields = array();
+$custom_fields    = array();
 if (!empty($elements_widgets)) {
     foreach ($elements_widgets as $key => $value) {
-        $widget_no = '-' . $key;
+        $widget_no = '-'.$key;
         if ($key == 0) {
             $widget_no = '';
         }
-        $contact_form = get_option('mystickyelements-contact-form' . $widget_no);
+        $contact_form = get_option('mystickyelements-contact-form'.$widget_no);
 
         if (!empty($contact_form['custom_fields'])) {
             foreach ($contact_form['custom_fields'] as $value) {
@@ -47,19 +43,19 @@ if (isset($_REQUEST['search-contact']) && $_REQUEST['search-contact'] != '') {
     $searchContent = sanitize_text_field($_REQUEST['search-contact']);
     $where_search  = "WHERE contact_name LIKE %s OR contact_email LIKE %s OR contact_phone LIKE %s OR contact_message LIKE %s";
     $whereCond     = [
-        '%' . $wpdb->esc_like($searchContent) . '%',
-        '%' . $wpdb->esc_like($searchContent) . '%',
-        '%' . $wpdb->esc_like($searchContent) . '%',
-        '%' . $wpdb->esc_like($searchContent) . '%'
+        '%'.$wpdb->esc_like($searchContent).'%',
+        '%'.$wpdb->esc_like($searchContent).'%',
+        '%'.$wpdb->esc_like($searchContent).'%',
+        '%'.$wpdb->esc_like($searchContent).'%'
     ];
 }
-$customPagHTML = "";
+$customPagHTML  = "";
 $items_per_page = 10;
-$page = (isset($_GET['cpage'])) ? abs((int)$_GET['cpage']) : 1;
-$offset = ($page * $items_per_page) - $items_per_page;
+$page           = (isset($_GET['cpage'])) ? abs((int) $_GET['cpage']) : 1;
+$offset         = ($page * $items_per_page) - $items_per_page;
 
 $chatway_action = isset($_GET['mse_action']) ? sanitize_text_field($_GET['mse_action']) : null;
-$nonce = isset($_GET['nonce']) ? sanitize_text_field($_GET['nonce']) : null;
+$nonce          = isset($_GET['nonce']) ? sanitize_text_field($_GET['nonce']) : null;
 if (!empty($whereCond)) {
     // Rebuild the query strings with placeholders to ensure correct parameter binding for both search filters and pagination.
     $total_query = "SELECT count(*) FROM {$table_name} WHERE contact_name LIKE %s OR contact_email LIKE %s OR contact_phone LIKE %s OR contact_message LIKE %s ORDER BY ID DESC";
@@ -67,21 +63,20 @@ if (!empty($whereCond)) {
 
     $whereCond[] = $offset;
     $whereCond[] = $items_per_page;
-    $query = "SELECT * FROM {$table_name} WHERE contact_name LIKE %s OR contact_email LIKE %s OR contact_phone LIKE %s OR contact_message LIKE %s ORDER BY ID DESC LIMIT %d, %d";
-    $query = $wpdb->prepare($query, $whereCond);
-
+    $query       = "SELECT * FROM {$table_name} WHERE contact_name LIKE %s OR contact_email LIKE %s OR contact_phone LIKE %s OR contact_message LIKE %s ORDER BY ID DESC LIMIT %d, %d";
+    $query       = $wpdb->prepare($query, $whereCond);
 } else {
     $total_query = "SELECT count(*) FROM {$table_name} ORDER BY ID DESC";
-    $whereCond = [$offset, $items_per_page];
-    $query = "SELECT * FROM {$table_name} ORDER BY ID DESC LIMIT %d, %d";
-    $query = $wpdb->prepare($query, $whereCond);
+    $whereCond   = [$offset, $items_per_page];
+    $query       = "SELECT * FROM {$table_name} ORDER BY ID DESC LIMIT %d, %d";
+    $query       = $wpdb->prepare($query, $whereCond);
 }
 
 $total      = $wpdb->get_var($total_query);
 $result     = $wpdb->get_results($query);
 $total_page = ceil($total / $items_per_page);
-$start_from         = $offset + 1;
-$to                 = $offset + min($items_per_page, count($result));
+$start_from = $offset + 1;
+$to         = $offset + min($items_per_page, count($result));
 ?>
 <div class="wrap mse-wrap mystickyelement-wrap px-5">
     <div class="mystickyelement-dashboard">
@@ -119,7 +114,7 @@ $to                 = $offset + min($items_per_page, count($result));
                         <form action="<?php echo admin_url("admin.php?page=my-sticky-elements-leads"); ?>" method='get'>
                             <input type="hidden" name="page" value='my-sticky-elements-leads'/>
                             <div class="search-box relative">
-                                <label class="screen-reader-text" for="post-search-input"><?php esc_html_e('Search', 'mystickyelements');?></label>
+                                <label class="screen-reader-text" for="post-search-input"><?php esc_html_e('Search', 'mystickyelements'); ?></label>
                                 <input type="search" id="post-search-input" class="search-input" name="search-contact" value="<?php echo (isset($_GET['search-contact']) && $_GET['search-contact'] != '') ? esc_attr($_GET['search-contact']) : ''; ?>" placeholder="Search by name, email, phone, widget name">
                                 <button type="submit" class="mse-search-button">
                                     <span class="sr-only"><?php esc_html_e('Search', 'mystickyelements'); ?></span>
@@ -155,16 +150,16 @@ $to                 = $offset + min($items_per_page, count($result));
                                         <?php if (!empty($res->contact_name)) { ?>
                                             <li><b><?php esc_html_e('Name: ', 'mystickyelements'); ?></b><?php echo esc_html($res->contact_name); ?></li>
                                         <?php } ?>
-                                        <?php if (!empty($res->contact_phone)) {?>
+                                        <?php if (!empty($res->contact_phone)) { ?>
                                             <li><b><?php esc_html_e('Phone: ', 'mystickyelements'); ?></b><?php echo esc_html($res->contact_phone); ?></li>
                                         <?php } ?>
-                                        <?php if (!empty($res->contact_email)) {?>
+                                        <?php if (!empty($res->contact_email)) { ?>
                                             <li><b><?php esc_html_e('Email: ', 'mystickyelements'); ?></b><?php echo esc_html($res->contact_email); ?></li>
                                         <?php } ?>
-                                        <?php if (!empty($res->ip_address)) {?>
+                                        <?php if (!empty($res->ip_address)) { ?>
                                             <li><b><?php esc_html_e('IP Address: ', 'mystickyelements'); ?></b><?php echo esc_html($res->ip_address); ?></li>
                                         <?php } ?>
-                                        <?php if (!empty($res->contact_option)) {?>
+                                        <?php if (!empty($res->contact_option)) { ?>
                                             <li><b><?php esc_html_e('Dropdown: ', 'mystickyelements'); ?></b><?php echo esc_html($res->contact_option); ?></li>
                                         <?php } ?>
                                     </ul>
@@ -185,7 +180,8 @@ $to                 = $offset + min($items_per_page, count($result));
                                     </button>
                                 </td>
                             </tr>
-                        <?php }
+                            <?php
+                        }
                         ?>
                     </table>
                 <?php } elseif (!empty($where_search)) { ?>
@@ -204,14 +200,17 @@ $to                 = $offset + min($items_per_page, count($result));
                             <div class="contactleads-pagination">
                                 <?php
                                 $big = 999999999; // need an unlikely integer
-                            echo paginate_links(array(
-                                    'base' => add_query_arg('cpage', '%#%'),
-                                    'format' => '',
-                                    'current' => $page,
-                                    'total' =>  $total_page
-                            ));?>
+                                echo paginate_links(
+                                    array(
+                                        'base' => add_query_arg('cpage', '%#%'),
+                                        'format' => '',
+                                        'current' => $page,
+                                        'total' => $total_page
+                                    )
+                                );
+                                ?>
                             </div>
-                        <?php }?>
+                        <?php } ?>
                     </div>
                 <?php } ?>
             </div>
@@ -227,8 +226,8 @@ $to                 = $offset + min($items_per_page, count($result));
                             </div>
                         </div>
                         <div class="flex flex-col gap-0.5 flex-1">
-                            <div class="text-base font-semibold"><?php esc_html_e('Delete all leads permanently', 'mystickyelements');?> </div>
-                            <div><?php esc_html_e('This will permanently delete all leads from the database.', 'mystickyelements');?> </div>
+                            <div class="text-base font-semibold"><?php esc_html_e('Delete all leads permanently', 'mystickyelements'); ?> </div>
+                            <div><?php esc_html_e('This will permanently delete all leads from the database.', 'mystickyelements'); ?> </div>
                         </div>
                     </div>
                     <div>
@@ -236,7 +235,7 @@ $to                 = $offset + min($items_per_page, count($result));
                             <svg class="w-auto h-4" width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.75 4.08333H2.41667M2.41667 4.08333H15.75M2.41667 4.08333V15.75C2.41667 16.192 2.59226 16.6159 2.90482 16.9285C3.21738 17.2411 3.64131 17.4167 4.08333 17.4167H12.4167C12.8587 17.4167 13.2826 17.2411 13.5952 16.9285C13.9077 16.6159 14.0833 16.192 14.0833 15.75V4.08333H2.41667ZM4.91667 4.08333V2.41667C4.91667 1.97464 5.09226 1.55072 5.40482 1.23816C5.71738 0.925595 6.14131 0.75 6.58333 0.75H9.91667C10.3587 0.75 10.7826 0.925595 11.0952 1.23816C11.4077 1.55072 11.5833 1.97464 11.5833 2.41667V4.08333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
-                            <?php esc_attr_e('Delete All Leads', 'mystickyelements');?>
+                            <?php esc_attr_e('Delete All Leads', 'mystickyelements'); ?>
                         </button>
                         <input type="hidden" id="delete_nonce" name="delete_nonce" value="<?php echo esc_attr(wp_create_nonce('mysticky_menu_delete_nonce')) ?>" />
                     </div>
@@ -244,7 +243,7 @@ $to                 = $offset + min($items_per_page, count($result));
             <?php } ?>
         <?php } else { ?>
             <div class="border border-[#F1F1F1] rounded-lg mse-shadow mse-form-leads mt-5 p-5 text-center">
-                <?php esc_html_e('No contact form leads found!', 'mystickyelements');?>
+                <?php esc_html_e('No contact form leads found!', 'mystickyelements'); ?>
             </div>
         <?php } ?>
     </div>

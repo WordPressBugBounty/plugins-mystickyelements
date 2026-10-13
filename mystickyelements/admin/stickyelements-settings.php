@@ -1,5 +1,5 @@
 <?php
-$mystickyelement_class =  (isset($_GET['page']) && $_GET['page'] == 'my-sticky-elements-settings' && !isset($_GET['widget'])) ? 'mystickyelement-wrap-default' : '' ;
+$mystickyelement_class  = (isset($_GET['page']) && $_GET['page'] == 'my-sticky-elements-settings' && !isset($_GET['widget'])) ? 'mystickyelement-wrap-default' : '';
 $mystickyelement_class .= is_plugin_active('chatway-live-chat/chatway.php') ? ' has-chatway-chat' : '';
 ?>
 <div class="sr-only">
@@ -28,9 +28,9 @@ $mystickyelement_class .= is_plugin_active('chatway-live-chat/chatway.php') ? ' 
                             <span class="mse-tabs-subheading"><?php esc_html_e('2. Select Channels', 'mystickyelements'); ?></span>
                         </a>
                     </li>
-                    <li class="mse-tab-triggers mse-tab-3" data-tab="<?php  esc_html_e('Triggers and Targeting', 'mystickyelements'); ?>">
+                    <li class="mse-tab-triggers mse-tab-3" data-tab="<?php esc_html_e('Triggers and Targeting', 'mystickyelements'); ?>">
                         <a href="#mystickyelements-tab-display-settings" data-step="3">
-                            <span class="mse-tabs-subheading"><?php  esc_html_e('3. Triggers and Targeting', 'mystickyelements'); ?></span>
+                            <span class="mse-tabs-subheading"><?php esc_html_e('3. Triggers and Targeting', 'mystickyelements'); ?></span>
                         </a>
                     </li>
                     <li class="mse-tab-4" data-tab="<?php esc_html_e('Add Live Chat', 'mystickyelements'); ?>">
@@ -110,30 +110,30 @@ $mystickyelement_class .= is_plugin_active('chatway-live-chat/chatway.php') ? ' 
                     include('general-settings.php');
                     include('chatway.php');
                     ?>
-			    </div>
+                </div>
                 <div class="mse-preview-section flex-1 lg:flex-[0_0_400px]">
                     <?php include('sticktelements-preview.php'); ?>
                 </div>
-			</div>
-			<input type="hidden" id="mystickyelement_save_confirm_status" name="mystickyelement_save_confirm_status" value=""/>
-			<?php wp_nonce_field('mystickyelement-submit', 'mystickyelement-submit'); ?>
+            </div>
+            <input type="hidden" id="mystickyelement_save_confirm_status" name="mystickyelement_save_confirm_status" value=""/>
+            <?php wp_nonce_field('mystickyelement-submit', 'mystickyelement-submit'); ?>
         </div>
     </div>
 
     <div class="mystickyelements-action-popup-open  mystickyelements-action-popup-status" id="mystickyelements-load-google-enable-popup" style="display:none;">
         <div class="popup-ui-widget-header">
-            <span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e("Are you sure?", 'mystickyelements')?></span>
+            <span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e("Are you sure?", 'mystickyelements') ?></span>
         </div>
         <div id="widget-delete-confirm" class="ui-widget-content">
-            <p><?php _e("You're about to turn off loading Google fonts from Google server. By turning it off, fonts will not be loaded by default and you have to manually load them to use properly. Are you sure?", 'mystickyelements');?></p>
+            <p><?php _e("You're about to turn off loading Google fonts from Google server. By turning it off, fonts will not be loaded by default and you have to manually load them to use properly. Are you sure?", 'mystickyelements'); ?></p>
         </div>
 
         <div class="popup-ui-dialog-buttonset flex justify-end gap-4">
             <button type="button" class="mystickyelement-cancel-widget-btn mse-secondary-button" id="mystickyelement-disable-loadfonts"  data-popupfrom="">
-                <?php esc_html_e("Disable anyway", 'mystickyelements');?>
+                <?php esc_html_e("Disable anyway", 'mystickyelements'); ?>
             </button>
             <button type="button" class="mystickyelement-btn-orange mystickyelement-btn-ok mse-primary-button" id="mystickyelement-button-keep-loadfonts">
-                <?php esc_html_e('Keep using', 'mystickyelements');?>
+                <?php esc_html_e('Keep using', 'mystickyelements'); ?>
             </button>
         </div>
     </div>
@@ -141,7 +141,7 @@ $mystickyelement_class .= is_plugin_active('chatway-live-chat/chatway.php') ? ' 
     <div class="mystickyelements-action-popup-open mystickyelements-missing-link-popup mystickyelements-action-popup-status" id="mystickyelements-missing-link-popup" style="display:none;">
 
         <div class="popup-ui-widget-header">
-            <span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e('Missing link', 'mystickyelements')?></span>
+            <span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e('Missing link', 'mystickyelements') ?></span>
             <span class="close-dialog" data-id="0" data-from='widget-social-link'>&#10006</span>
         </div>
         <div id="widget-delete-confirm" class="ui-widget-content">
@@ -150,10 +150,10 @@ $mystickyelement_class .= is_plugin_active('chatway-live-chat/chatway.php') ? ' 
 
         <div class="popup-ui-dialog-buttonset flex items-center gap-3">
             <button type="button" class="mystickyelement-cancel-widget-btn mse-do-later-widget-btn mse-secondary-button"  data-popupfrom="">
-                <?php esc_html_e("I'll do it later", 'mystickyelements');?>
+                <?php esc_html_e("I'll do it later", 'mystickyelements'); ?>
             </button>
             <button type="button" class="mystickyelement-btn-orange mse-widget-btn-ok mse-primary-button" id="mystickyelement-button-ok">
-                <?php esc_html_e('Ok', 'mystickyelements');?>
+                <?php esc_html_e('Ok', 'mystickyelements'); ?>
             </button>
         </div>
     </div>

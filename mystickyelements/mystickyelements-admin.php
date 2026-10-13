@@ -27,7 +27,6 @@ if (!class_exists('MyStickyElementsPage_pro')) {
             add_action('wp_ajax_mystickyelements_admin_send_message_to_owner', array( $this, 'mystickyelements_admin_send_message_to_owner' ));
             add_action('wp_ajax_mystickyelements_plugin_deactivate', array( $this, 'mystickyelements_plugin_deactivate' ));
 
-
             add_action('wp_ajax_my_sticky_elements_bulks', array( $this, 'my_sticky_elements_bulks' ));
 
             add_action('wp_ajax_mystickyelements_review_box', [$this, "mystickyelements_review_box"]);
@@ -46,7 +45,8 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                     <path d="M6 12L10 8L6 4" stroke="#092030" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
             </a>
-        <?php }
+            <?php
+        }
 
         public function mse_inline_pro_button()
         {
@@ -83,7 +83,7 @@ if (!class_exists('MyStickyElementsPage_pro')) {
 
         public function settings_link($links)
         {
-            $settings_link = '<a href="'.admin_url("admin.php?page=my-sticky-elements").'">Settings</a>';
+            $settings_link      = '<a href="'.admin_url("admin.php?page=my-sticky-elements").'">Settings</a>';
             $links['need_help'] = '<a href="https://premio.io/help/mystickyelements" target="_blank">'.__('Need help?', 'mystickyelements').'</a>';
 
             $links['go_pro'] = '<a href="'.admin_url("admin.php?page=my-sticky-elements-upgrade").'" style="color: #FF5983; font-weight: bold; display: inline-block; border: solid 1px #FF5983; border-radius: 4px; padding: 0 5px;">'.__('Upgrade', 'mystickyelements').'</a>';
@@ -111,8 +111,7 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                 wp_enqueue_style('thickbox.css', '/'.WPINC.'/js/thickbox/thickbox.css', null, '1.0');
                 return;
             }
-            if (isset($_GET['page']) && ($_GET['page'] == 'my-sticky-elements' || $_GET['page'] == 'my-sticky-elements-leads' || $_GET['page'] == 'my-sticky-elements-new-widget' || $_GET['page'] == 'recommended-plugins' || $_GET['page'] == 'my-sticky-elements-analytics' || $_GET['page'] == 'my-sticky-elements-integration' || $_GET['page'] == 'my-sticky-elements-upgrade'  || $_GET['page'] == 'my-sticky-elements-chatway-plugin')) {
-
+            if (isset($_GET['page']) && ($_GET['page'] == 'my-sticky-elements' || $_GET['page'] == 'my-sticky-elements-leads' || $_GET['page'] == 'my-sticky-elements-new-widget' || $_GET['page'] == 'recommended-plugins' || $_GET['page'] == 'my-sticky-elements-analytics' || $_GET['page'] == 'my-sticky-elements-integration' || $_GET['page'] == 'my-sticky-elements-upgrade' || $_GET['page'] == 'my-sticky-elements-chatway-plugin')) {
                 $is_shown = MSE_SIGNUP_CLASS::check_modal_status();
                 if ($is_shown) {
                     wp_enqueue_script('mailcheck-js', plugins_url('/dist/js/mailcheck.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
@@ -143,9 +142,9 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                     wp_enqueue_script("mystickyelements-star-rating-svg", plugins_url('dist/js/star-rating-svg.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
 
                     //wp_enqueue_script('plugin-install', admin_url('/js/plugin-install.min', __FILE__), array( 'jquery' ), MY_STICKY_ELEMENT_VERSION, true ) ;
-                    wp_enqueue_script('select2-js', plugins_url('dist/js/select2.js', __FILE__), array( 'jquery' ), MY_STICKY_ELEMENT_VERSION, true) ;
+                    wp_enqueue_script('select2-js', plugins_url('dist/js/select2.js', __FILE__), array( 'jquery' ), MY_STICKY_ELEMENT_VERSION, true);
                     wp_enqueue_script('timepicker-js', plugins_url('dist/js/timepicker.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, false);
-                    wp_enqueue_script('confetti-js', plugins_url('dist/js/confetti.js', __FILE__), array( 'jquery' ), MY_STICKY_ELEMENT_VERSION, true) ;
+                    wp_enqueue_script('confetti-js', plugins_url('dist/js/confetti.js', __FILE__), array( 'jquery' ), MY_STICKY_ELEMENT_VERSION, true);
 
                     wp_enqueue_script('mailcheck-js', plugins_url('dist/js/mailcheck.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION);
                     wp_enqueue_script('autocomplete-email-js', plugins_url('dist/js/email-autocomplete.js', __FILE__), ['jquery'], MY_STICKY_ELEMENT_VERSION, true);
@@ -158,7 +157,8 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                         'ajax_nonce' => wp_create_nonce('mystickyelements'),
                         'has_js_access' => current_user_can("unfiltered_html") ? true : false,
                         'js_message' => esc_html__("Please remove the JavaScript from the channels or ask the website's administrator to give you access to add JavaScript.", "mystickyelements"),
-                        'remove' => esc_html__("Remove", "mystickyelements")
+                        'remove' => esc_html__("Remove", "mystickyelements"),
+                        'upgrade_url' => esc_url(admin_url('admin.php?page=my-sticky-elements-upgrade'))
                     );
                     wp_localize_script('mystickyelements-js', 'mystickyelements', $locale_settings);
                 }
@@ -180,7 +180,7 @@ if (!class_exists('MyStickyElementsPage_pro')) {
         {
             $page = isset($_GET['page']) ? sanitize_text_field($_GET['page']) : '';
             if ($page == 'my-sticky-elements-leads') {
-                $total_leads = $this->total_my_sticky_elements_widgets(); // Total number of my sticky elements contact form leads
+                $total_leads                 = $this->total_my_sticky_elements_widgets(); // Total number of my sticky elements contact form leads
                 $contact_form_channel_active = $this->is_contact_form_channel_active(); // True if contact form is enabled, false otherwise
                 if ($total_leads == 0 && !$contact_form_channel_active) {
                     wp_redirect(admin_url('admin.php?page=my-sticky-elements'));
@@ -192,9 +192,9 @@ if (!class_exists('MyStickyElementsPage_pro')) {
         public function mystickyelement_inline_css_admin()
         {
             global $submenu;
-            $parent_slug = 'my-sticky-elements';
-            $elements_widgets 			= get_option('mystickyelements-widgets');
-            $total_leads = $this->total_my_sticky_elements_widgets(); // Total number of my sticky elements contact form leads
+            $parent_slug                 = 'my-sticky-elements';
+            $elements_widgets            = get_option('mystickyelements-widgets');
+            $total_leads                 = $this->total_my_sticky_elements_widgets(); // Total number of my sticky elements contact form leads
             $contact_form_channel_active = $this->is_contact_form_channel_active(); // True if contact form is enabled, false otherwise
 
             if (isset($submenu[$parent_slug])) {
@@ -212,24 +212,24 @@ if (!class_exists('MyStickyElementsPage_pro')) {
             }
 
             ?>
-			<style>  
-				.mse-admin-menu-upgrade {
-					display: none !important;
-				}
-				<?php
-                    if (empty($elements_widgets)) {
-                        echo '#toplevel_page_my-sticky-elements ul.wp-submenu .wp-first-item {
+            <style>
+                .mse-admin-menu-upgrade {
+                    display: none !important;
+                }
+                <?php
+                if (empty($elements_widgets)) {
+                    echo '#toplevel_page_my-sticky-elements ul.wp-submenu .wp-first-item {
 							display: none !important;
 						}';
-                    }
-            if ($total_leads == 0 && !$contact_form_channel_active) {
-                echo '#toplevel_page_my-sticky-elements ul.wp-submenu .mse-admin-menu-leads {
+                }
+                if ($total_leads == 0 && !$contact_form_channel_active) {
+                    echo '#toplevel_page_my-sticky-elements ul.wp-submenu .mse-admin-menu-leads {
 							display: none !important;
 						}';
-            }
-            ?>
-			</style>
-			<?php
+                }
+                ?>
+            </style>
+            <?php
         }
 
 
@@ -241,7 +241,7 @@ if (!class_exists('MyStickyElementsPage_pro')) {
         public function total_my_sticky_elements_widgets()
         {
             global $wpdb;
-            $tableName = $wpdb->prefix . 'mystickyelement_contact_lists';
+            $tableName   = $wpdb->prefix.'mystickyelement_contact_lists';
             $total_leads = 0;
             // Check if table exists using prepared statement for security
             $table_check = $wpdb->get_var($wpdb->prepare("SHOW TABLES LIKE %s", $tableName));
@@ -277,7 +277,6 @@ if (!class_exists('MyStickyElementsPage_pro')) {
         public function add_mystickyelement_plugin_page()
         {
 
-
             $getData = filter_input_array(INPUT_GET);
             if (isset($getData['hide_mserecommended_plugin']) && isset($getData['nonce'])) {
                 if (current_user_can('manage_options')) {
@@ -288,12 +287,12 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                 }
             }
             $hide_mserecommended_plugin = get_option('hide_mserecommended_plugin');
-            $elements_widgets 			= get_option('mystickyelements-widgets');
+            $elements_widgets           = get_option('mystickyelements-widgets');
 
-            $total_leads = $this->total_my_sticky_elements_widgets(); // Total number of my sticky elements contact form leads
+            $total_leads                 = $this->total_my_sticky_elements_widgets(); // Total number of my sticky elements contact form leads
             $contact_form_channel_active = $this->is_contact_form_channel_active(); // True if contact form is enabled, false otherwise
-            $new_widget_link 			= (!empty($elements_widgets)) ? 'my-sticky-elements-new-widget' : 'my-sticky-elements&widget=0';
-            $default_widget_name = 'Dashboard';
+            $new_widget_link             = (!empty($elements_widgets)) ? 'my-sticky-elements-new-widget' : 'my-sticky-elements&widget=0';
+            $default_widget_name         = 'Dashboard';
             add_menu_page(
                 'Settings Admin',
                 'My Sticky Elements',
@@ -330,8 +329,6 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                 array( $this, 'mystickyelements_admin_new_widget_page' )
             );
 
-
-
             if (class_exists('Chatway')) {
                 add_submenu_page(
                     'my-sticky-elements',
@@ -362,7 +359,6 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                     array( $this, 'mystickyelements_admin_integration_page' )
                 );
             }
-
 
             add_submenu_page(
                 'my-sticky-elements',
@@ -395,7 +391,6 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                 );
             }
 
-
             add_submenu_page(
                 'my-sticky-elements',
                 'Upgrade to Pro ⭐️',
@@ -412,8 +407,7 @@ if (!class_exists('MyStickyElementsPage_pro')) {
             $is_shown = MSE_SIGNUP_CLASS::check_modal_status();
             if ($is_shown) {
                 /* Signup Form When first time activate plugin */
-                include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';
-
+                include_once MYSTICKYELEMENTS_PATH.'/admin/email-signup.php';
             } else {
                 include('mystickyelements-admin-widgetanalytics.php');
             }
@@ -443,7 +437,7 @@ if (!class_exists('MyStickyElementsPage_pro')) {
             $is_shown = MSE_SIGNUP_CLASS::check_modal_status();
             if ($is_shown) {
                 /* Signup Form When first time activate plugin */
-                include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';
+                include_once MYSTICKYELEMENTS_PATH.'/admin/email-signup.php';
             } else {
                 include_once 'upgrade-to-pro.php';
             }
@@ -459,21 +453,17 @@ if (!class_exists('MyStickyElementsPage_pro')) {
             $is_shown = MSE_SIGNUP_CLASS::check_modal_status();
             if ($is_shown != 1) {
                 /* Signup Form When first time activate plugin */
-                require_once MYSTICKYELEMENTS_PATH . 'admin/stickyelements-review-popup.php';
+                require_once MYSTICKYELEMENTS_PATH.'admin/stickyelements-review-popup.php';
             }
 
             $widget_tab_index = 'mystickyelements-contact-form';
             if (isset($_POST['mystickyelement-submit']) && !wp_verify_nonce($_POST['mystickyelement-submit'], 'mystickyelement-submit')) {
-
-                echo '<div class="error settings-error notice is-dismissible "><p><strong>' . esc_html__('Unable to complete your request', 'mystickyelements'). '</p></strong></div>';
-
+                echo '<div class="error settings-error notice is-dismissible "><p><strong>'.esc_html__('Unable to complete your request', 'mystickyelements').'</p></strong></div>';
             } elseif (isset($_POST['general-settings']) && !empty($_POST['general-settings']) && wp_verify_nonce($_POST['mystickyelement-submit'], 'mystickyelement-submit')) {
-
                 /* Save/Update Contact Form tab */
                 $widget_tab_index = isset($_POST['hide_tab_index']) ? $_POST['hide_tab_index'] : 'mystickyelements-contact-form';
 
                 $elements_widgets[] = $_POST['widget_name'];
-
 
                 update_option('mystickyelements-widgets', $elements_widgets);
 
@@ -579,6 +569,10 @@ if (!class_exists('MyStickyElementsPage_pro')) {
 
                     if (isset($contact['contact_title_text'])) {
                         $post['contact_title_text'] = self::sanitize_options($contact['contact_title_text']);
+                    }
+
+                    if (isset($contact['input_border_radius'])) {
+                        $post['input_border_radius'] = self::sanitize_options($contact['input_border_radius']);
                     }
 
                     if (isset($contact['send_leads'])) {
@@ -702,14 +696,13 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                     $subject = "Great job! You created your contact form successfully";
                     $message = 'Thanks for using MyStickyElements! If you see this message in your spam folder, please click on "Report not spam" so you will get the next leads into your inbox.';
 
-
-                    $blog_name = get_bloginfo('name');
+                    $blog_name  = get_bloginfo('name');
                     $blog_email = get_bloginfo('admin_email');
 
-                    $headers = "MIME-Version: 1.0\r\n";
+                    $headers  = "MIME-Version: 1.0\r\n";
                     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-                    $headers .= 'From: ' . $blog_name . ' <' . $blog_email . '>' ."\r\n";
-                    $headers .= 'X-Mailer: PHP/' . phpversion() . "\r\n";
+                    $headers .= 'From: '.$blog_name.' <'.$blog_email.'>'."\r\n";
+                    $headers .= 'X-Mailer: PHP/'.phpversion()."\r\n";
 
                     if (wp_mail($send_mail, $subject, $message, $headers)) {
                         update_option('mystickyelements-contact-mail-sent', true);
@@ -729,7 +722,6 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                     }
                 }
                 if (isset($_POST['save_view']) && $_POST['save_view'] == 'Save View') {
-
                     echo '<script type="text/javascript"> jQuery("#loader").show(); </script>';
 
                     if (isset($_POST['widgest_status']) && $_POST['widgest_status'] == 0) {
@@ -739,31 +731,29 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                     }
                 }
 
-
                 if (isset($_POST['widgest_status']) && $_POST['widgest_status'] == 0) {
                     $this->show_save_popup();
                 }
                 echo '<script>window.location.href = "'.admin_url("admin.php?page=my-sticky-elements&widget=0&widget_saved=true").'";</script>';
                 exit;
-
             }
 
-            $contact_field = get_option('mystickyelements-contact-field');
+            $contact_field     = get_option('mystickyelements-contact-field');
             $is_widgest_create = 1;
             if (empty($contact_field)) {
                 $is_widgest_create = 'my-sticky-elements-new-widget';
-                $contact_field = array( 'name', 'phone', 'email', 'message', 'dropdown' );
+                $contact_field     = array( 'name', 'phone', 'email', 'message', 'dropdown' );
             }
-            $contact_form = get_option('mystickyelements-contact-form');
-            $social_channels = get_option('mystickyelements-social-channels');
+            $contact_form         = get_option('mystickyelements-contact-form');
+            $social_channels      = get_option('mystickyelements-social-channels');
             $social_channels_tabs = get_option('mystickyelements-social-channels-tabs');
-            $general_settings = get_option('mystickyelements-general-settings');
+            $general_settings     = get_option('mystickyelements-general-settings');
 
             if (!$contact_form && !$social_channels && !$social_channels_tabs && !$general_settings) {
-                $contact_form 			= mystickyelement_default_settings('contact_form');
-                $social_channels 		= mystickyelement_default_settings('social_channels');
-                $social_channels_tabs 	= mystickyelement_default_settings('social_channels_tabs');
-                $general_settings 		= mystickyelement_default_settings('general_settings');
+                $contact_form         = mystickyelement_default_settings('contact_form');
+                $social_channels      = mystickyelement_default_settings('social_channels');
+                $social_channels_tabs = mystickyelement_default_settings('social_channels_tabs');
+                $general_settings     = mystickyelement_default_settings('general_settings');
             }
             if (!isset($general_settings['position'])) {
                 $general_settings['position'] = 'left';
@@ -773,28 +763,27 @@ if (!class_exists('MyStickyElementsPage_pro')) {
             }
             $social_channels_lists = mystickyelements_social_channels();
 
-            $upgrade_url = admin_url("admin.php?page=my-sticky-elements-upgrade");
+            $upgrade_url   = admin_url("admin.php?page=my-sticky-elements-upgrade");
             $is_pro_active = false;
-            $is_shown = MSE_SIGNUP_CLASS::check_modal_status();
+            $is_shown      = MSE_SIGNUP_CLASS::check_modal_status();
             if ($is_shown) {
                 /* Signup Form When first time activate plugin */
-                include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';
-
+                include_once MYSTICKYELEMENTS_PATH.'/admin/email-signup.php';
             } else {
-
                 $default_fonts = array('Arial', 'Tahoma', 'Verdana', 'Helvetica', 'Times New Roman', 'Trebuchet MS', 'Georgia', 'Open Sans Hebrew');
 
                 if (isset($general_settings['font_family']) && $general_settings['font_family'] != "") :
-                    if (!in_array($general_settings['font_family'], $default_fonts)):
+                    if (!in_array($general_settings['font_family'], $default_fonts)) :
                         ?>
                 <link href="https://fonts.googleapis.com/css?family=<?php echo esc_attr($general_settings['font_family']); ?>:400,500,600,700"
                       rel="stylesheet" type="text/css" class="sfba-google-font">
-					  <?php endif;?>
+                      <?php endif; ?>
                 <style>
                     .myStickyelements-preview-ul .mystickyelements-social-icon {
-                        font-family: <?php echo esc_attr((isset($general_settings['font_family']) && $general_settings['font_family'] == 'System Stack') ? '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif' : $general_settings['font_family']);?>}
+                        font-family: <?php echo esc_attr((isset($general_settings['font_family']) && $general_settings['font_family'] == 'System Stack') ? '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif' : $general_settings['font_family']); ?>}
                 </style>
-				<?php endif;
+                    <?php
+                endif;
                 if (!isset($_GET['widget']) && isset($_GET['page'])) {
                     include_once('admin/stickyelements-dashboard.php');
                 } else {
@@ -803,116 +792,113 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                     $mystickyelements_popup_status = get_option('mystickyelements_intro_popup');
                     if ($mystickyelements_popup_status == 'show') {
                         ?>
-						
-						<div class="contactform-sendleads-upgrade-popup mystickyelements-action-popup-open mystickyelements-intro-popup mystickyelements-blue-popup" style="display:block;">
-							<div class="popup-ui-widget-header">
-								<span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e("Welcome to My Sticky Elements", "mystickyelements");?></span>
-								
-								<span class="close-dialog" data-from="intro-popup">						
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#31373D" d="M22.238 18.004l9.883-9.883c1.172-1.171 1.172-3.071 0-4.243-1.172-1.171-3.07-1.171-4.242 0l-9.883 9.883-9.883-9.882c-1.171-1.172-3.071-1.172-4.243 0-1.171 1.171-1.171 3.071 0 4.243l9.883 9.882-9.907 9.907c-1.171 1.171-1.171 3.071 0 4.242.585.586 1.354.879 2.121.879s1.536-.293 2.122-.879l9.906-9.906 9.882 9.882c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879c1.172-1.171 1.172-3.071 0-4.242l-9.881-9.883z"/></svg>
-								</span>
-							</div>
-							<div class="ui-widget-content">
-								<p><?php _e('Select your contact form fields, chat, and social channels. Need help? Visit our ', 'mystickyelements'); ?><a href="https://premio.io/help/mystickyelements/?utm_soruce=wordpressmystickyelements" target="_blank"><?php _e('Help Center', 'mystickyelements'); ?></a><?php _e(' and check the video.', 'mystickyelements'); ?></p>
-								
-								<iframe width="420" height="240" src="https://www.youtube.com/embed/VR9S_yuN1ko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								<input type="hidden" id="myStickyelements_update_popup_status" value="<?php echo wp_create_nonce("myStickyelements_update_popup_status") ?>">
-							</div>
-							<div class="popup-ui-dialog-buttonset">
-								<a href="#" class="new-upgrade-button mystickyelement-goto-button">Go to My Sticky Elements</a>
-							</div>
-						</div>
-						<div id="mystickyelement_intro_popup_overlay" class="stickyelement-overlay" style="display:block;"></div>
-						<?php
+
+                        <div class="contactform-sendleads-upgrade-popup mystickyelements-action-popup-open mystickyelements-intro-popup mystickyelements-blue-popup" style="display:block;">
+                            <div class="popup-ui-widget-header">
+                                <span id="ui-id-1" class="ui-dialog-title"><?php esc_html_e("Welcome to My Sticky Elements", "mystickyelements"); ?></span>
+
+                                <span class="close-dialog" data-from="intro-popup">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#31373D" d="M22.238 18.004l9.883-9.883c1.172-1.171 1.172-3.071 0-4.243-1.172-1.171-3.07-1.171-4.242 0l-9.883 9.883-9.883-9.882c-1.171-1.172-3.071-1.172-4.243 0-1.171 1.171-1.171 3.071 0 4.243l9.883 9.882-9.907 9.907c-1.171 1.171-1.171 3.071 0 4.242.585.586 1.354.879 2.121.879s1.536-.293 2.122-.879l9.906-9.906 9.882 9.882c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879c1.172-1.171 1.172-3.071 0-4.242l-9.881-9.883z"/></svg>
+                                </span>
+                            </div>
+                            <div class="ui-widget-content">
+                                <p><?php _e('Select your contact form fields, chat, and social channels. Need help? Visit our ', 'mystickyelements'); ?><a href="https://premio.io/help/mystickyelements/?utm_soruce=wordpressmystickyelements" target="_blank"><?php _e('Help Center', 'mystickyelements'); ?></a><?php _e(' and check the video.', 'mystickyelements'); ?></p>
+
+                                <iframe width="420" height="240" src="https://www.youtube.com/embed/VR9S_yuN1ko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <input type="hidden" id="myStickyelements_update_popup_status" value="<?php echo wp_create_nonce("myStickyelements_update_popup_status") ?>">
+                            </div>
+                            <div class="popup-ui-dialog-buttonset">
+                                <a href="#" class="new-upgrade-button mystickyelement-goto-button">Go to My Sticky Elements</a>
+                            </div>
+                        </div>
+                        <div id="mystickyelement_intro_popup_overlay" class="stickyelement-overlay" style="display:block;"></div>
+                        <?php
                     }
                 }
 
                 ?>
-                
-                <?php
-                $table_name = $wpdb->prefix . "mystickyelement_contact_lists";
-                $result = $wpdb->get_results("SELECT count(*) as count FROM {$table_name} ORDER BY ID DESC");
 
-                if ($result[0]->count != 0 && !get_option('myStickyelements_show_leads')) { ?>
-					<div id="myStickyelements-new-lead-confirm" style="display:none;" title="<?php esc_attr_e('Congratulations 🎉', 'mystickyelements'); ?>">
-						<p><?php _e('You just got your first My Sticky Elements lead. Click on the Show Me button to display your contact form leads', 'mystickyelements'); ?></p>
-						<p><?php _e('<a style="color: #000;" href="'.esc_url($upgrade_url).'" target="_blank"><strong>Upgrade to Pro</strong></a> to get leads on your email with more customization and awesome features 🚀', 'mystickyelements'); ?></p>
-					</div>
-					<script>
-						( function( $ ) {
-							"use strict";
-							$(document).ready(function(){
-								jQuery( "#myStickyelements-new-lead-confirm" ).dialog({
+                <?php
+                $table_name = $wpdb->prefix."mystickyelement_contact_lists";
+                $result     = $wpdb->get_results("SELECT count(*) as count FROM {$table_name} ORDER BY ID DESC");
+
+                if ($result[0]->count != 0 && !get_option('myStickyelements_show_leads')) {
+                    ?>
+                    <div id="myStickyelements-new-lead-confirm" style="display:none;" title="<?php esc_attr_e('Congratulations 🎉', 'mystickyelements'); ?>">
+                        <p><?php _e('You just got your first My Sticky Elements lead. Click on the Show Me button to display your contact form leads', 'mystickyelements'); ?></p>
+                        <p><?php _e('<a style="color: #000;" href="'.esc_url($upgrade_url).'" target="_blank"><strong>Upgrade to Pro</strong></a> to get leads on your email with more customization and awesome features 🚀', 'mystickyelements'); ?></p>
+                    </div>
+                    <script>
+                        ( function( $ ) {
+                            "use strict";
+                            $(document).ready(function(){
+                                jQuery( "#myStickyelements-new-lead-confirm" ).dialog({
                                     closeText: "",
-									resizable: false,
-									modal: true,
-									draggable: false,
-									height: 'auto',
-									width: 400,
+                                    resizable: false,
+                                    modal: true,
+                                    draggable: false,
+                                    height: 'auto',
+                                    width: 400,
                                     dialogClass: 'first-mse-lead',
-									buttons: {
-										"Show Me": {
-												click: function () {
-													window.location = "<?php echo admin_url('admin.php?page=my-sticky-elements-leads')?>";
-													//$(this).dialog('close');
-												},
-												text: 'Show Me',
-												class: 'mse-primary-button'
-											},
-											"Not Now": {
-												click: function () {
-													$(this).dialog('close');
-												},
-												text: 'Not Now',
-												class: 'mse-secondary-button'
-											},
-									}
-								});
-							});
-						})( jQuery );
-					</script>
-					<?php
+                                    buttons: {
+                                        "Show Me": {
+                                                click: function () {
+                                                    window.location = "<?php echo admin_url('admin.php?page=my-sticky-elements-leads') ?>";
+                                                    //$(this).dialog('close');
+                                                },
+                                                text: 'Show Me',
+                                                class: 'mse-primary-button'
+                                            },
+                                            "Not Now": {
+                                                click: function () {
+                                                    $(this).dialog('close');
+                                                },
+                                                text: 'Not Now',
+                                                class: 'mse-secondary-button'
+                                            },
+                                    }
+                                });
+                            });
+                        })( jQuery );
+                    </script>
+                    <?php
                     update_option('myStickyelements_show_leads', 1);
                 }
                 ?>
-				<div id="mystickyelement-save-confirm" style="display:none;" title="<?php esc_attr_e('Icons\' text isn\'t supported in this template', 'mystickyelements'); ?>">
-					<p><?php _e("The selected template doesn't support icons'text, please change to the Default templates. Would you like to publish it anyway?", 'mystickyelements'); ?></p>
-				</div>
-				<?php
-
-
-
+                <div id="mystickyelement-save-confirm" style="display:none;" title="<?php esc_attr_e('Icons\' text isn\'t supported in this template', 'mystickyelements'); ?>">
+                    <p><?php _e("The selected template doesn't support icons'text, please change to the Default templates. Would you like to publish it anyway?", 'mystickyelements'); ?></p>
+                </div>
+                <?php
                 if (isset($_GET['first_widget']) && $_GET['first_widget'] == 1) {
                     $this->show_save_popup();
                 }
-
             }
         }
 
         public function show_save_popup()
         {
             ?>
-			<div class="main-popup-mystickyelement-bg first-widget-popup">
-				<div class="main-popup-mystickyelement-bg mystickyelement_container_popupbox">
-					<div class="firstwidget-popup-contain">
-						<img src="<?php echo MYSTICKYELEMENTS_URL; ?>/images/firstwidget_congratulations.svg">
-						<h4><?php _e('Congratulations! 🎉', 'mystickyelements'); ?></h4>
-						<p><?php _e('Your first widget is now up and running on your website!', 'mystickyelements'); ?></p>
-						<div class="first-widget-popup-contant">
-							<h4><?php _e('Upgrade to pro today', 'mystickyelements'); ?></h4>
-							<p> <?php _e('🛠️ Show unlimited social icon such as Whatsapp,twitter,phone and so on', 'mystickyelements') ?> </p>
-							<p> <?php _e('📱Create multiple widgets for different devices, pages and languages.', 'mystickyelements') ?> </p>
-							<p> <?php _e('📈 Unlock analytics about each channel usage and different widgets ', 'mystickyelements') ?> </p>
-							<p> <?php _e('📩 Get contact form leads to Your email and integrate with MailChimp and MailPoet', 'mystickyelements') ?> </p>
-						</div>
-						<a href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements-upgrade"));?>" class="mystickymenu btn-black btn-back-dashboard"><?php _e('Upgrade to Pro', 'mystickyelements');?></a><br>
-						<a href="#" class="mystickymenu btn-black btn-dashboard btn-close-dashboard"><?php _e('Close', 'mystickyelements');?></a>
-					</div>
-					<div class="popup-modul-close-btn firstwidget-model"><a href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements")); ?>" class="close-chaty-maxvisitor-popup stickyelement-save-close-wrap" id="close-first-popup"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 5L5 15" stroke="#4A4A4A" stroke-width="2.08" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 5L15 15" stroke="#4A4A4A" stroke-width="2.08" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-				</div>
-			</div>
-			<div class="stickyelement-overlay" id="success-popup-overlay"  data-id=""></div>
-			<?php
+            <div class="main-popup-mystickyelement-bg first-widget-popup">
+                <div class="main-popup-mystickyelement-bg mystickyelement_container_popupbox">
+                    <div class="firstwidget-popup-contain">
+                        <img src="<?php echo MYSTICKYELEMENTS_URL; ?>/images/firstwidget_congratulations.svg">
+                        <h4><?php _e('Congratulations! 🎉', 'mystickyelements'); ?></h4>
+                        <p><?php _e('Your first widget is now up and running on your website!', 'mystickyelements'); ?></p>
+                        <div class="first-widget-popup-contant">
+                            <h4><?php _e('Upgrade to pro today', 'mystickyelements'); ?></h4>
+                            <p> <?php _e('🛠️ Show unlimited social icon such as Whatsapp,twitter,phone and so on', 'mystickyelements') ?> </p>
+                            <p> <?php _e('📱Create multiple widgets for different devices, pages and languages.', 'mystickyelements') ?> </p>
+                            <p> <?php _e('📈 Unlock analytics about each channel usage and different widgets ', 'mystickyelements') ?> </p>
+                            <p> <?php _e('📩 Get contact form leads to Your email and integrate with MailChimp and MailPoet', 'mystickyelements') ?> </p>
+                        </div>
+                        <a href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements-upgrade")); ?>" class="mystickymenu btn-black btn-back-dashboard"><?php _e('Upgrade to Pro', 'mystickyelements'); ?></a><br>
+                        <a href="#" class="mystickymenu btn-black btn-dashboard btn-close-dashboard"><?php _e('Close', 'mystickyelements'); ?></a>
+                    </div>
+                    <div class="popup-modul-close-btn firstwidget-model"><a href="<?php echo esc_url(admin_url("admin.php?page=my-sticky-elements")); ?>" class="close-chaty-maxvisitor-popup stickyelement-save-close-wrap" id="close-first-popup"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 5L5 15" stroke="#4A4A4A" stroke-width="2.08" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 5L15 15" stroke="#4A4A4A" stroke-width="2.08" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+                </div>
+            </div>
+            <div class="stickyelement-overlay" id="success-popup-overlay"  data-id=""></div>
+            <?php
         }
 
         public function mystickyelement_social_tab_add($key, $element_widget_no = '')
@@ -924,7 +910,7 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                 }
                 check_ajax_referer('mystickyelements', 'wpnonce');
             }
-            include MYSTICKYELEMENTS_PATH . '/admin/social-tab.php';
+            include MYSTICKYELEMENTS_PATH.'/admin/social-tab.php';
         }
 
         /*
@@ -937,8 +923,7 @@ if (!class_exists('MyStickyElementsPage_pro')) {
             ;
             if ($is_shown) {
                 /* Signup Form When first time activate plugin */
-                include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';
-
+                include_once MYSTICKYELEMENTS_PATH.'/admin/email-signup.php';
             } else {
                 include('mystickyelements-admin-integration.php');
             }
@@ -955,7 +940,7 @@ if (!class_exists('MyStickyElementsPage_pro')) {
             $is_shown = MSE_SIGNUP_CLASS::check_modal_status();
             if ($is_shown) {
                 /* Signup Form When first time activate plugin */
-                include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';
+                include_once MYSTICKYELEMENTS_PATH.'/admin/email-signup.php';
             } else {
                 include MYSTICKYELEMENTS_PATH.'admin/form-leads.php';
             }
@@ -967,7 +952,7 @@ if (!class_exists('MyStickyElementsPage_pro')) {
             ;
             if ($is_shown) {
                 /* Signup Form When first time activate plugin */
-                include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';
+                include_once MYSTICKYELEMENTS_PATH.'/admin/email-signup.php';
             } else {
                 include_once 'recommended-plugins.php';
             }
@@ -976,10 +961,10 @@ if (!class_exists('MyStickyElementsPage_pro')) {
         public function mystickyelements_manage_chatway_plugin()
         {
             ?>
-			<script>
-				window.location.href= '<?php echo admin_url("admin.php?page=chatway")?>'
-			</script>
-			<?php
+            <script>
+                window.location.href= '<?php echo admin_url("admin.php?page=chatway") ?>'
+            </script>
+            <?php
             exit;
         }
         public function mystickyelements_install_chatway_plugin()
@@ -999,21 +984,21 @@ if (!class_exists('MyStickyElementsPage_pro')) {
             ;
             if ($is_shown) {
                 /* Signup Form When first time activate plugin */
-                include_once MYSTICKYELEMENTS_PATH . '/admin/email-signup.php';
+                include_once MYSTICKYELEMENTS_PATH.'/admin/email-signup.php';
                 return;
             }
 
             $upgrade_url = admin_url("admin.php?page=my-sticky-elements-upgrade");
             ?>
-			<div class="mystickyelement-new-widget-wrap">
-				<?php include_once MYSTICKYELEMENTS_PATH . 'mystickyelements-widget.php';?>				
-			</div>
-			<?php
+            <div class="mystickyelement-new-widget-wrap">
+                <?php include_once MYSTICKYELEMENTS_PATH.'mystickyelements-widget.php'; ?>
+            </div>
+            <?php
         }
 
         public function get_mse_chatway_status()
         {
-            if (! current_user_can('manage_options')) {
+            if (!current_user_can('manage_options')) {
                 wp_send_json_error(array( 'message' => __('You are not allowed to perform this action.', 'mystickyelements') ), 403);
             }
             check_ajax_referer('mystickyelements', 'wpnonce');
@@ -1024,20 +1009,20 @@ if (!class_exists('MyStickyElementsPage_pro')) {
         public function mystickyelement_delete_db_record()
         {
             global $wpdb;
-            if (! current_user_can('manage_options')) {
+            if (!current_user_can('manage_options')) {
                 wp_die(0);
             }
             check_ajax_referer('mystickyelements', 'wpnonce');
             if (isset($_POST['ID']) && $_POST['ID'] != '' && wp_verify_nonce($_POST['delete_nonce'], "mysticky_elements_delete_nonce")) {
-                $ID = sanitize_text_field($_POST['ID']);
-                $table = $wpdb->prefix . 'mystickyelement_contact_lists';
-                $ID = self::sanitize_options($ID, "sql");
+                $ID         = sanitize_text_field($_POST['ID']);
+                $table      = $wpdb->prefix.'mystickyelement_contact_lists';
+                $ID         = self::sanitize_options($ID, "sql");
                 $delete_sql = $wpdb->prepare("DELETE FROM {$table} WHERE id = %d", $ID);
-                $delete = $wpdb->query($delete_sql);
+                $delete     = $wpdb->query($delete_sql);
             }
 
             if (isset($_POST['all_leads']) && $_POST['all_leads'] == 1 && wp_verify_nonce($_POST['delete_nonce'], "mysticky_elements_delete_nonce")) {
-                $table = $wpdb->prefix . 'mystickyelement_contact_lists';
+                $table  = $wpdb->prefix.'mystickyelement_contact_lists';
                 $delete = $wpdb->query("TRUNCATE TABLE $table");
             }
             wp_die();
@@ -1045,7 +1030,7 @@ if (!class_exists('MyStickyElementsPage_pro')) {
 
         public function myStickyelements_intro_popup_action()
         {
-            if (! current_user_can('manage_options')) {
+            if (!current_user_can('manage_options')) {
                 wp_die(0);
             }
 
@@ -1059,32 +1044,32 @@ if (!class_exists('MyStickyElementsPage_pro')) {
         public function mystickyelements_admin_send_message_to_owner()
         {
 
-            if (! current_user_can('manage_options')) {
+            if (!current_user_can('manage_options')) {
                 wp_die(0);
             }
-            $response = array();
-            $response['status'] = 0;
-            $response['error'] = 0;
-            $response['errors'] = array();
+            $response            = array();
+            $response['status']  = 0;
+            $response['error']   = 0;
+            $response['errors']  = array();
             $response['message'] = "";
-            $errorArray = [];
-            $errorMessage = esc_html__("%s is required", "mystickyelements");
-            $postData = $_POST;
+            $errorArray          = [];
+            $errorMessage        = esc_html__("%s is required", "mystickyelements");
+            $postData            = $_POST;
             if (!isset($postData['textarea_text']) || trim($postData['textarea_text']) == "") {
-                $error = array(
+                $error        = array(
                     "key"   => "textarea_text",
                     "message" => esc_html__("Please enter your message", 'mystickyelements')
                 );
                 $errorArray[] = $error;
             }
             if (!isset($postData['user_email']) || trim($postData['user_email']) == "") {
-                $error = array(
+                $error        = array(
                     "key"   => "user_email",
                     "message" => sprintf($errorMessage, __("Email", 'mystickyelements'))
                 );
                 $errorArray[] = $error;
             } elseif (!filter_var($postData['user_email'], FILTER_VALIDATE_EMAIL)) {
-                $error = array(
+                $error        = array(
                     'key' => "user_email",
                     "message" => "Email is not valid"
                 );
@@ -1092,13 +1077,13 @@ if (!class_exists('MyStickyElementsPage_pro')) {
             }
             if (empty($errorArray)) {
                 if (!isset($_REQUEST['nonce']) || empty($_REQUEST['nonce'])) {
-                    $error = array(
+                    $error        = array(
                         'key' => "nonce",
                         "message" => "Your request is not valid"
                     );
                     $errorArray[] = $error;
                 } elseif (!wp_verify_nonce($_REQUEST['nonce'], "mystickyelements_send_message_to_owner")) {
-                    $error = array(
+                    $error        = array(
                         'key' => "nonce",
                         "message" => "Your request is not valid"
                     );
@@ -1108,34 +1093,34 @@ if (!class_exists('MyStickyElementsPage_pro')) {
             if (empty($errorArray)) {
                 global $current_user;
                 $text_message = $postData['textarea_text'];
-                $email = $postData['user_email'];
-                $domain = site_url();
-                $user_name = $current_user->first_name." ".$current_user->last_name;
+                $email        = $postData['user_email'];
+                $domain       = site_url();
+                $user_name    = $current_user->first_name." ".$current_user->last_name;
 
                 $response['status'] = 1;
 
                 /* sending message to Crisp */
                 $post_message = array();
 
-                $message_data = array();
-                $message_data['key'] = "Plugin";
+                $message_data          = array();
+                $message_data['key']   = "Plugin";
                 $message_data['value'] = "My Sticky Elements";
-                $post_message[] = $message_data;
+                $post_message[]        = $message_data;
 
-                $message_data = array();
-                $message_data['key'] = "Domain";
+                $message_data          = array();
+                $message_data['key']   = "Domain";
                 $message_data['value'] = $domain;
-                $post_message[] = $message_data;
+                $post_message[]        = $message_data;
 
-                $message_data = array();
-                $message_data['key'] = "Email";
+                $message_data          = array();
+                $message_data['key']   = "Email";
                 $message_data['value'] = $email;
-                $post_message[] = $message_data;
+                $post_message[]        = $message_data;
 
-                $message_data = array();
-                $message_data['key'] = "Message";
+                $message_data          = array();
+                $message_data['key']   = "Message";
                 $message_data['value'] = $text_message;
-                $post_message[] = $message_data;
+                $post_message[]        = $message_data;
 
                 $api_params = array(
                     'domain' => $domain,
@@ -1154,7 +1139,7 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                     wp_safe_remote_post("https://premioapps.com/premio/send-message-api.php", array('body' => $api_params, 'timeout' => 15, 'sslverify' => false));
                 }
             } else {
-                $response['error'] = 1;
+                $response['error']  = 1;
                 $response['errors'] = $errorArray;
             }
             wp_send_json($response);
@@ -1163,21 +1148,20 @@ if (!class_exists('MyStickyElementsPage_pro')) {
 
         public function mystickyelement_widget_status()
         {
-            if (! current_user_can('manage_options')) {
+            if (!current_user_can('manage_options')) {
                 wp_die(0);
             }
             check_ajax_referer('mystickyelements', 'wpnonce');
 
             if (isset($_POST['widget_id']) && $_POST['widget_id'] != '' && isset($_POST['widget_status']) && $_POST['widget_status'] != '') {
                 $stickyelements_widgets = get_option('stickyelements_widgets');
-                if ( ! is_array( $stickyelements_widgets ) ) {
+                if (!is_array($stickyelements_widgets)) {
                     $stickyelements_widgets = array();
                 }
-                $widget_id = $_POST['widget_id'];
-                $widget_status = $_POST['widget_status'];
+                $widget_id                                    = $_POST['widget_id'];
+                $widget_status                                = $_POST['widget_status'];
                 $stickyelements_widgets[$widget_id]['status'] = $widget_status;
                 update_option('stickyelements_widgets', $stickyelements_widgets);
-
             }
             wp_die();
         }
@@ -1186,7 +1170,7 @@ if (!class_exists('MyStickyElementsPage_pro')) {
         {
             global $wpdb;
 
-            if (! current_user_can('manage_options')) {
+            if (!current_user_can('manage_options')) {
                 wp_die(0);
             }
 
@@ -1195,11 +1179,11 @@ if (!class_exists('MyStickyElementsPage_pro')) {
             if (isset($_POST['wpnonce'])) {
                 $bulks = isset($_POST['bulks']) ? $_POST['bulks'] : array();
                 foreach ($bulks as $key => $bulk) {
-                    $ID = sanitize_text_field($bulk);
-                    $table = $wpdb->prefix . 'mystickyelement_contact_lists';
-                    $ID = self::sanitize_options($ID, "sql");
+                    $ID         = sanitize_text_field($bulk);
+                    $table      = $wpdb->prefix.'mystickyelement_contact_lists';
+                    $ID         = self::sanitize_options($ID, "sql");
                     $delete_sql = $wpdb->prepare("DELETE FROM {$table} WHERE id = %d", $ID);
-                    $delete = $wpdb->query($delete_sql);
+                    $delete     = $wpdb->query($delete_sql);
                 }
             }
             wp_die();
@@ -1208,16 +1192,15 @@ if (!class_exists('MyStickyElementsPage_pro')) {
         public function mystickyelement_widget_rename()
         {
 
-            if (! current_user_can('manage_options')) {
+            if (!current_user_can('manage_options')) {
                 wp_die(0);
             }
             check_ajax_referer('mystickyelements', 'wpnonce');
 
             if (isset($_POST['widget_id']) && $_POST['widget_id'] != '' && isset($_POST['widget_rename']) && $_POST['widget_rename'] != '') {
-
                 $stickyelements_widgets = get_option('mystickyelements-widgets');
-                $widget_id = $_POST['widget_id'];
-                $widget_rename = $_POST['widget_rename'];
+                $widget_id              = $_POST['widget_id'];
+                $widget_rename          = $_POST['widget_rename'];
 
                 $stickyelements_widgets[$widget_id] = $widget_rename;
                 update_option('mystickyelements-widgets', $stickyelements_widgets);
@@ -1228,32 +1211,30 @@ if (!class_exists('MyStickyElementsPage_pro')) {
         public function mystickyelement_widget_delete()
         {
 
-            if (! current_user_can('manage_options')) {
+            if (!current_user_can('manage_options')) {
                 wp_die(0);
             }
             check_ajax_referer('mystickyelements', 'wpnonce');
 
             if (isset($_POST['widget_id']) && $_POST['widget_id'] != '' && isset($_POST['widget_delete']) && $_POST['widget_delete'] == 1) {
-
-                $elements_widgets = get_option('mystickyelements-widgets');
+                $elements_widgets              = get_option('mystickyelements-widgets');
                 $stickyelements_widgets_status = get_option('stickyelements_widgets');
-                $mystickyelements_widget = self::sanitize_options($_POST['widget_id']);
+                $mystickyelements_widget       = self::sanitize_options($_POST['widget_id']);
 
                 foreach ($elements_widgets as $key => $widget_value) {
                     $element_widget_no = '';
                     if ($key != 0) {
-                        $element_widget_no = '-' . esc_attr($key);
+                        $element_widget_no = '-'.esc_attr($key);
                     }
-                    delete_option('mystickyelements-contact-field' . $element_widget_no);
-                    delete_option('mystickyelements-contact-form' . $element_widget_no);
-                    delete_option('mystickyelements-social-channels' . $element_widget_no);
-                    delete_option('mystickyelements-social-channels-tabs' . $element_widget_no);
-                    delete_option('mystickyelements-general-settings' . $element_widget_no);
+                    delete_option('mystickyelements-contact-field'.$element_widget_no);
+                    delete_option('mystickyelements-contact-form'.$element_widget_no);
+                    delete_option('mystickyelements-social-channels'.$element_widget_no);
+                    delete_option('mystickyelements-social-channels-tabs'.$element_widget_no);
+                    delete_option('mystickyelements-general-settings'.$element_widget_no);
                 }
 
                 delete_option('mystickyelements-widgets');
                 delete_option('stickyelements_widgets');
-
             }
             wp_die();
         }
@@ -1267,23 +1248,23 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                 return;
             }
 
-            include MYSTICKYELEMENTS_PATH . 'mystickyelements-deactivate-form.php';
+            include MYSTICKYELEMENTS_PATH.'mystickyelements-deactivate-form.php';
         }
 
         public function mystickyelements_plugin_deactivate()
         {
             global $current_user;
-            if (! current_user_can('manage_options')) {
+            if (!current_user_can('manage_options')) {
                 wp_die(0);
             }
             check_ajax_referer('mystickyelements_deactivate_nonce', 'nonce');
 
-            $postData = $_POST;
-            $errorCounter = 0;
-            $response = array();
-            $response['status'] = 0;
+            $postData            = $_POST;
+            $errorCounter        = 0;
+            $response            = array();
+            $response['status']  = 0;
             $response['message'] = "";
-            $response['valid'] = 1;
+            $response['valid']   = 1;
             if (!isset($postData['reason']) || empty($postData['reason'])) {
                 $errorCounter++;
                 $response['message'] = "Please provide reason";
@@ -1300,55 +1281,55 @@ if (!class_exists('MyStickyElementsPage_pro')) {
             }
             if ($errorCounter == 0) {
                 global $current_user;
-                $plugin_info = get_plugin_data(MYSTICKYELEMENTS_PATH. 'mystickyelements.php');
-                $postData = $_POST;
-                $email = "none@none.none";
+                $plugin_info = get_plugin_data(MYSTICKYELEMENTS_PATH.'mystickyelements.php');
+                $postData    = $_POST;
+                $email       = "none@none.none";
 
                 if (isset($postData['email_id']) && !empty($postData['email_id']) && filter_var($postData['email_id'], FILTER_VALIDATE_EMAIL)) {
                     $email = $postData['email_id'];
                 }
-                $domain = site_url();
-                $user_name = $current_user->first_name . " " . $current_user->last_name;
+                $domain    = site_url();
+                $user_name = $current_user->first_name." ".$current_user->last_name;
 
                 $response['status'] = 1;
 
                 /* sending message to Crisp */
                 $post_message = array();
 
-                $message_data = array();
-                $message_data['key'] = "Plugin";
+                $message_data          = array();
+                $message_data['key']   = "Plugin";
                 $message_data['value'] = "My Sticky Elements";
-                $post_message[] = $message_data;
+                $post_message[]        = $message_data;
 
-                $message_data = array();
-                $message_data['key'] = "Plugin Version";
+                $message_data          = array();
+                $message_data['key']   = "Plugin Version";
                 $message_data['value'] = $plugin_info['Version'];
-                $post_message[] = $message_data;
+                $post_message[]        = $message_data;
 
-                $message_data = array();
-                $message_data['key'] = "Domain";
+                $message_data          = array();
+                $message_data['key']   = "Domain";
                 $message_data['value'] = $domain;
-                $post_message[] = $message_data;
+                $post_message[]        = $message_data;
 
-                $message_data = array();
-                $message_data['key'] = "Email";
+                $message_data          = array();
+                $message_data['key']   = "Email";
                 $message_data['value'] = $email;
-                $post_message[] = $message_data;
+                $post_message[]        = $message_data;
 
-                $message_data = array();
-                $message_data['key'] = "WordPress Version";
+                $message_data          = array();
+                $message_data['key']   = "WordPress Version";
                 $message_data['value'] = esc_attr(get_bloginfo('version'));
-                $post_message[] = $message_data;
+                $post_message[]        = $message_data;
 
-                $message_data = array();
-                $message_data['key'] = "PHP Version";
+                $message_data          = array();
+                $message_data['key']   = "PHP Version";
                 $message_data['value'] = PHP_VERSION;
-                $post_message[] = $message_data;
+                $post_message[]        = $message_data;
 
-                $message_data = array();
-                $message_data['key'] = "Message";
+                $message_data          = array();
+                $message_data['key']   = "Message";
                 $message_data['value'] = $postData['reason'];
-                $post_message[] = $message_data;
+                $post_message[]        = $message_data;
 
                 $api_params = array(
                     'domain' => $domain,
@@ -1426,8 +1407,7 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                 }
 
                 if (class_exists('\Hummingbird\Core\Utils')) {
-
-                    $modules   = \Hummingbird\Core\Utils::get_active_cache_modules();
+                    $modules = \Hummingbird\Core\Utils::get_active_cache_modules();
                     foreach ($modules as $module => $name) {
                         $mod = \Hummingbird\Core\Utils::get_module($module);
 
@@ -1445,7 +1425,6 @@ if (!class_exists('MyStickyElementsPage_pro')) {
                 if (function_exists('nitropack_purge_cache') && function_exists('nitropack_sdk_purge')) {
                     nitropack_sdk_purge(null, null, 'Manual purge of all pages');
                 }
-
             } catch (Exception $e) {
                 return 1;
             }

@@ -2,7 +2,7 @@
 $social_channel = (isset($_POST['social_channel'])) ? $_POST['social_channel'] : $key;
 
 if ($social_channel != '') {
-    $social_channels_tabs = get_option('mystickyelements-social-channels-tabs' . $element_widget_no, true);
+    $social_channels_tabs = get_option('mystickyelements-social-channels-tabs'.$element_widget_no, true);
     /* Return when Is Empty key found and isajax not set */
     if (isset($social_channels_tabs['is_empty']) && $social_channels_tabs['is_empty'] == 1 && !isset($_POST['is_ajax'])) {
         return;
@@ -12,21 +12,21 @@ if ($social_channel != '') {
         $custom_channel_temp = '';
         if (strpos($social_channel, 'custom_channel') !== false) {
             $custom_channel_temp = $social_channel;
-            $social_channel = 'custom_channel';
+            $social_channel      = 'custom_channel';
         }
         if (strpos($social_channel, 'custom_shortcode') !== false) {
             $custom_channel_temp = $social_channel;
-            $social_channel = 'custom_shortcode';
+            $social_channel      = 'custom_shortcode';
         }
 
         $social_channels_lists = mystickyelements_custom_social_channels();
-        $social_channels_list = $social_channels_lists[$social_channel];
+        $social_channels_list  = $social_channels_lists[$social_channel];
 
         if (isset($social_channel_value['channel_type']) && $social_channel_value['channel_type'] != '' && $social_channel_value['channel_type'] != 'custom') {
             $custom_social_channels_lists = mystickyelements_social_channels();
 
-            $social_channel_value['class'] = $custom_social_channels_lists[$social_channel_value['channel_type']]['class'];
-            $social_channels_list['class'] = $custom_social_channels_lists[$social_channel_value['channel_type']]['class'];
+            $social_channel_value['class']            = $custom_social_channels_lists[$social_channel_value['channel_type']]['class'];
+            $social_channels_list['class']            = $custom_social_channels_lists[$social_channel_value['channel_type']]['class'];
             $social_channel_value['fontawesome_icon'] = $custom_social_channels_lists[$social_channel_value['channel_type']]['class'];
             $social_channels_list['fontawesome_icon'] = $custom_social_channels_lists[$social_channel_value['channel_type']]['class'];
             if (isset($custom_social_channels_lists[$social_channel_value['channel_type']]['custom_svg_icon'])) {
@@ -39,33 +39,32 @@ if ($social_channel != '') {
             $social_channel = $custom_channel_temp;
         }
         if (isset($_POST['channel_key']) && $_POST['channel_key'] != '') {
-            $social_channel = $social_channel . '_' . $_POST['channel_key'];
+            $social_channel = $social_channel.'_'.$_POST['channel_key'];
         }
     } else {
-        $social_channels_lists 	= mystickyelements_social_channels();
-        $social_channels_list 	= (isset($social_channels_lists[$social_channel])) ? $social_channels_lists[$social_channel] : [];
+        $social_channels_lists = mystickyelements_social_channels();
+        $social_channels_list  = (isset($social_channels_lists[$social_channel])) ? $social_channels_lists[$social_channel] : [];
         if (empty($social_channels_list)) {
             return;
         }
     }
 
-    $social_channels_list['text'] = isset($social_channels_list['text']) ? $social_channels_list['text'] : "";
-    $social_channels_list['icon_text'] = isset($social_channels_list['icon_text']) ? $social_channels_list['icon_text'] : "";
-    $social_channels_list['icon_text_size'] = isset($social_channels_list['icon_text_size']) ? $social_channels_list['icon_text_size'] : "";
+    $social_channels_list['text']             = isset($social_channels_list['text']) ? $social_channels_list['text'] : "";
+    $social_channels_list['icon_text']        = isset($social_channels_list['icon_text']) ? $social_channels_list['icon_text'] : "";
+    $social_channels_list['icon_text_size']   = isset($social_channels_list['icon_text_size']) ? $social_channels_list['icon_text_size'] : "";
     $social_channels_list['background_color'] = isset($social_channels_list['background_color']) ? $social_channels_list['background_color'] : "";
-    $social_channels_list['hover_text'] = isset($social_channels_list['hover_text']) ? $social_channels_list['hover_text'] : "";
+    $social_channels_list['hover_text']       = isset($social_channels_list['hover_text']) ? $social_channels_list['hover_text'] : "";
 
     if (empty($social_channel_value)) {
-
         $social_channel_value['text'] = '';//$social_channels_list['text'];
 
-        $social_channel_value['bg_color'] = $social_channels_list['background_color'];
-        $social_channel_value['icon_text'] = $social_channels_list['icon_text'];
+        $social_channel_value['bg_color']       = $social_channels_list['background_color'];
+        $social_channel_value['icon_text']      = $social_channels_list['icon_text'];
         $social_channel_value['icon_text_size'] = $social_channels_list['icon_text_size'];
-        $social_channel_value['hover_text'] = $social_channels_list['hover_text'];
-        $social_channel_value['desktop'] = 1;
-        $social_channel_value['mobile'] = 1;
-        $social_channel_value['icon_color'] = '';
+        $social_channel_value['hover_text']     = $social_channels_list['hover_text'];
+        $social_channel_value['desktop']        = 1;
+        $social_channel_value['mobile']         = 1;
+        $social_channel_value['icon_color']     = '';
     }
 
     if (!isset($social_channel_value['icon_text'])) {
@@ -93,20 +92,20 @@ if ($social_channel != '') {
     }
 
     if ($key == 'line') {
-        echo "<style>.social-channels-item .social-channel-input-box-section .social-" . $key . " svg .fil1{ fill:" . $social_channel_value['icon_color'] . "}</style>";
+        echo "<style>.social-channels-item .social-channel-input-box-section .social-".$key." svg .fil1{ fill:".$social_channel_value['icon_color']."}</style>";
     }
     if ($key == 'qzone') {
-        echo "<style>.social-channels-item .social-channel-input-box-section .social-" . $key . " svg .fil2{ fill:" . $social_channel_value['icon_color'] . "}</style>";
+        echo "<style>.social-channels-item .social-channel-input-box-section .social-".$key." svg .fil2{ fill:".$social_channel_value['icon_color']."}</style>";
     }
 
-    $social_channel_value['text'] = str_replace('\"', '"', $social_channel_value['text']);
-    $social_channel_value['channel_type'] = (isset($social_channel_value['channel_type'])) ? $social_channel_value['channel_type'] : '';
-    $social_channel_value['open_new_tab'] = (isset($social_channel_value['open_new_tab'])) ? $social_channel_value['open_new_tab'] : '';
+    $social_channel_value['text']             = str_replace('\"', '"', $social_channel_value['text']);
+    $social_channel_value['channel_type']     = (isset($social_channel_value['channel_type'])) ? $social_channel_value['channel_type'] : '';
+    $social_channel_value['open_new_tab']     = (isset($social_channel_value['open_new_tab'])) ? $social_channel_value['open_new_tab'] : '';
     $social_channel_value['use_whatsapp_web'] = (isset($social_channel_value['use_whatsapp_web'])) ? $social_channel_value['use_whatsapp_web'] : '';
-    $social_channel_value['mobile'] = (isset($social_channel_value['mobile'])) ? $social_channel_value['mobile'] : '';
-    $social_channel_value['desktop'] = (isset($social_channel_value['desktop'])) ? $social_channel_value['desktop'] : '';
-    $channel_type = (isset($social_channel_value['channel_type'])) ? $social_channel_value['channel_type'] : '';
-    $social_channel_value['icon_text_color'] = (isset($social_channel_value['icon_text_color'])) ? $social_channel_value['icon_text_color'] : '#ffffff';
+    $social_channel_value['mobile']           = (isset($social_channel_value['mobile'])) ? $social_channel_value['mobile'] : '';
+    $social_channel_value['desktop']          = (isset($social_channel_value['desktop'])) ? $social_channel_value['desktop'] : '';
+    $channel_type                             = (isset($social_channel_value['channel_type'])) ? $social_channel_value['channel_type'] : '';
+    $social_channel_value['icon_text_color']  = (isset($social_channel_value['icon_text_color'])) ? $social_channel_value['icon_text_color'] : '#ffffff';
 
     if ($channel_type != 'custom' && $channel_type != '') {
         if ($channel_type == 'whatsapp') {
@@ -114,7 +113,7 @@ if ($social_channel != '') {
         }
     }
 
-    $channel_class	= (isset($social_channels_list['channel_class'])) ? $social_channels_list['channel_class'] : '';
+    $channel_class = (isset($social_channels_list['channel_class'])) ? $social_channels_list['channel_class'] : '';
 
     ?>
     <div id="social-channel-<?php echo esc_attr($social_channel); ?>" class="social-channels-item"
@@ -122,30 +121,36 @@ if ($social_channel != '') {
         <div class="mystickyelements-move-handle"></div>
         <div class="social-channels-item-title social-channel-input-box-section flex gap-4 items-center">
             <label class="flex gap-2 items-center w-full">
-							<span class="social-channels-list <?php echo esc_attr($channel_class);?> social-<?php echo esc_attr($social_channel); ?> social-<?php echo esc_attr($channel_type); ?>"
+                            <span class="social-channels-list <?php echo esc_attr($channel_class); ?> social-<?php echo esc_attr($social_channel); ?> social-<?php echo esc_attr($channel_type); ?>"
                                   style="background-color: <?php echo esc_attr($social_channel_value['bg_color']) ?>; color: <?php echo esc_attr($social_channel_value['icon_color']) ?>; position:relative;">
-								<?php if (isset($social_channels_list['custom']) && $social_channels_list['custom'] == 1 && isset($social_channel_value['custom_icon']) && $social_channel_value['custom_icon'] != '' && isset($social_channel_value['fontawesome_icon']) && $social_channel_value['fontawesome_icon'] == ''): ?>
+                                <?php if (isset($social_channels_list['custom']) && $social_channels_list['custom'] == 1 && isset($social_channel_value['custom_icon']) && $social_channel_value['custom_icon'] != '' && isset($social_channel_value['fontawesome_icon']) && $social_channel_value['fontawesome_icon'] == '') : ?>
                                     <img class="<?php echo (isset($social_channel_value['stretch_custom_icon']) && $social_channel_value['stretch_custom_icon'] == 1) ? 'mystickyelements-stretch-custom-img' : ''; ?>" src="<?php echo esc_url($social_channel_value['custom_icon']); ?>" width="25" height="25"/>
-                                <?php else:
+                                    <?php
+                                else :
                                     if (isset($social_channels_list['custom_svg_icon']) && $social_channels_list['custom_svg_icon'] != '') :
                                         echo $social_channels_list['custom_svg_icon'];  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                                    else:?>
+                                    else :
+                                        ?>
                                         <i class="<?php echo esc_attr($social_channels_list['class']) ?>"></i>
-                                    <?php endif;
-                                endif; ?>
-							</span>
-                <span class="text-lg font-medium"><?php echo esc_html($social_channels_list['text'] . " Settings"); ?> </span>
+                                        <?php
+                                    endif;
+                                endif;
+                                ?>
+                            </span>
+                <span class="text-lg font-medium"><?php echo esc_html($social_channels_list['text']." Settings"); ?> </span>
             </label>
         </div>
         <div class="myStickyelements-setting-wrap-list input-link mse-field-wrap">
             <div class="mse-field-left">
                 <label for="social_channel_<?php echo esc_attr($social_channel); ?>_icon_link" >
-                    <?php if (isset($social_channels_list['icon_label']) && $social_channels_list['icon_label'] != "") {
+                    <?php
+                    if (isset($social_channels_list['icon_label']) && $social_channels_list['icon_label'] != "") {
                         echo esc_html($social_channels_list['icon_label'], 'mystickyelements');
                     } else {
                         esc_html_e('Icon Link', 'mystickyelements');
                     }
-                    if (isset($social_channels_list['tooltip']) && $social_channels_list['tooltip'] != "") { ?>
+                    if (isset($social_channels_list['tooltip']) && $social_channels_list['tooltip'] != "") {
+                        ?>
                         <span class="social-tooltip">
                             <span>
                                 <i class="fas fa-info"></i>
@@ -159,14 +164,15 @@ if ($social_channel != '') {
             </div>
             <div class="px-wrap myStickyelements-inputs mse-field-right">
                 <?php
-                if (strpos($social_channel, 'custom_shortcode') !== false) { ?>
+                if (strpos($social_channel, 'custom_shortcode') !== false) {
+                    ?>
                     <textarea id="social_channel_<?php echo esc_attr($social_channel); ?>_icon_link"  class="mystickyelement-social-links-input <?php if (isset($social_channels_list['number_validation']) && $social_channels_list['number_validation'] == 1) : ?> mystickyelement-social-text-input<?php endif; ?>" name="social-channels-tab[<?php echo esc_attr($social_channel); ?>][text]" rows="3" cols="50" placeholder="<?php echo esc_attr($social_channels_list['placeholder']) ?>"><?php echo esc_attr(stripslashes($social_channel_value['text'])); ?></textarea>
                     <?php
-                } else { ?>
-                    <input type="text" class="mystickyelement-social-links-input <?php echo esc_attr($channel_type) ; ?><?php if (isset($social_channels_list['number_validation']) && $social_channels_list['number_validation'] == 1) : ?> mystickyelement-social-text-input<?php endif; ?>"
+                } else {
+                    ?>
+                    <input type="text" class="mystickyelement-social-links-input <?php echo esc_attr($channel_type); ?><?php if (isset($social_channels_list['number_validation']) && $social_channels_list['number_validation'] == 1) : ?> mystickyelement-social-text-input<?php endif; ?>"
                            id="social_channel_<?php echo esc_attr($social_channel); ?>_icon_link" name="social-channels-tab[<?php echo esc_attr($social_channel); ?>][text]" value="<?php echo esc_attr(stripslashes($social_channel_value['text'])); ?>" placeholder="<?php echo esc_attr($social_channels_list['placeholder']) ?>"/>
                     <?php
-
                 }
                 ?>
             </div>
@@ -243,7 +249,7 @@ if ($social_channel != '') {
                             <?php $fontawesome_icons = mystickyelements_fontawesome_icons(); ?>
                             <select id="mystickyelements-<?php echo esc_attr($social_channel); ?>-custom-icon" data-slug="<?php echo esc_attr($social_channel); ?>" name="social-channels-tab[<?php echo esc_attr($social_channel); ?>][fontawesome_icon]" class="social-channel-fontawesome-icon">
                                 <option value=""><?php esc_html_e('Select FontAwesome Icon', 'mystickyelements'); ?></option>
-                                <?php foreach ($fontawesome_icons as $icons): ?>
+                                <?php foreach ($fontawesome_icons as $icons) : ?>
                                     <option value="<?php echo esc_attr($icons) ?>" <?php selected($social_channel_value['fontawesome_icon'], $icons) ?>><?php echo esc_html($icons); ?></option>
                                 <?php endforeach; ?>
                             </select>
@@ -257,7 +263,8 @@ if ($social_channel != '') {
                     <div class="px-wrap myStickyelements-inputs mse-field-right">
                         <select class="social-custom-channel-type" name="social-channels-tab[<?php echo esc_attr($social_channel); ?>][channel_type]" data-id="social-channel-<?php echo esc_attr($social_channel); ?>" id="social-channel-<?php echo esc_attr($social_channel); ?>_channel_type" data-slug="social-<?php echo esc_attr($social_channel); ?>">
                             <option value="custom" data-social-channel='<?php echo wp_json_encode($social_channels_list); ?>' <?php selected($social_channel_value['channel_type'], 'custom', true) ?>><?php _e('Custom channel', 'mystickyelements'); ?></option>
-                            <?php foreach (mystickyelements_social_channels() as $csc_key => $csc_val):
+                            <?php
+                            foreach (mystickyelements_social_channels() as $csc_key => $csc_val) :
                                 if (isset($csc_val['custom']) && $csc_val['custom'] == 1) {
                                     continue;
                                 }
@@ -343,13 +350,13 @@ if ($social_channel != '') {
                         <span class="supported-tags mt-2 text-cht-gray-150">
                         <label class="social-custom-tooltip social-tooltip ">
                             <span class="mysticky-social-whatsapp-tags" data-tag="{title}">{title}<span class="social-tooltip-popup">
-                                    <?php esc_html_e('{title} tag grabs the page title of the webpage', 'mystickyelements');?></span>
+                                    <?php esc_html_e('{title} tag grabs the page title of the webpage', 'mystickyelements'); ?></span>
                             </span>
                         </label>
                          and
                             <label class="social-custom-tooltip social-tooltip ">
                                 <span class="mysticky-social-whatsapp-tags" data-tag="{url}">{url}<span class="social-tooltip-popup">
-                                        <?php esc_html_e('{url} tag grabs the URL of the webpage', 'mystickyelements');?></span>
+                                        <?php esc_html_e('{url} tag grabs the URL of the webpage', 'mystickyelements'); ?></span>
                                 </span>
                             </label>
                             tags are supported
@@ -363,7 +370,7 @@ if ($social_channel != '') {
                             <span class="social-tooltip">
                                 <span>
                                     <i class="fas fa-info"></i>
-                                    <span class="social-tooltip-popup"><?php esc_html_e('Automatically send desktop visitors to WhatsApp Web by turning on the feature', 'mystickyelements');?></span>
+                                    <span class="social-tooltip-popup"><?php esc_html_e('Automatically send desktop visitors to WhatsApp Web by turning on the feature', 'mystickyelements'); ?></span>
                                 </span>
                             </span>
                         </label>
@@ -385,7 +392,6 @@ if ($social_channel != '') {
     </div>
     <!-- end social channel tabs-->
     <?php
-
 }
 if (isset($_POST['is_ajax']) && $_POST['is_ajax'] == true) {
     wp_die();

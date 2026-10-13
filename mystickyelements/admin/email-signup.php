@@ -1,51 +1,51 @@
 <?php if (!defined('ABSPATH')) {
     exit;
 }
-$email = (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == "playground.wordpress.net") ? "" : get_option('admin_email');
+$email      = (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == "playground.wordpress.net") ? "" : get_option('admin_email');
 $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
 
 
 ?>
 <style>
-    
+
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
     @font-face {
         font-family: 'Lato';
-        src: url('<?php echo  esc_url($popup_data['font_url']); ?>');
+        src: url('<?php echo esc_url($popup_data['font_url']); ?>');
     }
- 
+
     #wpwrap {
         background-color: #fff;
         background-position: bottom center;
         background-size: cover;
-        background-image: url('<?php echo esc_url($popup_data['background_image']);?>');
+        background-image: url('<?php echo esc_url($popup_data['background_image']); ?>');
         position: relative;
-    } 
+    }
     #wpcontent{
         background-color: transparent !important;
     }
     #wpbody-content {
-        padding-bottom: 100px; 
-    } 
+        padding-bottom: 100px;
+    }
     #wpbody {
         height: 100%;
         position: unset;
-    } 
-    .premio-update-popup-wrap { 
+    }
+    .premio-update-popup-wrap {
         display: flex;
         height: 100%;
         width: 100%;
         align-items: center;
-        justify-content: center;  
+        justify-content: center;
         box-sizing: border-box;
     }
-    .premio-update-popup-wrap * { 
+    .premio-update-popup-wrap * {
         box-sizing: border-box;
     }
 
     .premio-update-popup-content {
-        margin-top: 100px; 
+        margin-top: 100px;
         width: 626px;
         box-shadow: 0px 15.511px 46.534px 0px rgba(0, 0, 0, 0.16);
         border-radius: 16px;
@@ -53,7 +53,7 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
         background-color: #FFF;
         position: relative;
         z-index: 999;
-        overflow: hidden;  
+        overflow: hidden;
         display: flex;
         flex-wrap: wrap;
         gap: 48px;
@@ -120,14 +120,14 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
         font-weight: 400;
         line-height: 150%;
     }
- 
+
     .premio-content-list .premio-content-list-items img {
         height: 20px;
         width: 20px;
-        
+
         display: inherit;
     }
-   
+
     /* // X-Small devices (portrait phones, less than 576px) */
 
 
@@ -161,13 +161,13 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
         top: 11px;
         z-index: 1;
     }
-    .premio-update-froms-input .mail-icon img { 
+    .premio-update-froms-input .mail-icon img {
         height: 24px;
         width: 24px;
     }
 
     .eac-input-wrap {
-        width: 100%; 
+        width: 100%;
     }
 
     .update-popup-btn {
@@ -185,7 +185,7 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
         cursor: pointer;
         transition: all 0.3s ease-in-out;
     }
-   
+
     .update-popup-btn:hover, .update-popup-btn:disabled {
         background-color: #276CD9;
         color: #fff !important;
@@ -204,7 +204,7 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
         display: inline-block;
     }
 
-  
+
 
     .premio-update-popup-footer {
         display: flex;
@@ -250,7 +250,7 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
         background-color: #49687E;
         opacity: 0.16;
     }
- 
+
 
     .premio-update-popup-bg-shape {
         border-radius: 448.684px;
@@ -266,7 +266,7 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
         top: 0;
         z-index: -1;
     }
- 
+
     .premio-update-popup-bottom-shape-one {
         position: absolute;
         bottom: 0;
@@ -285,7 +285,7 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
         margin-top: 24px;
     }
 
-   
+
 
     #suggestion {
         margin: 0;
@@ -310,8 +310,8 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
         width: 16px;
     }
     /* responsive */
-    @media (max-width: 575.98px) { 
-        #wpcontent { 
+    @media (max-width: 575.98px) {
+        #wpcontent {
             padding-left: 0 !important;
         }
         .premio-update-user-trust span {
@@ -320,60 +320,60 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
         .remio-update-popup-content h1 {
             font-size: 28px;
         }
-        .premio-content-list .premio-content-list-items { 
-            align-items: start; 
+        .premio-content-list .premio-content-list-items {
+            align-items: start;
         }
         .premio-content-list .premio-content-list-items img{
 
             margin-top: 5px;
         }
-        
-       
+
+
         .premio-update-popup-icon-box .absulate-border {
             display: none;
         }
         .premio-update-popup-footer {
             gap: 12px;
-            flex-direction: column;  
+            flex-direction: column;
             justify-content: center;
         }
-        
+
         .premio-update-popup-icon-box {
            width: auto;
         }
     }
-   
+
     /* responsive */
 </style>
 
-<div class="premio-update-popup-wrap" >  
-    <img src="<?php echo esc_url($popup_data['shape_bottom']);?>" class="premio-update-popup-bottom-shape-one" alt="shape bottom">
-    <img src="<?php echo esc_url($popup_data['shape_bottom_right']); ?>" class="premio-update-popup-right-shape-one" alt="shape right"> 
+<div class="premio-update-popup-wrap" >
+    <img src="<?php echo esc_url($popup_data['shape_bottom']); ?>" class="premio-update-popup-bottom-shape-one" alt="shape bottom">
+    <img src="<?php echo esc_url($popup_data['shape_bottom_right']); ?>" class="premio-update-popup-right-shape-one" alt="shape right">
     <div class="premio-update-popup-content">
     <span class="premio-update-popup-bg-shape"></span>
         <h3 class="premio-update-heading"><?php echo esc_html($popup_data['plugin_name']) ?></h3>
 
        <div class="remio-update-popup-content">
             <div class="premio-update-user-trust">
-                <img src="<?php echo esc_url($popup_data['trust_user_img']);?>" alt="user trust">
-   
+                <img src="<?php echo esc_url($popup_data['trust_user_img']); ?>" alt="user trust">
+
                 <span><?php echo esc_html($popup_data['trust_user']) ?><span>
             </div>
 
             <h1><?php esc_html_e("We Only Email When It's Worth It", 'mystickyelements') ?></h1>
 
             <div class="premio-content-list">
-                <div class="premio-content-list-items"> 
-                    <img src="<?php echo esc_url($popup_data['check_circle']);?>" alt="check circle">
+                <div class="premio-content-list-items">
+                    <img src="<?php echo esc_url($popup_data['check_circle']); ?>" alt="check circle">
                     <span><?php esc_html_e('Plugin updates and features for improved performance', 'mystickyelements') ?> </span>
                 </div>
                 <div class="premio-content-list-items">
-                    <img src="<?php echo esc_url($popup_data['check_circle']);?>" alt="check circle">
+                    <img src="<?php echo esc_url($popup_data['check_circle']); ?>" alt="check circle">
                     <span><?php esc_html_e('Important security updates for site safety', 'mystickyelements') ?></span>
-                     
+
                 </div>
                 <div class="premio-content-list-items">
-                    <img src="<?php echo esc_url($popup_data['check_circle']);?>" alt="check circle">
+                    <img src="<?php echo esc_url($popup_data['check_circle']); ?>" alt="check circle">
                     <span><?php esc_html_e('Limited-time offers for WordPress users seeking growth', 'mystickyelements') ?> </span>
                 </div>
             </div>
@@ -382,24 +382,24 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
                 <span class="mail-icon">
                     <img src="<?php echo esc_url($popup_data['mail_icon']) ?>" alt="Mail icon">
                 </span>
-                <input type="email" value="<?php echo esc_attr($email) ?>" name="mse_update_email" id="mse_update_email" autocomplete="off" placeholder="<?php esc_html_e('Your Email Address', 'mystickyelements') ?>" required>  
-                
+                <input type="email" value="<?php echo esc_attr($email) ?>" name="mse_update_email" id="mse_update_email" autocomplete="off" placeholder="<?php esc_html_e('Your Email Address', 'mystickyelements') ?>" required>
+
             </div>
             <p id="suggestion"></p>
             <div class="popup-update-btn-wrap">
-                <button href="#" class="update-popup-btn submit-popup yes"> <?php esc_html_e('Count Me In', 'mystickyelements')?>
+                <button href="#" class="update-popup-btn submit-popup yes"> <?php esc_html_e('Count Me In', 'mystickyelements') ?>
                     <span class="icon">
                         <img class="arrow-right" src="<?php echo esc_url($popup_data['arrow_right']) ?>" alt="arrow right">
                         <img id="pre-loader" style="display: none;" src="<?php echo esc_url($popup_data['pre_loader']) ?>" alt="pre loader">
-               
+
                     </span>
-                     
+
                 </button>
-                <button href="#" class="update-popup-btn close-popup no"> <?php esc_html_e('Maybe Later', 'mystickyelements')?> </button>
+                <button href="#" class="update-popup-btn close-popup no"> <?php esc_html_e('Maybe Later', 'mystickyelements') ?> </button>
             </div>
-          
+
        </div>
-        
+
 
        <div class="premio-update-popup-footer">
             <!-- Icon Box -->
@@ -415,7 +415,7 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
             <!-- Icon Box -->
             <!-- Icon Box -->
             <div class="premio-update-popup-icon-box">
-                
+
                 <span class="absulate-border"></span>
                 <div class="icon">
                     <img src="<?php echo esc_url($popup_data['slash_icon']) ?>" alt="slash icon">
@@ -428,7 +428,7 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
             <!-- Icon Box -->
             <!-- Icon Box -->
             <div class="premio-update-popup-icon-box">
-                
+
                 <span class="absulate-border"></span>
                 <div class="icon">
                     <img src="<?php echo esc_url($popup_data['star_icon']) ?>" alt="star icon">
@@ -446,56 +446,56 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
 </div>
 
 <script>
-	jQuery(document).ready(function($) {
-		var mailcheck_flg = false;
-		$(document).on("click", ".update-popup-btn", function () {
-			//$('#mse_update_email').trigger( 'blur' );
+    jQuery(document).ready(function($) {
+        var mailcheck_flg = false;
+        $(document).on("click", ".update-popup-btn", function () {
+            //$('#mse_update_email').trigger( 'blur' );
             // after clicking button button should be disable
-            $('.update-popup-btn').attr("disabled", true); 
-            
+            $('.update-popup-btn').attr("disabled", true);
+
             $('#suggestion').html('');
-            var email = $('#mse_update_email').val(); 
+            var email = $('#mse_update_email').val();
             var preLoader = $('#pre-loader');
             var btnIcon = $('.submit-popup .icon .arrow-right');
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             var updateStatus = 0;
-			if ($(this).hasClass("yes")) {
-				updateStatus = 1;
-			}
-            
-       
-			msemailcheck();
-  
+            if ($(this).hasClass("yes")) {
+                updateStatus = 1;
+            }
+
+
+            msemailcheck();
+
             // Check email address is empty or not its email
             if(email == '' && updateStatus == 1){
                 $('#suggestion').html('Please enter your email address.');
                 // empty this after 5 sec
-                setTimeout(function(){ $('#suggestion').html(''); }, 5000); 
-                $('.update-popup-btn').attr("disabled", false); 
+                setTimeout(function(){ $('#suggestion').html(''); }, 5000);
+                $('.update-popup-btn').attr("disabled", false);
                 return;
             }else if (!emailRegex.test(email) && updateStatus == 1) {
                 $('#suggestion').html('Please enter a valid email address.');
                 // empty this after 5 sec
-                setTimeout(function(){ $('#suggestion').html(''); }, 5000); 
-                $('.update-popup-btn').attr("disabled", false); 
+                setTimeout(function(){ $('#suggestion').html(''); }, 5000);
+                $('.update-popup-btn').attr("disabled", false);
                 return;
             }
-     
+
             btnIcon.hide();     // hide arrow icon
             preLoader.show();   // show loader
 
             if ( $('#suggestion').html() != '' && mailcheck_flg == false ) {
-				mailcheck_flg = true;
+                mailcheck_flg = true;
                 preLoader.hide();
-                btnIcon.show(); 
-                $('.update-popup-btn').attr("disabled", false); 
-				return false;
-			}  
-				 
-			$.ajax({
-				url: ajaxurl,
-				type: 'post',
+                btnIcon.show();
+                $('.update-popup-btn').attr("disabled", false);
+                return false;
+            }
+
+            $.ajax({
+                url: ajaxurl,
+                type: 'post',
                 data: {
                     action: "sticky_element_update_status",
                     status: updateStatus,
@@ -503,49 +503,44 @@ $popup_data = MSE_UPDATE_POPUP_CONTENT; // get Data from update class,
                     nonce: jQuery("#sticky_element_update_nonce").val()
                 },
                 type: 'post',
-				cache: false,
-				success: function () {
-					mailcheck_flg = false;
+                cache: false,
+                success: function () {
+                    mailcheck_flg = false;
                     preLoader.hide();
-					window.location.reload();
-				}
-			})
-		});
-		
-		var checkdomains = ["yahoo.com" ,"hotmail.com" ,"gmail.com" ,"me.com" ,"aol.com" ,"mac.com" ,"live.com" ,"comcast.net" ,"googlemail.com" ,"msn.com" ,"hotmail.co.uk" ,"facebook.com" ,"verizon.net" ,"sbcglobal.net" ,"att.net" ,"gmx.com" ,"outlook.com" ,"icloud.com" ,"protonmail.com"];
-        var topLevelDomains = ["com", "net", "org", "me", "io"];        
-        jQuery(document).on('blur','#mse_update_email', function(event) {            
+                    window.location.reload();
+                }
+            })
+        });
+
+        var checkdomains = ["yahoo.com" ,"hotmail.com" ,"gmail.com" ,"me.com" ,"aol.com" ,"mac.com" ,"live.com" ,"comcast.net" ,"googlemail.com" ,"msn.com" ,"hotmail.co.uk" ,"facebook.com" ,"verizon.net" ,"sbcglobal.net" ,"att.net" ,"gmx.com" ,"outlook.com" ,"icloud.com" ,"protonmail.com"];
+        var topLevelDomains = ["com", "net", "org", "me", "io"];
+        jQuery(document).on('blur','#mse_update_email', function(event) {
             msemailcheck();
         });
-		
-		function msemailcheck() {
-        
-			jQuery('#mse_update_email').mailcheck({
+
+        function msemailcheck() {
+
+            jQuery('#mse_update_email').mailcheck({
                 domains: checkdomains,                 // Optional array like ['gmail.com', 'yahoo.com']
                 topLevelDomains: topLevelDomains,     // Optional array like ['com', 'net', 'org']
                 suggested: function(element, suggestion) {
-                   
+
                     jQuery('#suggestion').html("Did you mean <b><i>" + suggestion.full + "</i></b>?");
                 },
-                empty: function(element) { 
+                empty: function(element) {
                     jQuery('#suggestion').html('');
                 }
             });
-		}
+        }
 
-        $("#mse_update_email").emailautocomplete({            
-			domains: ["yahoo.com" ,"hotmail.com" ,"gmail.com" ,"me.com" ,"aol.com" ,"mac.com" ,"live.com" ,"comcast.net" ,"googlemail.com" ,"msn.com" ,"hotmail.co.uk" ,"facebook.com" ,"verizon.net" ,"sbcglobal.net" ,"att.net" ,"gmx.com" ,"outlook.com" ,"icloud.com" ,"protonmail.com"]
+        $("#mse_update_email").emailautocomplete({
+            domains: ["yahoo.com" ,"hotmail.com" ,"gmail.com" ,"me.com" ,"aol.com" ,"mac.com" ,"live.com" ,"comcast.net" ,"googlemail.com" ,"msn.com" ,"hotmail.co.uk" ,"facebook.com" ,"verizon.net" ,"sbcglobal.net" ,"att.net" ,"gmx.com" ,"outlook.com" ,"icloud.com" ,"protonmail.com"]
         });
 
         $(document).on("click", "#suggestion i", function (){
             $("#mse_update_email").val($(this).text());
-			setTimeout(function(){ jQuery('#suggestion').html(''); }, 1000);
+            setTimeout(function(){ jQuery('#suggestion').html(''); }, 1000);
         });
-	});
+    });
 </script>
 <?php ?>
-
-
-
-
-

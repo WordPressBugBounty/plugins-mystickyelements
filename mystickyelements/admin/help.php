@@ -1,20 +1,20 @@
 <?php
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
     exit;
 }
 $data = MSE_FOOTER_HELP_DATA;
 ?>
- 
+
 <div class="premio-footer-help">
     <div class="premio-help-wrap">
 
         <div class="premio-help-menu">
- 
-            <?php foreach ($data['footer_menu'] as $key => $value):  ?>
-                <?php if ($value['status'] == 1): ?>
+
+            <?php foreach ($data['footer_menu'] as $key => $value) : ?>
+                <?php if ($value['status'] == 1) : ?>
                     <a target="_blank" href="<?php echo esc_url($value['link']) ?>"><?php echo esc_html($value['title']) ?></a>
                 <?php endif; ?>
-            <?php endforeach; ?> 
+            <?php endforeach; ?>
         </div>
         <div class="premio-help-content">
             <p><?php esc_html_e("Powered by ", "mystickyelements") ?><a target="_blank" href="<?php echo esc_url($data['premio_site_info']) ?>"><?php esc_html_e("Premio", "mystickyelements") ?></a></p>
@@ -24,29 +24,31 @@ $data = MSE_FOOTER_HELP_DATA;
     <!-- Free/Pro Only URL Change -->
         <a class="premio-help-button" href="#"><img src="<?php echo esc_url($data['help_icon']) ?>" alt="<?php esc_html_e("Need help?", 'mystickyelements'); ?>"  /></a>
         <a class="premio-help-close-btn" href="#"><img src="<?php echo esc_url($data['close_icon']) ?>" alt="<?php esc_html_e("Close", 'mystickyelements'); ?>"  /></a>
-        
+
         <?php
             $option = get_option("mse_help_cta");
-if ($option !== "yes") { ?>
+        if ($option !== "yes") {
+            ?>
                 <span class="tooltiptext"><?php esc_html_e("Support", "mystickyelements") ?></span>
-        <?php  } ?> 
+                <?php } ?>
         <div class="premio-help-absulate-content">
-            <?php foreach ($data['support_widget'] as $key => $value):
-                $link = $value['link'] == false ? '#' : esc_url($value['link']);
-                $class = $key == 'contact' ? 'contact-us-btn' : 'premio-click-to-close';
-                $target = $key == 'contact' ? '' : '_blank';
+            <?php
+            foreach ($data['support_widget'] as $key => $value) :
+                $link      = $value['link'] == false ? '#' : esc_url($value['link']);
+                $class     = $key == 'contact' ? 'contact-us-btn' : 'premio-click-to-close';
+                $target    = $key == 'contact' ? '' : '_blank';
                 $pro_class = $key == 'upgrade_to_pro' ? ' pro' : '';
                 ?>
                 <a target="<?php echo esc_attr($target); ?>" href="<?php echo esc_attr($link) ?>" class="premio-help-absulate-content-single <?php echo esc_attr($class); ?>">
-                    <span class="text"><?php  echo esc_html($value['title']) ?></span>
+                    <span class="text"><?php echo esc_html($value['title']) ?></span>
                     <span class="icon-img <?php echo esc_attr($pro_class); ?>"><img src="<?php echo esc_url($value['icon']) ?>" alt=""></span>
                 </a>
-            <?php endforeach; ?> 
+            <?php endforeach; ?>
         </div>
 
     </div>
     <div class="premio-help-form">
-    
+
         <form action="<?php echo esc_url(admin_url('admin-ajax.php')) ?>" method="post" id="premio-help-form">
             <div class="premio-help-header">
                 <?php esc_html_e("Contact Us", "mystickyelements") ?>
@@ -72,7 +74,7 @@ if ($option !== "yes") { ?>
 
 <script>
     jQuery(document).ready(function(){
-       
+
         jQuery(".premio-help-button").click(function(e){
             e.stopPropagation();
              jQuery(".premio-help-button-wrap .tooltiptext").hide();
@@ -80,23 +82,23 @@ if ($option !== "yes") { ?>
             jQuery(".premio-help-button").addClass('hide');
             jQuery(".premio-help-absulate-content").addClass('active');
             jQuery(".premio-help-absulate-content").removeClass('hide');
-             
+
         });
         jQuery(".premio-help-close-btn").click(function(e){
-            e.stopPropagation(); 
+            e.stopPropagation();
             jQuery(".premio-help-close-btn").removeClass('show');
             jQuery(".premio-help-button").removeClass('hide');
             jQuery(".premio-help-absulate-content").removeClass('active');
             jQuery(".premio-help-absulate-content").addClass('hide');
             jQuery(".premio-help-form").hide();
-             
+
         });
-        jQuery(".premio-click-to-close").click(function(e){ 
+        jQuery(".premio-click-to-close").click(function(e){
             jQuery(".premio-help-close-btn").removeClass('show');
             jQuery(".premio-help-button").removeClass('hide');
             jQuery(".premio-help-absulate-content").removeClass('active');
-            jQuery(".premio-help-absulate-content").addClass('hide'); 
-             
+            jQuery(".premio-help-absulate-content").addClass('hide');
+
         });
         jQuery("#premio-help-form").submit(function(){
             jQuery(".premio-help-button-submit").attr("disabled",true);
@@ -137,13 +139,13 @@ if ($option !== "yes") { ?>
             return false;
         });
         jQuery(".contact-us-btn").click(function(e){
-            e.stopPropagation(); 
-            jQuery(".premio-help-form").show(); 
-            jQuery(".premio-help-form").addClass('active');  
+            e.stopPropagation();
+            jQuery(".premio-help-form").show();
+            jQuery(".premio-help-form").addClass('active');
             jQuery(".premio-help-absulate-content").removeClass('active');
             jQuery(".premio-help-absulate-content").addClass('hide');
             if(jQuery(".premio-help-button-wrap .tooltiptext").length) {
-                jQuery(".premio-help-button-wrap .tooltiptext").remove(); 
+                jQuery(".premio-help-button-wrap .tooltiptext").remove();
                 jQuery.ajax({
                     url: "<?php echo esc_url(admin_url('admin-ajax.php')) ?>",
                     data: {
@@ -158,19 +160,19 @@ if ($option !== "yes") { ?>
             }
 
         });
-      
+
         jQuery(".premio-help-form").click(function(e){
             e.stopPropagation();
         });
         jQuery("body").click(function(){
-            if(jQuery(".premio-help-form").hasClass("active")) { 
-                jQuery(".premio-help-button").addClass('show'); 
-                jQuery(".premio-help-button").removeClass('hide'); 
-                
-                jQuery(".premio-help-close-btn").addClass('hide');  
-                jQuery(".premio-help-close-btn").removeClass('show'); 
+            if(jQuery(".premio-help-form").hasClass("active")) {
+                jQuery(".premio-help-button").addClass('show');
+                jQuery(".premio-help-button").removeClass('hide');
+
+                jQuery(".premio-help-close-btn").addClass('hide');
+                jQuery(".premio-help-close-btn").removeClass('show');
             }
-            
+
             jQuery(".premio-help-form").removeClass("active");
         });
     });
