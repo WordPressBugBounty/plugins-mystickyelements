@@ -99,7 +99,9 @@ $mystickyelement_class .= is_plugin_active('chatway-live-chat/chatway.php') ? ' 
             </div>
         </div>
     </div>
-    <h2 class="mystickyelement-empty-h2" style="font-size: 0px;margin-bottom: 0px;"></h2>
+    <div class="wrap m-0! px-5!">
+        <h2 class="sr-only"><?php esc_html_e('My Sticky Elements Settings', 'mystickyelements') ?></h2>
+    </div>
     <div class="wrap mse-wrap mystickyelement-wrap mystickyelements-pro-plugin-wrap <?php echo esc_attr($mystickyelement_class); ?>">
         <div class="mystickyelements-wrap my-5">
             <div class="mystickyelements-tabs-wrap mystickyelements-common-form-section flex flex-col lg:flex-row gap-5 border border-[#e5e7eb] rounded-lg bg-white">

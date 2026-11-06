@@ -23,11 +23,11 @@ if (defined('ABSPATH') === false) {
             <div class="preview-element-contact-form <?php echo esc_attr($general_settings['position']) ?>_pos  <?php echo esc_attr($general_settings['position_mobile']) ?>_pos_mobile  ">
                 <div class="preview-element-contact-form-wrap">
 
-                    <h2 style="color:<?php
+                    <div style="color:<?php
                     if ((isset($contact_form['headine_text_color']))) {
                         echo esc_attr($contact_form['headine_text_color']);
                     }
-                    ?>"><?php echo esc_html($contact_form['contact_title_text']); ?></h2>
+                    ?>"><?php echo esc_html($contact_form['contact_title_text']); ?></div>
                     <div class="preview-element-contact-form-wrap-div">
                     <input type="text" id="contact-form-name" class = "preview-contactform-field" placeholder="<?php echo (isset($contactform['name_value']) && $contactform['name_value'] != '') ? $contactform['name_value'] : 'Name'; ?>" data-slug = "name" style ="<?php
                     if (!isset($contact_form['name']) || (isset($contact_form['name']) && $contact_form['name'] != '1')) {

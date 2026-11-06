@@ -2,10 +2,10 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: My Sticky Elements 2.4.0\n"
+"Project-Id-Version: My Sticky Elements 2.4.1\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/mystickyelements-free-uncompressed\n"
-"POT-Creation-Date: 2026-10-13 06:34:51+00:00\n"
+"POT-Creation-Date: 2026-11-06 08:41:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -250,12 +250,12 @@ msgid ""
 msgstr ""
 
 #: admin/contact-forms.php:93 admin/social-media.php:55
-#: admin/stickyelements-dashboard.php:81 admin/stickyelements-settings.php:133
+#: admin/stickyelements-dashboard.php:81 admin/stickyelements-settings.php:135
 msgid "Disable anyway"
 msgstr ""
 
 #: admin/contact-forms.php:96 admin/social-media.php:58
-#: admin/stickyelements-dashboard.php:84 admin/stickyelements-settings.php:136
+#: admin/stickyelements-dashboard.php:84 admin/stickyelements-settings.php:138
 msgid "Keep using"
 msgstr ""
 
@@ -1627,7 +1627,7 @@ msgstr ""
 msgid "Quick Action"
 msgstr ""
 
-#: admin/stickyelements-dashboard.php:72 admin/stickyelements-settings.php:125
+#: admin/stickyelements-dashboard.php:72 admin/stickyelements-settings.php:127
 #: recommended-plugins.php:494
 msgid "Are you sure?"
 msgstr ""
@@ -1935,22 +1935,26 @@ msgstr ""
 msgid "Save & View Dashboard"
 msgstr ""
 
-#: admin/stickyelements-settings.php:128
+#: admin/stickyelements-settings.php:103
+msgid "My Sticky Elements Settings"
+msgstr ""
+
+#: admin/stickyelements-settings.php:130
 msgid ""
 "You're about to turn off loading Google fonts from Google server. By "
 "turning it off, fonts will not be loaded by default and you have to "
 "manually load them to use properly. Are you sure?"
 msgstr ""
 
-#: admin/stickyelements-settings.php:144
+#: admin/stickyelements-settings.php:146
 msgid "Missing link"
 msgstr ""
 
-#: admin/stickyelements-settings.php:153
+#: admin/stickyelements-settings.php:155
 msgid "I'll do it later"
 msgstr ""
 
-#: admin/stickyelements-settings.php:156
+#: admin/stickyelements-settings.php:158
 msgid "Ok"
 msgstr ""
 
