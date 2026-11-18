@@ -3,7 +3,7 @@
 Plugin Name: My Sticky Elements
 Plugin URI: https://premio.io/
 Description: My Sticky Elements is simple yet very effective plugin. It is perfect to fill out usually unused side space on webpages with some additional messages, videos, social widgets ...
-Version: 2.4.1
+Version: 2.4.2
 Author: Premio
 Author URI: https://premio.io/
 Domain Path: /languages
@@ -15,7 +15,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 define('MYSTICKYELEMENTS_URL', plugins_url('/', __FILE__));  // Define Plugin URL
 define('MYSTICKYELEMENTS_PATH', plugin_dir_path(__FILE__));  // Define Plugin Directory Path
 define('MYSTICKYELEMENTS_BASE', plugin_basename(__FILE__));
-define("MY_STICKY_ELEMENT_VERSION", "2.4.1");
+define("MY_STICKY_ELEMENT_VERSION", "2.4.2");
 
 /*
  * redirect my sticky element setting page after plugin activated
@@ -3685,6 +3685,34 @@ if (!empty($mysticky_elements_options)) {
 
 
 
+/**
+ * Neutralize spreadsheet formula triggers in a CSV cell (CWE-1236 / OWASP CSV Injection).
+ *
+ * Any cell whose first non-whitespace character is =, +, -, @, tab or carriage return
+ * is prefixed with a single quote so spreadsheet applications treat it as text.
+ *
+ * @param mixed $value Cell value.
+ * @return string
+ */
+function mystickyelements_csv_escape_cell($value)
+{
+    $value = (string) $value;
+    if ($value === '') {
+        return $value;
+    }
+
+    if (in_array($value[0], array("\t", "\r"), true)) {
+        return "'".$value;
+    }
+
+    $trimmed = ltrim($value, " \n\x0B\0");
+    if ($trimmed !== '' && in_array($trimmed[0], array('=', '+', '-', '@', "\t", "\r"), true)) {
+        return "'".$value;
+    }
+
+    return $value;
+}
+
 function mystickyelements_admin_init()
 {
     global $wpdb, $pagenow;
@@ -3695,37 +3723,33 @@ function mystickyelements_admin_init()
         $table_name = $wpdb->prefix."mystickyelement_contact_lists";
         $query      = "SELECT * FROM {$table_name} ORDER BY ID DESC";
         $result     = $wpdb->get_results($query);
-        $file       = "mystickyelements-contact-leads.csv";
-        $fp         = fopen($file, "a") or die("Error Couldn't open $file for writing!");
-        $all_data   = '';
-        $fields     = array("ID", "Widget Name", "Name", "Phone", "Email", "Message", "Page Link", "Message Date");
+
+        // Stream directly to the browser; never write lead data to a file on disk.
+        nocache_headers();
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename="mystickyelements-contact-leads.csv"');
+        header('X-Content-Type-Options: nosniff');
+
+        $fp     = fopen('php://output', 'w');
+        $fields = array("ID", "Widget Name", "Name", "Phone", "Email", "Message", "Page Link", "Message Date");
         fputcsv($fp, $fields, ',', '"', '\\');
         foreach ($result as $res) {
-            $res_ID              = $res->ID;
-            $res_name            = $res->contact_name;
-            $res_phone           = $res->contact_phone;
-            $res_email           = $res->contact_email;
-            $res_message         = $res->contact_message;
-            $res_message_date    = $res->message_date;
-            $widget_element_name = $res->widget_element_name;
-            $page_link           = $res->page_link;
-            $custom_fields       = $res->custom_fields;
+            $fields = array(
+                $res->ID,
+                $res->widget_element_name,
+                $res->contact_name,
+                $res->contact_phone,
+                $res->contact_email,
+                $res->contact_message,
+                $res->page_link,
+                $res->message_date,
+            );
 
-            $fields = array($res_ID, $widget_element_name, $res_name, $res_phone, $res_email, $res_message, $page_link ,$res_message_date);
-
-            fputcsv($fp, $fields, ',', '"', '\\');
+            fputcsv($fp, array_map('mystickyelements_csv_escape_cell', $fields), ',', '"', '\\');
         }
 
         fclose($fp);
-
-        if (file_exists($file)) {
-            header('Content-Type: application/csv');
-            header('Content-Disposition: attachment; filename="'.basename($file).'"');
-            header('Content-Length: '.filesize($file));
-            readfile($file);
-            unlink($file);
-            exit;
-        }
+        exit;
     }
 
     if ($pagenow == 'plugins.php' || (isset($_GET['page']) && $_GET['page'] == 'my-sticky-elements')) {

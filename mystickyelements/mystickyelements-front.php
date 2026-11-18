@@ -1056,7 +1056,8 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
             }
 
             if (isset($_POST['contact-form-email']) || isset($_POST['contact-form-name']) || isset($_POST['contact-form-phone']) || isset($_POST['contact-form-message'])) {
-                $_POST['contact-form-phone'] = (isset($_POST['contact_code'])) ? "+".$_POST['contact_code']." ".$_POST['contact-form-phone'] : $_POST['contact-form-phone'];
+                $contact_phone_raw = isset($_POST['contact-form-phone']) ? sanitize_text_field(wp_unslash($_POST['contact-form-phone'])) : '';
+                $_POST['contact-form-phone'] = (isset($_POST['contact_code'])) ? "+".sanitize_text_field(wp_unslash($_POST['contact_code']))." ".$contact_phone_raw : $contact_phone_raw;
 
                 if (isset($contact_form['send_leads']) && in_array('mail', $contact_form['send_leads'])) {
                     $send_mail = (isset($contact_form['sent_to_mail']) && $contact_form['sent_to_mail'] != '') ? $contact_form['sent_to_mail'] : get_option('admin_email');
@@ -1104,7 +1105,7 @@ if (!class_exists('MyStickyElementsFrontPage_pro')) {
                         $wpdb->prefix.'mystickyelement_contact_lists',
                         array(
                             'contact_name'      => isset($_POST['contact-form-name']) ? esc_sql(sanitize_text_field($_POST['contact-form-name'])) : '',
-                            'contact_phone'     => isset($_POST['contact-form-phone']) ? $_POST['contact-form-phone'] : '',
+                            'contact_phone'     => isset($_POST['contact-form-phone']) ? sanitize_text_field($_POST['contact-form-phone']) : '',
                             'contact_email'     => isset($_POST['contact-form-email']) ? esc_sql(sanitize_email($_POST['contact-form-email'])) : '',
                             'contact_message'   => isset($_POST['contact-form-message']) ? sanitize_textarea_field(stripslashes($_POST['contact-form-message'])) : '',
                             'contact_option'    => (isset($_POST['contact-form-dropdown'])) ? esc_sql(sanitize_textarea_field($_POST['contact-form-dropdown'])) : '',

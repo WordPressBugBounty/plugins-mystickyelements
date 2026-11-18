@@ -2,10 +2,10 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: My Sticky Elements 2.4.1\n"
+"Project-Id-Version: My Sticky Elements 2.4.2\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/mystickyelements-free-uncompressed\n"
-"POT-Creation-Date: 2026-11-06 08:41:43+00:00\n"
+"POT-Creation-Date: 2026-11-18 10:40:37+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2191,15 +2191,15 @@ msgstr ""
 msgid "*"
 msgstr ""
 
-#: mystickyelements-front.php:960 mystickyelements-front.php:1099
+#: mystickyelements-front.php:960 mystickyelements-front.php:1100
 msgid "Something went wrong. Please contact site administrator"
 msgstr ""
 
-#: mystickyelements-front.php:1095
+#: mystickyelements-front.php:1096
 msgid "Your request is submitted successfully"
 msgstr ""
 
-#: mystickyelements-front.php:1116
+#: mystickyelements-front.php:1117
 msgid "Your message was sent successfully"
 msgstr ""
 
